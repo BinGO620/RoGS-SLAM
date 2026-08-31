@@ -1,0 +1,93 @@
+{
+  "rgbd_bonn_balloon": {
+    "n": 341,
+    "tex_ratio_med": 1.7126429544114252,
+    "rho_plain": 0.9420197462840046,
+    "frac_ex_plain": 0.6217008797653959,
+    "n_texmatched": 319,
+    "rho_tex": 0.9536904904695048,
+    "frac_ex_tex": 0.6112852664576802,
+    "loss_gt_med": 0.10348768635137684,
+    "loss_pred_med": 0.08103490110346874,
+    "excess_over_reg_med": 0.025243441635397657,
+    "frac_reg_excess_2sd": 0.40762463343108507
+  },
+  "rgbd_bonn_balloon2": {
+    "n": 376,
+    "tex_ratio_med": 1.486152444986005,
+    "rho_plain": 0.9300841953939667,
+    "frac_ex_plain": 0.6409574468085106,
+    "n_texmatched": 360,
+    "rho_tex": 0.9341765053695816,
+    "frac_ex_tex": 0.6444444444444445,
+    "loss_gt_med": 0.11150803661173259,
+    "loss_pred_med": 0.06124232087998967,
+    "excess_over_reg_med": 0.04802952980080834,
+    "frac_reg_excess_2sd": 0.5159574468085106
+  },
+  "rgbd_bonn_moving_nonobstructing_box": {
+    "n": 294,
+    "tex_ratio_med": 2.6002821641725062,
+    "rho_plain": 0.9908203448088955,
+    "frac_ex_plain": 0.40816326530612246,
+    "n_texmatched": 255,
+    "rho_tex": 0.9971436735334791,
+    "frac_ex_tex": 0.3176470588235294,
+    "loss_gt_med": 0.018948643759432726,
+    "loss_pred_med": 0.020245074228429895,
+    "excess_over_reg_med": 0.0006726476829849275,
+    "frac_reg_excess_2sd": 0.2653061224489796
+  },
+  "rgbd_bonn_moving_nonobstructing_box2": {
+    "n": 336,
+    "tex_ratio_med": 2.2645910593273113,
+    "rho_plain": 0.9893538271512553,
+    "frac_ex_plain": 0.3541666666666667,
+    "n_texmatched": 302,
+    "rho_tex": 0.9973096576319873,
+    "frac_ex_tex": 0.23841059602649006,
+    "loss_gt_med": 0.025167913564021427,
+    "loss_pred_med": 0.02517982674471469,
+    "excess_over_reg_med": -0.0004316794867328176,
+    "frac_reg_excess_2sd": 0.22321428571428573
+  },
+  "rgbd_bonn_person_tracking": {
+    "n": 358,
+    "tex_ratio_med": 2.0685160777451133,
+    "rho_plain": 0.9869287758505753,
+    "frac_ex_plain": 0.4441340782122905,
+    "n_texmatched": 336,
+    "rho_tex": 0.9941887628905819,
+    "frac_ex_tex": 0.34523809523809523,
+    "loss_gt_med": 0.027696954909297578,
+    "loss_pred_med": 0.032525674837156696,
+    "excess_over_reg_med": 0.0018158423174489263,
+    "frac_reg_excess_2sd": 0.2681564245810056
+  },
+  "rgbd_bonn_person_tracking2": {
+    "n": 369,
+    "tex_ratio_med": 1.9362126702023774,
+    "rho_plain": 0.98363480411386,
+    "frac_ex_plain": 0.5230352303523035,
+    "n_texmatched": 349,
+    "rho_tex": 0.9906174216419104,
+    "frac_ex_tex": 0.4670487106017192,
+    "loss_gt_med": 0.03999876458444396,
+    "loss_pred_med": 0.043851314115543466,
+    "excess_over_reg_med": 0.0034199155995823932,
+    "frac_reg_excess_2sd": 0.3116531165311653
+  },
+  "rgbd_bonn_moving_obstructing_box": {
+    "n": 284,
+    "tex_ratio_med": 2.116037441881618,
+    "rho_plain": 0.979760254624461,
+    "frac_ex_plain": 0.5035211267605634,
+    "n_texmatched": 262,
+    "rho_tex": 0.9868516717748543,
+    "frac_ex_tex": 0.4389312977099237,
+    "loss_gt_med": 0.03907730216658967,
+    "loss_pred_med": 0.03138988539723156,
+    "excess_over_reg_med": 0.007573212868207428,
+    "frac_reg_excess_2sd": 0.2852112676056338
+  }
+}

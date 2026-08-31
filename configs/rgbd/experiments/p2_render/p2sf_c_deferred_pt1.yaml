@@ -1,0 +1,20 @@
+# P2-SF de-confounding control, variant C, arm B: COMBINED backbone + deferred lifecycle,
+# FROZEN-POSE on the prune arm's OWN self-tracked trajectory (Bonn person_tracking).
+# Twin of p2sf_c_prune_pt1.yaml; the pair differs ONLY in Mapping.lifecycle_mode (same
+# backbone, same injected prune trajectory, same pose freeze). See p2sf_c_prune_pt1.yaml
+# for the full rationale (self-frozen variant C, selection-bias disclosure, ATE=canary,
+# map-level observables, sentinel pose_file resolved by scripts/r2_p2_sf.py).
+#
+# The deferred arm's provisional-candidate lifecycle is the hypothesised map-level channel
+# (provisional candidates perturb densify) that this control isolates from tracking.
+inherit_from: "configs/rgbd/bonn/person_tracking.yaml"
+method_from: "configs/rgbd/experiments/active/candidate/method_combined_maskboth_deferred.yaml"
+method: "CombinedSF-C-Deferred"
+
+Oracle:
+  pose_file: "__PRUNE_TRAJ__"
+
+Training:
+  lr:
+    cam_rot_delta: 0.0
+    cam_trans_delta: 0.0

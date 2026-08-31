@@ -1,0 +1,4 @@
+# EXP59 boundary validation: mask-free arm on unseen sequence placing_nonobstructing_box.
+inherit_from: "configs/rgbd/bonn/placing_nonobstructing_box.yaml"
+method_from: "configs/rgbd/experiments/active/candidate/method_combined_maskoff_prune.yaml"
+method: "EXP59-maskfree-placing_nonobstructing_box"

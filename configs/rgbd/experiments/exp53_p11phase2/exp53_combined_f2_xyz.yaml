@@ -1,0 +1,5 @@
+# EXP53 — Combined 主表臂 f2_xyz(TUM 长静态 3397 帧)。
+# flow 预检已验证:parser 3397 帧 / unique depth stems 3319 / flow 3318 全覆盖(missing=0)。
+inherit_from: "configs/rgbd/tum/f2_xyz.yaml"
+method_from: "configs/rgbd/experiments/active/candidate/method_combined_maskboth_prune.yaml"
+method: "EXP53-C-Combined-F2XYZ"

@@ -1,0 +1,55 @@
+# P2-RT spike (2026-08-03): the combined backbone's DEFERRED twin + ReliableTracking ON.
+#
+# Cell D of the 2×2 (Tracker×Lifecycle) ablation: RT-on deferred = the full method.
+# Built only if the RT-on prune spike (cell C) survives the seed0 transfer gate AND
+# the mv_no_box2 safety check clears the documented 1/3 blowup tail (per codex 019fc3c7).
+#
+# Single-knob diff vs method_combined_maskboth_deferred.yaml = ReliableTracking.enabled
+# (false→true). Identical to method_combined_maskboth_prune_rton.yaml except lifecycle.
+# STATUS: apparatus only. Zero GPU runs exist against this config.
+TriReliability:
+  enabled: false
+
+ReliableTracking:
+  enabled: true
+
+RobustTracking:
+  enabled: true
+  kernel: "huber"
+  rgb_delta: 0.10
+  depth_delta: 0.10
+
+SemanticMask:
+  enabled: true
+  model: "maskrcnn"
+  dynamic_classes: [1]
+  dilate_px: 7
+  max_mask_ratio: 0.95
+  device: "cuda"
+  soft: false
+  mask_mapping: true
+  mask_insertion: true
+
+DynamicKeyframe:
+  enabled: true
+  gap_cap: 5
+  occ_tighten_thresh: 2.0
+
+Training:
+  window_size: 12
+  pose_window: 6
+
+ReliabilitySignal:
+  enabled: true
+
+DeferredCommit:
+  enabled: true
+  reliability_confirm: true
+
+Mapping:
+  lifecycle_mode: "deferred"
+
+Results:
+  save_raw_metrics: true
+  static_bg_mask_subdir: "dynamic_mask_gtmc"
+  static_bg_band_px: [10, 25, 50]

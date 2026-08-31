@@ -1,0 +1,7 @@
+# exp39 Step C / f3_wk_xyz —— E-sm-zeromask：EMA 形状 + 质量对齐 + 禁止 admission（0%）
+inherit_from: "configs/rgbd/experiments/exp39_mapping_soft/exp39c_ema_f3_wk_xyz.yaml"
+method: "EXP39C-sm-zeromask-f3_wk_xyz"
+
+SemanticMask:
+  mapping_ema_mass_match: true
+  mapping_ema_zero_dynamic: true

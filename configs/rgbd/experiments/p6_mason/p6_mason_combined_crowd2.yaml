@@ -1,0 +1,5 @@
+# P6-MASON — mask-ON discriminator run config — crowd2
+# mask-off worst (66cm); tests mask-ON against RGD 2.36 / DG 6.39 / WildGS 2.17.
+inherit_from: "configs/rgbd/bonn/crowd2.yaml"
+method_from: "configs/rgbd/experiments/active/candidate/method_combined_maskboth_prune.yaml"
+method: "Combined"

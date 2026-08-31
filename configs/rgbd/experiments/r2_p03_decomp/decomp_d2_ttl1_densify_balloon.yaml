@@ -1,0 +1,17 @@
+# R2-P03-DECOMP cell D2: S6_maxpress MINUS the native opacity prune.
+# Base = arm A (insert-then-prune control) under the frozen RGD balloon trajectory.
+# Allowed diff vs base = {method, DeferredCommit.ttl_keyframes,
+#   opt_params.densify_grad_threshold} — tests/test_r2_p03_decomp_configs.py.
+# Why this cell exists: it is the interaction cell of the 2x2 {ttl_keyframes 1} x
+# {densify_grad 5e-4}. Read against D0 (ttl only) and D1 (densify only) it says whether the
+# two knobs are additive or synergistic, and read against S6 (same two + gaussian_th 0.9,
+# R2-P03-SWEEP) it says whether the native opacity prune contributed anything to S6's
+# dominance at all.
+inherit_from: "configs/rgbd/experiments/r2_oracle_admission/oracle_prune_balloon.yaml"
+method: "OracleRGD-Prune-D2-ttl1-densify"
+
+DeferredCommit:
+  ttl_keyframes: 1
+
+opt_params:
+  densify_grad_threshold: 0.0005

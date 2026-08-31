@@ -1,0 +1,15 @@
+# WP-B flow-mask baseline — vanilla (K0R0L0) + naive flow-threshold semantic mask (no learning).
+# 2026-08-14, CCF-C 整改执行卡 §4 WP-B. THE ONLY difference from WP-A K0R0L0 (vanilla) is
+# SemanticMask.enabled:true + source:flow_threshold → the mask comes from thresholding the
+# frozen backward |f_obs| (same offline flow as MRCS). Everything else byte-identical.
+# Contract: tests/test_wpb_flowmask_configs.py.
+inherit_from: "configs/rgbd/experiments/wpa_factorial/method_mf_K0R0L0.yaml"
+
+SemanticMask:
+  enabled: true
+  source: "flow_threshold"
+  flow_quantile: 0.90      # per-frame threshold = 90th pct of |f_obs| (pilot sweeps p80/p90/p95)
+  flow_abs_px: 2.0         # absolute floor (px): static frame ~0 ego flow, >2px = object motion
+  dilate_px: 7             # aligns with the semantic-mask convention
+  max_mask_ratio: 0.95
+

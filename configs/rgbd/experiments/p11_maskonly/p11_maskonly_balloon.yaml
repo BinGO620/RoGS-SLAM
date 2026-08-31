@@ -1,0 +1,5 @@
+# P11 sparse-KF mask-only run config -- balloon. Option A (exp27 交接).
+# Arm = vanilla KF + mask_mapping + huber; diff vs WP-M maskonly = {RobustTracking ON, mask_insertion OFF}.
+inherit_from: "configs/rgbd/bonn/balloon.yaml"
+method_from: "configs/rgbd/experiments/p11_maskonly/method_p11_maskonly.yaml"
+method: "P11-balloon-sparsemaskonly"

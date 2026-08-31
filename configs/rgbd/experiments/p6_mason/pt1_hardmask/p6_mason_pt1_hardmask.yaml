@@ -1,0 +1,7 @@
+# P6-MASON pt1 H-e — hard semantic mask participates in tracking.
+# Inherits combined mask-ON, adds SemanticMask.hard_tracking_mask=true so the moving
+# person is hard-excluded from the photometric+depth pose loss (only robust-kernel static
+# background pixels constrain pose). Core change committed 10edf29.
+inherit_from: "configs/rgbd/experiments/p6_mason/p6_mason_combined_pt1.yaml"
+SemanticMask:
+  hard_tracking_mask: true

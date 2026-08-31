@@ -1,0 +1,19 @@
+# exp39 Step C 尺度对齐臂 E-sm-zeromask —— EMA 形状 + 质量对齐 + 禁止 admission
+#
+# 三臂链条（每对相邻臂只差一个变量）：
+#   H              均匀权重、只在 static 上           (已有: ATE 2.99)
+#   E-sm-zeromask  EMA 形状、只在 static 上、质量对齐   <- 本文件
+#   E-sm           EMA 形状、static+dynamic、质量对齐
+#
+#   H  -> E-sm-zeromask : 单变量 = static 内部的权重形状
+#   E-sm-zeromask -> E-sm : 单变量 = admission（动态像素是否带权重）
+#
+# 这条链把原 E 臂里纠缠的三件事（admission / 形状 / 5.7e4 倍尺度膨胀）拆开。
+# 代码分支混杂已由 tests/test_exp39c_scale_match.py 解析排除：均匀权重经本分支
+# 算出的 loss 与硬 mask 分支逐位相等。
+inherit_from: "configs/rgbd/experiments/exp39_mapping_soft/exp39c_ema_balloon.yaml"
+method: "EXP39C-sm-zeromask-balloon"
+
+SemanticMask:
+  mapping_ema_mass_match: true
+  mapping_ema_zero_dynamic: true

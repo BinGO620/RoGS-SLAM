@@ -1,0 +1,15 @@
+# exp39 Step C 尺度对齐臂 E-sm —— EMA 形状 + 质量对齐 + 允许 admission
+#
+# 为什么需要这个臂（2026-08-23 审计）：原 E 臂把 loss 乘以 mean(w)，光度项按
+# w_bar^2 缩放 ⇒ 相对硬臂膨胀 5.7e4 倍，固定的 isotropic 正则被事实上删除。
+# 原先所有 E-vs-H 的 ATE 差都混着这个五个数量级的尺度差，故 ADMISSION-NOT-SHAPE
+# 判决已撤回。本臂把总权重质量锁定到硬臂的 count(valid & static)，
+# 使 E 与 H 只差"同一份固定权重如何分布"。
+#
+# 与 E-sm-zeromask 的唯一差异 = mapping_ema_zero_dynamic ⇒ 单变量 = admission。
+inherit_from: "configs/rgbd/experiments/exp39_mapping_soft/exp39c_ema_balloon.yaml"
+method: "EXP39C-sm-balloon"
+
+SemanticMask:
+  mapping_ema_mass_match: true
+  mapping_ema_zero_dynamic: false

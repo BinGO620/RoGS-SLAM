@@ -1,0 +1,4 @@
+# P11 sparse-KF mask-only run config -- pt1. 18-seq 主表铺开 (exp28).
+inherit_from: "configs/rgbd/bonn/person_tracking.yaml"
+method_from: "configs/rgbd/experiments/p11_maskonly/method_p11_maskonly.yaml"
+method: "P11-pt1-sparsemaskonly"

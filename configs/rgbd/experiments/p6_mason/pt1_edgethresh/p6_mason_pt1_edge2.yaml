@@ -1,0 +1,7 @@
+# P6-MASON pt1 H-d — raise edge_threshold to keep only strong edges / room lines.
+# Tests the user's low-texture insight: if low-texture pixels (large inside-person uniform
+# areas) drag tracking, keeping only high-gradient pixels (person/bg boundary + room lines)
+# should lower pt1 ATE. Pure config, no core change.
+inherit_from: "configs/rgbd/experiments/p6_mason/p6_mason_combined_pt1.yaml"
+Training:
+  edge_threshold: 2.0

@@ -1,0 +1,7 @@
+# P9-A3 — 关 DeferredCommit（延迟提交 / prune）。
+# 它管高斯的准入与驱逐，直接改地图内容。静态序列上从未单独消融过。
+inherit_from: "configs/rgbd/tum/f3_st_hf.yaml"
+method_from: "configs/rgbd/experiments/active/candidate/method_combined_maskoff_prune.yaml"
+method: "P9-A3-NoDeferred"
+DeferredCommit:
+  enabled: false

@@ -1,0 +1,6 @@
+# WP-M MASK-ONLY run config -- f3_st_rpy. Arm = combined main-table overlay with
+# the three kernel components (K/R/L) OFF; only diff vs combined = {K,R,L}.
+# Contract pinned by tests/test_wpm_maskonly_configs.py.
+inherit_from: "configs/rgbd/tum/f3_st_rpy.yaml"
+method_from: "configs/rgbd/experiments/wpm_maskonly/method_maskonly.yaml"
+method: "WPM-f3_st_rpy-maskonly"

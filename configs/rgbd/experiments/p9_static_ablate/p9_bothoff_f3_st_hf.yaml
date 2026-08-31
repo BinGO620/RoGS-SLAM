@@ -1,0 +1,23 @@
+# P9-A5 — 判别 (a) 双通道各自致崩 vs (b) 损失分支 artifact。
+#
+# 背景：ReliabilitySignal.enabled 只 gate 两个行为输出——
+#   ① reliability_soft -> tracking loss      （w≡1 臂单独切断 => 仍崩 35.99）
+#   ② viewpoint.reliability_* -> deferred confirm（nodeferred 臂单独切断 => 仍崩 36.05/34.13）
+# 两条**分别**切断都没修好，**整个关掉**却修好了（2.15/2.39）。只剩两种可能：
+#   (a) 两条通道各自足以致崩，必须同时切断
+#   (b) 关掉 RS 顺带换了损失分支：combined_soft=None 时 get_loss_tracking 从
+#       get_loss_tracking_rgbd_soft(static_conf≡1) 落到 get_loss_tracking_rgbd_robust。
+#       二者唯一差别 = soft 路径的深度项多要求 valid(RGB 亮度 > rgb_boundary_threshold=0.01)。
+#       若是这条，则「静态崩溃」是实现层 artifact，不是方法语义问题。
+#
+# 本臂：两条通道都切断，但 RS 仍 enabled ⇒ reliability_soft 不是 None ⇒ 损失**留在 soft 分支**。
+#   修好 (2/2)  => (a) 成立，双通道各自致崩
+#   仍崩 (0/2)  => (b) 成立，病因是损失分支差异（实现 artifact）
+inherit_from: "configs/rgbd/tum/f3_st_hf.yaml"
+method_from: "configs/rgbd/experiments/active/candidate/method_combined_maskoff_prune.yaml"
+method: "P9-A5-BothChannelsOff"
+
+ReliabilitySignal:
+  tracking_downweight_off: true
+DeferredCommit:
+  enabled: false

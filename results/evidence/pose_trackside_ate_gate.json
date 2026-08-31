@@ -1,0 +1,84 @@
+{
+  "sequence": "balloon",
+  "prereg_commit": "f9fa31ea",
+  "blind": false,
+  "reach_floor": 0.55,
+  "gates": {
+    "K-1 r=2 per cell": {
+      "pass": true,
+      "detail": "E_trackside/s0=2; E_trackside/s1=2; E_trackside/s2=2; F_trackhard/s0=2; F_trackhard/s1=2; F_trackhard/s2=2"
+    },
+    "K-2 repeats same cfg": {
+      "pass": true,
+      "detail": "identical SemanticMask flags within every cell"
+    },
+    "K-3 single variable": {
+      "pass": true,
+      "detail": "1 SemanticMask flag(s) differ (E=(True, False, False, False), F=(True, False, False, True))"
+    },
+    "K-4 one caliper": {
+      "pass": true,
+      "detail": "1 distinct (success_threshold_cm, dataset) combos"
+    }
+  },
+  "cell_mean_ate": {
+    "E_trackside": {
+      "0": 8.0781,
+      "1": 9.5175,
+      "2": 9.439
+    },
+    "F_trackhard": {
+      "0": 7.7393,
+      "1": 7.1898,
+      "2": 7.8584
+    }
+  },
+  "within_config_signed": {
+    "E_trackside": [
+      0.2095,
+      0.4019,
+      -0.0701
+    ],
+    "F_trackhard": [
+      -0.5892,
+      -0.4185,
+      -0.048
+    ]
+  },
+  "delta_per_seed": {
+    "0": -0.3388,
+    "1": -2.3277,
+    "2": -1.5807
+  },
+  "shift_ATE": -1.4157000000000004,
+  "floor_ATE": 0.3519,
+  "floor_variance_matched": 0.24883087629954606,
+  "null_shifts": [
+    0.0407666667,
+    0.0409,
+    0.0729,
+    0.0875,
+    0.1804333333,
+    0.2271666667,
+    0.3199,
+    0.3519
+  ],
+  "verdict": "ENDPOINT-DECOUPLED",
+  "verdict_variance_matched": "ENDPOINT-DECOUPLED",
+  "labels_agree": true,
+  "r_needed_per_cell": null,
+  "noise_split": {
+    "E_trackside": {
+      "within_config_mean_abs": 0.22716666666666718,
+      "between_seed_ptp": 1.4393999999999991,
+      "ratio_within_over_between": 0.15782038812468205
+    },
+    "F_trackhard": {
+      "within_config_mean_abs": 0.35189999999999966,
+      "between_seed_ptp": 0.6686499999999995,
+      "ratio_within_over_between": 0.5262843041950197
+    }
+  },
+  "pooled_within_config": 0.2895333333333334,
+  "pooled_between_seed": 1.0540249999999993
+}

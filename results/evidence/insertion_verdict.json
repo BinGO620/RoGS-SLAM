@@ -1,0 +1,184 @@
+{
+  "verdict": {
+    "label": "INSERTION-CHANNEL-NEGLIGIBLE",
+    "why": "share_insertion sits at or below the readable floor on every judgable sequence ({'balloon': 0.017, 'f3_wk_xyz': -0.005}) => the 20-56% gap is NOT in insertion; it can only be in the tracking side. Next target = tracking-side isolation.",
+    "judgable": [
+      "balloon",
+      "f3_wk_xyz"
+    ],
+    "shares": {
+      "balloon": 0.017,
+      "f3_wk_xyz": -0.005
+    }
+  },
+  "sequences": {
+    "balloon": {
+      "descriptive_only": false,
+      "n": {
+        "eboth": 3,
+        "maskfree": 3,
+        "tracking_only": 3,
+        "pba": 3
+      },
+      "ate": {
+        "eboth": 3.065,
+        "maskfree": 11.363,
+        "tracking_only": 3.204,
+        "pba": 8.642
+      },
+      "per_seed": {
+        "eboth": [
+          3.057,
+          3.094,
+          3.043
+        ],
+        "maskfree": [
+          11.957,
+          10.436,
+          11.695
+        ],
+        "tracking_only": [
+          3.173,
+          3.34,
+          3.1
+        ],
+        "pba": [
+          9.351,
+          8.545,
+          8.03
+        ]
+      },
+      "total_effect_cm": 8.298,
+      "within_arm_spread_cm": 1.521,
+      "resolve_ratio": 5.46,
+      "resolvable": true,
+      "readable_floor": 0.183,
+      "share_insertion": 0.017,
+      "above_readable_floor": false,
+      "share_BA": 0.672,
+      "factorial": {
+        "insertion_main_effect_cm": 1.43,
+        "mapping_main_effect_cm": 6.868,
+        "interaction_cm": 2.581,
+        "interaction_vs_spread": 1.7,
+        "recovery_mapping_alone": 0.983,
+        "recovery_insertion_alone": 0.328,
+        "overlap": 0.311,
+        "reading": "overlapping (their solo recoveries sum past 100%)",
+        "shares_sum": 0.689
+      }
+    },
+    "f3_wk_xyz": {
+      "descriptive_only": false,
+      "n": {
+        "eboth": 3,
+        "maskfree": 3,
+        "tracking_only": 3,
+        "pba": 3
+      },
+      "ate": {
+        "eboth": 2.853,
+        "maskfree": 26.949,
+        "tracking_only": 2.727,
+        "pba": 13.413
+      },
+      "per_seed": {
+        "eboth": [
+          2.815,
+          3.067,
+          2.677
+        ],
+        "maskfree": [
+          26.77,
+          26.946,
+          27.131
+        ],
+        "tracking_only": [
+          2.73,
+          2.557,
+          2.893
+        ],
+        "pba": [
+          6.564,
+          9.946,
+          23.729
+        ]
+      },
+      "total_effect_cm": 24.096,
+      "within_arm_spread_cm": 0.39,
+      "resolve_ratio": 61.82,
+      "resolvable": true,
+      "readable_floor": 0.016,
+      "share_insertion": -0.005,
+      "above_readable_floor": false,
+      "share_BA": 0.438,
+      "factorial": {
+        "insertion_main_effect_cm": 6.705,
+        "mapping_main_effect_cm": 17.391,
+        "interaction_cm": 13.663,
+        "interaction_vs_spread": 35.05,
+        "recovery_mapping_alone": 1.005,
+        "recovery_insertion_alone": 0.562,
+        "overlap": 0.567,
+        "reading": "overlapping (their solo recoveries sum past 100%)",
+        "shares_sum": 0.433
+      }
+    },
+    "pt1": {
+      "descriptive_only": true,
+      "n": {
+        "eboth": 3,
+        "maskfree": 3,
+        "tracking_only": 3,
+        "pba": 3
+      },
+      "ate": {
+        "eboth": 9.954,
+        "maskfree": 33.593,
+        "tracking_only": 10.038,
+        "pba": 28.816
+      },
+      "per_seed": {
+        "eboth": [
+          10.667,
+          8.816,
+          10.379
+        ],
+        "maskfree": [
+          32.56,
+          37.355,
+          30.864
+        ],
+        "tracking_only": [
+          8.207,
+          12.182,
+          9.724
+        ],
+        "pba": [
+          16.523,
+          33.406,
+          36.519
+        ]
+      },
+      "total_effect_cm": 23.639,
+      "within_arm_spread_cm": 6.491,
+      "resolve_ratio": 3.64,
+      "resolvable": true,
+      "readable_floor": 0.275,
+      "share_insertion": 0.004,
+      "above_readable_floor": false,
+      "share_BA": 0.798,
+      "factorial": {
+        "insertion_main_effect_cm": 2.431,
+        "mapping_main_effect_cm": 21.209,
+        "interaction_cm": 4.693,
+        "interaction_vs_spread": 0.72,
+        "recovery_mapping_alone": 0.996,
+        "recovery_insertion_alone": 0.202,
+        "overlap": 0.199,
+        "reading": "overlapping (their solo recoveries sum past 100%)",
+        "shares_sum": 0.802
+      }
+    }
+  }
+}

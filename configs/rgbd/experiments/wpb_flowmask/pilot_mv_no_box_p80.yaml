@@ -1,0 +1,4 @@
+inherit_from: "configs/rgbd/bonn/moving_nonobstructing_box.yaml"
+method_from: "configs/rgbd/experiments/wpb_flowmask/flowmask_p80.yaml"
+method: "WPB-pilot-mv_no_box-p80"
+

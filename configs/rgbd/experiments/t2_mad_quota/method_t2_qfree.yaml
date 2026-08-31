@@ -1,0 +1,22 @@
+# T2 — Q-free 臂：mask-free 底座 + **无线索**自适应配额（候选集 = 全部有效像素）。
+#
+# 这是架构组指令二字面意义上的那一版："按 d 降序只排除前 k 个像素"。它把配额本身
+# 当成机制：不问像素为什么异常，只把最异常的那一截从 tau 的估计域里剪掉，k 由
+# 塌缩闭式解决定。E-flow / E-both 与它是**不同机制**，不是它的降级版：
+#   E-*   : 线索先选候选，配额只做上限；
+#   Q-free: 没有线索，配额就是选择器。
+#
+# 为什么值得单独一个臂：它**不依赖分割**，因此对 mask-free 主线（免分割内核，
+# 最高准则要求的 headline 方向）是可用的，而 E-both 不是。若 Q-free 单独就能拿到
+# E-both 的大部分增益，那任务二的贡献就不该写成"combined 专属"。
+inherit_from: "configs/rgbd/experiments/active/candidate/method_combined_maskoff_prune.yaml"
+method: "T2-Qfree"
+
+ReliabilitySignal:
+  mad_exclusion: true
+  mad_excl_candidates: "all"
+  mad_excl_max_zero_frac: 0.45
+  # 候选集 = 全帧，`min_keep_frac` 是这里唯一挡住"配额吃掉整帧"的东西（零质量很小的
+  # 帧上配额允许 k 接近 N）。tests/test_mad_exclusion.py::test_min_keep_frac_caps_a_greedy_quota
+  mad_excl_min_keep_frac: 0.20
+  mad_excl_tau_floor: 0.0

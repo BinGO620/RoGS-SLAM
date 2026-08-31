@@ -1,0 +1,3 @@
+inherit_from: "configs/rgbd/bonn/moving_nonobstructing_box.yaml"
+method_from: "configs/rgbd/experiments/exp54_component_attribution/method_p11_reliability_diag.yaml"
+method: "EXP54-P11-Reliability-mv_no_box"

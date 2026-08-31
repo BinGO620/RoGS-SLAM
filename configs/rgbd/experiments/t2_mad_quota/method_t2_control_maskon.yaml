@@ -1,0 +1,6 @@
+# T2 — control（combined / mask-ON 基线）。E-both 的对照。
+inherit_from: "configs/rgbd/experiments/active/candidate/method_combined_maskboth_prune.yaml"
+method: "T2-Control-MaskON"
+
+ReliabilitySignal:
+  mad_exclusion: false

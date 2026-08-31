@@ -1,0 +1,11 @@
+# R2-P02 Fork B -- arm E (exit + fill): arm D plus revealed-background recovery
+# (mechanism C). The FULL method. This is the CHECKPOINT-2 / headline mechanism:
+# E must beat prune (arm A) on vacated-region ghost (the metric prune won 0/5).
+# = deferred base (hard candidate ENTRY preserved) + AlphaLifecycle exit_fill.
+# Shares the exact exit thresholds of arm D via AlphaLifecycleParams (single
+# source) so E-vs-D isolates the fill contribution alone.
+inherit_from: "configs/rgbd/experiments/probe2_reliable_tracking/method_deferred_track_off.yaml"
+method: "AlphaExitFill-RToff"
+
+AlphaLifecycle:
+  mode: "exit_fill"

@@ -1,0 +1,34 @@
+{
+  "mv_no_box": {
+    "optimal_cue": "both",
+    "pose_variability": 0.001203660469572866,
+    "valid_depth_rate": 0.8456323982007574,
+    "median_flow_mag": 5.1015625,
+    "flow_valid_rate": 0.8457535396922718,
+    "geom_anomaly_p90": 0.2694807767868042
+  },
+  "mv_no_box2": {
+    "optimal_cue": "geo",
+    "pose_variability": 0.002511154093327763,
+    "valid_depth_rate": 0.8629975918458781,
+    "median_flow_mag": 5.41796875,
+    "flow_valid_rate": 0.8626512987639314,
+    "geom_anomaly_p90": 0.2675405442714691
+  },
+  "pt2": {
+    "optimal_cue": "geo",
+    "pose_variability": 0.001681414339215845,
+    "valid_depth_rate": 0.8665211704799106,
+    "median_flow_mag": 3.84765625,
+    "flow_valid_rate": 0.86581068698849,
+    "geom_anomaly_p90": 0.27080202102661133
+  },
+  "balloon": {
+    "optimal_cue": "geo",
+    "pose_variability": 0.0014939005534789515,
+    "valid_depth_rate": 0.8498339086724808,
+    "median_flow_mag": 3.19140625,
+    "flow_valid_rate": 0.8495794950529586,
+    "geom_anomaly_p90": 0.2569036364555359
+  }
+}

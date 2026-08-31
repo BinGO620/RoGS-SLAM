@@ -1,0 +1,6 @@
+inherit_from: "configs/rgbd/experiments/t2_mad_quota/t2_eboth_balloon.yaml"
+method: "PBA-mapping-OFF-balloon"
+
+SemanticMask:
+  mask_mapping: false
+  mask_insertion: true

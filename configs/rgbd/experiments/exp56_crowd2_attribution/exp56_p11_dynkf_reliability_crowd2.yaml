@@ -1,0 +1,5 @@
+# EXP56 run config: crowd2, double-variable arm (DynKF + Reliability).
+# Prereg: results/evidence/exp56_crowd2_attribution_prereg.md
+inherit_from: "configs/rgbd/bonn/crowd2.yaml"
+method_from: "configs/rgbd/experiments/exp56_crowd2_attribution/method_p11_dynkf_reliability.yaml"
+method: "EXP56-P11-DynKF-Rel-crowd2"

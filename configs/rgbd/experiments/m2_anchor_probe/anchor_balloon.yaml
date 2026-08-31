@@ -1,0 +1,4 @@
+# M2 锚点探针 — balloon。动态对照：mover 常驻时锚点存活率本就低，用来标定基线水平
+inherit_from: "configs/rgbd/bonn/balloon.yaml"
+method_from: "configs/rgbd/experiments/m2_anchor_probe/method_anchor_probe.yaml"
+method: "M2-AnchorProbe-balloon"

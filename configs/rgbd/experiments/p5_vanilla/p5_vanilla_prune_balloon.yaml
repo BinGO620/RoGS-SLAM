@@ -1,0 +1,5 @@
+# P5-VANILLA run config — balloon prune vanilla-core (H-GEN, screening seed0).
+# P5-VANILLA = P2-T combined prune with every mechanism block off, prune lifecycle kept.
+inherit_from: "configs/rgbd/bonn/balloon.yaml"
+method_from: "configs/rgbd/experiments/p5_vanilla/method_p5_vanilla_prune.yaml"
+method: "Vanilla-Prune"

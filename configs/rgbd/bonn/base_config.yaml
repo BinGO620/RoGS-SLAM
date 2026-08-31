@@ -1,0 +1,23 @@
+inherit_from: "configs/rgbd/tum/base_config.yaml"
+
+Dataset:
+  type: 'bonn'
+  sensor_type: 'depth'
+  pcd_downsample: 128
+  pcd_downsample_init: 32
+  adaptive_pointsize: True
+  point_size: 0.01
+  Calibration:
+    fx: 542.822841
+    fy: 542.576870
+    cx: 315.593520
+    cy: 237.756098
+    k1: 0.039903
+    k2: -0.099343
+    p1: -0.000730
+    p2: -0.000144
+    k3: 0.0
+    distorted: True
+    width: 640
+    height: 480
+    depth_scale: 5000.0

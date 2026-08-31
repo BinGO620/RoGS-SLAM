@@ -1,0 +1,4 @@
+# P2-RT spike — ReliableTracking ON, combined maskboth prune backbone, pt1 (person_tracking).
+inherit_from: "configs/rgbd/bonn/person_tracking.yaml"
+method_from: "configs/rgbd/experiments/active/candidate/method_combined_maskboth_prune_rton.yaml"
+method: "Combined-Prune-RTon"

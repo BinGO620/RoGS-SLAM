@@ -1,0 +1,6 @@
+# P8 修法臂 — f3_st_rpy mask-free + ego-residual projection（离线扫描显示投影效果大）
+inherit_from: "configs/rgbd/tum/f3_st_rpy.yaml"
+method_from: "configs/rgbd/experiments/active/candidate/method_combined_maskoff_prune.yaml"
+method: "Diag-EgoProjectionFix-MaskOff-f3_st_rpy"
+ReliabilitySignal:
+  ego_projection: true

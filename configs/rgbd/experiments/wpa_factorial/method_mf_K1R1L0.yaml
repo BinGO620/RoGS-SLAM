@@ -1,0 +1,29 @@
+# WP-A FACTORIAL method overlay — arm K1R1L0 (mask-free, L OFF, K+R ON).
+# 2026-08-14, WP-A. Δ_L = log(ATE_K1R1L0 / ATE_K1R1L1): cost of removing L at full config.
+# ReliabilitySignal off; K+R on (dense-KF + robust kernel). DeferredCommit stays on with
+# reliability_confirm:true — but L=0 means reliability_s maps are never stashed, so the
+# prune confirmation degrades to pure integer support/contradiction (the SAME make-or-break
+# path, just without reliability-weighted evidence). E0 dry-run asserts L=0/1 parity.
+inherit_from: "configs/rgbd/experiments/active/candidate/method_combined_maskoff_prune.yaml"
+
+TriReliability:
+  enabled: false
+
+RobustTracking:
+  enabled: true
+
+DynamicKeyframe:
+  enabled: true
+
+ReliabilitySignal:
+  enabled: false
+
+SemanticMask:
+  enabled: false
+
+DeferredCommit:
+  enabled: true
+  reliability_confirm: true
+
+Mapping:
+  lifecycle_mode: "prune"

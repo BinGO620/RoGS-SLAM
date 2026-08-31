@@ -1,0 +1,5 @@
+# WP-B CONFIRM — flow-mask arm, held-out seq balloon2, threshold p90.
+# See confirm_pt1_flowmask.yaml header. seq base = balloon2.
+inherit_from: "configs/rgbd/bonn/balloon2.yaml"
+method_from: "configs/rgbd/experiments/wpb_flowmask/flowmask_vanilla.yaml"
+method: "WPB-confirm-flowmask-balloon2"

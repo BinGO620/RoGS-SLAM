@@ -1,0 +1,40 @@
+# P5-VANILLA (2026-08-09, H-GEN pre-registered): vanilla insert-then-prune core.
+# PRUNE-mode control with EVERY mechanism block off — the closest reachable "vanilla
+# MonoGS-style backbone" that still keeps the terminal color refinement and the prune
+# lifecycle of the paper's combined backbone.
+#
+# PURPOSE (skeleton P1 "cross-front-end extrapolation restraint" direct strengthen):
+# test whether the op<0.01 soft-selected cohort is a combined-backbone artifact or a
+# structural property of the terminal color-refinement stage of a plain insert-then-prune
+# backbone. Answering the reviewer question "is it only your backbone?".
+#
+# ALLOWED DIFF vs P2-T prune (method_combined_maskboth_prune.yaml): ONLY turn off the
+# five mechanism blocks. EVERYTHING ELSE (layer/window/optimizer/densify/prune/
+# refinement/lookup/seed strategy) is inherited byte-identically from the P2-T chain
+# (bonn base → method_combined_maskboth_prune). lifecycle stays "prune".
+# No core-code change. Toggling these five is config-only (base_config defaults = off).
+#
+# This is NOT "any dynamic-SLAM generic result" — the claim stays scoped to our MonoGS
+# backbone AND its vanilla core. Pre-registered criteria in p5_vanilla_gen_prereg.md.
+
+inherit_from: "configs/rgbd/experiments/active/candidate/method_combined_maskboth_prune.yaml"
+
+# Turn off all five combined-backbone mechanisms (config-only; base defaults are already off,
+# this is belt-and-suspenders explicit so the diff is auditable):
+TriReliability:
+  enabled: false
+
+RobustTracking:
+  enabled: false
+
+SemanticMask:
+  enabled: false
+
+DynamicKeyframe:
+  enabled: false
+
+ReliabilitySignal:
+  enabled: false
+
+DeferredCommit:
+  enabled: false

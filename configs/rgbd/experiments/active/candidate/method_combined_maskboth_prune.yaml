@@ -1,0 +1,71 @@
+# P2-0 (2026-07-31): the COMBINED backbone's PRUNE twin — the paper main table's
+# control arm, which did not exist until this file.
+#
+# WHY IT IS NEEDED. `02-method.md` P2 requires a self-tracked main table with both
+# arms on a backbone that can produce a competitive ATE. The deferred half existed
+# (`method_combined_maskboth_deferred.yaml`); the prune half did not, so an A/B main
+# table was unbuildable. R2-P01-E2's `*_rtoff` arms cannot substitute: they carry no
+# adaptive tracking and no mask, and their self-tracked ATE is 37.72 / 29.03 cm on
+# balloon against RGD-SLAM 2.26 and DG-SLAM 3.65.
+#
+# WHAT IS ALLOWED TO DIFFER. Exactly `Mapping.lifecycle_mode` (deferred → prune).
+# Every other field is copied verbatim from the deferred twin so the pair isolates
+# the lifecycle, which is the one mechanism the paper claims. Pinned by
+# `tests/test_p2_combined_twin_configs.py`.
+#
+# WHAT THIS FILE IS NOT. It is not a new mechanism and not a re-tune: the backbone
+# is the deferred twin's, unchanged. `CoarsePoseInit` stays absent — probe1
+# falsified it (15.4 cm → 1.81 cm on removal; HANDOFF "Do Not Do" #1) and the twin
+# does not carry it either.
+#
+# STATUS: apparatus only. Zero GPU runs exist against this config. P2-S (balloon ×
+# {A,B} × seed 0, 2 runs) is the first thing that should touch it, because the
+# backbone's Bonn ATE has never been measured — registry has zero combined/maskboth
+# rows, and the ~3 cm figure comes from V1-FIXED5 on TUM f3_wk_xyz while the same
+# family's universal V1 drifted to 55.54 cm on f2_xyz.
+TriReliability:
+  enabled: false
+
+RobustTracking:
+  enabled: true
+  kernel: "huber"
+  rgb_delta: 0.10
+  depth_delta: 0.10
+
+SemanticMask:
+  enabled: true
+  model: "maskrcnn"
+  dynamic_classes: [1]
+  dilate_px: 7
+  max_mask_ratio: 0.95
+  device: "cuda"
+  soft: false
+  mask_mapping: true
+  mask_insertion: true
+
+DynamicKeyframe:
+  enabled: true
+  gap_cap: 5
+  occ_tighten_thresh: 2.0
+
+Training:
+  window_size: 12
+  pose_window: 6
+
+ReliabilitySignal:
+  enabled: true
+  # 默认 "both" = 双线索固定乘法 s=(1-e_flow)(1-v*g)，与历史逐字节一致。
+  # flow-only / geometry-only 是 cue 拆解消融开关（见 utils/reliability_signal.py），
+  # 仅在显式 overlay 里改，不入本主干默认。
+
+DeferredCommit:
+  enabled: true
+  reliability_confirm: true
+
+Mapping:
+  lifecycle_mode: "prune"
+
+Results:
+  save_raw_metrics: true
+  static_bg_mask_subdir: "dynamic_mask_gtmc"
+  static_bg_band_px: [10, 25, 50]

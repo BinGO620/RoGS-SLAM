@@ -1,0 +1,17 @@
+# P2-SF de-confounding control, variant C, arm A: COMBINED backbone + prune lifecycle,
+# FROZEN-POSE on the prune arm's OWN self-tracked trajectory (Bonn balloon2).
+# Mirror of p2sf_c_prune_pt1.yaml with dataset person_tracking -> balloon2. balloon2 is the
+# HIGH-COVERAGE + EASY-TRACKING countercell (cov 59.4%, self-tracked ATE 5.2cm) to pt1's
+# moderate-coverage + hard-tracking — the 2x2 contrast codex+hermes asked for. See
+# p2sf_c_prune_pt1.yaml for full rationale; sentinel pose_file resolved by scripts/r2_p2_sf.py.
+inherit_from: "configs/rgbd/bonn/balloon2.yaml"
+method_from: "configs/rgbd/experiments/active/candidate/method_combined_maskboth_prune.yaml"
+method: "CombinedSF-C-Prune"
+
+Oracle:
+  pose_file: "__PRUNE_TRAJ__"
+
+Training:
+  lr:
+    cam_rot_delta: 0.0
+    cam_trans_delta: 0.0

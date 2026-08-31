@@ -1,0 +1,7 @@
+# EXP55 single-variable intervention: combined-prune with RobustTracking.kernel
+# huber -> Geman-McClure. delta stays 0.10 on both channels; everything else is
+# the main-table combined arm identity (method_combined_maskboth_prune.yaml).
+inherit_from: "configs/rgbd/experiments/active/candidate/method_combined_maskboth_prune.yaml"
+
+RobustTracking:
+  kernel: "gm"

@@ -1,0 +1,5 @@
+# WP-B CONFIRM — MRCS arm (K1R1L1), held-out seq balloon2.
+# Mirrors wpa_pt1_K1R1L1 pattern; WP-A did not include balloon2, WP-B held-out② requires it.
+inherit_from: "configs/rgbd/bonn/balloon2.yaml"
+method_from: "configs/rgbd/experiments/wpa_factorial/method_mf_K1R1L1.yaml"
+method: "WPB-confirm-MRCS-balloon2"

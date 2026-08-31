@@ -1,0 +1,72 @@
+{
+  "sequence": "balloon",
+  "blind": false,
+  "reach_floor": 0.0831,
+  "floor_paired": 0.066187641,
+  "P": {
+    "E_trackside": {
+      "0": [
+        0.3673,
+        0.4205
+      ],
+      "1": [
+        0.3907,
+        0.375
+      ],
+      "2": [
+        0.4407,
+        0.3111
+      ]
+    },
+    "F_trackhard": {
+      "0": [
+        0.4033,
+        0.3738
+      ],
+      "1": [
+        0.5393,
+        0.5481
+      ],
+      "2": [
+        0.3861,
+        0.5381
+      ]
+    }
+  },
+  "delta_per_seed": {
+    "0": -0.0053,
+    "1": 0.1609,
+    "2": 0.0862
+  },
+  "shift": 0.08056206732240005,
+  "within_abs": {
+    "E_trackside": [
+      0.0533,
+      0.0157,
+      0.1296
+    ],
+    "F_trackhard": [
+      0.0295,
+      0.0088,
+      0.152
+    ]
+  },
+  "null_shifts": [
+    0.0202253999,
+    0.0306870797,
+    0.0378866549,
+    0.0437308176,
+    0.0557259612,
+    0.0575852296,
+    0.0634293922,
+    0.066187641
+  ],
+  "reachable": true,
+  "r_needed_per_cell": null,
+  "floor_variance_matched": 0.04680172978184076,
+  "verdict_variance_matched": "APPARATUS-TRACKING-SENSITIVE",
+  "labels_agree": true,
+  "anchor_max_abs_delta": 4.1029370601464166e-05,
+  "verdict": "APPARATUS-TRACKING-SENSITIVE",
+  "why": "|shift| 0.0806 > floor_paired 0.0662 => the estimand does respond to a tracking-side intervention; exp37's TRACKSIDE-INERT stands, narrowed to 'channel 1 buys nothing WITHIN its 10/100 scope'"
+}

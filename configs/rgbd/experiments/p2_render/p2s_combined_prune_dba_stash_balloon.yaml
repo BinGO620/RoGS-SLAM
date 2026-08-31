@@ -1,0 +1,17 @@
+# P2-DBAphoto apparatus (2026-08-03): the combined prune backbone + exact-online
+# reliability-weight persistence (stash_dba_weights: true). Runs the UNCHANGED
+# backbone (same as p2s_combined_prune_balloon) but additionally writes per-frame
+# exact-online w_map / s_map / render_depth / opacity / prev+cur W2C poses to
+# <save_dir>/dba_weight_snapshots/, so DBA-lite can later re-run a reliability-weighted
+# GEOMETRIC oracle on the SAME weights the online tracker froze (NOT a post-hoc
+# recompute from the final co-adapted PLY — see consult_codex_dbaphoto_design.md).
+#
+# This is APPARATUS ONLY: it does not run DBA, does not change tracking/mapping, and
+# the stashed weights default-off everywhere else. The P2-T main-table contract is
+# untouched (stash flag is off in the combined backbone). 2 seqs x 2 seeds is the
+# minimal population for the weighted-geometric oracle gate (codex: >=2 seq x 2 seed).
+inherit_from: "configs/rgbd/bonn/balloon.yaml"
+method_from: "configs/rgbd/experiments/active/candidate/method_combined_maskboth_prune.yaml"
+method: "Combined-Prune-DBAstash"
+ReliabilitySignal:
+  stash_dba_weights: true

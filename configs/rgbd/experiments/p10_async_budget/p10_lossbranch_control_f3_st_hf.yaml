@@ -1,0 +1,16 @@
+# P10-P1a — 排除损失分支混杂的控制臂（预留给 P0 不成立时用）
+#
+# bothoff 修好的同时，损失函数从 soft 分支（有 RGB brightness gate）切到 robust 分支。
+# 本臂：RS 仍 enabled（reliability_soft 被计算但置零），DeferredCommit enabled=false
+# 但 reliability_confirm 显式 false（而非靠 enabled=false 间接关）。
+# 目的：确认 RS 路径仍被选中但输出为零，排除损失分支切换作为独立因素。
+# 如果此臂也修好 ⇒ 损失分支不是混杂；如果此臂仍崩 ⇒ 损失分支差异是独立因素。
+inherit_from: "configs/rgbd/tum/f3_st_hf.yaml"
+method_from: "configs/rgbd/experiments/active/candidate/method_combined_maskoff_prune.yaml"
+method: "P10-P1a-LossBranchControl"
+
+ReliabilitySignal:
+  tracking_downweight_off: true
+DeferredCommit:
+  enabled: false
+  reliability_confirm: false

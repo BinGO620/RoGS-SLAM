@@ -1,0 +1,3 @@
+inherit_from: "configs/rgbd/bonn/crowd2.yaml"
+method_from: "configs/rgbd/experiments/exp54_component_attribution/method_p11_reliability_diag.yaml"
+method: "EXP54-P11-Reliability-crowd2"

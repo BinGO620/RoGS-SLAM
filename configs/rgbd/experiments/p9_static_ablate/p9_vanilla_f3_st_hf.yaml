@@ -1,0 +1,5 @@
+# P9-V — 我们自己的 vanilla 锚点（四个机制全关）。
+# 主表里的 MonoGS 2.80 来自用户自测 baseline 表，不是本仓库的 run，且无 n。
+# 这一臂给出同机、同 seed 口径、同 evo 协议下的 vanilla 数，作为所有消融的比较基准。
+inherit_from: "configs/rgbd/tum/f3_st_hf.yaml"
+method: "P9-Vanilla"

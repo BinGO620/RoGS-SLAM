@@ -1,0 +1,5 @@
+# WP-B CONFIRM — flow-mask arm, held-out seq pt2 (person_tracking2), threshold p90.
+# See confirm_pt1_flowmask.yaml header. seq base = person_tracking2.
+inherit_from: "configs/rgbd/bonn/person_tracking2.yaml"
+method_from: "configs/rgbd/experiments/wpb_flowmask/flowmask_vanilla.yaml"
+method: "WPB-confirm-flowmask-pt2"

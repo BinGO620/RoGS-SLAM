@@ -1,0 +1,3 @@
+inherit_from: "configs/rgbd/bonn/person_tracking2.yaml"
+method_from: "configs/rgbd/experiments/active/candidate/method_openset_deferred.yaml"
+method: "OpenSet-Deferred"

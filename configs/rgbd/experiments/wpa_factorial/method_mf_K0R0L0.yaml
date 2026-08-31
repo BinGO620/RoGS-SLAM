@@ -1,0 +1,31 @@
+# WP-A FACTORIAL method overlay — arm K0R0L0 (mask-free, all three mechanisms OFF).
+# 2026-08-14, WP-A (CCF-C 整改执行卡 v3). Three-factor full factorial on the mask-free
+# backbone: does the claimed mask-free MRCS kernel (dense-KF K + RobustTracking R +
+# ReliabilitySignal L) appear jointly necessary at the full config, or redundant?
+#
+# K = DynamicKeyframe.enabled / R = RobustTracking.enabled / L = ReliabilitySignal.enabled.
+# Mask-free (SemanticMask.enabled:false) always. DeferredCommit pinned TRUE with
+# reliability_confirm:true on ALL 8 cells (see prereg: coupling required; when L=0 the
+# reliability_s maps are never stashed, so confirm simply degrades to integer counts —
+# the same make-or-break path, E0 dry-run must demonstrate L=0/1 behavioral parity).
+#
+# This arm = the vanilla-ish skeleton (K=R=L=False) — the ``K0R0L0`` baseline.
+inherit_from: "configs/rgbd/experiments/active/candidate/method_combined_maskoff_prune.yaml"
+
+TriReliability:
+  enabled: false
+
+RobustTracking:
+  enabled: false
+
+DynamicKeyframe:
+  enabled: false
+
+ReliabilitySignal:
+  enabled: false
+
+SemanticMask:
+  enabled: false
+
+Mapping:
+  lifecycle_mode: "prune"

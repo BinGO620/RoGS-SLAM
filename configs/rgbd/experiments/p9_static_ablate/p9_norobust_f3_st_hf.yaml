@@ -1,0 +1,10 @@
+# P9-A2 — 关 RobustTracking（huber IRLS）。
+# w≡1 判据的盲区：那一臂只把 ReliabilitySignal 的 reliability_soft 置零，
+# get_loss_tracking_rgbd_soft 里的 huber IRLS 权重 w_rgb/w_depth 仍然在乘。
+# 静态场景的大光度残差主要来自欠优化的地图区域，huber(delta=0.10) 恰好把这些
+# 高梯度信息区降权 ⇒ 与「地图不够好」形成耦合。
+inherit_from: "configs/rgbd/tum/f3_st_hf.yaml"
+method_from: "configs/rgbd/experiments/active/candidate/method_combined_maskoff_prune.yaml"
+method: "P9-A2-NoRobust"
+RobustTracking:
+  enabled: false

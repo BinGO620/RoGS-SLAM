@@ -1,0 +1,25 @@
+# TRACKSIDE-ONLY 臂 —— mask 仍然计算，但两个消费者全关（exp36）
+#
+# ⚠ 命名警告：同目录的 `pba_tracking_only_*.yaml` **不是**这个臂。那三个文件里
+# `mask_mapping: true`（BA 侧 mask 还开着），它们实际是 **insertion-off**，名字是
+# exp35 的历史误名（连 run 目录、判决脚本表头 `trkOnly` 一起错）。本文件才是
+# 「只剩 tracking 侧」：`enabled: true` 让 mask 照算，`mask_mapping` 与
+# `mask_insertion` **同时关**，于是 mask 唯一还能作用的地方就是
+#   ① tracking 光度损失的前 warmup_iters=10 次迭代（`utils/slam_utils.py:126-153`
+#      的 soft 分支从第 10 次起把硬 mask 旁路掉）；
+#   ② T2 的 MAD 排除候选集（`mad_excl_candidates: "cue"` ⇒ semantic ∪ e_flow）。
+# 逐通道证据 = `results/evidence/semantic_mask_channel_inventory.md`。
+#
+# 为什么值得跑：exp34/35 把 44–80% 判给 `mask_mapping`、把 ~0 判给 `mask_insertion`，
+# 剩下 20–56% 的残差**从未被隔离**——它要么是通道交互（exp35 的读法），要么是
+# tracking 侧自己的贡献（`scripts/insertion_verdict.py` 判决文本自己写的读法）。
+# 这两种读法对 balloon 上同一段 2.72cm 给出相反归因，本臂是能分开它们的那一格。
+#
+# 预注册 = `results/evidence/trackside_channel_prereg.md`（第一个 run 前 commit）。
+# 单变量隔离由 `tests/test_pba_ba_coupling.py::TestPBATracksideOnlyConfigs` 钉住。
+inherit_from: "configs/rgbd/experiments/t2_mad_quota/t2_eboth_balloon.yaml"
+method: "PBA-trackside-only-balloon"
+
+SemanticMask:
+  mask_mapping: false      # ← BA/mapping 损失不用 mask（与 pba_mapping_off_* 同）
+  mask_insertion: false    # ← 插入门也关（与 pba_tracking_only_* 同）

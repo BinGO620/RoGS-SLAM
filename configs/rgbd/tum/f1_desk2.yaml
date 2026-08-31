@@ -1,0 +1,4 @@
+inherit_from: "configs/rgbd/tum/f1_base.yaml"
+
+Dataset:
+  dataset_path: "datasets/tum/rgbd_dataset_freiburg1_desk2"

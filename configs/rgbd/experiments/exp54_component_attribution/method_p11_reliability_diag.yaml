@@ -1,0 +1,10 @@
+# EXP54 single-variable intervention: P11 + Reliability signal family.
+# reliability_confirm remains true from P11's inherited prune contract, so this
+# arm measures tracking down-weight plus weighted DeferredCommit confirmation.
+inherit_from: "configs/rgbd/experiments/p11_maskonly/method_p11_maskonly.yaml"
+
+ReliabilitySignal:
+  enabled: true
+
+KeyframeDiag:
+  enabled: true

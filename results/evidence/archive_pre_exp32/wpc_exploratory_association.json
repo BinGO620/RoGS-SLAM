@@ -1,0 +1,35 @@
+{
+  "n": 18,
+  "rho_y_x1_all": 0.6821465428276574,
+  "loo1_rho": {
+    "bonn_balloon": 0.6647058823529411,
+    "bonn_crowd": 0.5470588235294118,
+    "bonn_mv": 0.6470588235294118,
+    "bonn_pt": 0.7735294117647058,
+    "other": 0.7009803921568628,
+    "tum_sitting": 0.7392857142857142,
+    "tum_static": 0.7392857142857142,
+    "tum_walking": 0.557142857142857
+  },
+  "rho_y_x2_person": 0.7714285714285715,
+  "n_x2": 6,
+  "x2_seqs": [
+    "balloon",
+    "balloon2",
+    "mv_no_box",
+    "mv_no_box2",
+    "pt1",
+    "pt2"
+  ],
+  "family_y_mean": {
+    "bonn_balloon": 1.0160869119791769,
+    "bonn_crowd": 3.2474211661196337,
+    "bonn_mv": 0.15071852302950794,
+    "bonn_pt": 0.5075156921342487,
+    "other": -0.0416053590584833,
+    "tum_sitting": -0.4956834651568495,
+    "tum_static": -0.025322874891268558,
+    "tum_walking": 1.9711091220392614
+  },
+  "caveat": "EXPLORATORY association only; n<=18, single-family seqs cannot bootstrap at family level; x1 is a vanilla-failure proxy NOT intrinsic difficulty; x2 is person-mask coverage (person seqs only)"
+}

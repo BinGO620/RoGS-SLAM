@@ -1,0 +1,112 @@
+[
+  {
+    "seq": "balloon",
+    "arm": "base",
+    "ply": "results/runs/P3/P3-DENSIFY-TAIL/balloon_base_seed0/datasets_bonn/p2s_combined_prune_balloon/seed_0/2026-08-07-10-27-37/point_cloud/final/point_cloud.ply",
+    "n_total": 27648,
+    "frac_lt_001": 0.000977,
+    "frac_lt_005": 0.00944,
+    "frac_lt_010": 0.048394,
+    "frac_ge_090": 0.639865
+  },
+  {
+    "seq": "balloon",
+    "arm": "lo",
+    "ply": "results/runs/P3/P3-DENSIFY-TAIL/balloon_lo_seed0/datasets_bonn/p3_densify_tail_lo_balloon/seed_0/2026-08-07-09-55-30/point_cloud/final/point_cloud.ply",
+    "n_total": 58518,
+    "frac_lt_001": 0.0,
+    "frac_lt_005": 0.0,
+    "frac_lt_010": 0.004887,
+    "frac_ge_090": 0.793517
+  },
+  {
+    "seq": "balloon",
+    "arm": "hi",
+    "ply": "results/runs/P3/P3-DENSIFY-TAIL/balloon_hi_seed0/datasets_bonn/p3_densify_tail_hi_balloon/seed_0/2026-08-07-10-54-38/point_cloud/final/point_cloud.ply",
+    "n_total": 25487,
+    "frac_lt_001": 0.044572,
+    "frac_lt_005": 0.140071,
+    "frac_lt_010": 0.25409,
+    "frac_ge_090": 0.364656
+  },
+  {
+    "seq": "balloon2",
+    "arm": "base",
+    "ply": "results/runs/P3/P3-DENSIFY-TAIL/balloon2_base_seed0/datasets_bonn/p2s_combined_prune_balloon2/seed_0/2026-08-07-11-55-24/point_cloud/final/point_cloud.ply",
+    "n_total": 70746,
+    "frac_lt_001": 0.011365,
+    "frac_lt_005": 0.041359,
+    "frac_lt_010": 0.062972,
+    "frac_ge_090": 0.790758
+  },
+  {
+    "seq": "balloon2",
+    "arm": "lo",
+    "ply": "results/runs/P3/P3-DENSIFY-TAIL/balloon2_lo_seed0/datasets_bonn/p3_densify_tail_lo_balloon2/seed_0/2026-08-07-11-19-56/point_cloud/final/point_cloud.ply",
+    "n_total": 69012,
+    "frac_lt_001": 0.000609,
+    "frac_lt_005": 0.00539,
+    "frac_lt_010": 0.018127,
+    "frac_ge_090": 0.806092
+  },
+  {
+    "seq": "balloon2",
+    "arm": "hi",
+    "ply": "results/runs/P3/P3-DENSIFY-TAIL/balloon2_hi_seed0/datasets_bonn/p3_densify_tail_hi_balloon2/seed_0/2026-08-07-12-27-21/point_cloud/final/point_cloud.ply",
+    "n_total": 18380,
+    "frac_lt_001": 0.0,
+    "frac_lt_005": 0.002394,
+    "frac_lt_010": 0.048749,
+    "frac_ge_090": 0.642383
+  },
+  {
+    "seq": "mv_no_box",
+    "arm": "base",
+    "ply": "results/runs/P3/P3-DENSIFY-TAIL/mv_no_box_base_seed0/datasets_bonn/p2s_combined_prune_mv_no_box/seed_0/2026-08-07-13-47-31/point_cloud/final/point_cloud.ply",
+    "n_total": 33678,
+    "frac_lt_001": 0.000475,
+    "frac_lt_005": 0.006087,
+    "frac_lt_010": 0.011432,
+    "frac_ge_090": 0.859463
+  },
+  {
+    "seq": "mv_no_box",
+    "arm": "lo",
+    "ply": "results/runs/P3/P3-DENSIFY-TAIL/mv_no_box_lo_seed0/datasets_bonn/p3_densify_tail_lo_mv_no_box/seed_0/2026-08-07-12-53-51/point_cloud/final/point_cloud.ply",
+    "n_total": 77193,
+    "frac_lt_001": 0.008019,
+    "frac_lt_005": 0.029666,
+    "frac_lt_010": 0.039913,
+    "frac_ge_090": 0.807742
+  },
+  {
+    "seq": "mv_no_box",
+    "arm": "hi",
+    "ply": "results/runs/P3/P3-DENSIFY-TAIL/mv_no_box_hi_seed0/datasets_bonn/p3_densify_tail_hi_mv_no_box/seed_0/2026-08-07-14-32-38/point_cloud/final/point_cloud.ply",
+    "n_total": 21091,
+    "frac_lt_001": 0.049784,
+    "frac_lt_005": 0.146366,
+    "frac_lt_010": 0.186335,
+    "frac_ge_090": 0.468968
+  },
+  {
+    "seq": "mv_no_box2",
+    "arm": "base",
+    "ply": "results/runs/P3/P3-DENSIFY-TAIL/mv_no_box2_base_seed0/datasets_bonn/p2s_combined_prune_mv_no_box2/seed_0/2026-08-07-16-22-31/point_cloud/final/point_cloud.ply",
+    "n_total": 76406,
+    "frac_lt_001": 0.008507,
+    "frac_lt_005": 0.034107,
+    "frac_lt_010": 0.043949,
+    "frac_ge_090": 0.777112
+  },
+  {
+    "seq": "mv_no_box2",
+    "arm": "lo",
+    "ply": "results/runs/P3/P3-DENSIFY-TAIL/mv_no_box2_lo_seed0/datasets_bonn/p3_densify_tail_lo_mv_no_box2/seed_0/2026-08-07-15-13-59/point_cloud/final/point_cloud.ply",
+    "n_total": 128043,
+    "frac_lt_001": 0.021149,
+    "frac_lt_005": 0.077497,
+    "frac_lt_010": 0.097889,
+    "frac_ge_090": 0.634014
+  }
+]

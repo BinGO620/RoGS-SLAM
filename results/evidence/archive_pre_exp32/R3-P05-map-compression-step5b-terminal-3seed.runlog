@@ -1,0 +1,83 @@
+=== TERM results/runs/P2/P2-T/balloon_prune_seed0/datasets_bonn/p2s_combined_prune_balloon/seed_0/2026-07-31-21-46-20 ===
+HIST 2026-07-31-21-46-20: {"n_total": 32653, "frac_op_lt_001": 0.12785961473677762, "frac_op_lt_005": 0.20359538174134076, "frac_op_lt_010": 0.27146050898845436, "frac_op_ge_090": 0.40342388141977764}
+TERM 2026-07-31-21-46-20 op<0.01: rm 4175/32653 (12.8%) dPSNR=-0.0001
+TERM 2026-07-31-21-46-20 op<0.05: rm 6648/32653 (20.4%) dPSNR=-0.0156
+DONE 2A
+
+=== TERM results/runs/P2/P2-T/balloon_prune_seed1/datasets_bonn/p2s_combined_prune_balloon/seed_1/2026-08-01-11-45-03 ===
+HIST 2026-08-01-11-45-03: {"n_total": 46074, "frac_op_lt_001": 0.1841168554933368, "frac_op_lt_005": 0.2776186135347484, "frac_op_lt_010": 0.35694751920823026, "frac_op_ge_090": 0.3400399357555237}
+TERM 2026-08-01-11-45-03 op<0.01: rm 8483/46074 (18.4%) dPSNR=-0.0001
+TERM 2026-08-01-11-45-03 op<0.05: rm 12791/46074 (27.8%) dPSNR=-0.0867
+DONE 2A
+
+=== TERM results/runs/P2/P2-T/balloon_prune_seed2/datasets_bonn/p2s_combined_prune_balloon/seed_2/2026-08-01-19-19-25 ===
+HIST 2026-08-01-19-19-25: {"n_total": 40625, "frac_op_lt_001": 0.17272615384615383, "frac_op_lt_005": 0.2737969230769231, "frac_op_lt_010": 0.34924307692307693, "frac_op_ge_090": 0.3497107692307692}
+TERM 2026-08-01-19-19-25 op<0.01: rm 7017/40625 (17.3%) dPSNR=+0.0001
+TERM 2026-08-01-19-19-25 op<0.05: rm 11123/40625 (27.4%) dPSNR=-0.0273
+DONE 2A
+
+=== TERM results/runs/P2/P2-T/mv_no_box_prune_seed0/datasets_bonn/p2s_combined_prune_mv_no_box/seed_0/2026-07-31-23-36-08 ===
+HIST 2026-07-31-23-36-08: {"n_total": 43598, "frac_op_lt_001": 0.09892655626404881, "frac_op_lt_005": 0.14957108124225882, "frac_op_lt_010": 0.1979448598559567, "frac_op_ge_090": 0.530391302353319}
+TERM 2026-07-31-23-36-08 op<0.01: rm 4313/43598 (9.9%) dPSNR=+0.0000
+TERM 2026-07-31-23-36-08 op<0.05: rm 6521/43598 (15.0%) dPSNR=-0.0110
+DONE 2A
+
+=== TERM results/runs/P2/P2-T/mv_no_box_prune_seed1/datasets_bonn/p2s_combined_prune_mv_no_box/seed_1/2026-08-01-13-42-08 ===
+HIST 2026-08-01-13-42-08: {"n_total": 34830, "frac_op_lt_001": 0.08392190640252656, "frac_op_lt_005": 0.12161929371231697, "frac_op_lt_010": 0.15997703129486074, "frac_op_ge_090": 0.5790123456790124}
+TERM 2026-08-01-13-42-08 op<0.01: rm 2923/34830 (8.4%) dPSNR=-0.0000
+TERM 2026-08-01-13-42-08 op<0.05: rm 4236/34830 (12.2%) dPSNR=-0.0324
+DONE 2A
+
+=== TERM results/runs/P2/P2-T/mv_no_box_prune_seed2/datasets_bonn/p2s_combined_prune_mv_no_box/seed_2/2026-08-01-21-11-26 ===
+HIST 2026-08-01-21-11-26: {"n_total": 43989, "frac_op_lt_001": 0.10016140398736048, "frac_op_lt_005": 0.14601377617131556, "frac_op_lt_010": 0.19047943804132852, "frac_op_ge_090": 0.5502739321193935}
+TERM 2026-08-01-21-11-26 op<0.01: rm 4406/43989 (10.0%) dPSNR=-0.0001
+TERM 2026-08-01-21-11-26 op<0.05: rm 6423/43989 (14.6%) dPSNR=-0.0118
+DONE 2A
+
+=== TERM results/runs/P2/P2-T/pt1_prune_seed0/datasets_bonn/p2s_combined_prune_pt1/seed_0/2026-08-01-02-54-57 ===
+HIST 2026-08-01-02-54-57: {"n_total": 49838, "frac_op_lt_001": 0.09900076247040411, "frac_op_lt_005": 0.12616878686945704, "frac_op_lt_010": 0.15682812311890526, "frac_op_ge_090": 0.5324451221959148}
+TERM 2026-08-01-02-54-57 op<0.01: rm 4934/49838 (9.9%) dPSNR=+0.0000
+TERM 2026-08-01-02-54-57 op<0.05: rm 6288/49838 (12.6%) dPSNR=-0.0059
+DONE 2A
+
+=== TERM results/runs/P2/P2-T/pt1_prune_seed1/datasets_bonn/p2s_combined_prune_pt1/seed_1/2026-08-01-17-01-11 ===
+HIST 2026-08-01-17-01-11: {"n_total": 58591, "frac_op_lt_001": 0.1012612858630165, "frac_op_lt_005": 0.1313170964823949, "frac_op_lt_010": 0.1673294533290096, "frac_op_ge_090": 0.510846375723234}
+TERM 2026-08-01-17-01-11 op<0.01: rm 5933/58591 (10.1%) dPSNR=-0.0000
+TERM 2026-08-01-17-01-11 op<0.05: rm 7694/58591 (13.1%) dPSNR=-0.0041
+DONE 2A
+
+=== TERM results/runs/P2/P2-T/pt1_prune_seed2/datasets_bonn/p2s_combined_prune_pt1/seed_2/2026-08-02-00-29-47 ===
+HIST 2026-08-02-00-29-47: {"n_total": 58358, "frac_op_lt_001": 0.10271085369615134, "frac_op_lt_005": 0.13542273552897632, "frac_op_lt_010": 0.17140751910620652, "frac_op_ge_090": 0.5136742177593475}
+TERM 2026-08-02-00-29-47 op<0.01: rm 5994/58358 (10.3%) dPSNR=+0.0000
+TERM 2026-08-02-00-29-47 op<0.05: rm 7903/58358 (13.5%) dPSNR=-0.0046
+DONE 2A
+
+=== TERM results/runs/P2/P2-T/pt2_prune_seed0/datasets_bonn/p2s_combined_prune_pt2/seed_0/2026-08-01-04-03-53 ===
+HIST 2026-08-01-04-03-53: {"n_total": 92537, "frac_op_lt_001": 0.18366707371105612, "frac_op_lt_005": 0.23618660643850567, "frac_op_lt_010": 0.28589645222991883, "frac_op_ge_090": 0.41101397278926266}
+TERM 2026-08-01-04-03-53 op<0.01: rm 16996/92537 (18.4%) dPSNR=-0.0000
+TERM 2026-08-01-04-03-53 op<0.05: rm 21856/92537 (23.6%) dPSNR=-0.0030
+DONE 2A
+
+=== TERM results/runs/P2/P2-T/pt2_prune_seed1/datasets_bonn/p2s_combined_prune_pt2/seed_1/2026-08-01-18-11-17 ===
+HIST 2026-08-01-18-11-17: {"n_total": 57595, "frac_op_lt_001": 0.11183262435975345, "frac_op_lt_005": 0.14749544231270076, "frac_op_lt_010": 0.18527649969615417, "frac_op_ge_090": 0.497282750238736}
+TERM 2026-08-01-18-11-17 op<0.01: rm 6441/57595 (11.2%) dPSNR=+0.0000
+TERM 2026-08-01-18-11-17 op<0.05: rm 8495/57595 (14.7%) dPSNR=-0.0041
+DONE 2A
+
+=== TERM results/runs/P2/P2-T/pt2_prune_seed2/datasets_bonn/p2s_combined_prune_pt2/seed_2/2026-08-02-01-39-42 ===
+HIST 2026-08-02-01-39-42: {"n_total": 58695, "frac_op_lt_001": 0.10469375585654656, "frac_op_lt_005": 0.13871709685663175, "frac_op_lt_010": 0.1742056393219184, "frac_op_ge_090": 0.5245421245421246}
+TERM 2026-08-02-01-39-42 op<0.01: rm 6145/58695 (10.5%) dPSNR=+0.0000
+TERM 2026-08-02-01-39-42 op<0.05: rm 8142/58695 (13.9%) dPSNR=-0.0048
+DONE 2A
+
+=== HIST results/runs/P2/P2-MC/balloon_compress_seed0/datasets_bonn/p2s_combined_prune_compress_balloon/seed_0/2026-08-05-21-09-13 ===
+HIST 2026-08-05-21-09-13: {"n_total": 26936, "frac_op_lt_001": 0.11037273537273537, "frac_op_lt_005": 0.17534155034155033, "frac_op_lt_010": 0.23255123255123256, "frac_op_ge_090": 0.4222230472230472}
+DONE 2A
+=== HIST results/runs/P2/P2-MC/mv_no_box_compress_seed0/datasets_bonn/p2s_combined_prune_compress_mv_no_box/seed_0/2026-08-05-21-49-22 ===
+HIST 2026-08-05-21-49-22: {"n_total": 35695, "frac_op_lt_001": 0.09651211654293318, "frac_op_lt_005": 0.149236587757389, "frac_op_lt_010": 0.2051827987113041, "frac_op_ge_090": 0.46790867068216835}
+DONE 2A
+=== HIST results/runs/P2/P2-MC/pt1_compress_seed0/datasets_bonn/p2s_combined_prune_compress_pt1/seed_0/2026-08-05-21-49-22 ===
+HIST 2026-08-05-21-49-22: {"n_total": 60932, "frac_op_lt_001": 0.09195496619182039, "frac_op_lt_005": 0.12166021138318125, "frac_op_lt_010": 0.15317074771876846, "frac_op_ge_090": 0.5626107792293048}
+DONE 2A
+=== HIST results/runs/P2/P2-MC/pt2_compress_seed0/datasets_bonn/p2s_combined_prune_compress_pt2/seed_0/2026-08-05-23-12-50 ===
+DONE 2A

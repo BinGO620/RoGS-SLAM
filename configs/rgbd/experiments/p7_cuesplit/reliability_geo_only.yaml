@@ -1,0 +1,9 @@
+# P7 CUE-SPLIT method: mask-free + ReliabilitySignal, GEOMETRY-ONLY cue.
+#
+# 对称于 reliability_flow_only.yaml。ReliabilitySignal 只用几何线索 s=(1-v*g)，
+# flow 线索清零。默认 both 仍为历史公式；本 overlay 只拆单 cue。
+inherit_from: "configs/rgbd/experiments/p7_cuesplit/reliability_flow_only.yaml"
+
+ReliabilitySignal:
+  enabled: true
+  mode: "geometry-only"

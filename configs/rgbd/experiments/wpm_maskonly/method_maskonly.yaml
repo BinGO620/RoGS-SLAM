@@ -1,0 +1,34 @@
+# WP-M MASK-ONLY method overlay (2026-08-15, exp22).
+#
+# The missing cell of the top-level 2x2 {kernel off/on} x {mask off/on}:
+#   vanilla   = kernel OFF, mask OFF  (WP-A K0R0L0 / MonoGS row)
+#   mask-only = kernel OFF, mask ON   <-- THIS ARM (never run before)
+#   mask-free = kernel ON,  mask OFF  (Ours-mask-free, main table)
+#   combined  = kernel ON,  mask ON   (Ours-combined, main table)
+#
+# WHY: every competitive absolute number in the paper comes from combined(mask-ON).
+# Without this arm we cannot answer "how much of that is just bolting an off-the-shelf
+# Mask R-CNN onto MonoGS?" -- P-B's mask-ON cells still keep RobustTracking +
+# ReliabilitySignal on, so they do not close it.
+#
+# CONTROL: inherits the EXACT combined main-table method overlay
+# (method_combined_maskboth_prune.yaml, the same one p6_mason_combined_*.yaml uses)
+# and flips ONLY the three kernel components. Everything else -- the Mask R-CNN block
+# (maskrcnn / person=1 / dilate 7 / mask_mapping / mask_insertion), DeferredCommit
+# (+reliability_confirm, which degrades to integer counts when L=0, the WP-A convention),
+# Training window, prune lifecycle, Results block -- is bit-identical to combined.
+# Pinned by tests/test_wpm_maskonly_configs.py.
+#
+# KNOWN CONFOUND (must be reported, not hidden): turning K off also changes the keyframe
+# budget, hence insertion/prune opportunities and compute. The prereg requires logging
+# KF count, Gaussian count and FPS per arm alongside ATE so the reader can see it.
+inherit_from: "configs/rgbd/experiments/active/candidate/method_combined_maskboth_prune.yaml"
+
+RobustTracking:
+  enabled: false
+
+DynamicKeyframe:
+  enabled: false
+
+ReliabilitySignal:
+  enabled: false

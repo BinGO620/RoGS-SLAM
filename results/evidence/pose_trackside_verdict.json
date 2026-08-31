@@ -1,0 +1,54 @@
+{
+  "sequence": "balloon",
+  "prereg_commit": "364da26c",
+  "gates": {
+    "G-A anchor": {
+      "pass": true,
+      "detail": "22 runs, max|delta| 0.00005 cm, 0 failures"
+    },
+    "G-E coverage": {
+      "pass": true,
+      "detail": "438/438 pairs = 100.0%"
+    },
+    "G-B positive (motion_matched)": {
+      "pass": true,
+      "detail": "min-gap +0.1532 (registered +0.1532), gap +0.2580 (registered +0.2580) vs 2xfloor 0.1662"
+    },
+    "G-B positive (plain)": {
+      "pass": true,
+      "detail": "min-gap +0.1465 (registered +0.1465), gap +0.2233 (registered +0.2233) vs 2xfloor 0.1454"
+    },
+    "G-C invalidation": {
+      "pass": true,
+      "detail": "3/3 rolled offsets fail to reproduce the gap"
+    }
+  },
+  "readings": {
+    "motion_matched": {
+      "P_E": [
+        0.3673,
+        0.3907,
+        0.4407
+      ],
+      "P_E_mean": 0.3995530729435264,
+      "P_E_range": 0.07344443332554218,
+      "per_seed_better_than_D": 1,
+      "share_pct": -3.5,
+      "verdict": "TRACKSIDE-INERT",
+      "why": "d_off 0.0085 <= floor 0.0831, d_on 0.2486 >= 0.1662"
+    },
+    "plain": {
+      "P_E": [
+        0.6962,
+        0.564,
+        0.6888
+      ],
+      "P_E_mean": 0.6496585284442437,
+      "P_E_range": 0.13221094305214076,
+      "per_seed_better_than_D": 1,
+      "share_pct": -12.8,
+      "verdict": "INDETERMINATE",
+      "why": "range(P(E)) 0.1322 > stop 0.1019 (prereg 6 step 0: do not read a label, do not add seeds)"
+    }
+  }
+}

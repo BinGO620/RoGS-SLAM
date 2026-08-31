@@ -1,0 +1,26 @@
+sequences:
+  - label: v1_f1_desk
+    dataset: TUM
+    id: f1_desk
+    method: v1-reference
+    config: configs/rgbd/experiments/reference/v1/f1_desk.yaml
+  - label: v1_f2_xyz
+    dataset: TUM
+    id: f2_xyz
+    method: v1-reference
+    config: configs/rgbd/experiments/reference/v1/f2_xyz.yaml
+  - label: v1_f3_wk_xyz
+    dataset: TUM
+    id: f3_wk_xyz
+    method: v1-reference
+    config: configs/rgbd/experiments/reference/v1/f3_wk_xyz.yaml
+  - label: v1_balloon
+    dataset: BONN
+    id: balloon
+    method: v1-reference
+    config: configs/rgbd/experiments/reference/v1/balloon.yaml
+  - label: v1_moving_obstructing_box
+    dataset: BONN
+    id: moving_obstructing_box
+    method: v1-reference
+    config: configs/rgbd/experiments/reference/v1/moving_obstructing_box.yaml

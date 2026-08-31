@@ -1,0 +1,71 @@
+# P2-RT spike (2026-08-03): the combined backbone's PRUNE twin + ReliableTracking ON.
+#
+# WHY. PROBE2-RT (results/evidence/probe2_reliable_tracking.md, 2026-07-23) screened the
+# RGD adaptive-weight tracker (utils/reliable_tracking.py) OFF↔ON on the *open-set* prune
+# base and got variance-separated ATE wins: balloon −41%, mv_no_box −45/−51%, pt2 −42%
+# (3-seed non-overlapping on balloon; pt2 3 ON < both OFF). BUT that was the open-set base,
+# and ReliableTracking is NOT enabled in the current paper main-table backbone
+# (method_combined_maskboth_prune.yaml → base_config ReliableTracking.enabled: false). The
+# P2-T main table (balloon prune 2.87cm, mv_no_box 2.58, pt1 10.97) was measured WITHOUT it.
+# Whether the −40%-class win reproduces on the *maskboth* combined backbone is UNTESTED.
+#
+# WHAT THIS FILE IS. A method twin identical to method_combined_maskboth_prune.yaml in
+# every field EXCEPT it adds ReliableTracking.enabled: true (RGD adaptive-weight: per-pixel
+# opacity down-weight + projected-border view weight + median-inlier residual masks, all at
+# base_config defaults). Single-knob isolation: the only difference vs the paper's prune
+# control arm is the tracker weight scheme — orthogonal to deferred-vs-prune lifecycle.
+#
+# WHAT THIS FILE IS NOT. Not a new mechanism, not a re-tune, not a main-table arm. It is a
+# screening spike: 3 seqs × seed0 to see if the PROBE2-RT win transfers to the maskboth
+# backbone. If it does, ReliableTracking becomes a candidate tracking-side contribution to
+# ADD to the main table (both arms) without touching the lifecycle headline. If it does not
+# (or regresses, e.g. the mv_no_box2 blowup tail), it stays off. Single seed ⇒ SCREENING
+# ONLY per incubation rule ⑤; no verdict written from this.
+#
+# STATUS: apparatus only. Zero GPU runs exist against this config.
+TriReliability:
+  enabled: false
+
+ReliableTracking:
+  enabled: true
+
+RobustTracking:
+  enabled: true
+  kernel: "huber"
+  rgb_delta: 0.10
+  depth_delta: 0.10
+
+SemanticMask:
+  enabled: true
+  model: "maskrcnn"
+  dynamic_classes: [1]
+  dilate_px: 7
+  max_mask_ratio: 0.95
+  device: "cuda"
+  soft: false
+  mask_mapping: true
+  mask_insertion: true
+
+DynamicKeyframe:
+  enabled: true
+  gap_cap: 5
+  occ_tighten_thresh: 2.0
+
+Training:
+  window_size: 12
+  pose_window: 6
+
+ReliabilitySignal:
+  enabled: true
+
+DeferredCommit:
+  enabled: true
+  reliability_confirm: true
+
+Mapping:
+  lifecycle_mode: "prune"
+
+Results:
+  save_raw_metrics: true
+  static_bg_mask_subdir: "dynamic_mask_gtmc"
+  static_bg_band_px: [10, 25, 50]

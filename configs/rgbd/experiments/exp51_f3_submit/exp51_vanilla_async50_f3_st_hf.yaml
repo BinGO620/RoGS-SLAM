@@ -1,0 +1,10 @@
+# EXP51 — f3_st_hf 静态 ATE 优化，Phase 1 预算公平对照。
+#
+# 臂 B2：vanilla（四机制全关）+ async_iter_per_kf=50。
+# 目的：排除"只要多给后端迭代，任何方法都变好"的预算混杂。
+# 若 vanilla+async50 同样大幅改善 ⇒ async50 是预算公平/工程修复，不是 MRCS 算法增益。
+inherit_from: "configs/rgbd/tum/f3_st_hf.yaml"
+method: "EXP51-B2-Vanilla-Async50"
+
+Training:
+  async_iter_per_kf: 50

@@ -1,0 +1,4 @@
+# M2 锚点探针 — f2_xyz。静态对照：不崩的序列锚点量应平稳，用来排除“拐点是每条序列都有的常态”
+inherit_from: "configs/rgbd/tum/f2_xyz.yaml"
+method_from: "configs/rgbd/experiments/m2_anchor_probe/method_anchor_probe.yaml"
+method: "M2-AnchorProbe-f2_xyz"

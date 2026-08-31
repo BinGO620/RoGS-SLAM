@@ -1,0 +1,6 @@
+# P10-动态验证: async50 在动态序列上增益是否保持
+inherit_from: "configs/rgbd/bonn/balloon.yaml"
+method_from: "configs/rgbd/experiments/active/candidate/method_combined_maskoff_prune.yaml"
+method: "P10-DynVerify-Async50-Balloon"
+Training:
+  async_iter_per_kf: 50

@@ -1,0 +1,10 @@
+# exp39 Step C Phase 1 / 对照臂 H（balloon）
+inherit_from: "configs/rgbd/experiments/exp39_mapping_soft/exp39_hard_balloon.yaml"
+method: "EXP39C-hard-balloon"
+
+MappingProbe:
+  enabled: true
+  interval: 50
+
+SemanticMask:
+  mapping_ema: false

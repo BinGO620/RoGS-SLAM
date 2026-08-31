@@ -1,0 +1,5 @@
+inherit_from: "configs/rgbd/bonn/balloon.yaml"
+method_from: "configs/rgbd/experiments/active/candidate/method_combined_maskoff_prune.yaml"
+method: "P10-DynVerify-Async10-Balloon"
+Training:
+  async_iter_per_kf: 10

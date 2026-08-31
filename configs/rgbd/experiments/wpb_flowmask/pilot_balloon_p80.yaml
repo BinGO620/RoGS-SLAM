@@ -1,0 +1,4 @@
+inherit_from: "configs/rgbd/bonn/balloon.yaml"
+method_from: "configs/rgbd/experiments/wpb_flowmask/flowmask_p80.yaml"
+method: "WPB-pilot-balloon-p80"
+

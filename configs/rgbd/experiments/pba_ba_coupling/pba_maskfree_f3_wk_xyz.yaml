@@ -1,0 +1,4 @@
+# PBA 对照臂 B：完全无 mask。与 t2_control_maskfree_* 同 overlay。
+inherit_from: "configs/rgbd/tum/f3_wk_xyz.yaml"
+method_from: "configs/rgbd/experiments/t2_mad_quota/method_t2_control_maskfree.yaml"
+method: "PBA-maskfree-f3_wk_xyz"

@@ -1,0 +1,8 @@
+# WP-B CONFIRM — flow-mask arm, held-out seq pt1 (person_tracking), threshold p90.
+# 2026-08-15 exp19. Three-arm confirm on held-out only (pt1/pt2 = held-out① clean,
+# mv_no_box2/balloon2 = held-out② same-family). flow-mask = vanilla(K0R0L0) + naive
+# flow_threshold mask at p90 (chosen threshold, dev geomean ATE minimum). Method overlay
+# flowmask_vanilla.yaml (default quantile 0.90) provides the flow_threshold semantic mask.
+inherit_from: "configs/rgbd/bonn/person_tracking.yaml"
+method_from: "configs/rgbd/experiments/wpb_flowmask/flowmask_vanilla.yaml"
+method: "WPB-confirm-flowmask-pt1"

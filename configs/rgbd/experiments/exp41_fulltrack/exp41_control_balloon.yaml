@@ -1,0 +1,10 @@
+# exp41 FULL-RANGE TRACKING MASK — control 臂（= P2-T balloon prune 主配置逐字段复制）
+#
+# 与 treatment 臂（exp41_fulltrack_balloon.yaml）唯一差异：
+#   SemanticMask.hard_tracking_mask 缺省（false）——即论文主配置原样。
+# 与 P2-T 已有 balloon_prune_seed0 run 的 config 逐字段一致，本臂重跑一次以获得
+# 同环境同批次的对照（P2-T 那次是 2026-08-08 的批次）。
+# 预注册：results/evidence/exp41_fulltrack_prereg.md
+inherit_from: "configs/rgbd/bonn/balloon.yaml"
+method_from: "configs/rgbd/experiments/active/candidate/method_combined_maskboth_prune.yaml"
+method: "Exp41-control-balloon"

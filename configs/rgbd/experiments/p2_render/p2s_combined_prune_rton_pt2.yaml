@@ -1,0 +1,7 @@
+# P2-RT spike — ReliableTracking ON, combined maskboth prune backbone, pt2 (3rd PROBE2 win).
+# Per codex (019fc3c7): pt2 (not pt1) was the 3rd variance-separated PROBE2-RT win (−42%,
+# 3 ON < both OFF non-overlapping). pt1 in the current spike tests a NEW sequence; pt2
+# tests the actual 3rd win. Run after the safety check if the spike transfers.
+inherit_from: "configs/rgbd/bonn/person_tracking2.yaml"
+method_from: "configs/rgbd/experiments/active/candidate/method_combined_maskboth_prune_rton.yaml"
+method: "Combined-Prune-RTon"

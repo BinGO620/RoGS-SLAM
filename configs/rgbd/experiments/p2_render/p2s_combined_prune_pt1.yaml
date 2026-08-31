@@ -1,0 +1,19 @@
+# P2-T main-table run, arm A: COMBINED backbone + prune lifecycle, SELF-TRACKED on
+# Bonn person_tracking. Mirrors p2s_combined_prune_pt2.yaml with the dataset swapped
+# person_tracking2 -> person_tracking.
+#
+# WHY pt1 IS ADDED TO P2-T (not in the original 6-seq table): the H-D hybrid hypothesis
+# (see results/evidence/hd_coverage_prereg.md) predicts compactness direction depends on
+# whether the person mask already covers the mover. The "mask covers the mover (high
+# coverage) => prune wins" side of that prediction was, before pt1, carried by pt2 ALONE
+# — and pt2 is the sequence that GENERATED the hypothesis (post-hoc). pt1 is pt2's unseen
+# same-class sibling (pure person-tracking, person mask sufficient), so it is the first
+# INDEPENDENT test of the high-coverage side. Without it the H-D high-coverage leg rests
+# on a single post-hoc observation (n=1, no unseen sample). pt1's GTMC eval mask was
+# frozen 2026-07-31 (sha 06f9c475) before this config was written.
+#
+# Single-seed smoke on pt1 is NOT run separately; pt1 enters P2-T directly at 3 seed
+# (its de-risk is pt2's de-risk — same class, combined backbone already survived pt2).
+inherit_from: "configs/rgbd/bonn/person_tracking.yaml"
+method_from: "configs/rgbd/experiments/active/candidate/method_combined_maskboth_prune.yaml"
+method: "Combined-Prune"

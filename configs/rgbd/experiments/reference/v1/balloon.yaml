@@ -1,0 +1,5 @@
+inherit_from: "configs/rgbd/bonn/balloon.yaml"
+method_from: "configs/rgbd/experiments/reference/v1/method.yaml"
+method: "v1-reference"
+Dataset:
+  sequence: "balloon"

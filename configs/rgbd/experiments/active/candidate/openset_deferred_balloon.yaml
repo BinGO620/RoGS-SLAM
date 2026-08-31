@@ -1,0 +1,3 @@
+inherit_from: "configs/rgbd/bonn/balloon.yaml"
+method_from: "configs/rgbd/experiments/active/candidate/method_openset_deferred.yaml"
+method: "OpenSet-Deferred"

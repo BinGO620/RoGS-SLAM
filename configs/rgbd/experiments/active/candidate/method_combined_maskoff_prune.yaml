@@ -1,0 +1,16 @@
+# P6 MASK-OFF 消融（2026-08-09，预注册）—— combined backbone 4-14× ATE 的方法内核生死判。
+#
+# 目的：判定 combined backbone（mask-both + RobustTracking + DynamicKeyframe + ReliabilitySignal,
+# prune lifecycle）对 vanilla 的 4-14× ATE 增益，方法内核在不在"借来的 Mask R-CNN 语义 mask"之外。
+#
+# `mask-off` = combined prune 减 SemanticMask（保留 dense-KF + RT + Reliability）。
+# 唯一允许差异 = `SemanticMask.enabled: true → false`。其余逐字节继承 `method_combined_maskboth_prune.yaml`
+# （P2-T prune 链）。lifecycle 保持 "prune"。
+#
+# 钉住"唯一差异 = mask"的合同测试：`tests/test_p6_maskoff_configs.py`。
+# 判据见 `results/evidence/p6_maskoff_prereg.md`（跑前固定）。
+
+inherit_from: "configs/rgbd/experiments/active/candidate/method_combined_maskboth_prune.yaml"
+
+SemanticMask:
+  enabled: false

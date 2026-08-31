@@ -1,0 +1,16 @@
+# P6-MASON pt1 A-variant — RT tighter + mask dilate larger (pure config, no core change)
+# Inherits the combined (mask-ON) method, overrides ONLY tracking-side knobs:
+#   - RobustTracking: huber delta tighter (0.10 -> 0.05) = more aggressive down-weight of
+#     dynamic/outlier residuals (person pixels the mask may miss near edges).
+#   - SemanticMask: dilate_px 7 -> 15 (wider exclusion of the moving person).
+# Question: does tightening the robust tracker + widening the mask exclusion lower pt1 RPE
+# (pure-person, SOTA-gap 11.89 vs RGD 7.21) vs the P6-MASON mask-ON baseline?
+# A is config-only; if it does NOT move RPE, that confirms the bottleneck is the coarse
+# POSE INIT (candidate B, requires core change), not the per-pixel robust weighting.
+inherit_from: "configs/rgbd/experiments/p6_mason/p6_mason_combined_pt1.yaml"
+RobustTracking:
+  kernel: "huber"
+  rgb_delta: 0.05
+  depth_delta: 0.05
+SemanticMask:
+  dilate_px: 15

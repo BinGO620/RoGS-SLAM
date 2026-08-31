@@ -1,0 +1,7 @@
+# P2-DBAphoto apparatus on moving_nonobstructing_box (the 2nd seq for the weighted-
+# geometric oracle gate). Identical to the balloon stash config except the base seq.
+inherit_from: "configs/rgbd/bonn/moving_nonobstructing_box.yaml"
+method_from: "configs/rgbd/experiments/active/candidate/method_combined_maskboth_prune.yaml"
+method: "Combined-Prune-DBAstash"
+ReliabilitySignal:
+  stash_dba_weights: true

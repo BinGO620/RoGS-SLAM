@@ -1,0 +1,3 @@
+inherit_from: "configs/rgbd/bonn/person_tracking2.yaml"
+method_from: "configs/rgbd/experiments/probe2_reliable_tracking/method_deferred_track_off.yaml"
+method: "Deferred-RToff"

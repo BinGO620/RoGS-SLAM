@@ -1,0 +1,33 @@
+# P8-W1 因果判据 — f3_st_hf，把可靠性下权重关掉（w ≡ 1），其余一律不动。
+#
+# ★ 这是**一个 run 的因果判据**，不是方法臂。诊断专用，绝不入主表。
+#
+# 问题（results/evidence/exp26_static_collapse_rootcause.md）：
+#   `cauchy_tracking_weight` 的 tau = median(d) + 1.4826*MAD(d) 由 d 自己的分布定，
+#   ⇒ w 对 d 的整体尺度**严格不变**（数值证：s∈[0.97,1] 与 s∈[0.10,1] 的 mean_w
+#   同为 0.7438、w<0.5 比例同为 0.1303，小数点后四位相同）。
+#   实测 8 条序列（4 静 4 动）mean_w 全在 0.57-0.66 ⇒ 纯静态桌面序列上也丢掉 ~38%
+#   的光度信号。f3_st_hf 在 frame 371（GT 平移进全序列前 5%、flow 支持只剩 43%）崩，
+#   而 vanilla MonoGS 用 100% 像素过得去（2.80cm）。
+#
+# 本臂检验的是那条**推断**：丢掉的 38% 信号，是不是 371 处崩溃的原因。
+#
+# 装置：`ReliabilitySignal.tracking_downweight_off` 只把 tracking loss 里的
+#   `reliability_soft` 置零（dynamic_soft=0 ⇒ static_conf≡1）。
+#   - 信号照常计算、照常落盘、照常喂 map 路径（`viewpoint.reliability_*` / DBA stash）
+#   - 损失**仍走同一条 soft 分支**，RobustTracking(huber) 保持开
+#   ⇒ 与对照臂的唯一差别 = 权重值本身。
+#
+# 对照 = 同机（3090）、同 async 模式、同 config 家族的 FULLKERN mask-free 三 seed：
+#   f3_st_hf 36.09 / 35.16 / 35.52（`results/runs/P6/P6-FULLKERN-MASKFREE/`）
+#
+# 冻结判据（发批前写死，见 exp26_w1_causal_prereg.md）：
+#   ATE < 5cm 且 plot/stats 在 frame 371 无翻倍  ⇒ 下权重即病因，坐实
+#   ATE >= 20cm 且仍在 371 翻倍                  ⇒ 下权重不是（唯一）病因，回定位
+#   5-20cm 之间                                  ⇒ INDETERMINATE，补 2 seed 再判
+inherit_from: "configs/rgbd/tum/f3_st_hf.yaml"
+method_from: "configs/rgbd/experiments/active/candidate/method_combined_maskoff_prune.yaml"
+method: "Diag-W1-NoDownweight-MaskOff"
+
+ReliabilitySignal:
+  tracking_downweight_off: true

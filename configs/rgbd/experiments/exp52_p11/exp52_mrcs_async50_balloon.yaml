@@ -1,0 +1,15 @@
+# EXP52 — P11 mask-only vs MRCS+async50 matched 对照(2026-08-27)。
+#
+# 臂 M50B:MRCS(mask-free combined 内核)+ 异步映射预算 async_iter_per_kf=50,序列 balloon。
+# 与 EXP51 A2(exp51_mrcs_async50_f3_st_hf.yaml)同一 method 链,仅序列不同;
+# method 侧与已验证的 p10_async50_balloon.yaml 逐字节等价(tests/test_exp52_p11_configs.py 断言)。
+#
+# 对照臂 P11-balloon 复用 configs/rgbd/experiments/p11_maskonly/p11_maskonly_balloon.yaml(不改)。
+#
+# 不改共享 bonn/base_config.yaml,不改 vanilla 默认,不改 gap_cap=5。
+inherit_from: "configs/rgbd/bonn/balloon.yaml"
+method_from: "configs/rgbd/experiments/active/candidate/method_combined_maskoff_prune.yaml"
+method: "EXP52-M50B-MRCS-Async50"
+
+Training:
+  async_iter_per_kf: 50

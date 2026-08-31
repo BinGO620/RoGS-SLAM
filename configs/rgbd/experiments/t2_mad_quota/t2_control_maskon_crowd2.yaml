@@ -1,0 +1,4 @@
+# T2 自适应配额 MAD 隔离 — control_maskon 臂 / crowd2。合同由 tests/test_t2_mad_quota_configs.py 钉住。
+inherit_from: "configs/rgbd/bonn/crowd2.yaml"
+method_from: "configs/rgbd/experiments/t2_mad_quota/method_t2_control_maskon.yaml"
+method: "T2-control_maskon-crowd2"

@@ -1,0 +1,11 @@
+# EXP56 double-variable intervention: P11 + DynamicKeyframe + ReliabilitySignal.
+# Same P11 base as EXP54 (mask_mapping=true, mask_insertion=false, RobustTracking
+# huber, lifecycle prune+DeferredCommit). The single remaining difference vs the
+# Combined configuration is SemanticMask.mask_insertion.
+inherit_from: "configs/rgbd/experiments/p11_maskonly/method_p11_maskonly.yaml"
+
+DynamicKeyframe:
+  enabled: true
+
+ReliabilitySignal:
+  enabled: true

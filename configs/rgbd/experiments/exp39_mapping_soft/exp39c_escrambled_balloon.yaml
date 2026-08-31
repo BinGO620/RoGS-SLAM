@@ -1,0 +1,9 @@
+# exp39 Step C Phase 0 / E-scrambled（D-3 打乱实验）
+# 在 EMA 基础上空间打乱 μ̂/q̂ 状态，测试权重空间结构是否重要。
+# 如果 E-scrambled ATE 接近 H（对照）→ EMA 的空间结构有害（吸收正反馈）
+# 如果 E-scrambled ATE 接近 E → EMA 的空间结构无害，问题在边际分布
+inherit_from: "configs/rgbd/experiments/exp39_mapping_soft/exp39c_ema_balloon.yaml"
+method: "EXP39C-escrambled-balloon"
+
+SemanticMask:
+  mapping_ema_scramble: true

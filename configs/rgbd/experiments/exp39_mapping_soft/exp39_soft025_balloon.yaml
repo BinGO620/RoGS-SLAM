@@ -1,0 +1,12 @@
+# exp39 Phase 0 / 治疗臂 W —— mapping/BA 损失里动态像素权重 = floor 0.25。
+# floor 值的理由见 results/evidence/exp39_weight_audit.md（尺度混淆 c_rgb=1.037，ESS 0.932）。
+inherit_from: "configs/rgbd/experiments/t2_mad_quota/t2_eboth_balloon.yaml"
+method: "EXP39-soft025-balloon"
+
+SemanticMask:
+  soft_mapping: true
+  mapping_floor: 0.25
+
+MappingProbe:
+  enabled: true
+  interval: 50

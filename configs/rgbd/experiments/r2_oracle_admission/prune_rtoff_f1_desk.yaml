@@ -1,0 +1,9 @@
+# R2-P01-E2 static no-harm row (mapping side): TUM freiburg1_desk, prune arm, RT off.
+# Same method base as dynamic rows 1-2 (method_openset_prune + RT off). TUM has no
+# GTMC masks -> static/band/vacated eval skips gracefully; readout = ATE + full-image
+# PSNR + geometry F-score (TUM GT fused on-the-fly from GT poses+depth). Full --eval
+# mode (595 frames). Allowed diff vs deferred twin = {method, Mapping.lifecycle_mode}
+# — tests/test_r2_oracle_configs.py.
+inherit_from: "configs/rgbd/tum/f1_desk.yaml"
+method_from: "configs/rgbd/experiments/probe2_reliable_tracking/method_track_off.yaml"
+method: "Prune-RToff"

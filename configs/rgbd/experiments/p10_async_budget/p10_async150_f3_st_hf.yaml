@@ -1,0 +1,11 @@
+# P10-P0b — async iter_per_kf=150（P0 第二档，与 sync 同预算但保持 async 模式）
+#
+# sync(iter_per_kf=150 且 single_thread=True) 3/3 全活。本臂验证：
+# 异步模式下 150 iter/KF 是否同样修好，隔离 single_thread vs iter_per_kf 两个变量。
+# 判据同 P0a：追平 vanilla 4/5。
+inherit_from: "configs/rgbd/tum/f3_st_hf.yaml"
+method_from: "configs/rgbd/experiments/active/candidate/method_combined_maskoff_prune.yaml"
+method: "P10-P0b-Async150"
+
+Training:
+  async_iter_per_kf: 150

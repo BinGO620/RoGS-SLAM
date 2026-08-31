@@ -1,0 +1,4 @@
+# P11 sparse-KF mask-only run config -- f1_desk. 18-seq 主表铺开 (exp28).
+inherit_from: "configs/rgbd/tum/f1_desk.yaml"
+method_from: "configs/rgbd/experiments/p11_maskonly/method_p11_maskonly.yaml"
+method: "P11-f1_desk-sparsemaskonly"

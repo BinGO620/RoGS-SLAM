@@ -1,0 +1,11 @@
+# insertion 通道干预臂 — 只翻 mask_insertion，BA 侧 mask 保持开启
+# ⚠ 名字是历史误名（exp35）：本臂 `mask_mapping` 仍为 true ⇒ 它是 **insertion-off**，
+# 不是「只剩 tracking 侧」。真正的 trackside-only 见 `pba_trackside_only_*.yaml`。
+# 文件名/run 目录/判决脚本表头 `trkOnly` 沿用不改（provenance），读数时按 insertion-off 读。
+# 与 pba_eboth_pt1 的唯一差异 = mask_insertion
+inherit_from: "configs/rgbd/experiments/pba_ba_coupling/pba_eboth_pt1.yaml"
+method: "PBA-tracking-only-pt1"
+
+SemanticMask:
+  mask_mapping: true       # BA 仍用 mask
+  mask_insertion: false    # ← 不挡动态高斯插入

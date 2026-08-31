@@ -1,0 +1,8 @@
+# P9-A4 — 关 ReliabilitySignal 整个（不只是跟踪下权重）。
+# w≡1 只关了跟踪路径；同一个 s 还喂 map 路径（viewpoint.reliability_* / deferred 确认）。
+# 本臂把整条信号关掉，判「地图路径是不是病因」。
+inherit_from: "configs/rgbd/tum/f3_st_hf.yaml"
+method_from: "configs/rgbd/experiments/active/candidate/method_combined_maskoff_prune.yaml"
+method: "P9-A4-NoRelSig"
+ReliabilitySignal:
+  enabled: false

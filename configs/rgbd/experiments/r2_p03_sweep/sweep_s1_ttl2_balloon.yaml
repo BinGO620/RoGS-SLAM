@@ -1,0 +1,11 @@
+# R2-P03-SWEEP level S1: candidate TTL pressure, moderate.
+# Base = arm A (insert-then-prune control) under the frozen RGD balloon trajectory.
+# Allowed diff vs base = {method, DeferredCommit.ttl_keyframes} — tests/test_r2_p03_sweep_configs.py.
+# Mechanism: a still-pending candidate expires at age >= ttl (deferred_commit.py:581); in the
+# prune arm expiry deletes its whole lineage, so a shorter ttl empties the candidate residue
+# that arm A otherwise carries to the end of the run (pending_final ~23.6k at ttl=5).
+inherit_from: "configs/rgbd/experiments/r2_oracle_admission/oracle_prune_balloon.yaml"
+method: "OracleRGD-Prune-S1-ttl2"
+
+DeferredCommit:
+  ttl_keyframes: 2

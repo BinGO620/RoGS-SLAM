@@ -1,0 +1,4 @@
+# P7 CUE-SPLIT method: mask-free, ReliabilitySignal DISABLED (control-off).
+inherit_from: "configs/rgbd/experiments/active/candidate/method_combined_maskoff_prune.yaml"
+ReliabilitySignal:
+  enabled: false

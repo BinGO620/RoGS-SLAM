@@ -1,0 +1,6 @@
+# exp47 RPE boundary held-out — f3_long_office maskfree arm (prereg: results/evidence/rpe_boundary_heldout_prereg.md)
+# maskfree = combined prune backbone with SemanticMask OFF.
+# Unique difference between the two arms = SemanticMask.enabled (contract: tests/test_p6_maskoff_configs.py).
+inherit_from: "configs/rgbd/tum/f3_office.yaml"
+method_from: "configs/rgbd/experiments/active/candidate/method_combined_maskoff_prune.yaml"
+method: "RpeHeldout-MaskFree-f3_long_office"

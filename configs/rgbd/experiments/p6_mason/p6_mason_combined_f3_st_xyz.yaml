@@ -1,0 +1,5 @@
+# P6-MASON extension — mask-ON combined run for f3_st_xyz.
+# Added to complete the 18-sequence combined(mask-ON) rendering table.
+inherit_from: "configs/rgbd/tum/f3_st_xyz.yaml"
+method_from: "configs/rgbd/experiments/active/candidate/method_combined_maskboth_prune.yaml"
+method: "Combined"

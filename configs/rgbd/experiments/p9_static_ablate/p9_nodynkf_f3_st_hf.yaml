@@ -1,0 +1,12 @@
+# P9-A1 — 关 DynamicKeyframe（头号嫌疑）。
+# gap_cap=5 强制每 5 帧插一个关键帧：实测 215 KF / 1074 帧，正好 1/5。
+# vanilla 按 kf_overlap=0.9 / kf_translation=0.08m 判据决定，而本序列帧间平移中位
+# 只有 0.65cm（要 12 帧才够 8cm）⇒ vanilla 的 KF 少一个量级。
+# async 下 iter_per_kf=10，KF 洪水把后端淹了、滑窗搅了，静态场景又换不来新信息
+# （overlap 极高）⇒ 地图长期欠优化，到 frame 371 平移突增时撑不住。
+# 该假设同时解释：sync(150 iters/KF) 修好、w≡1 无效、vanilla 不崩、双稳态、崩在 371。
+inherit_from: "configs/rgbd/tum/f3_st_hf.yaml"
+method_from: "configs/rgbd/experiments/active/candidate/method_combined_maskoff_prune.yaml"
+method: "P9-A1-NoDynKF"
+DynamicKeyframe:
+  enabled: false

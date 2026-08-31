@@ -1,0 +1,49 @@
+#!/bin/bash
+# run_p10_async_budget_3090.sh — P10 async iter_per_kf 消融，3090 双卡
+# 判据: p10_async_budget_prereg.md（跑前冻结）
+# 用法: nohup bash scripts/run_p10_async_budget_3090.sh > results/runs/P10/master_3090.log 2>&1 &
+set -u
+REPO=/home/jiangwenheng/cron/monogs-ours; cd "$REPO"
+PY=/home/jiangwenheng/anaconda3/envs/monogs-ours-3090/bin/python
+OUT=results/runs/P10/P10-ASYNC-BUDGET-3090
+mkdir -p "$OUT"; DONE="$OUT/async_budget.done"; : > "$DONE"
+MAX_PARALLEL=2
+
+# 3 臂 × 5 seed = 15 run
+# P0c=control(iter=10), P0a=50, P0b=150
+RUNS=""
+for seed in 0 1 2 3 4; do
+  RUNS="$RUNS async10:$seed async50:$seed async150:$seed"
+done
+
+FLOW=/mnt/app/datasets/TUM/rgbd_dataset_freiburg3_sitting_halfsphere/flow_raft
+n=$(ls "$FLOW"/*.npy 2>/dev/null | wc -l); echo "precheck flow_npy=$n" >> "$DONE"
+[ "$n" -ge 10 ] || { echo "ABORT: flow 不全($n)" >> "$DONE"; exit 1; }
+
+running_slam() { pgrep -af 'slam\.py' 2>/dev/null | grep -cE '/python[0-9]* +slam\.py' || true; }
+wait_slot() { while [ "$(running_slam)" -ge "$MAX_PARALLEL" ]; do sleep 20; done; }
+pick_gpu() { nvidia-smi --query-gpu=index,memory.used,utilization.gpu --format=csv,noheader,nounits \
+    | awk -F, '{w=$2+($3*100); if(NR==1||w<best){best=w; g=$1}} END{print g}' | tr -d ' '; }
+
+i=0
+for entry in $RUNS; do
+  arm="${entry%%:*}"; seed="${entry##*:}"; outnm="f3_st_hf_${arm}_seed${seed}"
+  [ -f "$OUT/$outnm/tables/tracking_raw.csv" ] && { echo "SKIP $outnm" >> "$DONE"; continue; }
+  wait_slot
+  gpu=$(pick_gpu); [ -n "$gpu" ] || gpu=$((i % 2)); i=$((i+1))
+  log="$OUT/$outnm.$(date +%Y%m%d-%H%M%S).consolelog"
+  echo "$(date +%H:%M) RUN $outnm gpu$gpu" >> "$DONE"
+  env PYTHONPATH=$PWD MPLBACKEND=Agg CUDA_VISIBLE_DEVICES=$gpu \
+    $PY slam.py --config "configs/rgbd/experiments/p10_async_budget/p10_${arm}_f3_st_hf.yaml" \
+    --seed "$seed" --results-root "$OUT/$outnm" > "$log" 2>&1 &
+  sleep 20
+done
+while [ "$(running_slam)" -gt 0 ]; do sleep 30; done
+missing=0
+for entry in $RUNS; do
+  arm="${entry%%:*}"; seed="${entry##*:}"; outnm="f3_st_hf_${arm}_seed${seed}"
+  c="$OUT/$outnm/tables/tracking_raw.csv"
+  if [ ! -f "$c" ]; then echo "MISSING $outnm" >> "$DONE"; missing=$((missing+1))
+  else echo "DONE $outnm ATE=$(python3 -c "import csv,sys;r=list(csv.DictReader(open(sys.argv[1])));print(r[0]['ate_rmse_cm'] if r else 'NA')" "$c" 2>/dev/null)" >> "$DONE"; fi
+done
+echo "P10_3090_ALL_DONE $(date) missing=$missing" >> "$DONE"

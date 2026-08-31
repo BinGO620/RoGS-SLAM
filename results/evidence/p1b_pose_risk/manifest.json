@@ -1,0 +1,93 @@
+{
+  "arms": [
+    "all",
+    "robust",
+    "oracle",
+    "shift",
+    "mrcs"
+  ],
+  "n_shift": 8,
+  "preregistration": "results/evidence/p1b_pose_risk_preregistration.md",
+  "runs": [
+    {
+      "sequence": "rgbd_bonn_balloon",
+      "n_rows": 343,
+      "skips": {
+        "few_valid": 0,
+        "ill_cond": 0,
+        "small_mask": 57
+      },
+      "csv": "results/evidence/p1b_pose_risk/rgbd_bonn_balloon.csv"
+    },
+    {
+      "sequence": "rgbd_bonn_balloon2",
+      "n_rows": 377,
+      "skips": {
+        "few_valid": 0,
+        "ill_cond": 0,
+        "small_mask": 23
+      },
+      "csv": "results/evidence/p1b_pose_risk/rgbd_bonn_balloon2.csv"
+    },
+    {
+      "sequence": "rgbd_bonn_moving_nonobstructing_box",
+      "n_rows": 305,
+      "skips": {
+        "few_valid": 0,
+        "ill_cond": 0,
+        "small_mask": 95
+      },
+      "csv": "results/evidence/p1b_pose_risk/rgbd_bonn_moving_nonobstructing_box.csv"
+    },
+    {
+      "sequence": "rgbd_bonn_moving_nonobstructing_box2",
+      "n_rows": 332,
+      "skips": {
+        "few_valid": 0,
+        "ill_cond": 0,
+        "small_mask": 68
+      },
+      "csv": "results/evidence/p1b_pose_risk/rgbd_bonn_moving_nonobstructing_box2.csv"
+    },
+    {
+      "sequence": "rgbd_bonn_person_tracking",
+      "n_rows": 355,
+      "skips": {
+        "few_valid": 0,
+        "ill_cond": 0,
+        "small_mask": 45
+      },
+      "csv": "results/evidence/p1b_pose_risk/rgbd_bonn_person_tracking.csv"
+    },
+    {
+      "sequence": "rgbd_bonn_person_tracking2",
+      "n_rows": 369,
+      "skips": {
+        "few_valid": 0,
+        "ill_cond": 0,
+        "small_mask": 31
+      },
+      "csv": "results/evidence/p1b_pose_risk/rgbd_bonn_person_tracking2.csv"
+    },
+    {
+      "sequence": "rgbd_bonn_moving_obstructing_box",
+      "n_rows": 283,
+      "skips": {
+        "few_valid": 0,
+        "ill_cond": 0,
+        "small_mask": 117
+      },
+      "csv": "results/evidence/p1b_pose_risk/rgbd_bonn_moving_obstructing_box.csv"
+    },
+    {
+      "sequence": "rgbd_bonn_static_close_far",
+      "n_rows": 344,
+      "skips": {
+        "few_valid": 15,
+        "ill_cond": 0,
+        "small_mask": 41
+      },
+      "csv": "results/evidence/p1b_pose_risk/rgbd_bonn_static_close_far.csv"
+    }
+  ]
+}

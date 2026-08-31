@@ -1,0 +1,36 @@
+{
+  "sequence": "balloon",
+  "prereg_commit": "2985dd07",
+  "floor": 0.0831,
+  "P_E_reference": 0.3996,
+  "stop": 0.12,
+  "per_arm": {
+    "A_eboth": [
+      0.1747,
+      0.0669,
+      0.1703
+    ],
+    "E_trackside": [
+      0.3673,
+      0.3907,
+      0.4407
+    ],
+    "F_trackhard": [
+      0.4033,
+      0.5393,
+      0.3861
+    ],
+    "D_maskfree": [
+      0.4043,
+      0.3588,
+      0.4101
+    ]
+  },
+  "P_F_mean": 0.44290619160971617,
+  "P_F_range": 0.15322571834590337,
+  "shift": 0.04330619160971616,
+  "shift_over_floor": 0.521133473041109,
+  "anchor_max_abs_delta": 4.693890613616247e-05,
+  "verdict": "NO VERDICT (stop rule)",
+  "why": "range(P(E-hard)) 0.1532 > 0.1200"
+}

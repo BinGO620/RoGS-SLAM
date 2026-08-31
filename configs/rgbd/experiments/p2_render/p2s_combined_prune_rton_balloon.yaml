@@ -1,0 +1,6 @@
+# P2-RT spike — ReliableTracking ON, combined maskboth prune backbone (self-tracked).
+# Twin of p2s_combined_prune_balloon.yaml; only diff = method_from → the RT-on method twin.
+# Single seed ⇒ SCREENING ONLY (incubation rule ⑤). See method_combined_maskboth_prune_rton.yaml.
+inherit_from: "configs/rgbd/bonn/balloon.yaml"
+method_from: "configs/rgbd/experiments/active/candidate/method_combined_maskboth_prune_rton.yaml"
+method: "Combined-Prune-RTon"

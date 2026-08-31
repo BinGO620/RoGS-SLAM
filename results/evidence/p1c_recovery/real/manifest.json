@@ -1,0 +1,94 @@
+{
+  "arms": [
+    "robust",
+    "oracle",
+    "mrcs"
+  ],
+  "gn_steps": 8,
+  "n_start": 2,
+  "eps_mm": 10.0,
+  "n_shift": 4,
+  "preregistration": "results/evidence/p1c_recovery_preregistration.md",
+  "runs": [
+    {
+      "sequence": "rgbd_bonn_balloon",
+      "n_rows": 49,
+      "skips": {
+        "few_valid": 0,
+        "small_mask": 11,
+        "failed": 0
+      },
+      "csv": "results/evidence/p1c_recovery/real/rgbd_bonn_balloon.csv"
+    },
+    {
+      "sequence": "rgbd_bonn_balloon2",
+      "n_rows": 51,
+      "skips": {
+        "few_valid": 0,
+        "small_mask": 9,
+        "failed": 0
+      },
+      "csv": "results/evidence/p1c_recovery/real/rgbd_bonn_balloon2.csv"
+    },
+    {
+      "sequence": "rgbd_bonn_moving_nonobstructing_box",
+      "n_rows": 32,
+      "skips": {
+        "few_valid": 0,
+        "small_mask": 28,
+        "failed": 0
+      },
+      "csv": "results/evidence/p1c_recovery/real/rgbd_bonn_moving_nonobstructing_box.csv"
+    },
+    {
+      "sequence": "rgbd_bonn_moving_nonobstructing_box2",
+      "n_rows": 37,
+      "skips": {
+        "few_valid": 0,
+        "small_mask": 23,
+        "failed": 0
+      },
+      "csv": "results/evidence/p1c_recovery/real/rgbd_bonn_moving_nonobstructing_box2.csv"
+    },
+    {
+      "sequence": "rgbd_bonn_person_tracking",
+      "n_rows": 47,
+      "skips": {
+        "few_valid": 0,
+        "small_mask": 13,
+        "failed": 0
+      },
+      "csv": "results/evidence/p1c_recovery/real/rgbd_bonn_person_tracking.csv"
+    },
+    {
+      "sequence": "rgbd_bonn_person_tracking2",
+      "n_rows": 48,
+      "skips": {
+        "few_valid": 0,
+        "small_mask": 12,
+        "failed": 0
+      },
+      "csv": "results/evidence/p1c_recovery/real/rgbd_bonn_person_tracking2.csv"
+    },
+    {
+      "sequence": "rgbd_bonn_moving_obstructing_box",
+      "n_rows": 30,
+      "skips": {
+        "few_valid": 0,
+        "small_mask": 30,
+        "failed": 0
+      },
+      "csv": "results/evidence/p1c_recovery/real/rgbd_bonn_moving_obstructing_box.csv"
+    },
+    {
+      "sequence": "rgbd_bonn_static_close_far",
+      "n_rows": 40,
+      "skips": {
+        "few_valid": 3,
+        "small_mask": 17,
+        "failed": 0
+      },
+      "csv": "results/evidence/p1c_recovery/real/rgbd_bonn_static_close_far.csv"
+    }
+  ]
+}

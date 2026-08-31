@@ -1,0 +1,25 @@
+# WP-A FACTORIAL method overlay — arm K1R0L0 (mask-free, R+L OFF, K ON).
+# 2026-08-14, WP-A. Lower-order cell for the descriptive full table / interaction structure.
+inherit_from: "configs/rgbd/experiments/active/candidate/method_combined_maskoff_prune.yaml"
+
+TriReliability:
+  enabled: false
+
+RobustTracking:
+  enabled: false
+
+DynamicKeyframe:
+  enabled: true
+
+ReliabilitySignal:
+  enabled: false
+
+SemanticMask:
+  enabled: false
+
+DeferredCommit:
+  enabled: true
+  reliability_confirm: true
+
+Mapping:
+  lifecycle_mode: "prune"

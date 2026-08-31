@@ -1,0 +1,22 @@
+# P3-TERMINAL-REFINE counterfactual (2026-08-07): does the op<0.01 tail come from
+# color-refinement soft-suppression, and is freezing opacity during refinement a
+# fix or a loss?
+#
+# Base = P2-T's prune run config by IDENTITY (the exact BASE arm already measured:
+# balloon_prune_seed0 -> tail 1.8% online -> 12.8% after_opt). The ONLY diff added is
+# TriReliability.color_refinement_freeze_opacity: true, which temporarily zeroes the
+# opacity learning rate during the 26000-iter color-refinement phase only (online map
+# is untouched; geometry + color still live during refinement).
+#
+# Compared against the stored balloon_prune_seed0 standard run:
+#   - if freeze-opacity gives EQUIVALENT final rendering quality AND ~no tail      => the
+#     9-16% tail is a defective-refine artifact; contribution = cleaner refine loop.
+#   - if freeze-opacity DEGRADES quality                                          => opacity
+#     suppression is functionally useful; terminal compression is a valid post-process
+#     but "removing harmful floaters" story is wrong.
+# Decision rule: results/evidence/p3_terminal_mech_autopsy.md §5.
+inherit_from: "configs/rgbd/experiments/p2_render/p2s_combined_prune_balloon.yaml"
+method: "Combined-Prune-refine-freeze-opac"
+
+TriReliability:
+  color_refinement_freeze_opacity: true

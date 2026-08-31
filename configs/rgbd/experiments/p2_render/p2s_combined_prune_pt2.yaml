@@ -1,0 +1,18 @@
+# P2-S pt2 de-risk, arm A: COMBINED backbone + prune lifecycle, SELF-TRACKED on
+# Bonn person_tracking2. Mirrors p2s_combined_prune_balloon.yaml with the dataset
+# swapped balloon -> person_tracking2. Same contract guarantees apply (the twin
+# pair differs only in Mapping.lifecycle_mode); the existing
+# tests/test_p2_combined_twin_configs.py covers the backbone contract, and this
+# run reuses the same method bases.
+#
+# WHY pt2 IS THE DE-RISK RUNG, not just another smoke: pt2 was the WORST rtoff
+# self-tracked ATE (44.22 cm prune / 20.99 cm deferred — see r2_oracle_admission_e2.md),
+# and the combined backbone has never run on it. P2-T commits 36 runs; this pair
+# (~50 min) confirms the backbone does not collapse on the highest-risk sequence
+# BEFORE the 36-run spend. If it collapses, P2-T is redesigned to 4 sequences
+# (drop pt2) for the cost of 2 runs.
+#
+# Single seed ⇒ SCREENING ONLY. No verdict (discipline ⑤).
+inherit_from: "configs/rgbd/bonn/person_tracking2.yaml"
+method_from: "configs/rgbd/experiments/active/candidate/method_combined_maskboth_prune.yaml"
+method: "Combined-Prune"

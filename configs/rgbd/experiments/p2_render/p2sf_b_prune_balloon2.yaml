@@ -1,0 +1,14 @@
+# P2-SF de-confounding control, variant B (sensitivity), arm A: COMBINED + prune, GT-pose
+# frozen (Bonn balloon2). Mirror of p2sf_b_prune_pt1.yaml, dataset person_tracking->balloon2.
+# balloon2 = high-coverage + easy-tracking countercell. See p2sf_b_prune_pt1.yaml.
+inherit_from: "configs/rgbd/bonn/balloon2.yaml"
+method_from: "configs/rgbd/experiments/active/candidate/method_combined_maskboth_prune.yaml"
+method: "CombinedSF-B-Prune"
+
+Oracle:
+  gt_pose: true
+
+Training:
+  lr:
+    cam_rot_delta: 0.0
+    cam_trans_delta: 0.0

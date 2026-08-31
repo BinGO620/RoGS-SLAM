@@ -1,0 +1,6 @@
+# P6-MASON pt2 — KF-BA 重启前提探针 (exp-v3-14), 与 pt1 同口径。
+# 只读：DBALite.oracle + diagnostic。回答：person 序列族 mask-ON+edge3 下 masked geometry 是否偏好 GT。
+inherit_from: "configs/rgbd/experiments/p6_mason/pt2_edgethresh/p6_mason_pt2_edge3.yaml"
+DBALite:
+  diagnostic: true
+  oracle: true

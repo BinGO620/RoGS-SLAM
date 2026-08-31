@@ -1,0 +1,21 @@
+# P8-SYNC 机制探针 — f3_st_hf oracle 臂（GT 相对位姿喂 rigid_flow），固定映射预算。
+#
+# 与 p8_sync_control_maskoff_f3_st_hf.yaml 的唯一差别 = ReliabilitySignal.ego_pose_oracle。
+# 竞态说明与「两处都要设 single_thread」的坑见那个 control config 的注释。
+#
+# 作用：在关掉竞态的工作点上重新标定上界。async 下 oracle = 2.85cm(n=1)；
+# 若 sync 下 oracle 也 ~3cm 而 sync control 仍崩，则「位姿误差被当动态」这条
+# 因果在固定预算下同样成立，不是竞态的副产品。
+#
+# ⚠ GT 只进 rigid_flow 的自运动预测，不进位姿估计。诊断专用，绝不入主表。
+inherit_from: "configs/rgbd/tum/f3_st_hf.yaml"
+method_from: "configs/rgbd/experiments/active/candidate/method_combined_maskoff_prune.yaml"
+method: "Diag-Sync-Oracle-MaskOff"
+
+Dataset:
+  single_thread: True
+Training:
+  single_thread: True
+
+ReliabilitySignal:
+  ego_pose_oracle: true

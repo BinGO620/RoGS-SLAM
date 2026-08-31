@@ -1,0 +1,5 @@
+# EXP57 run config: crowd2, mask_insertion single-variable arm.
+# Prereg: results/evidence/exp57_crowd2_attribution_prereg.md
+inherit_from: "configs/rgbd/bonn/crowd2.yaml"
+method_from: "configs/rgbd/experiments/exp57_crowd2_attribution/method_p11_mask_insertion.yaml"
+method: "EXP57-P11-MaskIns-crowd2"

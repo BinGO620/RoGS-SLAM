@@ -1,0 +1,19 @@
+# R2-P02 pre-flight -- arm D (alpha exit) on balloon under a FROZEN GT trajectory.
+# Twin of gtpose_deferred_balloon.yaml; allowed diff vs it = EXACTLY
+#   {method, AlphaLifecycle.mode}
+# so the pre-flight measures the CHECKPOINT-1 contrast (D vs B) with the pose
+# channel removed. Screening instrument only -- see the twin's header.
+#
+# Allowed diff vs its own self-tracked base (alpha_exit_balloon.yaml) = EXACTLY
+#   {method, Oracle.gt_pose, Training.lr.cam_rot_delta, Training.lr.cam_trans_delta}
+# -- tests/test_preflight_pose_configs.py.
+inherit_from: "configs/rgbd/experiments/r2_alpha_lifecycle/alpha_exit_balloon.yaml"
+method: "GTPose-AlphaExit"
+
+Oracle:
+  gt_pose: true
+
+Training:
+  lr:
+    cam_rot_delta: 0.0
+    cam_trans_delta: 0.0

@@ -1,0 +1,6 @@
+# WP-A FACTORIAL run config — balloon, arm K1R0L1 (mask-free, K=1 R=0 L=1).
+# Contract pinned by tests/test_wpa_factorial_configs.py (all cells share the mask-free
+# skeleton + fixed constants; only the three booleans vary).
+inherit_from: "configs/rgbd/bonn/balloon.yaml"
+method_from: "configs/rgbd/experiments/wpa_factorial/method_mf_K1R0L1.yaml"
+method: "WPA-balloon-KK1R0L1"

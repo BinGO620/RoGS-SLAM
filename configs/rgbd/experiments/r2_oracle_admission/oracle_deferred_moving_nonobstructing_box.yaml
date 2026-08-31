@@ -1,0 +1,15 @@
+# R2-P01-E2 injected row 4 (strong-trajectory regime): RGD bonn_moving_nonobstructing_box
+# seed_0 published trajectory via Oracle.pose_file (frontend itr-0 break; backend pose lr=0).
+# Base = row-2 self-tracked config. Allowed diff vs base = {method, Oracle.pose_file,
+# Training.lr.cam_rot_delta, Training.lr.cam_trans_delta} — tests/test_r2_oracle_configs.py.
+# Injected sanity ATE vs OUR GT (pre-registered, SLAM-seed independent): 2.0538 cm.
+inherit_from: "configs/rgbd/experiments/probe2_reliable_tracking/deferred_rtoff_moving_nonobstructing_box.yaml"
+method: "OracleRGD-Deferred"
+
+Oracle:
+  pose_file: "/data/monogs-ours/external_trajectories/rgd/bonn_moving_nonobstructing_box/seed_0/slam_outputs/Datasets_Bonn/2026-06-25-08-54-02/plot/trj_final.json"
+
+Training:
+  lr:
+    cam_rot_delta: 0.0
+    cam_trans_delta: 0.0

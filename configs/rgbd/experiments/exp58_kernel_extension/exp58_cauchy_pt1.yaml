@@ -1,0 +1,5 @@
+# EXP58 kernel extension: combined-prune identity, kernel=cauchy.
+# Prereg: results/evidence/exp58_kernel_extension_prereg.md
+inherit_from: "configs/rgbd/bonn/person_tracking.yaml"
+method_from: "configs/rgbd/experiments/exp55_kernel_ablation/method_combined_cauchy.yaml"
+method: "EXP58-Combined-cauchy-pt1"

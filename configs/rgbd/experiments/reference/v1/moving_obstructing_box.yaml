@@ -1,0 +1,5 @@
+inherit_from: "configs/rgbd/bonn/moving_obstructing_box.yaml"
+method_from: "configs/rgbd/experiments/reference/v1/method.yaml"
+method: "v1-reference"
+Dataset:
+  sequence: "moving_obstructing_box"

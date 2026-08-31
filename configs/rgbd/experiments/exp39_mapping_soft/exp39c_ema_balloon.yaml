@@ -1,0 +1,15 @@
+# exp39 Step C Phase 0 / 治疗臂 E（滞后残差 EMA）
+# 在 exp39 Step C Phase 0 prereg §2 的三臂中，此臂是唯一带状态的估计器。
+# 超参 β/λ/σ_min 按设计稿 §6 不扫（标准信号处理惯例值）。
+inherit_from: "configs/rgbd/experiments/exp39_mapping_soft/exp39_hard_balloon.yaml"
+method: "EXP39C-ema-balloon"
+
+MappingProbe:
+  enabled: true
+  interval: 50
+
+SemanticMask:
+  mapping_ema: true
+  mapping_ema_beta: 0.95
+  mapping_ema_lambda: 1.0
+  mapping_ema_sigma_min: 0.01

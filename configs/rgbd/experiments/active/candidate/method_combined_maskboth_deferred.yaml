@@ -1,0 +1,55 @@
+# QUEUED（R1-P03 combined-vs-prune 次要列用；不属于当前 R1-P01 pair，registry 不引用）。
+# COMBINED = mask-both backbone + deferred lifecycle（论文 secondary column：证明系统在
+# backbone 上仍达竞争力 ATE）。
+#
+# backbone 定义 = C′（V1 − CoarsePoseInit），逐字段对齐 reference/v1/method.yaml，两处
+# 显式修正（2026-07-21）：
+#   1. SemanticMask.mask_insertion: true —— 旧 launcher 的 combined overlay 漏掉了它，
+#      与 V1 mask-both 定义不符（V1 method.yaml:37-38 两项都为 true）；
+#   2. CoarsePoseInit 不启用 —— probe1（registry PROBE1-C）证伪其 const_vel 初始化为
+#      f2_xyz 漂移唯一元凶；combined 用 C′ backbone，不回收已证伪模块。
+# 旧 launcher 还用过另一组 DynamicKeyframe 参数（crisis_interval 等）；此处以
+# reference/v1/method.yaml 的 gap_cap/occ_tighten_thresh 为唯一真身。
+TriReliability:
+  enabled: false
+
+RobustTracking:
+  enabled: true
+  kernel: "huber"
+  rgb_delta: 0.10
+  depth_delta: 0.10
+
+SemanticMask:
+  enabled: true
+  model: "maskrcnn"
+  dynamic_classes: [1]
+  dilate_px: 7
+  max_mask_ratio: 0.95
+  device: "cuda"
+  soft: false
+  mask_mapping: true
+  mask_insertion: true
+
+DynamicKeyframe:
+  enabled: true
+  gap_cap: 5
+  occ_tighten_thresh: 2.0
+
+Training:
+  window_size: 12
+  pose_window: 6
+
+ReliabilitySignal:
+  enabled: true
+
+DeferredCommit:
+  enabled: true
+  reliability_confirm: true
+
+Mapping:
+  lifecycle_mode: "deferred"
+
+Results:
+  save_raw_metrics: true
+  static_bg_mask_subdir: "dynamic_mask_gtmc"
+  static_bg_band_px: [10, 25, 50]

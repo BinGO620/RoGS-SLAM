@@ -1,0 +1,34 @@
+inherit_from: "configs/rgbd/bonn/balloon.yaml"
+method: "MonoGS-Lifecycle-Smoke"
+
+# Stage 2b wiring PLUMBING smoke ONLY: exercises the insert_candidates /
+# prune_lineage frontend->backend IPC path added for the prune/deferred lifecycle
+# arms. Reduced iterations are INVALID for paper metrics -- this is an integration
+# check (does the pipeline run end-to-end on GPU without crashing?), not evidence.
+# Run with:  slam.py --config <deferred|prune>.yaml --fast --max-frames 15
+
+Training:
+  color_refinement_iterations: 0
+  init_itr_num: 30
+  mapping_itr_num: 5
+  tracking_itr_num: 5
+  kf_interval: 1
+  window_size: 4
+  pose_window: 2
+  single_thread: false
+
+DynamicKeyframe:
+  enabled: true
+  gap_cap: 1
+  occ_tighten_thresh: 2.0
+
+DeferredCommit:
+  # thresholds inherit from tum/base_config.yaml (confirming_views:2, ttl_keyframes:5,
+  # etc.); only tighten capacity + turn on synchronous CUDA error surfacing for the smoke.
+  max_candidates_per_keyframe: 500
+  cuda_debug_sync: true
+  validate_state_after_promotion: true
+
+Results:
+  eval_rendering: false
+  save_final_gaussians: false

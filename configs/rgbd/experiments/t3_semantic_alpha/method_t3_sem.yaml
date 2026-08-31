@@ -1,0 +1,26 @@
+# T3 — A-sem 臂：带严格几何门控的语义 Alpha 覆盖。与 A-off 的唯一差异 = 本文件的
+# `semantic_alpha_override`。
+#
+# 机制：语义命中 **且** 高斯在观测面前方 > delta（默认继承 delta_free_m = 0.10 m）
+# ⇒ alpha 直接置 0（不等 EMA 慢慢降）并**写回 static_prob**（拍板②：持久化是唯一实现，
+# 不提供开关）。alpha=0 当帧即过 tau_reset ⇒ 立刻 opacity reset；硬 prune 仍需
+# obs_count ≥ 3（select_carve_mask 的持久化门），所以**不要写"瞬杀"**，
+# 前几个 KF 看到 carved=0 是预期而非机制失效。
+#
+# 几何门是承重的，不是保险：坐着不动的人 z ≈ obs_at ⇒ in_front=False ⇒ 打不着，
+# 他贡献的静态结构得以保留；mask 膨胀溢到人身后墙面的那一圈也落在观测面上而非前方。
+# 误杀自限：随后每个静态证据 KF 让 alpha 按 1−0.9^k 回升，3 KF 过 tau_carve、5 KF 过 tau_reset。
+#
+# 判据（拍板③，全部 arm 内闭环，机制先于指标）：
+#   1. 机制自证（首要）：backend_timing.json 的 `alpha_sem_override_total` > 0，
+#      且日志 `alpha-sem` 行的 carved 出现非 0。若仍为 0，先看 hit / geom_front /
+#      override 三计数定位哪一环空，**不看 ATE**。
+#   2. 误杀护栏：被 override 的高斯投影落在 dynamic_mask_gtmc/（冻结 GT 运动一致性
+#      掩码，方法从未见过）静态区的比例 ≤ 5%。
+#   3. 渲染护栏：band-PSNR 相对 A-off 不劣化。
+#   4. ATE 只作观察项，不作判据。
+inherit_from: "configs/rgbd/experiments/t3_semantic_alpha/method_t3_off.yaml"
+method: "T3-AlphaSem"
+
+AlphaLifecycle:
+  semantic_alpha_override: 0.0

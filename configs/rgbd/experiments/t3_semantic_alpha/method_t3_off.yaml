@@ -1,0 +1,18 @@
+# T3 — A-off 臂：AlphaLifecycle exit，**不开**语义覆盖。A-sem 的 arm 内对照。
+#
+# ⚠ 与计划的一处偏离，必须记下来：计划写的是"复现 R2-P02 arm D 基线"，但实测
+# `r2_alpha_lifecycle/alpha_exit_balloon.yaml` resolve 出来 `SemanticMask.enabled = False`
+# —— R2-P02 arm D 是 **mask-free** 的。在 mask-free 底座上 `viewpoint.dynamic_mask`
+# 恒为 None，语义覆盖是永久 no-op，A-sem 与 A-off 会逐字节相同。
+# 所以本 arm 改建在 **combined / mask-ON prune 主干**上（lifecycle_mode: prune，
+# 不是 arm D 的 deferred）。按拍板③，判据全部在 A-off ↔ A-sem 之间闭环，
+# 不与 R2-P02 的任何数、也不与主干比，所以这次换底座不影响判决的有效性。
+inherit_from: "configs/rgbd/experiments/active/candidate/method_combined_maskboth_prune.yaml"
+method: "T3-AlphaOff"
+
+AlphaLifecycle:
+  mode: "exit"
+  # 阈值全部走 AlphaLifecycleParams 默认（tau_reset 0.35 / delta_occlude 0.05 m /
+  # tau_carve 0.20 / delta_free 0.10 m / min_obs_count 3 / ema_beta 0.9），
+  # 与 A-sem 共用；两臂唯一差异 = semantic_alpha_override。
+  semantic_alpha_override: null

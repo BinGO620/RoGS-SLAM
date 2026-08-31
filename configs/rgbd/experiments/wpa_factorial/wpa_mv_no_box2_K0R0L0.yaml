@@ -1,0 +1,6 @@
+# WP-A FACTORIAL run config — mv_no_box2, arm K0R0L0 (mask-free, K=0 R=0 L=0).
+# Contract pinned by tests/test_wpa_factorial_configs.py (all cells share the mask-free
+# skeleton + fixed constants; only the three booleans vary).
+inherit_from: "configs/rgbd/bonn/moving_nonobstructing_box2.yaml"
+method_from: "configs/rgbd/experiments/wpa_factorial/method_mf_K0R0L0.yaml"
+method: "WPA-mv_no_box2-KK0R0L0"

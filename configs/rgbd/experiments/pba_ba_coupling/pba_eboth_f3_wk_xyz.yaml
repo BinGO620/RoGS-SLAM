@@ -1,0 +1,4 @@
+# PBA 对照臂 A：完整 mask（mask_mapping=T, mask_insertion=T）。与 t2_eboth_* 同 overlay。
+inherit_from: "configs/rgbd/tum/f3_wk_xyz.yaml"
+method_from: "configs/rgbd/experiments/t2_mad_quota/method_t2_eboth.yaml"
+method: "PBA-eboth-f3_wk_xyz"

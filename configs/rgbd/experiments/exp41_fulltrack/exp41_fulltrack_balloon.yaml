@@ -1,0 +1,15 @@
+# exp41 FULL-RANGE TRACKING MASK — treatment 臂（combined 主配置 + 全程硬 tracking mask）
+#
+# 唯一差异（相对 P2-T balloon prune 主配置）：SemanticMask.hard_tracking_mask: true
+# 机制：把语义硬 mask 在 tracking 光度损失里的作用域从 warmup(10)/100 次迭代
+# 扩到全部 100 次（slam_frontend.py:1293 的 soft 旁路改为 hardsoft 路径）。
+# 依据：exp37 ENDPOINT-DECOUPLED（E/F 臂 ATE −1.42cm, 4.0× 地板）+ exp38
+# COHERENT-BIASED（方差-偏置机制三角闭合）——但那是在 mapping-OFF 装置上测的，
+# 本臂首次在完整主配置（mapping-ON + insertion-ON）上测。
+# 预注册：results/evidence/exp41_fulltrack_prereg.md
+inherit_from: "configs/rgbd/bonn/balloon.yaml"
+method_from: "configs/rgbd/experiments/active/candidate/method_combined_maskboth_prune.yaml"
+method: "Exp41-fulltrack-balloon"
+
+SemanticMask:
+  hard_tracking_mask: true   # ← 唯一差异

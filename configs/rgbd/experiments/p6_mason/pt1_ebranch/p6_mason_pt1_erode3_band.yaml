@@ -1,0 +1,10 @@
+# E factorial C arm: edge_threshold=3.0 + hard semantic exclusion + ERODE the mask by 7px
+# (track_erode_px=3, half the dilate) so only the person INTERIOR is hard-excluded, keeping
+# the person-boundary band + static-side background as constraints. Discriminator: if C works
+# but B (full hard) fails, the boundary band matters.
+inherit_from: "configs/rgbd/experiments/p6_mason/p6_mason_combined_pt1.yaml"
+Training:
+  edge_threshold: 3.0
+SemanticMask:
+  hard_tracking_mask: true
+  track_erode_px: 3

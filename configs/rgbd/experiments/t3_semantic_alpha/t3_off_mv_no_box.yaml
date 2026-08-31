@@ -1,0 +1,4 @@
+# T3 语义 Alpha 覆盖 — A-off 臂 / mv_no_box（必须 mask-ON：mask-free 下本机制恒为 no-op）。
+inherit_from: "configs/rgbd/bonn/moving_nonobstructing_box.yaml"
+method_from: "configs/rgbd/experiments/t3_semantic_alpha/method_t3_off.yaml"
+method: "T3-Aoff-mv_no_box"

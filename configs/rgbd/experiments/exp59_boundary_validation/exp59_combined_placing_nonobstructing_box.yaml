@@ -1,0 +1,5 @@
+# EXP59 boundary validation: combined arm on unseen sequence placing_nonobstructing_box.
+# Never mixed into the fixed 18-sequence denominator (prereg §2).
+inherit_from: "configs/rgbd/bonn/placing_nonobstructing_box.yaml"
+method_from: "configs/rgbd/experiments/active/candidate/method_combined_maskboth_prune.yaml"
+method: "EXP59-combined-placing_nonobstructing_box"

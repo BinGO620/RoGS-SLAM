@@ -1,0 +1,8 @@
+# P2-S pt2 de-risk, arm B: COMBINED backbone + deferred lifecycle, SELF-TRACKED on
+# Bonn person_tracking2. Twin of p2s_combined_prune_pt2.yaml; the only resolved
+# difference is Mapping.lifecycle_mode.
+#
+# See the prune twin for why pt2 is the de-risk rung and why this is screening only.
+inherit_from: "configs/rgbd/bonn/person_tracking2.yaml"
+method_from: "configs/rgbd/experiments/active/candidate/method_combined_maskboth_deferred.yaml"
+method: "Combined-Deferred"

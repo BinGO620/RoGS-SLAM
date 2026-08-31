@@ -1,0 +1,11 @@
+# exp39 Phase 1 / soft025 臂 — mv_no_box（第二序列，纯物 mover）。
+inherit_from: "configs/rgbd/experiments/t2_mad_quota/t2_eboth_mv_no_box.yaml"
+method: "EXP39-soft025-mv_no_box"
+
+SemanticMask:
+  soft_mapping: true
+  mapping_floor: 0.25
+
+MappingProbe:
+  enabled: true
+  interval: 50

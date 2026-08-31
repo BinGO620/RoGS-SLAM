@@ -1,0 +1,22 @@
+# P8-SYNC 机制探针 — f3_st_hf fix 臂（ego-residual projection），固定映射预算。
+#
+# 与 p8_sync_control_maskoff_f3_st_hf.yaml 的唯一差别 = ReliabilitySignal.ego_projection。
+# 竞态说明与「两处都要设 single_thread」的坑见那个 control config 的注释。
+#
+# 判据（exp26_discriminant_prereg.md D2）：
+#   sync control 崩(>=20cm) 且 sync fix 两 seed 都 <5cm  => 双稳态是 async race 产物，修法有效
+#   sync control 不崩(<5cm)                              => 崩溃需要竞态才发生，缺陷叙事要改写成联合正反馈
+#   sync fix 仍有一个 >=20cm                             => 双稳态是方法内在的，走 D3 查护栏
+#
+# ⚠ 诊断专用，绝不入主表（另一个工作点，ATE 与主表不可比）。
+inherit_from: "configs/rgbd/tum/f3_st_hf.yaml"
+method_from: "configs/rgbd/experiments/active/candidate/method_combined_maskoff_prune.yaml"
+method: "Diag-Sync-Fix-MaskOff"
+
+Dataset:
+  single_thread: True
+Training:
+  single_thread: True
+
+ReliabilitySignal:
+  ego_projection: true

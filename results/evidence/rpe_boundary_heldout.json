@@ -1,0 +1,118 @@
+{
+  "rule_under_test": "mask-free RPE > 1.6445 cm/frame => mask necessary (dev midpoint, preregistered 2026-08-26 be5f6d3c)",
+  "verdict": "CONFIRMED",
+  "counts": {
+    "decided": 4,
+    "agree": 4,
+    "ambiguous_excluded": 1,
+    "bistable_excluded": []
+  },
+  "rows": [
+    {
+      "seq": "obox",
+      "rpe_maskfree": 2.117,
+      "ate_maskfree": 35.23,
+      "ate_combined": 24.78,
+      "N": 1.42,
+      "predicted": "necessary",
+      "observed": "ambiguous",
+      "ate_range_maskfree": 9.32,
+      "ate_range_combined": 12.15
+    },
+    {
+      "seq": "obox2",
+      "rpe_maskfree": 2.068,
+      "ate_maskfree": 31.59,
+      "ate_combined": 19.48,
+      "N": 1.62,
+      "predicted": "necessary",
+      "observed": "necessary",
+      "ate_range_maskfree": 2.22,
+      "ate_range_combined": 4.25
+    },
+    {
+      "seq": "synchronous",
+      "rpe_maskfree": 2.424,
+      "ate_maskfree": 65.43,
+      "ate_combined": 0.47,
+      "N": 138.97,
+      "predicted": "necessary",
+      "observed": "necessary",
+      "ate_range_maskfree": 4.87,
+      "ate_range_combined": 0.07
+    },
+    {
+      "seq": "f2_desk_with_person",
+      "rpe_maskfree": 0.602,
+      "ate_maskfree": 6.1,
+      "ate_combined": 6.48,
+      "N": 0.94,
+      "predicted": "redundant",
+      "observed": "redundant",
+      "ate_range_maskfree": 0.6,
+      "ate_range_combined": 0.09
+    },
+    {
+      "seq": "f3_long_office_household",
+      "rpe_maskfree": 0.456,
+      "ate_maskfree": 1.71,
+      "ate_combined": 1.56,
+      "N": 1.09,
+      "predicted": "redundant",
+      "observed": "redundant",
+      "ate_range_maskfree": 0.34,
+      "ate_range_combined": 0.27
+    }
+  ],
+  "duplicate_runs_latest_rule": {
+    "obox2/maskfree/seed0": [
+      {
+        "run_id": "2026-08-26-17-04-20",
+        "ate": "42.1807",
+        "rpe": "2.2794"
+      },
+      {
+        "run_id": "2026-08-26-17-20-23",
+        "ate": "30.1697",
+        "rpe": "2.073"
+      }
+    ],
+    "obox2/combined/seed0": [
+      {
+        "run_id": "2026-08-26-17-05-24",
+        "ate": "23.4985",
+        "rpe": "1.6448"
+      },
+      {
+        "run_id": "2026-08-26-17-22-28",
+        "ate": "17.512",
+        "rpe": "1.7515"
+      }
+    ],
+    "synchronous/maskfree/seed0": [
+      {
+        "run_id": "2026-08-26-17-28-46",
+        "ate": "62.8765",
+        "rpe": "2.4118"
+      },
+      {
+        "run_id": "2026-08-27-01-36-13",
+        "ate": "63.4976",
+        "rpe": "2.4445"
+      }
+    ],
+    "f2_desk_with_person/combined/seed2": [
+      {
+        "run_id": "2026-08-26-23-22-44",
+        "ate": "6.984",
+        "rpe": "0.5235"
+      },
+      {
+        "run_id": "2026-08-27-01-42-59",
+        "ate": "6.4264",
+        "rpe": "0.4894"
+      }
+    ]
+  },
+  "scope": "First out-of-sample test of a band fitted on the dev-18 set (rpe_stratification_rule_test.json). tau locked at dev midpoint before any held-out run existed. n=3 seeds per cell, descriptive. mask-free RPE requires running the mask-free arm => post-hoc diagnostic, not a deployable a-priori selector."
+}

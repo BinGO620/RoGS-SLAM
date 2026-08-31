@@ -1,0 +1,4 @@
+# M2 锚点探针 — f3_st_hf。崩点 frame 371，P9 实测；本探针的主目标
+inherit_from: "configs/rgbd/tum/f3_st_hf.yaml"
+method_from: "configs/rgbd/experiments/m2_anchor_probe/method_anchor_probe.yaml"
+method: "M2-AnchorProbe-f3_st_hf"

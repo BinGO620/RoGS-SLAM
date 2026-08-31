@@ -1,0 +1,18 @@
+# P3-S6X arm `s6` on Bonn moving_nonobstructing_box2. Mirrors p3s6x_s6_balloon.yaml with the
+# base swapped to that sequence's P2-T prune run config; see that file (and this directory's
+# README) for why the arm inherits from the anchor and why the knob values may not be edited.
+#
+# NB this is the campaign's longest sequence (937 frames) and carried the project's whole-run
+# VRAM ceiling in P2-T (3.74 / 4.09 GB on the prune arm). S6 lowers the Gaussian count, so it
+# runs strictly below that ceiling — the 6 GB 2060 is not at risk here.
+inherit_from: "configs/rgbd/experiments/p2_render/p2s_combined_prune_mv_no_box2.yaml"
+method: "Combined-Prune-S6-maxpress"
+
+DeferredCommit:
+  ttl_keyframes: 1
+
+Training:
+  gaussian_th: 0.9
+
+opt_params:
+  densify_grad_threshold: 0.0005

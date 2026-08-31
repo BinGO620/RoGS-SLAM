@@ -1,0 +1,13 @@
+# exp39 Phase 1 / 对照臂 S —— 硬 mask + 尺度匹配（c = Σw/Σm，detach，RGB/depth 分别算）。
+# 存在理由：l1.mean() 分母恒为 H*W 且 isotropic 项固定尺度 ⇒ 抬 floor 同时改光度项对正则项的
+# 比例。没有这条臂，W 优于 H 无法归因于权重形状（codex 对抗审核 2026-08-22）。
+inherit_from: "configs/rgbd/experiments/t2_mad_quota/t2_eboth_balloon.yaml"
+method: "EXP39-scale025-balloon"
+
+SemanticMask:
+  mapping_scale_match: true
+  mapping_floor: 0.25
+
+MappingProbe:
+  enabled: true
+  interval: 50

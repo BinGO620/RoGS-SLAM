@@ -1,0 +1,8 @@
+# P2-T main-table run config, prune arm, on Bonn moving_nonobstructing_box. Mirrors the balloon run
+# config with the dataset swapped. The twin pair (prune/deferred) differs ONLY in
+# Mapping.lifecycle_mode; tests/test_r2_p2_t_configs.py pins this for all 6 seqs.
+# Self-tracked (no Oracle.pose_file, non-zero cam lrs) — amendment #01 §4 forbids a
+# frozen-pose main table. Scores on frozen dynamic_mask_gtmc (same support both arms).
+inherit_from: "configs/rgbd/bonn/moving_nonobstructing_box.yaml"
+method_from: "configs/rgbd/experiments/active/candidate/method_combined_maskboth_prune.yaml"
+method: "Combined-Prune"

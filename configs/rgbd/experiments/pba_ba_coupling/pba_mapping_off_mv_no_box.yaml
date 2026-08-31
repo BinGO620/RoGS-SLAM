@@ -1,0 +1,6 @@
+inherit_from: "configs/rgbd/experiments/t2_mad_quota/t2_eboth_mv_no_box.yaml"
+method: "PBA-mapping-OFF-mv_no_box"
+
+SemanticMask:
+  mask_mapping: false
+  mask_insertion: true

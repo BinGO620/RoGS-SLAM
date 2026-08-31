@@ -1,0 +1,4 @@
+# T2 自适应配额 MAD 隔离 — qfree 臂 / f3_st_hf。合同由 tests/test_t2_mad_quota_configs.py 钉住。
+inherit_from: "configs/rgbd/tum/f3_st_hf.yaml"
+method_from: "configs/rgbd/experiments/t2_mad_quota/method_t2_qfree.yaml"
+method: "T2-qfree-f3_st_hf"

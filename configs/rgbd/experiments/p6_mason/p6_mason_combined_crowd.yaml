@@ -1,0 +1,7 @@
+# P6-MASON — mask-ON discriminator run config — crowd
+# Tests whether adding semantic mask (combined backbone, mask-ON) brings the crowd
+# sequence (mask-off worst 56cm) into the RGD/DG competitive band (2-6cm).
+# Same method as P2-T combined (method_combined_maskboth_prune.yaml), dataset = crowd.
+inherit_from: "configs/rgbd/bonn/crowd.yaml"
+method_from: "configs/rgbd/experiments/active/candidate/method_combined_maskboth_prune.yaml"
+method: "Combined"

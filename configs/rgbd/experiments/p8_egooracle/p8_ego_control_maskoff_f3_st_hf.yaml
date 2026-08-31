@@ -1,0 +1,11 @@
+# P8 同机对照 — f3_st_hf mask-free 臂，ego_pose_oracle 关（= 正常完整内核）。
+#
+# 为什么需要：崩溃(35.59cm)是在 jiangwenheng 3090 上测的，oracle 要在 cb 2060 上跑。
+# 跨机比较不成立（本项目已有同 seed 两次 ATE 15.72 vs 21.42 的非确定性证据），
+# 所以必须在同一台机器上跑一个不带 oracle 的对照，oracle 才有可比基线。
+inherit_from: "configs/rgbd/tum/f3_st_hf.yaml"
+method_from: "configs/rgbd/experiments/active/candidate/method_combined_maskoff_prune.yaml"
+method: "Diag-EgoPoseControl-MaskOff"
+
+ReliabilitySignal:
+  ego_pose_oracle: false

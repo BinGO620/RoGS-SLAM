@@ -1,0 +1,10 @@
+# P2-S smoke, arm B (the method): COMBINED backbone + deferred pre-instantiation
+# lifecycle, SELF-TRACKED on Bonn balloon. Twin of p2s_combined_prune_balloon.yaml;
+# the only difference between the two resolved configs is Mapping.lifecycle_mode
+# (tests/test_p2_combined_twin_configs.py).
+#
+# See the prune twin for why this pair exists, why it is self-tracked, and what the
+# two smoke runs are meant to buy. Single seed ⇒ screening only, no verdict.
+inherit_from: "configs/rgbd/bonn/balloon.yaml"
+method_from: "configs/rgbd/experiments/active/candidate/method_combined_maskboth_deferred.yaml"
+method: "Combined-Deferred"

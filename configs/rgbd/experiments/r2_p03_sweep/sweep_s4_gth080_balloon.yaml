@@ -1,0 +1,11 @@
+# R2-P03-SWEEP level S4: native MonoGS opacity prune, moderate.
+# Base = arm A (insert-then-prune control) under the frozen RGD balloon trajectory.
+# Allowed diff vs base = {method, Training.gaussian_th} — tests/test_r2_p03_sweep_configs.py.
+# Mechanism: gaussian_th is min_opacity in densify_and_prune (slam_backend.py:489 ->
+# gaussian_model.py:1383); raising it prunes low-opacity Gaussians everywhere in the map,
+# candidate-derived or not. This is the canonical "just tune your pruning harder" knob.
+inherit_from: "configs/rgbd/experiments/r2_oracle_admission/oracle_prune_balloon.yaml"
+method: "OracleRGD-Prune-S4-gth080"
+
+Training:
+  gaussian_th: 0.8

@@ -1,0 +1,16 @@
+# P8 修法臂 — f3_st_hf mask-free + ego-residual projection（修法 B）。
+#
+# 与 p8_ego_control_maskoff_f3_st_hf.yaml 的唯一差别 = ReliabilitySignal.ego_projection。
+# 三者同机同卡同序对比：
+#   control  = 现状（完整内核，缺陷在）           实测 2060 ATE 35.29cm
+#   oracle   = GT 相对位姿喂 rigid_flow           = 任何修法的上界
+#   fix      = 本臂，投影掉自运动误差子空间       应逼近 oracle
+#
+# 护栏参数留默认（max_corr_px=20 / min_explained_frac=0.25），默认值由
+# scripts/probe_eflow_pose_sensitivity.py 在真实数据上标定，不在这里手调。
+inherit_from: "configs/rgbd/tum/f3_st_hf.yaml"
+method_from: "configs/rgbd/experiments/active/candidate/method_combined_maskoff_prune.yaml"
+method: "Diag-EgoProjectionFix-MaskOff"
+
+ReliabilitySignal:
+  ego_projection: true

@@ -1,0 +1,45 @@
+# P2-T de-confounding control, arm A: COMBINED backbone + prune lifecycle, FROZEN-POSE on
+# Bonn person_tracking. This is NOT a main-table arm — it is the mechanistic control that
+# tests hermes's blind spot (coverage collinear with tracking-difficulty; see
+# results/evidence/consult_synthesis_frozenpose.md).
+#
+# WHY THIS EXISTS. The P2-T self-tracked pt1 pair showed deferred ATE >= prune (6/6 same-sign
+# across the table, pt1 +12.6%) with compactness ratio 0.798 (<1, deferred smaller). A reviewer
+# can attribute the ATE cost to tracking difficulty (pt1 is a hard-tracking pure-person seq
+# near the MonoGS tracking limit) rather than to the lifecycle. Freezing the pose removes
+# tracking as a variable: under Oracle.pose_file the frontend skips Adam tracking and pins the
+# frame to an injected trajectory, so the only remaining channel through which the two arms can
+# differ is MAP ADMISSION / densify / keyframing.
+#
+# WHAT IS THE CORRECT OBSERVABLE (NOT ATE). Under frozen pose ATE is identical across arms BY
+# CONSTRUCTION (oracle_pose.py + slam_frontend.py:905 set oracle_skip at itr 0 and never touch
+# R_gt/T_gt; R2-P01-E2 measured balloon frozen-pose ATE 2.0618cm to 4dp on BOTH arms ALL seeds).
+# So ATE here is a CANARY (= injected-tracker ATE +/- 0.02), not an outcome. The arm-
+# discriminating observables are MAP-LEVEL: refined_num_gaussians (G_def/G_prune), and the
+# fidelity pair vac_depth / vac_psnr. See consult_synthesis_frozenpose.md Q1.
+#
+# WHAT IS ALLOWED TO DIFFER vs the self-tracked pt1 prune config: exactly
+# {Oracle.pose_file, Training.lr.cam_rot_delta, Training.lr.cam_trans_delta} — the trajectory
+# injection + backend pose freeze. The backbone and lifecycle are the self-tracked arm's,
+# unchanged. Pinned by tests/test_p2fp_frozen_pose_configs.py.
+#
+# INJECTED TRAJECTORY AUDIT (codex guardrail #6): the RGD pt1 pose file was audited before
+# this config was written — injected-tracker ATE vs GT = 5.48 cm (580 frames). This is a CLEAN
+# trajectory, not a collapse (pt2's RGD was 26.30 cm; a poor fixed trajectory would change the
+# mapping regime rather than cleanly representing "tracking difficulty removed"). Note RGD's
+# 5.48 cm is BETTER than our self-tracked pt1 prune ATE 10.97 cm, so frozen-pose pt1 maps are
+# built on a better tracking regime — recorded as a regime caveat, not a confound on the
+# arm-pair contrast (both frozen-pose arms share the same 5.48 cm trajectory).
+#
+# STATUS: apparatus only. Zero GPU runs. seed 0 screening first; MAP-EFFECT/REVERSED => 3 seed.
+inherit_from: "configs/rgbd/bonn/person_tracking.yaml"
+method_from: "configs/rgbd/experiments/active/candidate/method_combined_maskboth_prune.yaml"
+method: "CombinedFP-Prune"
+
+Oracle:
+  pose_file: "/data/monogs-ours/external_trajectories/rgd/bonn_person_tracking/seed_0/slam_outputs/Datasets_Bonn/2026-06-25-13-11-13/plot/trj_final.json"
+
+Training:
+  lr:
+    cam_rot_delta: 0.0
+    cam_trans_delta: 0.0

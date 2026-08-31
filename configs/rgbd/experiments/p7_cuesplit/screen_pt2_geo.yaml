@@ -1,0 +1,5 @@
+# P7 CUE-SPLIT screen config — pt2, ReliabilitySignal mode=geo.
+# inherit seq dataset + method overlay. Contract pinned by tests/test_p7_cuesplit_configs.py.
+inherit_from: "configs/rgbd/bonn/person_tracking2.yaml"
+method_from: "configs/rgbd/experiments/p7_cuesplit/reliability_geo_only.yaml"
+method: "CueSplit-pt2-geo"

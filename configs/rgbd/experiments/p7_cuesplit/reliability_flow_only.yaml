@@ -1,0 +1,15 @@
+# P7 CUE-SPLIT method: mask-free + ReliabilitySignal, FLOW-ONLY cue.
+#
+# 2026-08-13, ours-method 移交方法期立项。目的 = 拆解 ReliabilitySignal 固定双线索乘法
+# s=(1-e_flow)(1-v*g) 里逐 cue 的独立跟踪贡献。ours-method 的 cue 拆解（seed-0/mask-free/
+# prune/2060 --fast）显示：纯物/纯人偏好 geometry、balloon 偏好 flow、mv_no_box2 上固定
+# both 真实退化(5.68→12.72)。本 overlay = 上游 mask-free 内核下，ReliabilitySignal 只用 flow 线索。
+#
+# 合同：继承 method_combined_maskoff_prune.yaml（mask-free 主表骨干）加上 mode: "flow-only"。
+# 唯一差异 = ReliabilitySignal.mode，默认 both 与历史逐字节一致。钉住本合同的测试：
+# tests/test_p7_cuesplit_configs.py。
+inherit_from: "configs/rgbd/experiments/active/candidate/method_combined_maskoff_prune.yaml"
+
+ReliabilitySignal:
+  enabled: true
+  mode: "flow-only"

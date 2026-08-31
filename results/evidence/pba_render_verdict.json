@@ -1,0 +1,279 @@
+{
+  "balloon": {
+    "status": "complete",
+    "metrics": {
+      "PSNR": {
+        "eboth": 17.3128,
+        "PBA": 19.5428,
+        "maskfree": 19.5825,
+        "total_effect": 2.2696,
+        "worst_within_arm_range": 1.6804,
+        "decomp_ratio": 1.35,
+        "decomposable": false,
+        "lower_is_better": false,
+        "mask_helps": false,
+        "monotone_eboth_PBA_maskfree": false,
+        "share_BA": null,
+        "readable_floor": 0.74,
+        "share_BA_per_seed": {
+          "0": 1.588,
+          "1": 0.492,
+          "2": 0.948
+        },
+        "seeds_degraded_by_removing_BA_mask": "0/3",
+        "per_seed_sign_consistent": true
+      },
+      "SSIM": {
+        "eboth": 0.7937,
+        "PBA": 0.7758,
+        "maskfree": 0.7589,
+        "total_effect": -0.0348,
+        "worst_within_arm_range": 0.0378,
+        "decomp_ratio": 0.92,
+        "decomposable": false,
+        "lower_is_better": false,
+        "mask_helps": true,
+        "monotone_eboth_PBA_maskfree": true,
+        "share_BA": null,
+        "readable_floor": 1.087,
+        "share_BA_per_seed": {
+          "0": 0.293,
+          "1": 1.253,
+          "2": -4.242
+        },
+        "seeds_degraded_by_removing_BA_mask": "2/3",
+        "per_seed_sign_consistent": false
+      },
+      "LPIPS": {
+        "eboth": 0.3577,
+        "PBA": 0.3794,
+        "maskfree": 0.3982,
+        "total_effect": 0.0405,
+        "worst_within_arm_range": 0.0824,
+        "decomp_ratio": 0.49,
+        "decomposable": false,
+        "lower_is_better": true,
+        "mask_helps": true,
+        "monotone_eboth_PBA_maskfree": true,
+        "share_BA": null,
+        "readable_floor": 2.035,
+        "share_BA_per_seed": {
+          "0": 0.191,
+          "1": 1.844,
+          "2": 1.757
+        },
+        "seeds_degraded_by_removing_BA_mask": "2/3",
+        "per_seed_sign_consistent": false
+      },
+      "Depth-L1": {
+        "eboth": 19.0334,
+        "PBA": 15.9011,
+        "maskfree": 16.4897,
+        "total_effect": -2.5437,
+        "worst_within_arm_range": 3.812,
+        "decomp_ratio": 0.67,
+        "decomposable": false,
+        "lower_is_better": true,
+        "mask_helps": false,
+        "monotone_eboth_PBA_maskfree": false,
+        "share_BA": null,
+        "readable_floor": 1.499,
+        "share_BA_per_seed": {
+          "0": 3.711,
+          "1": 0.075,
+          "2": 1.281
+        },
+        "seeds_degraded_by_removing_BA_mask": "0/3",
+        "per_seed_sign_consistent": true
+      }
+    }
+  },
+  "f3_wk_xyz": {
+    "status": "complete",
+    "metrics": {
+      "PSNR": {
+        "eboth": 14.8247,
+        "PBA": 14.4957,
+        "maskfree": 13.6016,
+        "total_effect": -1.2232,
+        "worst_within_arm_range": 1.1672,
+        "decomp_ratio": 1.05,
+        "decomposable": false,
+        "lower_is_better": false,
+        "mask_helps": true,
+        "monotone_eboth_PBA_maskfree": true,
+        "share_BA": null,
+        "readable_floor": 0.954,
+        "share_BA_per_seed": {
+          "0": -0.268,
+          "1": 0.23,
+          "2": 0.813
+        },
+        "seeds_degraded_by_removing_BA_mask": "2/3",
+        "per_seed_sign_consistent": false
+      },
+      "SSIM": {
+        "eboth": 0.6159,
+        "PBA": 0.4778,
+        "maskfree": 0.3818,
+        "total_effect": -0.2341,
+        "worst_within_arm_range": 0.1265,
+        "decomp_ratio": 1.85,
+        "decomposable": false,
+        "lower_is_better": false,
+        "mask_helps": true,
+        "monotone_eboth_PBA_maskfree": true,
+        "share_BA": null,
+        "readable_floor": 0.54,
+        "share_BA_per_seed": {
+          "0": 0.337,
+          "1": 0.531,
+          "2": 0.908
+        },
+        "seeds_degraded_by_removing_BA_mask": "3/3",
+        "per_seed_sign_consistent": true
+      },
+      "LPIPS": {
+        "eboth": 0.354,
+        "PBA": 0.4702,
+        "maskfree": 0.5511,
+        "total_effect": 0.1971,
+        "worst_within_arm_range": 0.1111,
+        "decomp_ratio": 1.77,
+        "decomposable": false,
+        "lower_is_better": true,
+        "mask_helps": true,
+        "monotone_eboth_PBA_maskfree": true,
+        "share_BA": null,
+        "readable_floor": 0.564,
+        "share_BA_per_seed": {
+          "0": 0.342,
+          "1": 0.485,
+          "2": 0.94
+        },
+        "seeds_degraded_by_removing_BA_mask": "3/3",
+        "per_seed_sign_consistent": true
+      },
+      "Depth-L1": {
+        "eboth": 66.2857,
+        "PBA": 62.3809,
+        "maskfree": 75.8652,
+        "total_effect": 9.5795,
+        "worst_within_arm_range": 11.7129,
+        "decomp_ratio": 0.82,
+        "decomposable": false,
+        "lower_is_better": true,
+        "mask_helps": true,
+        "monotone_eboth_PBA_maskfree": false,
+        "share_BA": null,
+        "readable_floor": 1.223,
+        "share_BA_per_seed": {
+          "0": -1.238,
+          "1": -0.59,
+          "2": 0.343
+        },
+        "seeds_degraded_by_removing_BA_mask": "1/3",
+        "per_seed_sign_consistent": false
+      }
+    }
+  },
+  "mv_no_box": {
+    "status": "incomplete",
+    "have": [
+      "PBA"
+    ],
+    "missing": [
+      "eboth",
+      "maskfree"
+    ]
+  },
+  "pt1": {
+    "status": "complete",
+    "metrics": {
+      "PSNR": {
+        "eboth": 16.5928,
+        "PBA": 16.4717,
+        "maskfree": 16.7613,
+        "total_effect": 0.1684,
+        "worst_within_arm_range": 1.17,
+        "decomp_ratio": 0.14,
+        "decomposable": false,
+        "lower_is_better": false,
+        "mask_helps": false,
+        "monotone_eboth_PBA_maskfree": false,
+        "share_BA": null,
+        "readable_floor": 6.946,
+        "share_BA_per_seed": {
+          "0": 2.408,
+          "1": 0.077,
+          "2": 1.775
+        },
+        "seeds_degraded_by_removing_BA_mask": "1/3",
+        "per_seed_sign_consistent": false
+      },
+      "SSIM": {
+        "eboth": 0.7501,
+        "PBA": 0.7068,
+        "maskfree": 0.6992,
+        "total_effect": -0.0509,
+        "worst_within_arm_range": 0.0503,
+        "decomp_ratio": 1.01,
+        "decomposable": false,
+        "lower_is_better": false,
+        "mask_helps": true,
+        "monotone_eboth_PBA_maskfree": true,
+        "share_BA": null,
+        "readable_floor": 0.989,
+        "share_BA_per_seed": {
+          "0": 0.206,
+          "1": 3.421,
+          "2": 0.979
+        },
+        "seeds_degraded_by_removing_BA_mask": "3/3",
+        "per_seed_sign_consistent": true
+      },
+      "LPIPS": {
+        "eboth": 0.4423,
+        "PBA": 0.4779,
+        "maskfree": 0.4892,
+        "total_effect": 0.0469,
+        "worst_within_arm_range": 0.0613,
+        "decomp_ratio": 0.77,
+        "decomposable": false,
+        "lower_is_better": true,
+        "mask_helps": true,
+        "monotone_eboth_PBA_maskfree": true,
+        "share_BA": null,
+        "readable_floor": 1.307,
+        "share_BA_per_seed": {
+          "0": -0.362,
+          "1": 4.97,
+          "2": 0.82
+        },
+        "seeds_degraded_by_removing_BA_mask": "2/3",
+        "per_seed_sign_consistent": false
+      },
+      "Depth-L1": {
+        "eboth": 16.8137,
+        "PBA": 19.1708,
+        "maskfree": 19.4886,
+        "total_effect": 2.6749,
+        "worst_within_arm_range": 5.208,
+        "decomp_ratio": 0.51,
+        "decomposable": false,
+        "lower_is_better": true,
+        "mask_helps": true,
+        "monotone_eboth_PBA_maskfree": true,
+        "share_BA": null,
+        "readable_floor": 1.947,
+        "share_BA_per_seed": {
+          "0": -0.05,
+          "1": -4.992,
+          "2": 1.379
+        },
+        "seeds_degraded_by_removing_BA_mask": "2/3",
+        "per_seed_sign_consistent": false
+      }
+    }
+  }
+}

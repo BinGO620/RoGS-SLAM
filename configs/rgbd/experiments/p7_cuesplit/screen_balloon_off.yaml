@@ -1,0 +1,5 @@
+# P7 CUE-SPLIT screen config — balloon, ReliabilitySignal mode=off.
+# inherit seq dataset + method overlay. Contract pinned by tests/test_p7_cuesplit_configs.py.
+inherit_from: "configs/rgbd/bonn/balloon.yaml"
+method_from: "configs/rgbd/experiments/p7_cuesplit/reliability_screen_off_body.yaml"
+method: "CueSplit-balloon-off"

@@ -1,0 +1,7 @@
+# PBA 处理臂：只关 BA 侧 mask。与 pba_eboth_pt1 的唯一差异 = mask_mapping。
+inherit_from: "configs/rgbd/experiments/pba_ba_coupling/pba_eboth_pt1.yaml"
+method: "PBA-mapping-OFF-pt1"
+
+SemanticMask:
+  mask_mapping: false
+  mask_insertion: true

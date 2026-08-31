@@ -1,0 +1,6 @@
+# EXP57 single-variable intervention: P11 + SemanticMask.mask_insertion only.
+# DynKF/Reliability stay off; this isolates the last untested switch from EXP56.
+inherit_from: "configs/rgbd/experiments/p11_maskonly/method_p11_maskonly.yaml"
+
+SemanticMask:
+  mask_insertion: true

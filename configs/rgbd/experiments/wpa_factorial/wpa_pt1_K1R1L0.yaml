@@ -1,0 +1,6 @@
+# WP-A FACTORIAL run config — pt1, arm K1R1L0 (mask-free, K=1 R=1 L=0).
+# Contract pinned by tests/test_wpa_factorial_configs.py (all cells share the mask-free
+# skeleton + fixed constants; only the three booleans vary).
+inherit_from: "configs/rgbd/bonn/person_tracking.yaml"
+method_from: "configs/rgbd/experiments/wpa_factorial/method_mf_K1R1L0.yaml"
+method: "WPA-pt1-KK1R1L0"

@@ -1,0 +1,10 @@
+# T2 — control（mask-free 基线）。与 E-flow / quota-free 的唯一差异 = mad_exclusion。
+#
+# 显式写 `mad_exclusion: false` 而不是留空：默认值本来就是 false，写出来是为了让
+# frames.csv 的 `mad_exclusion` 列在 control 上也有据可查——一个臂必须能在盘上
+# **自证**它跑的是哪个机制（P8 ego_* 静默丢列事故的教训）。
+inherit_from: "configs/rgbd/experiments/active/candidate/method_combined_maskoff_prune.yaml"
+method: "T2-Control-MaskFree"
+
+ReliabilitySignal:
+  mad_exclusion: false

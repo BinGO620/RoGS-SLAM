@@ -1,0 +1,4 @@
+inherit_from: "configs/rgbd/experiments/wpb_flowmask/flowmask_vanilla.yaml"
+SemanticMask:
+  flow_quantile: 0.95
+

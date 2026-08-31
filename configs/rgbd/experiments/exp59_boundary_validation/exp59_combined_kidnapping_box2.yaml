@@ -1,0 +1,5 @@
+# EXP59 boundary validation: combined arm on unseen sequence kidnapping_box2.
+# Never mixed into the fixed 18-sequence denominator (prereg §2).
+inherit_from: "configs/rgbd/bonn/kidnapping_box2.yaml"
+method_from: "configs/rgbd/experiments/active/candidate/method_combined_maskboth_prune.yaml"
+method: "EXP59-combined-kidnapping_box2"

@@ -1,0 +1,28 @@
+# M2 — 锚点只读探针（Design B 的生死门）。
+#
+# 问题：追踪崩溃前，**还在约束位姿的像素集合**是否先变薄 / 先变坏？
+# 若是，Design B 的"锚点存活率触发关键帧"才有信号可用；若否，M3（48 run）不跑。
+#
+# 本 overlay 与主干的唯一差异 = `DynamicKeyframe.anchor_probe`。探针整块
+# `torch.no_grad()`，不进 combined_soft、不改位姿、不参与关键帧判据 ⇒
+# ATE 必须与同 seed 的主干 run 一致（异步时序抖动除外，见下）。
+#
+# ⚠ 判读注意（exp26 实测）：f3_st_hf 在**同机、同 config、同 seed** 下跑出过
+# 2.99 与 33.70 两种结果（异步后端时序）。所以
+#   ① "探针 ON/OFF 的 ATE 一样"**不能**用来证明 byte-identical——那要靠代码审查 + 单测
+#      （tests/test_anchor_probe.py）；
+#   ② 崩溃本身是概率事件，必须多 seed 才能捞到一条崩的轨迹来读拐点。
+#
+# 判据（在 f3_st_hf 崩点 frame 371 附近，P9 实测：前 350 帧四臂一致 ~1.6 cm，
+# 371 一步翻倍到 3.32）：`anchor_frac_*` 或 `anchor_ratio_*` 是否有可见拐点。
+# 参照量 = `flow_valid_frac` 在 f368-380 从 0.54 掉到 0.43（−20%），锚点量至少同级。
+#   有拐点 → 进 M3（锚点触发关键帧，48 run）
+#   无拐点 → Design B 判负，M3 不跑
+inherit_from: "configs/rgbd/experiments/active/candidate/method_combined_maskoff_prune.yaml"
+method: "M2-AnchorProbe"
+
+DynamicKeyframe:
+  anchor_probe: true
+  anchor_thresholds: [0.80, 0.90, 0.95]
+  # 锚点只取强边缘像素（真正携带位姿信息的那些）。关掉则退化为整个 RGB support。
+  anchor_require_grad_mask: true

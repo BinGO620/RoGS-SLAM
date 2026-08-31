@@ -1,0 +1,4 @@
+# P5-VANILLA run config — mv_no_box prune vanilla-core (H-GEN, screening seed0).
+inherit_from: "configs/rgbd/bonn/moving_nonobstructing_box.yaml"
+method_from: "configs/rgbd/experiments/p5_vanilla/method_p5_vanilla_prune.yaml"
+method: "Vanilla-Prune"

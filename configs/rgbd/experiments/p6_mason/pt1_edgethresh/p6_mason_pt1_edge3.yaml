@@ -1,0 +1,4 @@
+# P6-MASON pt1 H-d grad: edge_threshold=3.0 (keep only stronger edges/room lines)
+inherit_from: "configs/rgbd/experiments/p6_mason/p6_mason_combined_pt1.yaml"
+Training:
+  edge_threshold: 3.0

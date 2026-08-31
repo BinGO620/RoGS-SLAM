@@ -1,0 +1,349 @@
+## SLAM parameters
+Results:
+  save_results: True
+  save_dir: "results"
+  save_trj: True
+  save_trj_kf_intv: 5
+  use_gui: False
+  eval_rendering: False
+  use_wandb: False
+  save_raw_metrics: True
+  save_final_tracking: True
+  save_final_mapping: False
+  save_final_gaussians: True
+  success_threshold_cm: 5.0
+  tracking_raw_path: "results/tables/tracking_raw.csv"
+  mapping_raw_path: "results/tables/mapping_raw.csv"
+  efficiency_raw_path: "results/tables/efficiency_raw.csv"
+
+Reliability:
+  enabled: false
+  mode: "observe"        # off / observe / tracking / mapping / both
+  type: "soft"           # soft / hard
+  tau_depth: 0.05
+  tau_rgb: 0.10
+  r_min: 0.05
+  hard_threshold: 0.50
+  min_mean_reliability: 0.20
+  loss_eps: 1.0e-6
+  save_visualization: true
+  save_interval: 20
+  save_opacity: true
+  use_ema: false
+  ema_beta: 0.8
+
+TriReliability:
+  enabled: false
+  mode: "observe"        # off / observe / tracking / mapping / both
+  tau_depth: 0.10
+  tau_rgb: 0.20
+  min_static_weight: 0.50
+  unmapped_opacity_threshold: 0.35
+  opacity_dynamic_threshold: 0.60
+  boundary_rgb_threshold: 0.08
+  boundary_depth_threshold: 0.08
+  boundary_suppression: 1.00
+  boundary_gate_power: 1.00
+  initial_static_prob: 0.70
+  # P* (2026-08-07): surgical color-refinement opacity-freeze counterfactual knob.
+  # Independent of apply_color_refinement_static_guard (which swaps the L1 loss AND
+  # freezes xyz/scaling/rotation). This one freezes ONLY opacity during the 26000-iter
+  # refinement, to test whether the op<0.01 tail is a refinement soft-suppression
+  # artifact vs a functionally-useful opacity DOF. See p3_terminal_mech_autopsy.md.
+  color_refinement_freeze_opacity: false
+  memory_beta: 0.90
+  update_gaussian_memory: true
+  apply_insertion_gate: false
+  insertion_dynamic_threshold: 0.45
+  max_insertion_gate_ratio: 0.35
+  apply_color_refinement_static_guard: false
+  color_refinement_static_floor: 0.25
+  color_refinement_loss_eps: 1.0e-6
+  freeze_color_refinement_geometry: true
+  # P1a / TR-T (H1): hard-exclude dynamic pixels from the tracking loss (default-off)
+  apply_tracking_dynamic_mask: false
+  tracking_dynamic_threshold: 0.45     # dynamic_evidence > this -> excluded from tracking L1
+  max_tracking_mask_ratio: 0.60        # if masked ratio exceeds this, fall back to vanilla tracking
+  tracking_loss_eps: 1.0e-6
+  save_visualization: true
+  save_interval: 20
+
+RobustTracking:
+  enabled: false
+  kernel: "huber"        # huber / cauchy / gm
+  rgb_delta: 0.10        # photometric residual scale (RGB in [0,1])
+  depth_delta: 0.10      # depth residual scale (meters)
+  loss_eps: 1.0e-6
+
+ReliableTracking:
+  enabled: false
+  opacity_min: 0.95
+  rgb_median_scale: 8.0
+  depth_median_scale: 10.0
+  min_support_ratio: 0.10
+  border_weight_min: 0.40
+  border_weight_max: 0.80
+  border_max_width: 60
+  border_max_height: 40
+  border_projection_max_points: 20000
+  soft_strength: 1.0
+  soft_floor: 0.10
+
+VisibilityWindow:
+  enabled: false
+  covis_weight: 0.50
+  sample_rays: 2048
+  complement_ray_depth_m: 2.0
+  image_edge_px: 20
+  protect_newest: 2
+  reliability_dynamic_tau: 0.5   # open-set complement source: reliability_s < tau = dynamic (s in [0,1])
+
+BootstrapVO:
+  enabled: false
+  max_frames: 3
+  orb_features: 2000
+  ratio_test: 0.75
+  min_inliers: 100
+  min_inlier_ratio: 0.30
+  ransac_iterations: 200
+  reprojection_threshold_px: 3.0
+  confidence: 0.999
+  min_depth: 0.05
+  max_depth: 5.0
+  min_confirmed_pixels: 1000
+
+DeferredCommit:
+  enabled: false
+  confirming_views: 2
+  reject_contradictions: 2
+  ttl_keyframes: 5
+  max_pending_keyframes: 6
+  max_candidates_per_keyframe: 5000
+  promotion_downsample: 1
+  promotion_min_scale_m: 0.001
+  promotion_max_scale_m: 0.02
+  depth_abs_m: 0.03
+  depth_rel: 0.02
+  color_l1: 0.15
+  fast_depth_abs_m: 0.01
+  fast_color_l1: 0.05
+  fast_promotion: false
+  explained_opacity: 0.80
+  unmapped_opacity_threshold: 0.35
+  validate_state_after_promotion: true
+  cuda_debug_sync: false
+
+ReliabilitySignal:
+  # Class-agnostic reliability signal s=(1-e_flow)(1-v*g) (method #8, utils/reliability_signal.py).
+  # enabled=false => INERT (baselines/ablation-off untouched, like DeferredCommit above); a
+  # method overlay flips enabled:true (+ optional DeferredCommit.reliability_confirm) to gate the
+  # tracking down-weight and, when confirming, the candidate C+/C- evidence. RGB-D only. Needs a
+  # frozen flow_raft/ artifact (scripts/build_flow_raft.py --config <this seq's cfg>).
+  enabled: false
+  warmup_iters: 10
+  flow_subdir: "flow_raft"
+  # flow_scale_floor CALIBRATED (doc-10 #7 user-locked rule): offline GT-pose probe on f2_xyz
+  # (static no-harm worst case, 499 frames) => raw ||f_obs-f_static|| noise floor 1.1px med /
+  # 1.6px p90; floor 2.0px drops static e_flow>0.5 to 0% med / 1.6% p90 (no-harm) while the obox
+  # mover stays flagged 9.6% med, concentration 0.98 (6x separation). floor 3.0 over-suppresses
+  # the mover (1.7%). Pure-MAD ablation arm = set 0.0. Derivation: scripts/probe_reliability_floor.py.
+  flow_scale_floor: 2.0
+  geo_scale_floor: 0.0   # pure-MAD; g is opacity-gated so its main static-FP is already suppressed (calibration deferred)
+  # P2-DBAphoto (2026-08-03): persist the EXACT online w_map + its warmup render context
+  # (render_depth, opacity, prev/cur W2C poses) per frame to disk, so DBA-lite can re-run
+  # a reliability-weighted geometric oracle on the SAME weights the online tracker froze
+  # (NOT a post-hoc recompute from final PLY, which co-adapts the map and biases the gate).
+  # Default-off; only a DBA-photo campaign run turns it on. KF-only is insufficient
+  # (DBA needs prev frame-1 pose + the full w_map, not just KFs), so this stashes ALL
+  # frames where the signal was frozen. See results/evidence/dba_photo_weighted_design.md
+  # §synthesis (consult_codex_dbaphoto_design.md) for why exact-online matters.
+  stash_dba_weights: false
+
+StaticEvidence:
+  enabled: false
+  protocol_version: "static-evidence-v1"
+  min_depth: 0.01
+  depth_abs_m: 0.03
+  depth_rel: 0.02
+  reliable_opacity_threshold: 0.80
+  mapped_opacity_threshold: 0.35
+
+FullFramePose:
+  enabled: false
+  source_offsets: [1, 2]
+  orb_features: 2000
+  ratio_test: 0.75
+  min_inliers: 100
+  min_inlier_ratio: 0.30
+  reprojection_threshold_px: 3.0
+  ransac_iterations: 200
+  confidence: 0.999
+  min_depth: 0.05
+  max_depth: 5.0
+  min_static_support_ratio: 0.10
+  max_conflict_ratio: 0.60
+  max_rotation_deg: 12.0
+  max_translation_m: 0.20
+  map_loss_ratio_gate: 1.05
+  prior_weight: 0.01
+  prior_iterations: 20
+
+FlowResidualTracking:
+  enabled: false
+  residual_flow_threshold_px: 2.0   # |measured - ego-predicted| flow (px) > this -> dynamic
+  max_mask_ratio: 0.90              # if masked ratio exceeds this, fall back to vanilla tracking
+  min_depth: 0.01
+  warmup_iters: 10                  # unmasked pose warm-up iters before computing the mask
+
+SemanticMask:
+  enabled: false
+  model: "deeplabv3"      # deeplabv3 (light) / maskrcnn (stronger, heavier)
+  dynamic_classes: [15]   # deeplabv3/VOC person=15; maskrcnn/COCO person=1
+  dilate_px: 5
+  max_mask_ratio: 0.95
+  device: "cuda"          # cuda / cpu
+  soft: false             # P3a: soft down-weight (person softmax prob) instead of hard mask
+  soft_strength: 1.0      # weight = clamp(1 - soft_strength*person_prob, soft_floor, 1)
+  soft_floor: 0.10
+  mask_mapping: false     # also exclude dynamic pixels from the MAPPING loss (not just tracking)
+  mask_insertion: false   # also gate dynamic pixels OUT of Gaussian insertion (zero person depth -> no dynamic Gaussians enter the map)
+
+MaskQA:                   # P1: detection-gap fix -- reuse last good mask on a Mask R-CNN miss
+  enabled: false
+  recent_window: 5        # frames of coverage history kept
+  min_history: 3          # need this many past frames before flagging a gap
+  presence_thresh: 0.02   # recent median coverage >= this => person was recently present
+  gap_abs_thresh: 0.005   # current coverage < this => (near) empty => candidate detection gap
+  max_consecutive_propagate: 3  # cap consecutive propagated frames (avoid stale mask)
+  propagate_dilate_px: 5  # dilate the reused mask to cover person motion during the gap
+
+StaticProb:
+  enabled: false
+  initial_static_prob: 0.7
+  memory_beta: 0.90       # EMA: static_prob = beta*prev + (1-beta)*(1-residual_evidence)
+  residual_tau: 0.15      # residual scale for per-pixel dynamic evidence
+  soft_strength: 1.0      # tracking weight = robust x clamp(1 - strength*(1-static_prob), floor, 1)
+  soft_floor: 0.10
+
+CoarsePoseInit:           # P4a Lever A: robust coarse pose init before Adam refine
+  enabled: false
+  mode: "const_vel"       # const_vel (ORB3 motion model) / icp (const_vel seed + robust ICP) / masked_icp (icp + person masked on BOTH endpoints, SPEC-1)
+  min_depth: 0.05         # meters; ICP depth validity range (TUM indoor)
+  max_depth: 5.0
+  min_inlier_ratio: 0.30  # ICP fallback to seed if inlier ratio drops below this
+  min_points: 2000        # ICP fallback to seed if fewer valid correspondences
+  best_fraction: 0.70     # keep smallest-|residual| fraction (walking-person robustness)
+  max_update_rot_deg: 8.0 # reject an ICP GN step exceeding this rotation
+  max_update_trans: 0.15  # reject an ICP GN step exceeding this translation (meters)
+  # masked_icp (SPEC-1) extras: person masked on BOTH endpoints + total-delta guard.
+  huber_delta: 0.0        # >0 -> fixed Huber delta (m); 0 -> adaptive 1.5*MAD (icp default)
+  require_masks: true     # masked_icp falls back to const_vel if a person mask is missing
+  max_total_rot_deg: 12.0 # reject full ICP result if it rotates >this (deg) from const_vel seed
+  max_total_trans: 0.20   # reject full ICP result if it translates >this (m) from seed
+
+Oracle:                   # diagnostic only (default-off): isolate tracking vs mapping
+  gt_pose: false          # force GT camera pose + skip Adam tracking; mapping runs normally
+  pose_file: ""           # inject a FIXED external trajectory (JSON {trj_id,trj_est,trj_gt},
+                          # per-frame C2W; GT-anchored into the dataset world by utils/oracle_pose).
+                          # Skips Adam tracking like gt_pose; R_gt stays REAL GT so the final ATE
+                          # row = injected-vs-GT (sanity anchor == borrowed tracker's published ATE).
+                          # Strict fixed-trajectory runs must also freeze the backend pose refine:
+                          # Training.lr.cam_rot_delta: 0.0 + cam_trans_delta: 0.0 (config-only).
+
+DBALite:                  # P2 (doc 14): learning-free mask-aware RGB-D KF pose-graph BA
+  diagnostic: false       # P2a: masked-edge conditioning diagnostic at run end (read-only)
+  oracle: false           # GT-oracle falsifier: does masked geometry prefer GT? (read-only)
+  enabled: false          # P2b: apply the v0 KF pose-graph BA at run end (writes KF poses)
+  opt_offsets: [1, 2, 5]  # temporal + long-range geometric optimization edges
+  val_offsets: [3]        # held-out validation edges (guard vs train-edge overfit; no GT)
+  lm_lambda0: 0.001       # LM damping init
+  v0_iters: 12            # max GN/LM iterations
+  val_tol: 1.10           # reject (poses unchanged) if held-out val residual grows > this factor
+  lm_prior: 5.0           # pose-prior weight: anchor each KF to its photometric estimate (0=geometry-only)
+  stride: 4               # semi-dense source-pixel stride
+  grad_thresh: 0.02       # keep source pixels with depth-gradient (geometry) above this
+  min_depth: 0.05
+  max_depth: 5.0
+  depth_gate: 0.10        # reject a correspondence with depth mismatch > this (m)
+  normal_deg: 30.0        # reject a correspondence with normal disagreement > this (deg)
+  min_points: 500         # min inlier correspondences for a valid edge
+  edge_offsets: [1, 2]    # temporal KF edges (i,i+1),(i,i+2)
+  cond_warn: 10000.0      # Hessian condition number above this = ill-conditioned edge
+  probe_rot_deg: 2.0      # GN-recovery known-perturbation rotation (deg)
+  probe_trans: 0.03       # GN-recovery known-perturbation translation (m)
+  gn_iters: 5             # GN steps from the perturbed pose in the residual-reduction probe
+  max_update_rot_deg: 5.0 # per-step GN rotation cap in the probe
+  max_update_trans: 0.10  # per-step GN translation cap (m) in the probe
+
+Dataset:
+  type: 'tum'
+  sensor_type: 'depth'
+  pcd_downsample: 128
+  pcd_downsample_init: 32
+  adaptive_pointsize: True
+  point_size: 0.01
+
+Training:
+  color_refinement_iterations: 26000
+  #Initialization
+  init_itr_num: 1050
+  init_gaussian_update: 100
+  init_gaussian_reset: 500
+  init_gaussian_th: 0.005
+  init_gaussian_extent: 30
+  # Tracking and Mapping
+  tracking_itr_num: 100
+  mapping_itr_num: 150
+  gaussian_update_every: 150
+  gaussian_update_offset: 50
+  gaussian_th: 0.7
+  gaussian_extent: 1.0
+  gaussian_reset: 2001
+  size_threshold: 20
+  kf_interval: 5
+  window_size: 8
+  pose_window: 3
+  edge_threshold: 1.1
+  rgb_boundary_threshold: 0.01
+  alpha: 0.9
+  kf_translation: 0.08
+  kf_min_translation: 0.05
+  kf_overlap: 0.9
+  kf_cutoff: 0.3
+  prune_mode: 'slam'
+  single_thread: False
+  spherical_harmonics: False
+  lr:
+    cam_rot_delta: 0.003
+    cam_trans_delta: 0.001
+
+## 3DGS default parameters
+opt_params:
+  iterations: 30000
+  position_lr_init: 0.00016
+  position_lr_final: 0.0000016
+  position_lr_delay_mult: 0.01
+  position_lr_max_steps: 30000
+  feature_lr: 0.0025
+  opacity_lr: 0.05
+  scaling_lr: 0.001
+  rotation_lr: 0.001
+  percent_dense: 0.01
+  lambda_dssim: 0.2
+  densification_interval: 100
+  opacity_reset_interval: 3000
+  densify_from_iter: 500
+  densify_until_iter: 15000
+  densify_grad_threshold: 0.0002
+
+model_params:
+  sh_degree: 0
+  source_path: ""
+  model_path: ""
+  resolution: -1
+  white_background: False
+  data_device: "cuda"
+
+pipeline_params:
+  convert_SHs_python: False
+  compute_cov3D_python: False

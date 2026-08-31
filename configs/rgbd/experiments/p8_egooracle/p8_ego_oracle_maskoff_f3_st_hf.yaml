@@ -1,0 +1,16 @@
+# P8 ego-pose oracle 诊断 — f3_st_hf mask-free 臂。
+#
+# 目的：证明/证伪 eflow_pose_error_defect.md 的闭环因果。
+# `ReliabilitySignal.ego_pose_oracle: true` 只把 GT 相对位姿喂给 rigid_flow 的
+# 自运动预测，**跟踪照常优化自己的位姿，GT 不进入位姿估计**。
+# 若 f3_st_hf 的 ATE 从 ~35cm 回到 ~2cm 量级 ⇒ 缺陷因果坐实，
+# 且这就是任何真实修法能达到的上界。
+#
+# ⚠ 诊断专用，绝不入主表、绝不作为方法臂。run 的 frames.csv 里
+#    ego_pose_oracle=1 列自证模式。
+inherit_from: "configs/rgbd/tum/f3_st_hf.yaml"
+method_from: "configs/rgbd/experiments/active/candidate/method_combined_maskoff_prune.yaml"
+method: "Diag-EgoPoseOracle-MaskOff"
+
+ReliabilitySignal:
+  ego_pose_oracle: true

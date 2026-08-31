@@ -1,0 +1,59 @@
+{
+  "noise_floor_rel": 0.06,
+  "sequences": {
+    "balloon": {
+      "verdict": "SOFT-WORSE",
+      "detail": "W is worse than H beyond the noise floor",
+      "arms": {
+        "hard": {
+          "ate_cm": 3.1526,
+          "probe_rows": 703,
+          "applied_frac": 0.1570527530454623,
+          "audit_area_same_frames": 0.12388123402323911,
+          "dyn_share_map": 0.0
+        },
+        "soft025": {
+          "ate_cm": 8.6948,
+          "probe_rows": 706,
+          "applied_frac": 0.15995769972681073,
+          "audit_area_same_frames": 0.12388123402323911,
+          "dyn_share_map": 0.315406393015059
+        },
+        "scale025": {
+          "ate_cm": 2.7421,
+          "probe_rows": 687,
+          "applied_frac": 0.1570527530454623,
+          "audit_area_same_frames": 0.12388123402323911,
+          "dyn_share_map": 0.0
+        }
+      }
+    },
+    "mv_no_box": {
+      "verdict": "SCALE-EXPLAINED",
+      "detail": "W beats H but not S: the gain tracks loss scale",
+      "arms": {
+        "hard": {
+          "ate_cm": 2.8846,
+          "probe_rows": 1185,
+          "applied_frac": 0.0,
+          "audit_area_same_frames": null,
+          "dyn_share_map": 0.0
+        },
+        "soft025": {
+          "ate_cm": 2.6875,
+          "probe_rows": 1365,
+          "applied_frac": 0.0,
+          "audit_area_same_frames": null,
+          "dyn_share_map": 0.0
+        },
+        "scale025": {
+          "ate_cm": 2.7363,
+          "probe_rows": 1213,
+          "applied_frac": 0.0,
+          "audit_area_same_frames": null,
+          "dyn_share_map": 0.0
+        }
+      }
+    }
+  }
+}

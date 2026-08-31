@@ -1,0 +1,18 @@
+# P3-S6X arm `s6` on Bonn person_tracking2 (pt2). Mirrors p3s6x_s6_balloon.yaml with the base
+# swapped to that sequence's P2-T prune run config; see that file (and this directory's README)
+# for why the arm inherits from the anchor and why the knob values may not be edited.
+#
+# pt2 is the sequence where compactness REVERSED in P2-T (G_def/G_prune > 1) and where the
+# deferred arm drew the ATE no-harm flag. Whatever this campaign reads here is therefore a
+# per-sequence statement first; discipline ⑨ forbids averaging a direction that flips.
+inherit_from: "configs/rgbd/experiments/p2_render/p2s_combined_prune_pt2.yaml"
+method: "Combined-Prune-S6-maxpress"
+
+DeferredCommit:
+  ttl_keyframes: 1
+
+Training:
+  gaussian_th: 0.9
+
+opt_params:
+  densify_grad_threshold: 0.0005

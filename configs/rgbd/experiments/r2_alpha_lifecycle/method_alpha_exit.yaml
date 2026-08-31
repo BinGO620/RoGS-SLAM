@@ -1,0 +1,13 @@
+# R2-P02 Fork B -- arm D (exit): alpha-driven opacity-reset (mechanism A) +
+# persistence-gated free-space carve (mechanism B). This is the CHECKPOINT-1
+# mechanism: D must beat passive deferred (arm B) on vacated-region ghost.
+# = deferred base (hard candidate ENTRY preserved) + AlphaLifecycle exit pass.
+# Thresholds default from AlphaLifecycleParams (utils/alpha_lifecycle.py):
+# tau_reset 0.35 / delta_occlude 0.05m / tau_carve 0.20 / delta_free 0.10m /
+# min_obs_count 3 / ema_beta 0.9 -- single source shared by C/D/E. Add explicit
+# AlphaLifecycle keys here ONLY to tune, and mirror the change into arm E.
+inherit_from: "configs/rgbd/experiments/probe2_reliable_tracking/method_deferred_track_off.yaml"
+method: "AlphaExit-RToff"
+
+AlphaLifecycle:
+  mode: "exit"

@@ -1,0 +1,5 @@
+# P6-MASON — mask-ON discriminator run config — f3_wk_xyz (TUM walking translation)
+# mask-off 26.84cm (worst walking), vs RGD 2.01 / DG 1.70 /WildGS 1.22. Regression probe.
+inherit_from: "configs/rgbd/tum/f3_wk_xyz.yaml"
+method_from: "configs/rgbd/experiments/active/candidate/method_combined_maskboth_prune.yaml"
+method: "Combined"

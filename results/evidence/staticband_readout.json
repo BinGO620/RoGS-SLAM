@@ -1,0 +1,179 @@
+{
+  "balloon": {
+    "A_eboth": {
+      "0": {
+        "ff_psnr": 17.3835,
+        "ff_ssim": 0.8058,
+        "sb_psnr": 18.7785,
+        "sb_depth": 8.0055,
+        "ghost_psnr_db": -4.4247,
+        "freshvac_ghost_db": -2.6243,
+        "sb_frames": 88,
+        "n_gauss": 41646,
+        "vac_support": 203284
+      },
+      "1": {
+        "ff_psnr": 17.5804,
+        "ff_ssim": 0.8065,
+        "sb_psnr": 18.9999,
+        "sb_depth": 8.0813,
+        "ghost_psnr_db": -4.1613,
+        "freshvac_ghost_db": -2.7505,
+        "sb_frames": 88,
+        "n_gauss": 34866,
+        "vac_support": 203284
+      },
+      "2": {
+        "ff_psnr": 16.9746,
+        "ff_ssim": 0.7687,
+        "sb_psnr": 18.0888,
+        "sb_depth": 10.2711,
+        "ghost_psnr_db": -4.6533,
+        "freshvac_ghost_db": -2.6403,
+        "sb_frames": 88,
+        "n_gauss": 24921,
+        "vac_support": 203284
+      }
+    },
+    "B_insoff": {
+      "0": {
+        "ff_psnr": 16.3548,
+        "ff_ssim": 0.7494,
+        "sb_psnr": 17.3309,
+        "sb_depth": 10.5969,
+        "ghost_psnr_db": -3.2482,
+        "freshvac_ghost_db": -2.0756,
+        "sb_frames": 88,
+        "n_gauss": 25910,
+        "vac_support": 203284
+      },
+      "1": {
+        "ff_psnr": 17.6056,
+        "ff_ssim": 0.8051,
+        "sb_psnr": 19.0706,
+        "sb_depth": 8.1372,
+        "ghost_psnr_db": -4.3281,
+        "freshvac_ghost_db": -2.6888,
+        "sb_frames": 88,
+        "n_gauss": 36108,
+        "vac_support": 203284
+      },
+      "2": {
+        "ff_psnr": 17.3863,
+        "ff_ssim": 0.8063,
+        "sb_psnr": 18.8063,
+        "sb_depth": 7.9277,
+        "ghost_psnr_db": -4.0623,
+        "freshvac_ghost_db": -2.5148,
+        "sb_frames": 88,
+        "n_gauss": 36725,
+        "vac_support": 203284
+      }
+    },
+    "C_mapoff": {
+      "0": {
+        "ff_psnr": 20.2533,
+        "ff_ssim": 0.7878,
+        "sb_psnr": 21.3293,
+        "sb_depth": 8.8277,
+        "ghost_psnr_db": -3.9156,
+        "freshvac_ghost_db": -2.058,
+        "sb_frames": 88,
+        "n_gauss": 47908,
+        "vac_support": 203284
+      },
+      "1": {
+        "ff_psnr": 18.5729,
+        "ff_ssim": 0.757,
+        "sb_psnr": 19.1891,
+        "sb_depth": 12.0684,
+        "ghost_psnr_db": -2.4434,
+        "freshvac_ghost_db": -1.6916,
+        "sb_frames": 88,
+        "n_gauss": 26564,
+        "vac_support": 203284
+      },
+      "2": {
+        "ff_psnr": 19.8022,
+        "ff_ssim": 0.7827,
+        "sb_psnr": 20.6469,
+        "sb_depth": 9.0121,
+        "ghost_psnr_db": -3.6842,
+        "freshvac_ghost_db": -1.7515,
+        "sb_frames": 88,
+        "n_gauss": 42728,
+        "vac_support": 203284
+      }
+    },
+    "E_trackside": {
+      "0": {
+        "ff_psnr": 19.4018,
+        "ff_ssim": 0.7831,
+        "sb_psnr": 20.1718,
+        "sb_depth": 8.9962,
+        "ghost_psnr_db": -3.6469,
+        "freshvac_ghost_db": -1.7617,
+        "sb_frames": 88,
+        "n_gauss": 39867,
+        "vac_support": 203284
+      },
+      "1": {
+        "ff_psnr": 19.384,
+        "ff_ssim": 0.7812,
+        "sb_psnr": 20.0971,
+        "sb_depth": 9.0946,
+        "ghost_psnr_db": -3.8232,
+        "freshvac_ghost_db": -1.5729,
+        "sb_frames": 88,
+        "n_gauss": 40555,
+        "vac_support": 203284
+      },
+      "2": {
+        "ff_psnr": 19.9933,
+        "ff_ssim": 0.7788,
+        "sb_psnr": 20.8933,
+        "sb_depth": 9.1089,
+        "ghost_psnr_db": -3.1494,
+        "freshvac_ghost_db": -2.1317,
+        "sb_frames": 88,
+        "n_gauss": 41454,
+        "vac_support": 203284
+      }
+    },
+    "D_maskfree": {
+      "0": {
+        "ff_psnr": 19.1908,
+        "ff_ssim": 0.7443,
+        "sb_psnr": 19.9521,
+        "sb_depth": 11.3278,
+        "ghost_psnr_db": -1.636,
+        "freshvac_ghost_db": -1.5354,
+        "sb_frames": 88,
+        "n_gauss": 32226,
+        "vac_support": 203284
+      },
+      "1": {
+        "ff_psnr": 19.599,
+        "ff_ssim": 0.767,
+        "sb_psnr": 20.408,
+        "sb_depth": 9.9168,
+        "ghost_psnr_db": -3.8671,
+        "freshvac_ghost_db": -1.8731,
+        "sb_frames": 88,
+        "n_gauss": 30882,
+        "vac_support": 203284
+      },
+      "2": {
+        "ff_psnr": 19.9576,
+        "ff_ssim": 0.7654,
+        "sb_psnr": 20.7954,
+        "sb_depth": 10.26,
+        "ghost_psnr_db": -3.7172,
+        "freshvac_ghost_db": -2.0764,
+        "sb_frames": 88,
+        "n_gauss": 47210,
+        "vac_support": 203284
+      }
+    }
+  }
+}

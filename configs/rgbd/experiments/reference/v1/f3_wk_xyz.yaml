@@ -1,0 +1,5 @@
+inherit_from: "configs/rgbd/tum/f3_wk_xyz.yaml"
+method_from: "configs/rgbd/experiments/reference/v1/method.yaml"
+method: "v1-reference"
+Dataset:
+  sequence: "f3_wk_xyz"

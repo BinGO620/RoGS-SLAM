@@ -1,0 +1,42 @@
+# R2-P02 pre-flight -- arm E (alpha exit + fill) on balloon under the RGD-INJECTED
+# strong trajectory. Exact twin of oracle_alpha_exit_balloon.yaml (arm D); the sole
+# method diff is AlphaLifecycle.mode = exit_fill, so E-vs-D isolates the 补侧 (fill)
+# contribution on the same frozen trajectory (prereg 4: "E vs D = 补侧增益").
+#
+# Why this arm only becomes measurable now. Fill is coupled to the exit delta
+# (`n_reset == 0 and n_carve == 0` -> return, commit 3ab0207) so that no Gaussian is
+# ever seeded behind a still-present ghost. Until tonight exit had never fired at all
+# (R2-P02-E2 VOID, root cause bd884b8), which made fill unreachable BY CONSTRUCTION
+# rather than merely inactive. The pre-flight measured exit firing for real on all
+# three seeds (reset 5291/3456/3373, carve 75/36/7), so the coupling gate now opens
+# and fill's own behaviour is observable for the first time.
+#
+# Why it is the right lever for what the pre-flight found. The pre-flight's F2 verdict
+# (evidence/r2_p02_preflight_pose_rgd.md 5) is that alpha-exit improves the 16%
+# non-vacated periphery by +1.59 dB (3.2x its own sd, 3/3 seeds) and the 66% vacated
+# region -- the region the claim is about -- 7x less and not reliably. Exit thresholds
+# cannot invert that ratio: a lower tau_carve removes more Gaussians everywhere. Fill
+# can, because it is spatially targeted BY CONSTRUCTION -- detect_vacated_pixels fires
+# only where exit cleared an opaque occluder that was hiding observed background, i.e.
+# only inside the vacated region, so it can move static_vacated_psnr without moving
+# static_nonvacated_psnr. prereg H1b predicted exactly this ("补侧(E)是打赢 prune 的
+# 关键 ... 靠'补'填洞才低 depth_l1"), i.e. the pre-registration already expected arm D
+# alone to be insufficient.
+#
+# Allowed diff vs its self-tracked base (alpha_exit_fill_balloon.yaml) = EXACTLY
+#   {method, Oracle.pose_file, Training.lr.cam_rot_delta, Training.lr.cam_trans_delta}
+# Allowed diff vs its arm-D twin (oracle_alpha_exit_balloon.yaml) = EXACTLY
+#   {method, AlphaLifecycle.mode}
+# -- tests/test_preflight_pose_configs.py.
+#
+# Injected sanity ATE vs OUR GT (pre-registered, SLAM-seed independent): 2.0618 cm.
+inherit_from: "configs/rgbd/experiments/r2_alpha_lifecycle/alpha_exit_fill_balloon.yaml"
+method: "OracleRGD-AlphaExitFill"
+
+Oracle:
+  pose_file: "/data/monogs-ours/external_trajectories/rgd/bonn_balloon/seed_0/slam_outputs/Datasets_Bonn/2026-06-25-02-49-00/plot/trj_final.json"
+
+Training:
+  lr:
+    cam_rot_delta: 0.0
+    cam_trans_delta: 0.0

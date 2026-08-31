@@ -1,0 +1,24 @@
+# R2-P02 pre-flight -- arm B (deferred control) on balloon under a FROZEN GT
+# trajectory. Screening instrument only, never a paper row: the headline table
+# must stay full SLAM (r2_p02_e2.md 8.4).
+#
+# Why: every map metric is rendered from the estimated poses, and self-tracked
+# balloon carries ate_rmse_cm = 29.97 +/- 2.62 cm -- the same order as the 21-27 cm
+# depth errors we call "ghost". Freezing the pose removes that channel, which is
+# aligned with the claim under test (map ADMISSION, positioned tracker-orthogonal).
+#
+# Allowed diff vs the self-tracked base = EXACTLY
+#   {method, Oracle.gt_pose, Training.lr.cam_rot_delta, Training.lr.cam_trans_delta}
+# -- tests/test_preflight_pose_configs.py. gt_pose alone is NOT enough: it only
+# skips the frontend's Adam tracking, the backend would still refine poses off GT
+# unless both lrs are zeroed (see the Oracle note in tum/base_config.yaml).
+inherit_from: "configs/rgbd/experiments/probe2_reliable_tracking/deferred_rtoff_balloon.yaml"
+method: "GTPose-Deferred"
+
+Oracle:
+  gt_pose: true
+
+Training:
+  lr:
+    cam_rot_delta: 0.0
+    cam_trans_delta: 0.0

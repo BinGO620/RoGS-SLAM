@@ -1,0 +1,4 @@
+# EXP53 — Combined 主表臂 balloon2。同 exp53_combined_balloon 说明。
+inherit_from: "configs/rgbd/bonn/balloon2.yaml"
+method_from: "configs/rgbd/experiments/active/candidate/method_combined_maskboth_prune.yaml"
+method: "EXP53-C-Combined-Balloon2"

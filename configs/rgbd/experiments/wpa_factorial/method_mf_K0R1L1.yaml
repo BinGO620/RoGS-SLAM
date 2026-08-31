@@ -1,0 +1,27 @@
+# WP-A FACTORIAL method overlay — arm K0R1L1 (mask-free, K OFF, R+L ON).
+# 2026-08-14, WP-A. Δ_K = log(ATE_K0R1L1 / ATE_K1R1L1): cost of removing K at full config.
+# This arm is the numerator of Δ_K. Note: DynamicKeyframe off keeps the base (non-dense)
+# keyframing from the combined backbone; mask-free + R+L on.
+inherit_from: "configs/rgbd/experiments/active/candidate/method_combined_maskoff_prune.yaml"
+
+TriReliability:
+  enabled: false
+
+RobustTracking:
+  enabled: true
+
+DynamicKeyframe:
+  enabled: false
+
+ReliabilitySignal:
+  enabled: true
+
+SemanticMask:
+  enabled: false
+
+DeferredCommit:
+  enabled: true
+  reliability_confirm: true
+
+Mapping:
+  lifecycle_mode: "prune"

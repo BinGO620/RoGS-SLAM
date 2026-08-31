@@ -1,0 +1,12 @@
+# P10-P0a — async iter_per_kf=50（P0 首档）
+#
+# 背景：async 下 iter_per_kf 硬编码 10，215 KF 把后端队列塞满 ⇒ 自由跑机会为零。
+# sync(iter_per_kf=150) 3/3 全活、−DynKF(57 KF) 2/3 活 ⇒ 地图优化预算是关键。
+# 本臂：保持 async，iter_per_kf 从 10 提到 50（5×），不动任何方法内核。
+# 判据：逃逸率追平 vanilla 4/5（逃逸 ≡ ATE < 5cm），且动态序列 4-14× 增益不掉。
+inherit_from: "configs/rgbd/tum/f3_st_hf.yaml"
+method_from: "configs/rgbd/experiments/active/candidate/method_combined_maskoff_prune.yaml"
+method: "P10-P0a-Async50"
+
+Training:
+  async_iter_per_kf: 50

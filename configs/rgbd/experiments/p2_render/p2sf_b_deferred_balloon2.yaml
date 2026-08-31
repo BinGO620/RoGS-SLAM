@@ -1,0 +1,13 @@
+# P2-SF de-confounding control, variant B (sensitivity), arm B: COMBINED + deferred, GT-pose
+# frozen (Bonn balloon2). Twin of p2sf_b_prune_balloon2.yaml; differs ONLY in lifecycle.
+inherit_from: "configs/rgbd/bonn/balloon2.yaml"
+method_from: "configs/rgbd/experiments/active/candidate/method_combined_maskboth_deferred.yaml"
+method: "CombinedSF-B-Deferred"
+
+Oracle:
+  gt_pose: true
+
+Training:
+  lr:
+    cam_rot_delta: 0.0
+    cam_trans_delta: 0.0

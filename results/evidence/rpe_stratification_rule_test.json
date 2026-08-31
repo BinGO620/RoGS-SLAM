@@ -1,0 +1,185 @@
+{
+  "rule_under_test": "mask-free RPE > 2.5 cm/frame => mask necessary",
+  "necessity_definition": {
+    "N": "ATE(mask-free)/ATE(combined)",
+    "necessary": "N >= 1.5",
+    "redundant": "N <= 1.2",
+    "ambiguous": "1.2 < N < 1.5 (excluded)"
+  },
+  "counts": {
+    "decided": 17,
+    "agree": 13,
+    "disagree": 4,
+    "ambiguous_excluded": 1
+  },
+  "separating_interval": [
+    1.5723666666666667,
+    1.7166333333333335
+  ],
+  "midpoint_threshold": 1.6445,
+  "rows": [
+    {
+      "seq": "f1_desk",
+      "rpe_maskfree": 0.847,
+      "ate_maskfree": 1.49,
+      "ate_combined": 1.39,
+      "N": 1.07,
+      "predicted": "redundant",
+      "observed": "redundant"
+    },
+    {
+      "seq": "f2_xyz",
+      "rpe_maskfree": 0.222,
+      "ate_maskfree": 1.91,
+      "ate_combined": 1.93,
+      "N": 0.99,
+      "predicted": "redundant",
+      "observed": "redundant"
+    },
+    {
+      "seq": "f3_office",
+      "rpe_maskfree": 0.456,
+      "ate_maskfree": 1.59,
+      "ate_combined": 1.55,
+      "N": 1.02,
+      "predicted": "redundant",
+      "observed": "redundant"
+    },
+    {
+      "seq": "f2_person",
+      "rpe_maskfree": 0.498,
+      "ate_maskfree": 6.79,
+      "ate_combined": 7.34,
+      "N": 0.92,
+      "predicted": "redundant",
+      "observed": "redundant"
+    },
+    {
+      "seq": "f3_st_hf",
+      "rpe_maskfree": 1.041,
+      "ate_maskfree": 35.59,
+      "ate_combined": 29.43,
+      "N": 1.21,
+      "predicted": "redundant",
+      "observed": "ambiguous"
+    },
+    {
+      "seq": "f3_st_rpy",
+      "rpe_maskfree": 1.465,
+      "ate_maskfree": 2.63,
+      "ate_combined": 2.58,
+      "N": 1.02,
+      "predicted": "redundant",
+      "observed": "redundant"
+    },
+    {
+      "seq": "f3_st_xyz",
+      "rpe_maskfree": 0.91,
+      "ate_maskfree": 2.66,
+      "ate_combined": 4.69,
+      "N": 0.57,
+      "predicted": "redundant",
+      "observed": "redundant"
+    },
+    {
+      "seq": "f3_wk_hf",
+      "rpe_maskfree": 2.327,
+      "ate_maskfree": 17.33,
+      "ate_combined": 3.29,
+      "N": 5.27,
+      "predicted": "redundant",
+      "observed": "necessary"
+    },
+    {
+      "seq": "f3_wk_rpy",
+      "rpe_maskfree": 2.264,
+      "ate_maskfree": 14.61,
+      "ate_combined": 4.29,
+      "N": 3.41,
+      "predicted": "redundant",
+      "observed": "necessary"
+    },
+    {
+      "seq": "f3_wk_xyz",
+      "rpe_maskfree": 1.717,
+      "ate_maskfree": 26.84,
+      "ate_combined": 3.06,
+      "N": 8.76,
+      "predicted": "redundant",
+      "observed": "necessary"
+    },
+    {
+      "seq": "balloon",
+      "rpe_maskfree": 2.028,
+      "ate_maskfree": 12.11,
+      "ate_combined": 3.06,
+      "N": 3.96,
+      "predicted": "redundant",
+      "observed": "necessary"
+    },
+    {
+      "seq": "balloon2",
+      "rpe_maskfree": 2.73,
+      "ate_maskfree": 10.14,
+      "ate_combined": 5.27,
+      "N": 1.92,
+      "predicted": "necessary",
+      "observed": "necessary"
+    },
+    {
+      "seq": "crowd",
+      "rpe_maskfree": 2.643,
+      "ate_maskfree": 34.89,
+      "ate_combined": 2.29,
+      "N": 15.24,
+      "predicted": "necessary",
+      "observed": "necessary"
+    },
+    {
+      "seq": "crowd2",
+      "rpe_maskfree": 2.98,
+      "ate_maskfree": 45.89,
+      "ate_combined": 2.19,
+      "N": 20.95,
+      "predicted": "necessary",
+      "observed": "necessary"
+    },
+    {
+      "seq": "mv_no_box",
+      "rpe_maskfree": 1.21,
+      "ate_maskfree": 3.1,
+      "ate_combined": 2.65,
+      "N": 1.17,
+      "predicted": "redundant",
+      "observed": "redundant"
+    },
+    {
+      "seq": "mv_no_box2",
+      "rpe_maskfree": 1.521,
+      "ate_maskfree": 5.62,
+      "ate_combined": 5.14,
+      "N": 1.09,
+      "predicted": "redundant",
+      "observed": "redundant"
+    },
+    {
+      "seq": "pt1",
+      "rpe_maskfree": 2.894,
+      "ate_maskfree": 32.41,
+      "ate_combined": 11.89,
+      "N": 2.73,
+      "predicted": "necessary",
+      "observed": "necessary"
+    },
+    {
+      "seq": "pt2",
+      "rpe_maskfree": 1.572,
+      "ate_maskfree": 9.3,
+      "ate_combined": 10.45,
+      "N": 0.89,
+      "predicted": "redundant",
+      "observed": "redundant"
+    }
+  ],
+  "scope": "Threshold is FITTED to these 18 sequences; no held-out set. mask-free RPE requires running the mask-free arm => diagnostic, not an a-priori selector. n=3 seeds per cell, descriptive only."
+}

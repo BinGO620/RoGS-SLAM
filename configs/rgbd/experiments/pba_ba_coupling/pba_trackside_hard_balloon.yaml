@@ -1,0 +1,26 @@
+# TRACKSIDE-HARD 臂 —— exp37 的 tracking 侧正控制（本估计量的生死门）
+#
+# 为什么必须有这一臂：exp37 判 `TRACKSIDE-INERT`（P(E) 落在 H-inert 预言 0.0085 内，
+# = 地板的 10%），但那个判决有一个**未闭合的缺口**，写在
+# `results/evidence/pose_trackside_verdict.md` §4.1：
+#   动态惩罚 P 被证明对一个 **mapping 侧**介入敏感（`mask_mapping`，3.1× 地板 + 失效对照
+#   3/3），却**没有任何正控制证明它对 tracking 侧介入敏感**。
+# 于是 "INERT" 严格只能读成「没有本估计量能看见的效应」，不能读成「①什么都没做」。
+#
+# 本臂闭合它，且是**单变量**：相对 `pba_trackside_only_balloon.yaml` 只多
+# `hard_tracking_mask: true`。机制上这把通道①的作用域从 **10/100 次跟踪迭代扩到 100/100**：
+#   `utils/slam_utils.py:126-153` —— 一旦 reliability 的 soft 项在第 warmup_iters=10 次
+#   之后就位，硬 mask 会被**整条旁路**（走 `get_loss_tracking_rgbd_soft`），除非本 flag
+#   为真，此时改走 `get_loss_tracking_rgbd_hardsoft` 把硬 mask 合成进 soft 路径。
+# 该代码路径不是本轮新写的：`configs/rgbd/experiments/p6_mason/*` 已在用，default-off。
+#
+# 判读规则（预注册于 `results/evidence/pose_trackside_prereg_addendum.md`，跑前 commit）：
+#   |P(E-hard) − P(E)| > 地板 0.0831  ⇒ 估计量对 tracking 侧**敏感** ⇒ exp37 的 INERT 站住，
+#                                       含义收窄为「①在其 10/100 的作用域内买不到」；
+#   |P(E-hard) − P(E)| ≤ 地板         ⇒ 估计量对 tracking 侧**盲** ⇒ exp37 判决**降级为描述性**。
+# 注意这条门**不看 ATE**（Phase 0 纪律：只看机制诊断）。
+inherit_from: "configs/rgbd/experiments/pba_ba_coupling/pba_trackside_only_balloon.yaml"
+method: "PBA-trackside-hard-balloon"
+
+SemanticMask:
+  hard_tracking_mask: true   # ← 唯一差异：硬 mask 覆盖全部 100 次跟踪迭代，而非前 10 次

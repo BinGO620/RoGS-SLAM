@@ -1,0 +1,5 @@
+# P7 CUE-SPLIT screen config — mv_no_box, ReliabilitySignal mode=flow.
+# inherit seq dataset + method overlay. Contract pinned by tests/test_p7_cuesplit_configs.py.
+inherit_from: "configs/rgbd/bonn/moving_nonobstructing_box.yaml"
+method_from: "configs/rgbd/experiments/p7_cuesplit/reliability_flow_only.yaml"
+method: "CueSplit-mv_no_box-flow"

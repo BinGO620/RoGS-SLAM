@@ -1,0 +1,4 @@
+# T2 自适应配额 MAD 隔离 — control_maskfree 臂 / f2_xyz。合同由 tests/test_t2_mad_quota_configs.py 钉住。
+inherit_from: "configs/rgbd/tum/f2_xyz.yaml"
+method_from: "configs/rgbd/experiments/t2_mad_quota/method_t2_control_maskfree.yaml"
+method: "T2-control_maskfree-f2_xyz"

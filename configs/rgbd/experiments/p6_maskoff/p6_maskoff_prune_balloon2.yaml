@@ -1,0 +1,5 @@
+# P6 MASK-OFF 消融 run config — balloon2 prune, SemanticMask off.
+# Same contract as p6_maskoff_prune_balloon.yaml, dataset swapped to balloon2.
+inherit_from: "configs/rgbd/bonn/balloon2.yaml"
+method_from: "configs/rgbd/experiments/active/candidate/method_combined_maskoff_prune.yaml"
+method: "Combined-MaskOff"

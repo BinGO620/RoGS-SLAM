@@ -1,0 +1,18 @@
+# R2-P03-SWEEP level S6: every prune/admission lever at once (rate floor).
+# Base = arm A (insert-then-prune control) under the frozen RGD balloon trajectory.
+# Allowed diff vs base = {method, DeferredCommit.ttl_keyframes, Training.gaussian_th,
+# opt_params.densify_grad_threshold} — tests/test_r2_p03_sweep_configs.py.
+# Purpose: guarantee the ladder brackets arm B's ~11.3k from BELOW. Attribution is
+# deliberately mixed here — this level exists to answer "can the baseline get there at all",
+# not "which knob got it there"; S1-S5 carry the single-knob attribution.
+inherit_from: "configs/rgbd/experiments/r2_oracle_admission/oracle_prune_balloon.yaml"
+method: "OracleRGD-Prune-S6-maxpress"
+
+DeferredCommit:
+  ttl_keyframes: 1
+
+Training:
+  gaussian_th: 0.9
+
+opt_params:
+  densify_grad_threshold: 0.0005

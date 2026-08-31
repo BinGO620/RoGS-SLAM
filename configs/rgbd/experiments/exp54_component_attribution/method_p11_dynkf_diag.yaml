@@ -1,0 +1,9 @@
+# EXP54 single-variable intervention: P11 + DynamicKeyframe.
+# KeyframeDiag is read-only instrumentation; it does not feed tracking or mapping.
+inherit_from: "configs/rgbd/experiments/p11_maskonly/method_p11_maskonly.yaml"
+
+DynamicKeyframe:
+  enabled: true
+
+KeyframeDiag:
+  enabled: true

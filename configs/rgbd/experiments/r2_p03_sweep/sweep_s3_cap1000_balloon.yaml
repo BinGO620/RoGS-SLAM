@@ -1,0 +1,12 @@
+# R2-P03-SWEEP level S3: per-keyframe candidate budget pressure.
+# Base = arm A (insert-then-prune control) under the frozen RGD balloon trajectory.
+# Allowed diff vs base = {method, DeferredCommit.max_candidates_per_keyframe} —
+# tests/test_r2_p03_sweep_configs.py.
+# Mechanism: the default 5000 is saturated on every keyframe of this sequence
+# (candidate_overflow ~4.17M px/run), so cutting the budget 5x cuts what the prune arm
+# instantiates in the first place (deferred_commit.py:386).
+inherit_from: "configs/rgbd/experiments/r2_oracle_admission/oracle_prune_balloon.yaml"
+method: "OracleRGD-Prune-S3-cap1000"
+
+DeferredCommit:
+  max_candidates_per_keyframe: 1000

@@ -1,0 +1,4 @@
+# T3 语义 Alpha 覆盖 — A-off 臂 / balloon（必须 mask-ON：mask-free 下本机制恒为 no-op）。
+inherit_from: "configs/rgbd/bonn/balloon.yaml"
+method_from: "configs/rgbd/experiments/t3_semantic_alpha/method_t3_off.yaml"
+method: "T3-Aoff-balloon"

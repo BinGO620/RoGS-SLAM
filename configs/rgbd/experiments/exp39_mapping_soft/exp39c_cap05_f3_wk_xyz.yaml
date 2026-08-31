@@ -1,0 +1,6 @@
+# exp39 Step C / f3_wk_xyz —— 剂量 5%（balloon 上此点有害，2.5x 地板）
+inherit_from: "configs/rgbd/experiments/exp39_mapping_soft/exp39c_sm_f3_wk_xyz.yaml"
+method: "EXP39C-cap05-f3_wk_xyz"
+
+SemanticMask:
+  mapping_ema_dynamic_cap: 0.05

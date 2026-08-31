@@ -1,0 +1,8 @@
+# E factorial B arm: edge_threshold=3.0 (strong bg edges) + FULL semantic hard exclusion.
+# Discriminator: if E3+fullhard fails but interior-suppression (C) works, the person
+# boundary band / adjacent static-side pixels matter. Zero new code (reuses H-e + edge3).
+inherit_from: "configs/rgbd/experiments/p6_mason/p6_mason_combined_pt1.yaml"
+Training:
+  edge_threshold: 3.0
+SemanticMask:
+  hard_tracking_mask: true

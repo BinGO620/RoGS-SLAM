@@ -1,0 +1,12 @@
+# exp39 Step C Phase 0 / 对照臂 H（硬 mask）
+# 功能上等价于 exp39_hard_balloon，但保留独立 method 标签，
+# 便于在 Phase 1 三臂(F/H/E)比较时与 Phase 0 结果明确分离。
+inherit_from: "configs/rgbd/experiments/exp39_mapping_soft/exp39_hard_balloon.yaml"
+method: "EXP39C-hard-balloon"
+
+MappingProbe:
+  enabled: true
+  interval: 50
+
+SemanticMask:
+  mapping_ema: false

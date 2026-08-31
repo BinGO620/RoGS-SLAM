@@ -1,0 +1,26 @@
+# P2-S smoke, arm A (control): COMBINED backbone + insert-then-prune lifecycle,
+# SELF-TRACKED on Bonn balloon. Base = the dataset config; method = the prune twin.
+# Allowed diff vs the deferred twin config = {method, method_from} — and the two
+# method bases differ only in Mapping.lifecycle_mode
+# (tests/test_p2_combined_twin_configs.py).
+#
+# SELF-TRACKED ON PURPOSE. No Oracle.pose_file here and no cam-lr zeroing: this arm
+# runs its own tracker, because `02-method.md` Non-negotiables require the paper's
+# main table to be full-SLAM self-tracked and forbid the frozen-pose screen from
+# ever becoming the main table.
+#
+# WHAT THE 2 SMOKE RUNS BUY, before 36 runs are committed:
+#   1. the backbone's ATE on Bonn, which has never been measured — registry has zero
+#      combined/maskboth rows, and the ~3 cm reference is V1-FIXED5 on TUM f3_wk_xyz
+#      while the same family's universal V1 drifted to 55.54 cm on f2_xyz;
+#   2. the real per-run wall clock, replacing an estimate (~45–90 min/run) that is
+#      extrapolated from R2-P01-E2's rtoff runs (24–55 min) times a guess for
+#      per-KF Mask R-CNN + dense keyframing.
+# Reference points for reading result (1), balloon ATE cm: RGD-SLAM 2.26,
+# DG-SLAM 3.65, ORB-SLAM3 6.1–8.9, DynaGSLAM 8.36, Co-SLAM 26–28, and this
+# project's own rtoff arms 37.72 (prune) / 29.03 (deferred).
+#
+# Single seed ⇒ SCREENING ONLY. Discipline ⑤: no verdict may be written from this.
+inherit_from: "configs/rgbd/bonn/balloon.yaml"
+method_from: "configs/rgbd/experiments/active/candidate/method_combined_maskboth_prune.yaml"
+method: "Combined-Prune"

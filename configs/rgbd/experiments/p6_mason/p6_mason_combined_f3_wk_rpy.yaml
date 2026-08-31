@@ -1,0 +1,6 @@
+# P6-MASON — mask-ON discriminator run config — f3_wk_rpy (TUM walking rotation)
+# mask-off 16.8cm (best of the walking 3, but vs RGD 3.55 / DG 7.35 /WildGS 3.00 still lags).
+# Tests whether mask-ON closes the gap on the TUM walking-fast-motion regime.
+inherit_from: "configs/rgbd/tum/f3_wk_rpy.yaml"
+method_from: "configs/rgbd/experiments/active/candidate/method_combined_maskboth_prune.yaml"
+method: "Combined"

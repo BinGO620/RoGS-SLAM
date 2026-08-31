@@ -1,0 +1,9 @@
+# P2-T main-table run, arm B: COMBINED backbone + deferred lifecycle, SELF-TRACKED on
+# Bonn person_tracking. Mirrors p2s_combined_deferred_pt2.yaml with the dataset swapped
+# person_tracking2 -> person_tracking. See p2s_combined_prune_pt1.yaml for the pt1
+# rationale (H-D high-coverage independent test). The twin pair differs ONLY in
+# Mapping.lifecycle_mode; tests/test_p2_combined_twin_configs.py covers the backbone
+# contract and tests/test_r2_p2_t_configs.py covers the run-level pair.
+inherit_from: "configs/rgbd/bonn/person_tracking.yaml"
+method_from: "configs/rgbd/experiments/active/candidate/method_combined_maskboth_deferred.yaml"
+method: "Combined-Deferred"

@@ -1,0 +1,98 @@
+{
+  "alpha": 0.95,
+  "n_null": 32,
+  "count_tol": 0.15,
+  "min_removed": 500,
+  "max_frames": 400,
+  "min_null": 8,
+  "depth_tol": 0.25,
+  "device": "cuda",
+  "seed": 0,
+  "preregistration": "results/evidence/p1_observability_preregistration.md",
+  "sequences": [
+    {
+      "sequence": "rgbd_bonn_balloon",
+      "status": "ok",
+      "n_frames_considered": 400,
+      "n_rows": 341,
+      "skipped": {
+        "small_mask": 59,
+        "null_infeasible": 0,
+        "bad_spectrum": 0
+      },
+      "csv": "results/evidence/p1_observability/rgbd_bonn_balloon.csv"
+    },
+    {
+      "sequence": "rgbd_bonn_balloon2",
+      "status": "ok",
+      "n_frames_considered": 400,
+      "n_rows": 376,
+      "skipped": {
+        "small_mask": 24,
+        "null_infeasible": 0,
+        "bad_spectrum": 0
+      },
+      "csv": "results/evidence/p1_observability/rgbd_bonn_balloon2.csv"
+    },
+    {
+      "sequence": "rgbd_bonn_moving_nonobstructing_box",
+      "status": "ok",
+      "n_frames_considered": 400,
+      "n_rows": 294,
+      "skipped": {
+        "small_mask": 106,
+        "null_infeasible": 0,
+        "bad_spectrum": 0
+      },
+      "csv": "results/evidence/p1_observability/rgbd_bonn_moving_nonobstructing_box.csv"
+    },
+    {
+      "sequence": "rgbd_bonn_moving_nonobstructing_box2",
+      "status": "ok",
+      "n_frames_considered": 400,
+      "n_rows": 335,
+      "skipped": {
+        "small_mask": 64,
+        "null_infeasible": 1,
+        "bad_spectrum": 0
+      },
+      "csv": "results/evidence/p1_observability/rgbd_bonn_moving_nonobstructing_box2.csv"
+    },
+    {
+      "sequence": "rgbd_bonn_person_tracking",
+      "status": "ok",
+      "n_frames_considered": 400,
+      "n_rows": 358,
+      "skipped": {
+        "small_mask": 42,
+        "null_infeasible": 0,
+        "bad_spectrum": 0
+      },
+      "csv": "results/evidence/p1_observability/rgbd_bonn_person_tracking.csv"
+    },
+    {
+      "sequence": "rgbd_bonn_person_tracking2",
+      "status": "ok",
+      "n_frames_considered": 400,
+      "n_rows": 369,
+      "skipped": {
+        "small_mask": 31,
+        "null_infeasible": 0,
+        "bad_spectrum": 0
+      },
+      "csv": "results/evidence/p1_observability/rgbd_bonn_person_tracking2.csv"
+    },
+    {
+      "sequence": "rgbd_bonn_moving_obstructing_box",
+      "status": "ok",
+      "n_frames_considered": 400,
+      "n_rows": 284,
+      "skipped": {
+        "small_mask": 116,
+        "null_infeasible": 0,
+        "bad_spectrum": 0
+      },
+      "csv": "results/evidence/p1_observability/rgbd_bonn_moving_obstructing_box.csv"
+    }
+  ]
+}

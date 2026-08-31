@@ -1,0 +1,35 @@
+# R2-P04-MASKRATE arm M: the HARD-MASK baseline, on arm A's lifecycle.
+# Base = arm A (insert-then-prune control) under the frozen RGD balloon trajectory.
+# Allowed diff vs base = {method, SemanticMask.*} — tests/test_r2_p04_maskrate_configs.py.
+#
+# Why this arm exists: external review pointed out that a hard semantic mask is a strict
+# SUBSET of what the deferred arm admits (a masked pixel never becomes a candidate at all),
+# so arm B's Gaussian count is probably >= a mask-blocking competitor's. Every R2-P03
+# campaign compared arm B against insert-then-prune (arm A) ONLY -- no arm in the project's
+# 46 accounted runs ever enabled SemanticMask, so the -55% compactness result has never been
+# measured against this comparator. This arm supplies it, in-campaign, config-only.
+#
+# The SemanticMask block is the project's existing mask-both setting, copied verbatim from
+# configs/rgbd/experiments/reference/v1/method.yaml (maskrcnn / person / dilate 7 / both
+# consumers), so the arm reproduces how this repo already deploys a hard mask rather than a
+# freshly tuned one. It is NOT inherited from that file: the v1 lineage also carries
+# CoarsePoseInit.enabled=true, the module probe1 falsified (HANDOFF "Do Not Do" #1), and
+# method_combined_maskboth_deferred.yaml bundles RobustTracking + DynamicKeyframe +
+# Training.window_size/pose_window, which would make the diff four mechanisms instead of one.
+#
+# Under the frozen trajectory the tracking-side use of the mask is inert (the oracle pose
+# replaces the Adam refine), so what this arm actually exercises is mask_mapping (mapping
+# loss) + mask_insertion (person depth zeroed -> no dynamic Gaussians enter the map).
+inherit_from: "configs/rgbd/experiments/r2_oracle_admission/oracle_prune_balloon.yaml"
+method: "OracleRGD-Prune-M-maskboth"
+
+SemanticMask:
+  enabled: true
+  model: "maskrcnn"       # COCO instance seg; weights cached locally (no download at run time)
+  dynamic_classes: [1]    # COCO person
+  dilate_px: 7
+  max_mask_ratio: 0.95
+  device: "cuda"
+  soft: false
+  mask_mapping: true      # exclude person pixels from the MAPPING loss
+  mask_insertion: true    # zero person depth at keyframe insertion -> no dynamic Gaussians

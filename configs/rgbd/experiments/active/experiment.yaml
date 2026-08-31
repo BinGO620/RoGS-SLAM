@@ -1,0 +1,60 @@
+schema_version: 1
+# R1-P01 make-or-break：deferred pre-instantiation lifecycle vs insert-then-prune。
+# 车道说明见 configs/rgbd/experiments/README.md。
+#
+# 多臂拆分（不硬塞一个 pair manifest，受管 runner 不绕过）：
+#   R1-P01 = deferred-vs-prune（本文件，论文主对比 make-or-break）
+#   R1-P02 = deferred-vs-immediate（三臂补全；未建 manifest，未备 overlay）
+#   R1-P03 = combined-vs-prune（secondary 列；overlay 已备 method_combined_maskboth_deferred.yaml）
+# 每条各走自己的 E0–E4；active/ 同一时刻只放一份合同。
+#
+# E 阶梯计划（每次晋级改 stage/run 字段并重新提交冻结，逐级过 gate）：
+#   E0 dry-run（本状态）→ E1 100 帧 smoke（2060）→ E2 全长 seed-0 screening
+#   （2060，run.fast: false 以获得 band-PSNR/geometry 方向；hardware: RTX2060）
+#   → E2 结果向用户汇报，方向成立才申请 3090 → E3 三 seed fast（RTX3090）
+#   → E4 三 seed 完整 eval（RTX3090，正式判据）。
+mode: comparison
+plan_id: R1-P01
+experiment_id: R1-P01-E2
+status: APPROVED  # 2026-07-22 用户"继续"确认进 E2（全长 seed-0 screening）；E3/3090 前须再汇报
+stage: E2
+
+hypothesis: >-
+  在 open-set 动态序列上（mover 超出 person-mask 覆盖），deferred pre-instantiation
+  lifecycle 相对 insert-then-prune 产出更干净的静态背景地图（dynamic-adjacent
+  band-PSNR 与 geometry 为 co-primary 判据）；ATE 仅作 no-harm。两臂共享同一
+  ReliabilitySignal 与 DeferredCommit 配置，唯一允许差异 = Mapping.lifecycle_mode。
+sequence_file: configs/rgbd/experiments/active/sequences.yaml
+seeds: [0]
+
+comparison:
+  control: "OpenSet-Prune"
+  candidate: "OpenSet-Deferred"
+  allowed_config_diff: ["Mapping.lifecycle_mode"]
+
+run:
+  dry_run: false         # E0 已过（12 条命令展开正确）
+  fast: false            # E2：map-质量 screening 需要 band-PSNR/geometry
+  max_frames: 0          # 全长
+  timeout_seconds: 5400
+  stall_timeout_seconds: 600   # 2026-07-22 提高：band-PSNR eval(eval_static_background_raw)
+                               # 全长渲染耗时长；已在 band eval 内加周期性进度日志(根因修复)，
+                               # 此处 600s 为额外保险，避免误判 stall（E2-first 尝试全 TIMEOUT 教训）
+  heartbeat_seconds: 30
+  # open-set 臂 ATE 本来就高（preview balloon 28.5 / person_t2 43cm），低阈值早退会
+  # 制造 survivor bias（doc-11 §hardening：关 ATE early-abort）→ 只留灾难护栏。
+  ate_abort_threshold_cm: 100.0
+  ate_abort_min_frames: 100
+
+gates:
+  # ATE 在本实验只是 no-harm/护栏；判据在 E4 的 band-PSNR + geometry co-primary。
+  max_absolute_ate_cm: 100.0
+  # E4 co-primary 预注册 margin（DRAFT 提案值，APPROVED 时由用户定稿）：
+  # band25/band50 一致方向且 mean margin ≥0.2dB；geometry F-score 不劣于 control。
+  primary_band_psnr_min_margin_db: 0.2
+  primary_geometry_fscore_min_margin: 0.0
+  max_fps_regression_pct: 10.0
+  max_vram_increase_pct: 10.0
+
+hardware: "RTX2060"   # E1/E2=RTX2060，E3/E4=RTX3090
+diagnostic_reference_tag: v1.0-maskboth-densekf

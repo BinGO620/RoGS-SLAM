@@ -1,0 +1,181 @@
+{
+  "n_csv_files": 855,
+  "n_rows": 872,
+  "n_within_groups": 12,
+  "n_between_groups": 149,
+  "within_ratio": {
+    "median": 1.0515456215665728,
+    "mean": 1.0794243318663705,
+    "p75": 1.0856480969820157,
+    "p90": 1.1568146954933993,
+    "max": 1.3627758446300549,
+    "frac_gt_1_2": 0.08333333333333333,
+    "frac_gt_1_5": 0.0,
+    "frac_gt_2": 0.0
+  },
+  "between_ratio": {
+    "median": 1.1377275852340427,
+    "p75": 1.3981493059897463,
+    "p90": 2.1746046926492073,
+    "max": 17.15271372827244
+  },
+  "verdict": "\u5224\u6b7b",
+  "groups": {
+    "Combined-MaskOff|p6_maskoff_prune_f3_wk_rpy|0|P6/P6-18SEQ": {
+      "n": 2,
+      "min": 15.7199,
+      "max": 21.4227,
+      "median": 18.5713,
+      "ratio": 1.3627758446300549,
+      "ptp": 5.702799999999998,
+      "cv": 0.2171355021862035,
+      "values": [
+        15.7199,
+        21.4227
+      ]
+    },
+    "WPA-mv_no_box-KK1R1L1|wpa_mv_no_box_K1R1L1|0|WPA/WPA-FACTORIAL": {
+      "n": 2,
+      "min": 2.8286,
+      "max": 3.2884,
+      "median": 3.0585,
+      "ratio": 1.1625539135968326,
+      "ptp": 0.45980000000000043,
+      "cv": 0.1063029910052558,
+      "values": [
+        2.8286,
+        3.2884
+      ]
+    },
+    "PBA-mapping-OFF-balloon|pba_mapping_off_balloon|1|PBA/pba_mapping_off_balloon_seed1": {
+      "n": 2,
+      "min": 7.7319,
+      "max": 8.545,
+      "median": 8.13845,
+      "ratio": 1.1051617325625007,
+      "ptp": 0.8130999999999995,
+      "cv": 0.07064594901766079,
+      "values": [
+        7.7319,
+        8.545
+      ]
+    },
+    "PBA-trackside-hard-balloon|pba_trackside_hard_balloon|0|PBA/pba_trackside_hard_balloon_seed0": {
+      "n": 2,
+      "min": 7.4447,
+      "max": 8.0339,
+      "median": 7.7393,
+      "ratio": 1.0791435517885206,
+      "ptp": 0.5891999999999991,
+      "cv": 0.0538326871261113,
+      "values": [
+        7.4447,
+        8.0339
+      ]
+    },
+    "PBA-mapping-OFF-balloon|pba_mapping_off_balloon|2|PBA/pba_mapping_off_balloon_seed2": {
+      "n": 2,
+      "min": 7.5514,
+      "max": 8.0305,
+      "median": 7.7909500000000005,
+      "ratio": 1.0634451889715815,
+      "ptp": 0.47909999999999986,
+      "cv": 0.04348312578908539,
+      "values": [
+        7.5514,
+        8.0305
+      ]
+    },
+    "PBA-trackside-hard-balloon|pba_trackside_hard_balloon|1|PBA/pba_trackside_hard_balloon_seed1": {
+      "n": 2,
+      "min": 6.9805,
+      "max": 7.399,
+      "median": 7.18975,
+      "ratio": 1.0599527254494663,
+      "ptp": 0.41849999999999987,
+      "cv": 0.041159176317197406,
+      "values": [
+        6.9805,
+        7.399
+      ]
+    },
+    "PBA-trackside-only-balloon|pba_trackside_only_balloon|1|PBA/pba_trackside_only_balloon_seed1": {
+      "n": 2,
+      "min": 9.3165,
+      "max": 9.7184,
+      "median": 9.51745,
+      "ratio": 1.0431385176836796,
+      "ptp": 0.40190000000000126,
+      "cv": 0.02985949128798936,
+      "values": [
+        9.3165,
+        9.7184
+      ]
+    },
+    "PBA-trackside-only-balloon|pba_trackside_only_balloon|0|PBA/pba_trackside_only_balloon_seed0": {
+      "n": 2,
+      "min": 7.9733,
+      "max": 8.1828,
+      "median": 8.078050000000001,
+      "ratio": 1.0262751934581666,
+      "ptp": 0.20950000000000024,
+      "cv": 0.018338444384298422,
+      "values": [
+        7.9733,
+        8.1828
+      ]
+    },
+    "T2-eboth-balloon|t2_eboth_balloon|0|PBA/eboth_balloon_seed0": {
+      "n": 2,
+      "min": 3.0974,
+      "max": 3.1749,
+      "median": 3.1361499999999998,
+      "ratio": 1.0250209853425454,
+      "ptp": 0.07750000000000012,
+      "cv": 0.017473901293610806,
+      "values": [
+        3.0974,
+        3.1749
+      ]
+    },
+    "T2-eboth-balloon|t2_eboth_balloon|1|PBA/eboth_balloon_seed1": {
+      "n": 2,
+      "min": 3.1553,
+      "max": 3.1933,
+      "median": 3.1742999999999997,
+      "ratio": 1.0120432288530408,
+      "ptp": 0.03799999999999981,
+      "cv": 0.008464876566515034,
+      "values": [
+        3.1553,
+        3.1933
+      ]
+    },
+    "PBA-trackside-only-balloon|pba_trackside_only_balloon|2|PBA/pba_trackside_only_balloon_seed2": {
+      "n": 2,
+      "min": 9.404,
+      "max": 9.4741,
+      "median": 9.43905,
+      "ratio": 1.0074542747766908,
+      "ptp": 0.07010000000000005,
+      "cv": 0.0052513955706535095,
+      "values": [
+        9.404,
+        9.4741
+      ]
+    },
+    "PBA-trackside-hard-balloon|pba_trackside_hard_balloon|2|PBA/pba_trackside_hard_balloon_seed2": {
+      "n": 2,
+      "min": 7.8344,
+      "max": 7.8824,
+      "median": 7.8584,
+      "ratio": 1.0061268252833657,
+      "ptp": 0.04800000000000004,
+      "cv": 0.004319088554534551,
+      "values": [
+        7.8344,
+        7.8824
+      ]
+    }
+  }
+}

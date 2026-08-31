@@ -1,0 +1,6 @@
+# P6 MASK-OFF 消融 run config — f3_wk_rpy prune, SemanticMask off.
+# Same contract as p6_maskoff_prune_balloon.yaml (maskoff = combined prune minus SemanticMask),
+# dataset swapped to f3_wk_rpy.
+inherit_from: "configs/rgbd/tum/f3_wk_rpy.yaml"
+method_from: "configs/rgbd/experiments/active/candidate/method_combined_maskoff_prune.yaml"
+method: "Combined-MaskOff"

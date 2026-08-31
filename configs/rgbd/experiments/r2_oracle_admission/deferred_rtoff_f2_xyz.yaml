@@ -1,0 +1,9 @@
+# R2-P01-E2 static no-harm row (tracking side): TUM freiburg2_xyz, deferred arm, RT off.
+# Same method base as dynamic rows 1-2 (method_openset_deferred + RT off). Long static
+# sequence (3666 frames) = the historical slow-drift killer; run with --fast (ATE only;
+# full eval on 3666-frame dense-KF maps is the documented 2060 OOM risk — mapping-side
+# no-harm is carried by f1_desk). Allowed diff vs prune twin = {method,
+# Mapping.lifecycle_mode} — tests/test_r2_oracle_configs.py.
+inherit_from: "configs/rgbd/tum/f2_xyz.yaml"
+method_from: "configs/rgbd/experiments/probe2_reliable_tracking/method_deferred_track_off.yaml"
+method: "Deferred-RToff"

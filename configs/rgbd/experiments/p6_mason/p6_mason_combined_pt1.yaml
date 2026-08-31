@@ -1,0 +1,7 @@
+# P6-MASON — mask-ON discriminator run config — pt1 (the known 18-seq weakness)
+# Re-verifies the existing P2-T pt1 combined (10.04) and confirms mask-ON fixed the
+# mask-off 32.41 collapse. If mask-ON were dropped from the method, this would be absent;
+# retaining it re-affirms pt1 as mask-ON-stable.
+inherit_from: "configs/rgbd/bonn/person_tracking.yaml"
+method_from: "configs/rgbd/experiments/active/candidate/method_combined_maskboth_prune.yaml"
+method: "Combined"

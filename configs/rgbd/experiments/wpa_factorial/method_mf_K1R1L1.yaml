@@ -1,0 +1,29 @@
+# WP-A FACTORIAL method overlay — arm K1R1L1 (mask-free, all three mechanisms ON).
+# 2026-08-14, WP-A (CCF-C 整改执行卡 v3). This is the FULL mask-free MRCS config
+# (== the complete method_combined_maskoff_prune backbone). Three-factor full factorial;
+# K = DynamicKeyframe / R = RobustTracking / L = ReliabilitySignal.
+# Must resolve byte-identical to method_combined_maskoff_prune (mask-free, all three on,
+# DeferredCommit trimmed per prereg). This arm anchors K1R1L1 = the "complete method".
+inherit_from: "configs/rgbd/experiments/active/candidate/method_combined_maskoff_prune.yaml"
+
+TriReliability:
+  enabled: false
+
+RobustTracking:
+  enabled: true
+
+DynamicKeyframe:
+  enabled: true
+
+ReliabilitySignal:
+  enabled: true
+
+SemanticMask:
+  enabled: false
+
+DeferredCommit:
+  enabled: true
+  reliability_confirm: true
+
+Mapping:
+  lifecycle_mode: "prune"

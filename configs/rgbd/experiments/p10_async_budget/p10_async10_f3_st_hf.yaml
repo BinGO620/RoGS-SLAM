@@ -1,0 +1,10 @@
+# P10-P0c — async iter_per_kf=10（控制锚点，与 exp26 完全一致的重现）
+#
+# 用于确认当前 async iter_per_kf=10 的基线逃逸率（期望 0/5，与 exp26 control 0/4 一致）。
+# 注意：默认值就是 10，这里显式写出来是为了配置自证（config.yml 可读到该值）。
+inherit_from: "configs/rgbd/tum/f3_st_hf.yaml"
+method_from: "configs/rgbd/experiments/active/candidate/method_combined_maskoff_prune.yaml"
+method: "P10-P0c-Async10"
+
+Training:
+  async_iter_per_kf: 10

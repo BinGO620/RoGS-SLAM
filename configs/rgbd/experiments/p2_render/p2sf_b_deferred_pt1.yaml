@@ -1,0 +1,14 @@
+# P2-SF de-confounding control, variant B (sensitivity), arm B: COMBINED + deferred, GT-pose
+# frozen (Bonn person_tracking). Twin of p2sf_b_prune_pt1.yaml; differs ONLY in lifecycle.
+# See p2sf_b_prune_pt1.yaml for rationale (GT-pose sensitivity, regime-extremity, ATE=canary).
+inherit_from: "configs/rgbd/bonn/person_tracking.yaml"
+method_from: "configs/rgbd/experiments/active/candidate/method_combined_maskboth_deferred.yaml"
+method: "CombinedSF-B-Deferred"
+
+Oracle:
+  gt_pose: true
+
+Training:
+  lr:
+    cam_rot_delta: 0.0
+    cam_trans_delta: 0.0

@@ -1,0 +1,9 @@
+# exp39 Step C / f3_wk_xyz EMA 基线（超参与 balloon 一致，不扫）
+inherit_from: "configs/rgbd/experiments/exp39_mapping_soft/exp39_hard_f3_wk_xyz.yaml"
+method: "EXP39C-ema-f3_wk_xyz"
+
+SemanticMask:
+  mapping_ema: true
+  mapping_ema_beta: 0.95
+  mapping_ema_lambda: 1.0
+  mapping_ema_sigma_min: 0.01

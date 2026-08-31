@@ -1,0 +1,4 @@
+# EXP59 boundary validation: mask-free arm on unseen sequence kidnapping_box.
+inherit_from: "configs/rgbd/bonn/kidnapping_box.yaml"
+method_from: "configs/rgbd/experiments/active/candidate/method_combined_maskoff_prune.yaml"
+method: "EXP59-maskfree-kidnapping_box"

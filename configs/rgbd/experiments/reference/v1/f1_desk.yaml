@@ -1,0 +1,5 @@
+inherit_from: "configs/rgbd/tum/f1_desk.yaml"
+method_from: "configs/rgbd/experiments/reference/v1/method.yaml"
+method: "v1-reference"
+Dataset:
+  sequence: "f1_desk"

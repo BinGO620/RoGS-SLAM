@@ -1,0 +1,16 @@
+# EXP51 — f3_st_hf 静态 ATE 优化，Phase 1 预算公平对照。
+#
+# 臂 A1：MRCS（mask-free 主内核：RobustTracking + DynamicKeyframe(gap_cap=5) +
+# ReliabilitySignal + prune lifecycle）+ 异步映射预算 async_iter_per_kf=10。
+#
+# 目的：复现当前主表口径下 MRCS 在 f3_st_hf 的必崩退化（0/5，约 35.6–35.9 cm）。
+# 本臂是 EXP51 的失败锚点，与 exp27/p10_async10 同链（method_combined_maskoff_prune），
+# 只显式钉死 async_iter_per_kf=10 以便 config.yml 可读自证。
+#
+# 正式数据只用 3090（jiangwenheng），2060(cb) 不做判决。
+inherit_from: "configs/rgbd/tum/f3_st_hf.yaml"
+method_from: "configs/rgbd/experiments/active/candidate/method_combined_maskoff_prune.yaml"
+method: "EXP51-A1-MRCS-Async10"
+
+Training:
+  async_iter_per_kf: 10

@@ -1,0 +1,6 @@
+# WP-B CONFIRM — vanilla arm (K0R0L0), held-out seq balloon2.
+# Mirrors wpa_pt1_K0R0L0 pattern; WP-A factorial did not include balloon2 (5 seqs were
+# mv_no_box/mv_no_box2/pt2/balloon/pt1), and WP-B held-out② requires balloon2.
+inherit_from: "configs/rgbd/bonn/balloon2.yaml"
+method_from: "configs/rgbd/experiments/wpa_factorial/method_mf_K0R0L0.yaml"
+method: "WPB-confirm-vanilla-balloon2"

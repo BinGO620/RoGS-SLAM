@@ -1,0 +1,4 @@
+# P-B 2x2: mask ON, dynKF OFF, prune. balloon.
+inherit_from: "configs/rgbd/bonn/balloon.yaml"
+method_from: "configs/rgbd/experiments/active/candidate/method_combined_mask_dynkfoff_prune.yaml"
+method: "Combined-MaskDynKfOff"

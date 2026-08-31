@@ -1,0 +1,8 @@
+# TRACKSIDE-ONLY 臂 / f3_wk_xyz —— 说明见 pba_trackside_only_balloon.yaml
+# 与 pba_eboth_f3_wk_xyz 的差异 = mask_mapping 与 mask_insertion 同时关。
+inherit_from: "configs/rgbd/experiments/pba_ba_coupling/pba_eboth_f3_wk_xyz.yaml"
+method: "PBA-trackside-only-f3_wk_xyz"
+
+SemanticMask:
+  mask_mapping: false
+  mask_insertion: false

@@ -1,0 +1,30 @@
+# R2-P02 pre-flight -- arm D (alpha exit) on balloon under the RGD-INJECTED
+# strong trajectory. Twin of r2_oracle_admission/oracle_deferred_balloon.yaml
+# (arm B), which R2-P01-E2 already ran on both seeds -- so this arm has a real
+# on-disk reference band instead of a guessed canary (the E2 process failure:
+# a 15-32 cm plausibility band admitted everything, r2_p02_e2.md 5).
+#
+# This is the pre-registered pose-controlled instrument (prereg 7: "R2-P02-E3 ...
+# + Oracle 注入 pose-controlled 行（复用 R2-P01 注入）"), pulled forward as a
+# screening pre-flight. Preferred over gtpose_* because (a) it is already in the
+# contract, (b) its injection is self-validating -- ate_rmse_cm must reproduce
+# 2.0618 cm to 4 dp under the +-0.02 cm fail-fast, so a silent pose-freeze
+# failure cannot pass, and (c) 2 cm is a trajectory a real tracker can have.
+#
+# Allowed diff vs its self-tracked base (alpha_exit_balloon.yaml) = EXACTLY
+#   {method, Oracle.pose_file, Training.lr.cam_rot_delta, Training.lr.cam_trans_delta}
+# Allowed diff vs its arm-B twin (oracle_deferred_balloon.yaml) = EXACTLY
+#   {method, AlphaLifecycle.mode}
+# -- tests/test_preflight_pose_configs.py.
+#
+# Injected sanity ATE vs OUR GT (pre-registered, SLAM-seed independent): 2.0618 cm.
+inherit_from: "configs/rgbd/experiments/r2_alpha_lifecycle/alpha_exit_balloon.yaml"
+method: "OracleRGD-AlphaExit"
+
+Oracle:
+  pose_file: "/data/monogs-ours/external_trajectories/rgd/bonn_balloon/seed_0/slam_outputs/Datasets_Bonn/2026-06-25-02-49-00/plot/trj_final.json"
+
+Training:
+  lr:
+    cam_rot_delta: 0.0
+    cam_trans_delta: 0.0

@@ -1,0 +1,8 @@
+# TRACKSIDE-HARD 臂 / f3_wk_xyz —— 把 channel 1 的作用域从 10/100 扩到 100/100
+# 与 pba_trackside_only_f3_wk_xyz 的差异 = 唯一多 hard_tracking_mask: true
+# 逻辑同 pba_trackside_hard_balloon.yaml
+inherit_from: "configs/rgbd/experiments/pba_ba_coupling/pba_trackside_only_f3_wk_xyz.yaml"
+method: "PBA-trackside-hard-f3_wk_xyz"
+
+SemanticMask:
+  hard_tracking_mask: true

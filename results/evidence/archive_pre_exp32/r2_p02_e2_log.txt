@@ -1,0 +1,24 @@
+[2026-07-28 00:06:16] ==== E2 phase=all commit=3ab0207 GPU=0 ====
+[2026-07-28 00:06:16] START A_prune seed0 -> results/runs/R2-P02/R2-P02-E2/A_prune_seed0
+[2026-07-28 00:30:00] END   A_prune seed0 exit=0 23.7min vac_depth=21.5631
+[2026-07-28 00:30:00] START B_deferred seed0 -> results/runs/R2-P02/R2-P02-E2/B_deferred_seed0
+[2026-07-28 00:53:04] END   B_deferred seed0 exit=0 23.1min vac_depth=22.252
+[2026-07-28 00:53:04] CANARY-CHECK A_prune exit=0 vac_depth=21.5631 G_refined=25471.0 vac_px=203284.0 -> OK
+[2026-07-28 00:53:04] CANARY-CHECK B_deferred exit=0 vac_depth=22.252 G_refined=23552.0 vac_px=203284.0 -> OK
+[2026-07-28 00:53:04] ==== CANARY PASS (ref: A/prune~23.55cm/25896G, B/deferred~23.86cm/20355G) ====
+[2026-07-28 00:53:04] START C_observe seed0 -> results/runs/R2-P02/R2-P02-E2/C_observe_seed0
+[2026-07-28 01:15:33] END   C_observe seed0 exit=0 22.5min vac_depth=23.046
+[2026-07-28 01:15:33] START D_exit seed0 -> results/runs/R2-P02/R2-P02-E2/D_exit_seed0
+[2026-07-28 01:39:05] END   D_exit seed0 exit=0 23.5min vac_depth=21.9919
+[2026-07-28 01:39:05] START E_exit_fill seed0 -> results/runs/R2-P02/R2-P02-E2/E_exit_fill_seed0
+[2026-07-28 02:02:15] END   E_exit_fill seed0 exit=0 23.2min vac_depth=22.8824
+[2026-07-28 02:02:15] START A_prune seed1 -> results/runs/R2-P02/R2-P02-E2/A_prune_seed1
+[2026-07-28 02:25:24] END   A_prune seed1 exit=0 23.1min vac_depth=22.0741
+[2026-07-28 02:25:24] START B_deferred seed1 -> results/runs/R2-P02/R2-P02-E2/B_deferred_seed1
+[2026-07-28 02:48:59] END   B_deferred seed1 exit=0 23.6min vac_depth=26.6837
+[2026-07-28 02:48:59] START D_exit seed1 -> results/runs/R2-P02/R2-P02-E2/D_exit_seed1
+[2026-07-28 03:11:53] END   D_exit seed1 exit=0 22.9min vac_depth=23.3908
+[2026-07-28 03:11:53] START E_exit_fill seed1 -> results/runs/R2-P02/R2-P02-E2/E_exit_fill_seed1
+[2026-07-28 03:35:43] END   E_exit_fill seed1 exit=0 23.8min vac_depth=23.7297
+[2026-07-28 03:35:43] ==== REST DONE ====
+[2026-07-28 03:35:43] ==== E2 ALL DONE ====

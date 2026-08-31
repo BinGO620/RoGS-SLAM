@@ -1,0 +1,21 @@
+# R1-P01 open-set arm: PRUNE = insert-then-prune control（竞品 Type-B 的忠实复现）。
+# 与 deferred 臂的唯一允许差异 = Mapping.lifecycle_mode（method 字段自动豁免）。
+# CoarsePoseInit 保持基座默认 OFF——probe1（2026-07-21, registry PROBE1-C）已证伪该模块。
+# TriReliability 显式钉死 OFF：旧 V1 信号，防止与 R1-P01 的 ReliabilitySignal 串扰。
+TriReliability:
+  enabled: false
+
+ReliabilitySignal:
+  enabled: true
+
+DeferredCommit:
+  enabled: true
+  reliability_confirm: true
+
+Mapping:
+  lifecycle_mode: "prune"
+
+Results:
+  save_raw_metrics: true
+  static_bg_mask_subdir: "dynamic_mask_gtmc"
+  static_bg_band_px: [10, 25, 50]

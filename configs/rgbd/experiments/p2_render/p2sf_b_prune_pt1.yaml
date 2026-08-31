@@ -1,0 +1,27 @@
+# P2-SF de-confounding control, variant B (SENSITIVITY, not branch), arm A: COMBINED backbone
+# + prune lifecycle, FROZEN-POSE on dataset GT (Bonn person_tracking).
+#
+# WHY VARIANT B (GT-pose, sensitivity not primary). codex's causally-cleanest option: GT
+# poses are exogenous, identical, not selected by either arm. BUT hermes's regime-preservation
+# argument makes B a SENSITIVITY, not the branch: GT pose = 0cm ATE = perfect tracking, a
+# regime SHIFT from self-tracked (R2-P01-E2 saw frozen-pose PSNR ~15 vs self ~19-25). If the
+# compactness effect is partly mediated by pose-map feedback (exactly what C tests), perfect
+# poses can SUPPRESS it by construction -> a NO-MAP-EFFECT under B is ambiguous (tracking-
+# coupled OR regime-suppressed). So C carries the prereg branch; B is a regime-extremity
+# footnote: "if B suppresses the effect while C shows it, consistent with pose-map feedback
+# mediating part of the compactness contrast." See consult_synthesis_selffrozen.md.
+#
+# ATE = canary (GT-pose ATE = 0 by construction, both arms). Observables map-level
+# (R_G^F + vac_depth/vac_psnr). Differs from self-tracked prune only in
+# {Oracle.gt_pose, cam_rot_delta, cam_trans_delta}. Pinned by tests/test_p2sf_selffrozen_configs.py.
+inherit_from: "configs/rgbd/bonn/person_tracking.yaml"
+method_from: "configs/rgbd/experiments/active/candidate/method_combined_maskboth_prune.yaml"
+method: "CombinedSF-B-Prune"
+
+Oracle:
+  gt_pose: true
+
+Training:
+  lr:
+    cam_rot_delta: 0.0
+    cam_trans_delta: 0.0

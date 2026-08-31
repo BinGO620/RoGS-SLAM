@@ -1,0 +1,159 @@
+RUN results/runs/P2/P2-T/balloon2_prune_seed0/datasets_bonn/p2s_combined_prune_balloon2/seed_0/2026-07-31-22-39-00
+HIST-FAIL results/runs/P2/P2-T/balloon2_prune_seed0/datasets_bonn/p2s_combined_prune_balloon2/seed_0/2026-07-31-22-39-00: No CUDA GPUs are available
+TERM-FAIL 2026-07-31-22-39-00 op<0.01: No CUDA GPUs are available
+TERM-FAIL 2026-07-31-22-39-00 op<0.05: No CUDA GPUs are available
+DONE 2A
+RUN results/runs/P2/P2-T/balloon2_prune_seed1/datasets_bonn/p2s_combined_prune_balloon2/seed_1/2026-08-01-12-38-56
+HIST-FAIL results/runs/P2/P2-T/balloon2_prune_seed1/datasets_bonn/p2s_combined_prune_balloon2/seed_1/2026-08-01-12-38-56: No CUDA GPUs are available
+TERM-FAIL 2026-08-01-12-38-56 op<0.01: No CUDA GPUs are available
+TERM-FAIL 2026-08-01-12-38-56 op<0.05: No CUDA GPUs are available
+DONE 2A
+RUN results/runs/P2/P2-T/balloon2_prune_seed2/datasets_bonn/p2s_combined_prune_balloon2/seed_2/2026-08-01-20-12-49
+HIST-FAIL results/runs/P2/P2-T/balloon2_prune_seed2/datasets_bonn/p2s_combined_prune_balloon2/seed_2/2026-08-01-20-12-49: No CUDA GPUs are available
+TERM-FAIL 2026-08-01-20-12-49 op<0.01: No CUDA GPUs are available
+TERM-FAIL 2026-08-01-20-12-49 op<0.05: No CUDA GPUs are available
+DONE 2A
+RUN results/runs/P2/P2-T/balloon_prune_seed0/datasets_bonn/p2s_combined_prune_balloon/seed_0/2026-07-31-21-46-20
+HIST-FAIL results/runs/P2/P2-T/balloon_prune_seed0/datasets_bonn/p2s_combined_prune_balloon/seed_0/2026-07-31-21-46-20: No CUDA GPUs are available
+TERM-FAIL 2026-07-31-21-46-20 op<0.01: No CUDA GPUs are available
+TERM-FAIL 2026-07-31-21-46-20 op<0.05: No CUDA GPUs are available
+DONE 2A
+RUN results/runs/P2/P2-T/balloon_prune_seed1/datasets_bonn/p2s_combined_prune_balloon/seed_1/2026-08-01-11-45-03
+HIST-FAIL results/runs/P2/P2-T/balloon_prune_seed1/datasets_bonn/p2s_combined_prune_balloon/seed_1/2026-08-01-11-45-03: No CUDA GPUs are available
+TERM-FAIL 2026-08-01-11-45-03 op<0.01: No CUDA GPUs are available
+TERM-FAIL 2026-08-01-11-45-03 op<0.05: No CUDA GPUs are available
+DONE 2A
+RUN results/runs/P2/P2-T/balloon_prune_seed2/datasets_bonn/p2s_combined_prune_balloon/seed_2/2026-08-01-19-19-25
+HIST-FAIL results/runs/P2/P2-T/balloon_prune_seed2/datasets_bonn/p2s_combined_prune_balloon/seed_2/2026-08-01-19-19-25: No CUDA GPUs are available
+TERM-FAIL 2026-08-01-19-19-25 op<0.01: No CUDA GPUs are available
+TERM-FAIL 2026-08-01-19-19-25 op<0.05: No CUDA GPUs are available
+DONE 2A
+RUN results/runs/P2/P2-T/mv_no_box2_prune_seed0/datasets_bonn/p2s_combined_prune_mv_no_box2/seed_0/2026-08-01-01-06-48
+HIST-FAIL results/runs/P2/P2-T/mv_no_box2_prune_seed0/datasets_bonn/p2s_combined_prune_mv_no_box2/seed_0/2026-08-01-01-06-48: No CUDA GPUs are available
+TERM-FAIL 2026-08-01-01-06-48 op<0.01: No CUDA GPUs are available
+TERM-FAIL 2026-08-01-01-06-48 op<0.05: No CUDA GPUs are available
+DONE 2A
+RUN results/runs/P2/P2-T/mv_no_box2_prune_seed1/datasets_bonn/p2s_combined_prune_mv_no_box2/seed_1/2026-08-01-15-12-09
+HIST-FAIL results/runs/P2/P2-T/mv_no_box2_prune_seed1/datasets_bonn/p2s_combined_prune_mv_no_box2/seed_1/2026-08-01-15-12-09: No CUDA GPUs are available
+TERM-FAIL 2026-08-01-15-12-09 op<0.01: No CUDA GPUs are available
+TERM-FAIL 2026-08-01-15-12-09 op<0.05: No CUDA GPUs are available
+DONE 2A
+RUN results/runs/P2/P2-T/mv_no_box2_prune_seed2/datasets_bonn/p2s_combined_prune_mv_no_box2/seed_2/2026-08-01-22-40-35
+HIST-FAIL results/runs/P2/P2-T/mv_no_box2_prune_seed2/datasets_bonn/p2s_combined_prune_mv_no_box2/seed_2/2026-08-01-22-40-35: No CUDA GPUs are available
+TERM-FAIL 2026-08-01-22-40-35 op<0.01: No CUDA GPUs are available
+TERM-FAIL 2026-08-01-22-40-35 op<0.05: No CUDA GPUs are available
+DONE 2A
+RUN results/runs/P2/P2-T/mv_no_box_prune_seed0/datasets_bonn/p2s_combined_prune_mv_no_box/seed_0/2026-07-31-23-36-08
+HIST-FAIL results/runs/P2/P2-T/mv_no_box_prune_seed0/datasets_bonn/p2s_combined_prune_mv_no_box/seed_0/2026-07-31-23-36-08: No CUDA GPUs are available
+TERM-FAIL 2026-07-31-23-36-08 op<0.01: No CUDA GPUs are available
+TERM-FAIL 2026-07-31-23-36-08 op<0.05: No CUDA GPUs are available
+DONE 2A
+RUN results/runs/P2/P2-T/mv_no_box_prune_seed1/datasets_bonn/p2s_combined_prune_mv_no_box/seed_1/2026-08-01-13-42-08
+HIST-FAIL results/runs/P2/P2-T/mv_no_box_prune_seed1/datasets_bonn/p2s_combined_prune_mv_no_box/seed_1/2026-08-01-13-42-08: No CUDA GPUs are available
+TERM-FAIL 2026-08-01-13-42-08 op<0.01: No CUDA GPUs are available
+TERM-FAIL 2026-08-01-13-42-08 op<0.05: No CUDA GPUs are available
+DONE 2A
+RUN results/runs/P2/P2-T/mv_no_box_prune_seed2/datasets_bonn/p2s_combined_prune_mv_no_box/seed_2/2026-08-01-21-11-26
+HIST-FAIL results/runs/P2/P2-T/mv_no_box_prune_seed2/datasets_bonn/p2s_combined_prune_mv_no_box/seed_2/2026-08-01-21-11-26: No CUDA GPUs are available
+TERM-FAIL 2026-08-01-21-11-26 op<0.01: No CUDA GPUs are available
+TERM-FAIL 2026-08-01-21-11-26 op<0.05: No CUDA GPUs are available
+DONE 2A
+RUN results/runs/P2/P2-T/pt1_prune_seed0/datasets_bonn/p2s_combined_prune_pt1/seed_0/2026-08-01-02-54-57
+HIST-FAIL results/runs/P2/P2-T/pt1_prune_seed0/datasets_bonn/p2s_combined_prune_pt1/seed_0/2026-08-01-02-54-57: No CUDA GPUs are available
+TERM-FAIL 2026-08-01-02-54-57 op<0.01: No CUDA GPUs are available
+TERM-FAIL 2026-08-01-02-54-57 op<0.05: No CUDA GPUs are available
+DONE 2A
+RUN results/runs/P2/P2-T/pt1_prune_seed1/datasets_bonn/p2s_combined_prune_pt1/seed_1/2026-08-01-17-01-11
+HIST-FAIL results/runs/P2/P2-T/pt1_prune_seed1/datasets_bonn/p2s_combined_prune_pt1/seed_1/2026-08-01-17-01-11: No CUDA GPUs are available
+TERM-FAIL 2026-08-01-17-01-11 op<0.01: No CUDA GPUs are available
+TERM-FAIL 2026-08-01-17-01-11 op<0.05: No CUDA GPUs are available
+DONE 2A
+RUN results/runs/P2/P2-T/pt1_prune_seed2/datasets_bonn/p2s_combined_prune_pt1/seed_2/2026-08-02-00-29-47
+HIST-FAIL results/runs/P2/P2-T/pt1_prune_seed2/datasets_bonn/p2s_combined_prune_pt1/seed_2/2026-08-02-00-29-47: No CUDA GPUs are available
+TERM-FAIL 2026-08-02-00-29-47 op<0.01: No CUDA GPUs are available
+TERM-FAIL 2026-08-02-00-29-47 op<0.05: No CUDA GPUs are available
+DONE 2A
+RUN results/runs/P2/P2-T/pt2_prune_seed0/datasets_bonn/p2s_combined_prune_pt2/seed_0/2026-08-01-04-03-53
+HIST-FAIL results/runs/P2/P2-T/pt2_prune_seed0/datasets_bonn/p2s_combined_prune_pt2/seed_0/2026-08-01-04-03-53: No CUDA GPUs are available
+TERM-FAIL 2026-08-01-04-03-53 op<0.01: No CUDA GPUs are available
+TERM-FAIL 2026-08-01-04-03-53 op<0.05: No CUDA GPUs are available
+DONE 2A
+RUN results/runs/P2/P2-T/pt2_prune_seed1/datasets_bonn/p2s_combined_prune_pt2/seed_1/2026-08-01-18-11-17
+HIST-FAIL results/runs/P2/P2-T/pt2_prune_seed1/datasets_bonn/p2s_combined_prune_pt2/seed_1/2026-08-01-18-11-17: No CUDA GPUs are available
+TERM-FAIL 2026-08-01-18-11-17 op<0.01: No CUDA GPUs are available
+TERM-FAIL 2026-08-01-18-11-17 op<0.05: No CUDA GPUs are available
+DONE 2A
+RUN results/runs/P2/P2-T/pt2_prune_seed2/datasets_bonn/p2s_combined_prune_pt2/seed_2/2026-08-02-01-39-42
+RUN results/runs/P2/P2-T/balloon_prune_seed0/datasets_bonn/p2s_combined_prune_balloon/seed_0/2026-07-31-21-46-20
+HIST-FAIL results/runs/P2/P2-T/pt2_prune_seed2/datasets_bonn/p2s_combined_prune_pt2/seed_2/2026-08-02-01-39-42: No CUDA GPUs are available
+TERM-FAIL 2026-08-02-01-39-42 op<0.01: No CUDA GPUs are available
+TERM-FAIL 2026-08-02-01-39-42 op<0.05: No CUDA GPUs are available
+DONE 2A
+HIST-FAIL results/runs/P2/P2-T/balloon_prune_seed0/datasets_bonn/p2s_combined_prune_balloon/seed_0/2026-07-31-21-46-20: No CUDA GPUs are available
+TERM-FAIL 2026-07-31-21-46-20 op<0.01: No CUDA GPUs are available
+TERM-FAIL 2026-07-31-21-46-20 op<0.05: No CUDA GPUs are available
+DONE 2A
+RUN results/runs/P2/P2-T/balloon_prune_seed1/datasets_bonn/p2s_combined_prune_balloon/seed_1/2026-08-01-11-45-03
+HIST-FAIL results/runs/P2/P2-T/balloon_prune_seed1/datasets_bonn/p2s_combined_prune_balloon/seed_1/2026-08-01-11-45-03: No CUDA GPUs are available
+TERM-FAIL 2026-08-01-11-45-03 op<0.01: No CUDA GPUs are available
+TERM-FAIL 2026-08-01-11-45-03 op<0.05: No CUDA GPUs are available
+DONE 2A
+RUN results/runs/P2/P2-T/balloon_prune_seed2/datasets_bonn/p2s_combined_prune_balloon/seed_2/2026-08-01-19-19-25
+HIST-FAIL results/runs/P2/P2-T/balloon_prune_seed2/datasets_bonn/p2s_combined_prune_balloon/seed_2/2026-08-01-19-19-25: No CUDA GPUs are available
+TERM-FAIL 2026-08-01-19-19-25 op<0.01: No CUDA GPUs are available
+TERM-FAIL 2026-08-01-19-19-25 op<0.05: No CUDA GPUs are available
+DONE 2A
+RUN results/runs/P2/P2-T/mv_no_box_prune_seed0/datasets_bonn/p2s_combined_prune_mv_no_box/seed_0/2026-07-31-23-36-08
+HIST-FAIL results/runs/P2/P2-T/mv_no_box_prune_seed0/datasets_bonn/p2s_combined_prune_mv_no_box/seed_0/2026-07-31-23-36-08: No CUDA GPUs are available
+TERM-FAIL 2026-07-31-23-36-08 op<0.01: No CUDA GPUs are available
+TERM-FAIL 2026-07-31-23-36-08 op<0.05: No CUDA GPUs are available
+DONE 2A
+RUN results/runs/P2/P2-T/mv_no_box_prune_seed1/datasets_bonn/p2s_combined_prune_mv_no_box/seed_1/2026-08-01-13-42-08
+HIST-FAIL results/runs/P2/P2-T/mv_no_box_prune_seed1/datasets_bonn/p2s_combined_prune_mv_no_box/seed_1/2026-08-01-13-42-08: No CUDA GPUs are available
+TERM-FAIL 2026-08-01-13-42-08 op<0.01: No CUDA GPUs are available
+TERM-FAIL 2026-08-01-13-42-08 op<0.05: No CUDA GPUs are available
+DONE 2A
+RUN results/runs/P2/P2-T/mv_no_box_prune_seed2/datasets_bonn/p2s_combined_prune_mv_no_box/seed_2/2026-08-01-21-11-26
+HIST-FAIL results/runs/P2/P2-T/mv_no_box_prune_seed2/datasets_bonn/p2s_combined_prune_mv_no_box/seed_2/2026-08-01-21-11-26: No CUDA GPUs are available
+TERM-FAIL 2026-08-01-21-11-26 op<0.01: No CUDA GPUs are available
+TERM-FAIL 2026-08-01-21-11-26 op<0.05: No CUDA GPUs are available
+DONE 2A
+RUN results/runs/P2/P2-T/pt1_prune_seed0/datasets_bonn/p2s_combined_prune_pt1/seed_0/2026-08-01-02-54-57
+HIST-FAIL results/runs/P2/P2-T/pt1_prune_seed0/datasets_bonn/p2s_combined_prune_pt1/seed_0/2026-08-01-02-54-57: No CUDA GPUs are available
+TERM-FAIL 2026-08-01-02-54-57 op<0.01: No CUDA GPUs are available
+TERM-FAIL 2026-08-01-02-54-57 op<0.05: No CUDA GPUs are available
+DONE 2A
+RUN results/runs/P2/P2-T/pt1_prune_seed1/datasets_bonn/p2s_combined_prune_pt1/seed_1/2026-08-01-17-01-11
+HIST-FAIL results/runs/P2/P2-T/pt1_prune_seed1/datasets_bonn/p2s_combined_prune_pt1/seed_1/2026-08-01-17-01-11: No CUDA GPUs are available
+TERM-FAIL 2026-08-01-17-01-11 op<0.01: No CUDA GPUs are available
+TERM-FAIL 2026-08-01-17-01-11 op<0.05: No CUDA GPUs are available
+DONE 2A
+RUN results/runs/P2/P2-T/pt1_prune_seed2/datasets_bonn/p2s_combined_prune_pt1/seed_2/2026-08-02-00-29-47
+HIST-FAIL results/runs/P2/P2-T/pt1_prune_seed2/datasets_bonn/p2s_combined_prune_pt1/seed_2/2026-08-02-00-29-47: No CUDA GPUs are available
+TERM-FAIL 2026-08-02-00-29-47 op<0.01: No CUDA GPUs are available
+TERM-FAIL 2026-08-02-00-29-47 op<0.05: No CUDA GPUs are available
+DONE 2A
+RUN results/runs/P2/P2-T/pt2_prune_seed0/datasets_bonn/p2s_combined_prune_pt2/seed_0/2026-08-01-04-03-53
+HIST-FAIL results/runs/P2/P2-T/pt2_prune_seed0/datasets_bonn/p2s_combined_prune_pt2/seed_0/2026-08-01-04-03-53: No CUDA GPUs are available
+TERM-FAIL 2026-08-01-04-03-53 op<0.01: No CUDA GPUs are available
+TERM-FAIL 2026-08-01-04-03-53 op<0.05: No CUDA GPUs are available
+DONE 2A
+RUN results/runs/P2/P2-T/pt2_prune_seed1/datasets_bonn/p2s_combined_prune_pt2/seed_1/2026-08-01-18-11-17
+HIST-FAIL results/runs/P2/P2-T/pt2_prune_seed1/datasets_bonn/p2s_combined_prune_pt2/seed_1/2026-08-01-18-11-17: No CUDA GPUs are available
+TERM-FAIL 2026-08-01-18-11-17 op<0.01: No CUDA GPUs are available
+TERM-FAIL 2026-08-01-18-11-17 op<0.05: No CUDA GPUs are available
+DONE 2A
+RUN results/runs/P2/P2-T/pt2_prune_seed2/datasets_bonn/p2s_combined_prune_pt2/seed_2/2026-08-02-01-39-42
+HIST-FAIL results/runs/P2/P2-T/pt2_prune_seed2/datasets_bonn/p2s_combined_prune_pt2/seed_2/2026-08-02-01-39-42: No CUDA GPUs are available
+TERM-FAIL 2026-08-02-01-39-42 op<0.01: No CUDA GPUs are available
+TERM-FAIL 2026-08-02-01-39-42 op<0.05: No CUDA GPUs are available
+DONE 2A
+HIST-RUN results/runs/P2/P2-MC/balloon_compress_seed0/datasets_bonn/p2s_combined_prune_compress_balloon/seed_0/2026-08-05-21-09-13
+HIST-FAIL results/runs/P2/P2-MC/balloon_compress_seed0/datasets_bonn/p2s_combined_prune_compress_balloon/seed_0/2026-08-05-21-09-13: No CUDA GPUs are available
+DONE 2A
+HIST-RUN results/runs/P2/P2-MC/mv_no_box_compress_seed0/datasets_bonn/p2s_combined_prune_compress_mv_no_box/seed_0/2026-08-05-21-49-22
+HIST-FAIL results/runs/P2/P2-MC/mv_no_box_compress_seed0/datasets_bonn/p2s_combined_prune_compress_mv_no_box/seed_0/2026-08-05-21-49-22: No CUDA GPUs are available
+DONE 2A
+HIST-RUN results/runs/P2/P2-MC/pt1_compress_seed0/datasets_bonn/p2s_combined_prune_compress_pt1/seed_0/2026-08-05-21-49-22
+HIST-FAIL results/runs/P2/P2-MC/pt1_compress_seed0/datasets_bonn/p2s_combined_prune_compress_pt1/seed_0/2026-08-05-21-49-22: No CUDA GPUs are available
+DONE 2A

@@ -1,0 +1,11 @@
+# R2-P03-SWEEP level S2: candidate TTL pressure, maximal on this knob.
+# Base = arm A (insert-then-prune control) under the frozen RGD balloon trajectory.
+# Allowed diff vs base = {method, DeferredCommit.ttl_keyframes} — tests/test_r2_p03_sweep_configs.py.
+# ttl=1 gives every candidate exactly one confirmation view before expiry; with
+# confirming_views=2 and fast_promotion off, that is the hardest candidate-side prune the
+# lifecycle can express without disabling candidates altogether.
+inherit_from: "configs/rgbd/experiments/r2_oracle_admission/oracle_prune_balloon.yaml"
+method: "OracleRGD-Prune-S2-ttl1"
+
+DeferredCommit:
+  ttl_keyframes: 1

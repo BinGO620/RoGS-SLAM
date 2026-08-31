@@ -1,0 +1,14 @@
+# P2-SF de-confounding control, variant C, arm B: COMBINED backbone + deferred lifecycle,
+# FROZEN-POSE on prune's own self-tracked trajectory (Bonn balloon2). Twin of
+# p2sf_c_prune_balloon2.yaml; differs ONLY in Mapping.lifecycle_mode. See p2sf_c_prune_pt1.yaml.
+inherit_from: "configs/rgbd/bonn/balloon2.yaml"
+method_from: "configs/rgbd/experiments/active/candidate/method_combined_maskboth_deferred.yaml"
+method: "CombinedSF-C-Deferred"
+
+Oracle:
+  pose_file: "__PRUNE_TRAJ__"
+
+Training:
+  lr:
+    cam_rot_delta: 0.0
+    cam_trans_delta: 0.0

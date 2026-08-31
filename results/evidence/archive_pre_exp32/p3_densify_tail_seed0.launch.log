@@ -1,0 +1,2 @@
+ERROR conda.cli.main_run:execute(148): `conda run python scripts/p3_densify_tail.py --phase seed0` failed. (See above for error)
+[2026-08-07 09:52:11] REFUSING to launch: worktree dirty at 6b75b64. Campaign discipline requires a frozen commit before GPU (起跑前必须 commit).

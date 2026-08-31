@@ -1,0 +1,10 @@
+# P6-MASON pt1 — KF-BA 重启前提探针 (exp-v3-14)
+# 只读：DBALite.oracle (GT-oracle falsifier) + diagnostic (masked-edge conditioning)。
+# 回答：在 mask-ON + edge3 的 person 序列上，masked geometry 是否偏好 GT？
+#   偏好 -> run_dba_v0 前提变了 -> 值得重启 KF-BA。
+#   仍不偏好 -> 从源头确认几何目标不偏好 GT -> 转向长期位姿约束。
+# 零核心改动（纯 config toggle）；DBALite 走 person_tracking <- bonn/base <- tum/base 链。
+inherit_from: "configs/rgbd/experiments/p6_mason/pt1_edgethresh/p6_mason_pt1_edge3.yaml"
+DBALite:
+  diagnostic: true     # masked-edge Hessian conditioning (read-only)
+  oracle: true         # GT-oracle: does masked geometry prefer GT? (read-only)

@@ -1,0 +1,7 @@
+# P-B 2x2 arm: mask OFF, DynamicKeyframe OFF (prune lifecycle). Everything else = combined.
+# Isolates whether dense-KF is the dominant mask-free kernel component.
+inherit_from: "configs/rgbd/experiments/active/candidate/method_combined_maskboth_prune.yaml"
+SemanticMask:
+  enabled: false
+DynamicKeyframe:
+  enabled: false

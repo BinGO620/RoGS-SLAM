@@ -1,0 +1,24 @@
+# P3-S6X arm `s6`: the S6_maxpress knob group on the COMBINED backbone, SELF-TRACKED,
+# Bonn balloon. Base = this campaign's prune anchor (P2-T's frozen run config), so the
+# resolved diff against that anchor is EXACTLY the three knobs below — no restated
+# backbone that could drift. Pinned by tests/test_p3_s6x_configs.py.
+#
+# The three values are R2-P03-SWEEP's `S6_maxpress` verbatim (ttl=1 + gth=0.9 +
+# densify=5e-4); the test asserts they equal scripts/r2_p03_sweep.LEVELS["S6_maxpress"].
+# S6 stays in the PRUNE family: it is a tuned *baseline*, the thing that dominated arm B.
+#
+# WHAT IS NEW HERE IS THE REGIME, NOT THE ARM. S6 was only ever measured on balloon under
+# an injected RGD trajectory where ate_rmse_cm was 2.0618 on all 46 runs of R2-P03 — so a
+# baseline that buys rate by degrading the map could not be charged for it. This config is
+# self-tracked, so it can be.
+inherit_from: "configs/rgbd/experiments/p2_render/p2s_combined_prune_balloon.yaml"
+method: "Combined-Prune-S6-maxpress"
+
+DeferredCommit:
+  ttl_keyframes: 1
+
+Training:
+  gaussian_th: 0.9
+
+opt_params:
+  densify_grad_threshold: 0.0005

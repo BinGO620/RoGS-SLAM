@@ -1,0 +1,14 @@
+# R2-P03-DECOMP cell D1: the generic densification knob, ALONE.
+# Base = arm A (insert-then-prune control) under the frozen RGD balloon trajectory.
+# Allowed diff vs base = {method, opt_params.densify_grad_threshold}
+#   — tests/test_r2_p03_decomp_configs.py.
+# Why this cell exists: R2-P03-SWEEP's S6_maxpress dominated arm B while moving THREE knobs
+# at once (ttl_keyframes 5→1, Training.gaussian_th 0.7→0.9, densify_grad 2e-4→5e-4), so
+# "is the compactness win deferred-specific?" was left unanswerable. This cell moves only the
+# knob that every 3DGS system has, with no part of the candidate-lifecycle admission budget
+# touched — the strictest reading of "a competitor changes one line".
+inherit_from: "configs/rgbd/experiments/r2_oracle_admission/oracle_prune_balloon.yaml"
+method: "OracleRGD-Prune-D1-densifyonly"
+
+opt_params:
+  densify_grad_threshold: 0.0005

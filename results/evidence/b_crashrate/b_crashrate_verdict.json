@@ -1,0 +1,58 @@
+{
+  "verdict": "T-CONFIRMED (timing-driven)",
+  "why": "identical config AND seed still spans 37.0-73.1 cm (max/min 1.97) => a seed-averaged ATE is not an estimator of a method effect on the mask-free backbone; mask-free judgements must be restated as crash rates",
+  "blocks": {
+    "T": {
+      "n": 6,
+      "min": 37.0371,
+      "max": 73.1398,
+      "median": 57.6596,
+      "ratio": 1.9747712428888868,
+      "iqr": 20.6464,
+      "collapse_rate": 0.6666666666666666,
+      "values": [
+        37.0371,
+        48.1211,
+        51.7407,
+        63.5785,
+        71.7037,
+        73.1398
+      ]
+    },
+    "S": {
+      "n": 6,
+      "min": 28.05,
+      "max": 77.8738,
+      "median": 38.3391,
+      "ratio": 2.7762495543672014,
+      "iqr": 15.674475000000001,
+      "collapse_rate": 0.3333333333333333,
+      "values": [
+        28.05,
+        30.8007,
+        37.101,
+        39.5772,
+        50.8746,
+        77.8738
+      ]
+    }
+  },
+  "runs": {
+    "T": {
+      "T_seed0_rep1": 48.1211,
+      "T_seed0_rep2": 71.7037,
+      "T_seed0_rep3": 37.0371,
+      "T_seed0_rep4": 73.1398,
+      "T_seed0_rep5": 51.7407,
+      "T_seed0_rep6": 63.5785
+    },
+    "S": {
+      "S_seed1": 77.8738,
+      "S_seed2": 37.101,
+      "S_seed3": 30.8007,
+      "S_seed4": 28.05,
+      "S_seed5": 50.8746,
+      "S_seed6": 39.5772
+    }
+  }
+}

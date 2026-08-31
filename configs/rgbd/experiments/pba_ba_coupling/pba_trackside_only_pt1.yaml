@@ -1,0 +1,8 @@
+# TRACKSIDE-ONLY 臂 / pt1（描述性序列）—— 说明见 pba_trackside_only_balloon.yaml
+# 与 pba_eboth_pt1 的差异 = mask_mapping 与 mask_insertion 同时关。
+inherit_from: "configs/rgbd/experiments/pba_ba_coupling/pba_eboth_pt1.yaml"
+method: "PBA-trackside-only-pt1"
+
+SemanticMask:
+  mask_mapping: false
+  mask_insertion: false

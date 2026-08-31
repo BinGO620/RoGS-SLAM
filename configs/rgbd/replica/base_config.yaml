@@ -1,0 +1,172 @@
+Results:
+  save_results: True
+  save_dir: "results"
+  save_trj: True
+  save_trj_kf_intv: 20
+  use_gui: True
+  eval_rendering: False
+  use_wandb: False
+
+Reliability:
+  enabled: false
+  mode: "observe"        # off / observe / tracking / mapping / both
+  type: "soft"           # soft / hard
+  tau_depth: 0.05
+  tau_rgb: 0.10
+  r_min: 0.05
+  hard_threshold: 0.50
+  min_mean_reliability: 0.20
+  loss_eps: 1.0e-6
+  save_visualization: true
+  save_interval: 20
+  save_opacity: true
+  use_ema: false
+  ema_beta: 0.8
+
+TriReliability:
+  enabled: false
+  mode: "observe"        # off / observe / tracking / mapping / both
+  tau_depth: 0.10
+  tau_rgb: 0.20
+  min_static_weight: 0.50
+  unmapped_opacity_threshold: 0.35
+  opacity_dynamic_threshold: 0.60
+  boundary_rgb_threshold: 0.08
+  boundary_depth_threshold: 0.08
+  boundary_suppression: 1.00
+  boundary_gate_power: 1.00
+  initial_static_prob: 0.70
+  memory_beta: 0.90
+  update_gaussian_memory: true
+  apply_insertion_gate: false
+  insertion_dynamic_threshold: 0.45
+  max_insertion_gate_ratio: 0.35
+  apply_color_refinement_static_guard: false
+  color_refinement_static_floor: 0.25
+  color_refinement_loss_eps: 1.0e-6
+  freeze_color_refinement_geometry: true
+  # P1a / TR-T (H1): hard-exclude dynamic pixels from the tracking loss (default-off)
+  apply_tracking_dynamic_mask: false
+  tracking_dynamic_threshold: 0.45     # dynamic_evidence > this -> excluded from tracking L1
+  max_tracking_mask_ratio: 0.60        # if masked ratio exceeds this, fall back to vanilla tracking
+  tracking_loss_eps: 1.0e-6
+  save_visualization: true
+  save_interval: 20
+
+RobustTracking:
+  enabled: false
+  kernel: "huber"        # huber / cauchy / gm
+  rgb_delta: 0.10        # photometric residual scale (RGB in [0,1])
+  depth_delta: 0.10      # depth residual scale (meters)
+  loss_eps: 1.0e-6
+
+FlowResidualTracking:
+  enabled: false
+  residual_flow_threshold_px: 2.0   # |measured - ego-predicted| flow (px) > this -> dynamic
+  max_mask_ratio: 0.90              # if masked ratio exceeds this, fall back to vanilla tracking
+  min_depth: 0.01
+  warmup_iters: 10                  # unmasked pose warm-up iters before computing the mask
+
+SemanticMask:
+  enabled: false
+  model: "deeplabv3"      # deeplabv3 (light) / maskrcnn (stronger, heavier)
+  dynamic_classes: [15]   # deeplabv3/VOC person=15; maskrcnn/COCO person=1
+  dilate_px: 5
+  max_mask_ratio: 0.95
+  device: "cuda"          # cuda / cpu
+  soft: false             # P3a: soft down-weight (person softmax prob) instead of hard mask
+  soft_strength: 1.0      # weight = clamp(1 - soft_strength*person_prob, soft_floor, 1)
+  soft_floor: 0.10
+
+StaticProb:
+  enabled: false
+  initial_static_prob: 0.7
+  memory_beta: 0.90       # EMA: static_prob = beta*prev + (1-beta)*(1-residual_evidence)
+  residual_tau: 0.15      # residual scale for per-pixel dynamic evidence
+  soft_strength: 1.0      # tracking weight = robust x clamp(1 - strength*(1-static_prob), floor, 1)
+  soft_floor: 0.10
+
+Dataset:
+  sensor_type: 'depth'
+  pcd_downsample: 64
+  pcd_downsample_init: 32
+  adaptive_pointsize: True
+  point_size: 0.05
+  type: 'replica'
+  Calibration:
+    fx: 600.0
+    fy: 600.0
+    cx: 599.5
+    cy: 339.5
+    k1: 0.0
+    k2: 0.0
+    p1: 0.0
+    p2: 0.0
+    k3: 0.0
+    width: 1200
+    height: 680
+    depth_scale: 6553.5
+    distorted: False
+
+
+Training:
+  color_refinement_iterations: 26000
+  init_itr_num: 1050
+  init_gaussian_update: 100
+  init_gaussian_reset: 500
+  init_gaussian_th: 0.005
+  init_gaussian_extent: 30
+  tracking_itr_num: 100
+  mapping_itr_num: 150
+  gaussian_update_every: 150
+  gaussian_update_offset: 50
+  gaussian_th: 0.7
+  gaussian_extent: 1.0
+  gaussian_reset: 2001
+  size_threshold: 20
+  kf_interval: 4
+  window_size: 10
+  pose_window: 5
+  edge_threshold: 4
+  rgb_boundary_threshold: 0.01
+
+  kf_translation: 0.04
+  kf_min_translation: 0.02
+  kf_overlap: 0.95
+  prune_mode: 'slam'
+  single_thread: True
+  spherical_harmonics: False
+  lr:
+    cam_rot_delta: 0.003
+    cam_trans_delta: 0.001
+
+
+opt_params:
+  iterations: 30000
+  position_lr_init: 0.00016
+  position_lr_final: 0.0000016
+  position_lr_delay_mult: 0.01
+  position_lr_max_steps: 30000
+  feature_lr: 0.0025
+  opacity_lr: 0.05
+  scaling_lr: 0.001
+  rotation_lr: 0.001
+  percent_dense: 0.01
+  lambda_dssim: 0.2
+  densification_interval: 100
+  opacity_reset_interval: 3000
+  densify_from_iter: 500
+  densify_until_iter: 15000
+  densify_grad_threshold: 0.0002
+
+model_params:
+  sh_degree: 0
+  source_path: ""
+  model_path: ""
+  resolution: -1
+  white_background: False
+  data_device: "cuda"
+  
+pipeline_params:
+  convert_SHs_python: False
+  compute_cov3D_python: False

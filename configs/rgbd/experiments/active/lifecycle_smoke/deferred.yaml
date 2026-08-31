@@ -1,0 +1,7 @@
+inherit_from: "configs/rgbd/experiments/active/lifecycle_smoke/base.yaml"
+method: "MonoGS-Lifecycle-Deferred-Smoke"
+
+# Deferred arm (ours): uncertain candidates held OUT of the map, promoted via the
+# lineage-carrying direct builder (insert_candidates IPC) on multi-view confirm.
+Mapping:
+  lifecycle_mode: "deferred"

@@ -1,0 +1,11 @@
+# exp44 Replica 锚点 —— vanilla MonoGS，单进程 + GUI 关（显存修复）
+#
+# 相对 configs/rgbd/replica/room0_sp.yaml 的唯一差异 = Results.use_gui: False
+#   * room0_sp.yaml 与 room0.yaml 只差 single_thread: true（多进程两份模型副本 ⇒ 24GB 装不下）
+#   * Replica base_config 的 use_gui 是 upstream 默认 True（TUM base 是 False），
+#     GUI 进程实测独占 3.08 GB —— 我们从没跑过 Replica 所以一直没发现
+# 对口参照（预注册已钉，MonoGS 论文 Table 2 "Ours (sp)" 行）：office0 0.36 / room0 0.33 cm
+inherit_from: "configs/rgbd/replica/room0_sp.yaml"
+
+Results:
+  use_gui: False

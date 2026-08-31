@@ -1,0 +1,23 @@
+# P11 sparse-KF mask-only method overlay (2026-08-19, exp28).
+#
+# 交接书 NEXT_SESSION_PROMPT.md (exp27) 的 Option A 最小可行臂：
+#   vanilla KF 策略 + Mask R-CNN mask_mapping + Huber robust tracking，
+#   无 DynamicKeyframe / 无 ReliabilitySignal / 无 mask_insertion。
+#
+# 继承关系（归因链）：
+#   inherit WP-M 的 method_maskonly.yaml（exp22 已跑 54-run 的已知臂，
+#   = combined 主表 overlay + {K,R,L}=OFF），只翻两处 P11 规格差异：
+#     ① RobustTracking: false → true（huber, delta 0.10，同 combined）
+#     ② SemanticMask.mask_insertion: true → false（不 map 动态则无需挡插入）
+#   其余（DeferredCommit 降级整数计数、prune lifecycle、Results 块）与 WP-M
+#   逐字节一致 → P11 vs WP-M 的差异恰为 {RobustTracking, mask_insertion}。
+inherit_from: "configs/rgbd/experiments/wpm_maskonly/method_maskonly.yaml"
+
+RobustTracking:
+  enabled: true
+  kernel: "huber"
+  rgb_delta: 0.10
+  depth_delta: 0.10
+
+SemanticMask:
+  mask_insertion: false

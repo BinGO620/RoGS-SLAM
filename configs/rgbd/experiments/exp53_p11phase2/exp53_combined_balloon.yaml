@@ -1,0 +1,8 @@
+# EXP53 — Combined 主表臂 balloon(2026-08-28)。补齐 balloon 头对头:
+# P11 侧复用 EXP52 P11B(同 HEAD),C 侧 3 run 新跑。
+# Combined = method_combined_maskboth_prune 全内核(DynKF gap_cap=5 + ReliabilitySignal
+# + DeferredCommit + RT huber + prune + SemanticMask mapping/insertion 全 ON)。
+# 预算走代码默认 async_iter_per_kf=10(主表口径,两臂匹配,不设该键)。
+inherit_from: "configs/rgbd/bonn/balloon.yaml"
+method_from: "configs/rgbd/experiments/active/candidate/method_combined_maskboth_prune.yaml"
+method: "EXP53-C-Combined-Balloon"

@@ -1,0 +1,252 @@
+{
+  "verdict": {
+    "label": "INDETERMINATE",
+    "why": "E's own seed spread exceeds half the gap between the two point predictions on ['balloon'] -> the arm cannot separate them at n=3 (prereg \u00a75 stopping rule)",
+    "recovery": {
+      "balloon": 0.272,
+      "f3_wk_xyz": -0.021
+    }
+  },
+  "sequences": {
+    "balloon": {
+      "descriptive_only": false,
+      "n": {
+        "A_eboth": 3,
+        "C_mapoff": 3,
+        "D_maskfree": 3,
+        "E_trackside": 3
+      },
+      "ate": {
+        "A_eboth": 3.065,
+        "C_mapoff": 8.642,
+        "D_maskfree": 11.363,
+        "E_trackside": 9.102
+      },
+      "ptp": {
+        "A_eboth": 0.05,
+        "C_mapoff": 1.321,
+        "D_maskfree": 1.521,
+        "E_trackside": 1.536
+      },
+      "per_seed": {
+        "A_eboth": {
+          "0": 3.057,
+          "1": 3.094,
+          "2": 3.043
+        },
+        "C_mapoff": {
+          "0": 9.351,
+          "1": 8.545,
+          "2": 8.03
+        },
+        "D_maskfree": {
+          "0": 11.957,
+          "1": 10.436,
+          "2": 11.695
+        },
+        "E_trackside": {
+          "0": 8.183,
+          "1": 9.718,
+          "2": 9.404
+        }
+      },
+      "total_effect_cm": 8.298,
+      "control_spread_cm": 1.521,
+      "resolve_ratio": 5.46,
+      "resolvable": true,
+      "residual_R": 0.328,
+      "predict_H_inert_E": 11.363,
+      "predict_H_material_E": 8.642,
+      "prediction_gap_cm": 2.721,
+      "recovery_trackside": 0.272,
+      "floor_trackside": 0.185,
+      "trackside_above_floor": true,
+      "share_ins_mapoff": 0.055,
+      "floor_ins_mapoff": 0.185,
+      "ins_mapoff_above_floor": false,
+      "partition_check": -0.001,
+      "E_spread_vs_gap": 0.56,
+      "E_spread_swamps_gap": true,
+      "paired_vs_maskfree": {
+        "seeds": [
+          0,
+          1,
+          2
+        ],
+        "delta_cm": [
+          -3.774,
+          -0.718,
+          -2.291
+        ],
+        "n_better": 3,
+        "n": 3
+      },
+      "paired_vs_mapoff": {
+        "seeds": [
+          0,
+          1,
+          2
+        ],
+        "delta_cm": [
+          -1.168,
+          1.173,
+          1.373
+        ]
+      },
+      "sensitivity_repeats_averaged": {
+        "ate": {
+          "A_eboth": 3.065,
+          "C_mapoff": 8.427,
+          "D_maskfree": 11.363,
+          "E_trackside": 9.102
+        },
+        "recovery_trackside": 0.272,
+        "residual_R": 0.354
+      }
+    },
+    "f3_wk_xyz": {
+      "descriptive_only": false,
+      "n": {
+        "A_eboth": 3,
+        "C_mapoff": 3,
+        "D_maskfree": 3,
+        "E_trackside": 3
+      },
+      "ate": {
+        "A_eboth": 2.853,
+        "C_mapoff": 13.413,
+        "D_maskfree": 26.949,
+        "E_trackside": 27.464
+      },
+      "ptp": {
+        "A_eboth": 0.39,
+        "C_mapoff": 17.164,
+        "D_maskfree": 0.361,
+        "E_trackside": 0.556
+      },
+      "per_seed": {
+        "A_eboth": {
+          "0": 2.815,
+          "1": 3.067,
+          "2": 2.677
+        },
+        "C_mapoff": {
+          "0": 6.564,
+          "1": 9.946,
+          "2": 23.729
+        },
+        "D_maskfree": {
+          "0": 26.77,
+          "1": 26.946,
+          "2": 27.131
+        },
+        "E_trackside": {
+          "0": 27.426,
+          "1": 27.206,
+          "2": 27.762
+        }
+      },
+      "total_effect_cm": 24.096,
+      "control_spread_cm": 0.39,
+      "resolve_ratio": 61.82,
+      "resolvable": true,
+      "residual_R": 0.562,
+      "predict_H_inert_E": 26.949,
+      "predict_H_material_E": 13.413,
+      "prediction_gap_cm": 13.536,
+      "recovery_trackside": -0.021,
+      "floor_trackside": 0.023,
+      "trackside_above_floor": false,
+      "share_ins_mapoff": 0.583,
+      "floor_ins_mapoff": 0.712,
+      "ins_mapoff_above_floor": false,
+      "partition_check": -0.0,
+      "E_spread_vs_gap": 0.04,
+      "E_spread_swamps_gap": false,
+      "paired_vs_maskfree": {
+        "seeds": [
+          0,
+          1,
+          2
+        ],
+        "delta_cm": [
+          0.655,
+          0.26,
+          0.63
+        ],
+        "n_better": 0,
+        "n": 3
+      },
+      "paired_vs_mapoff": {
+        "seeds": [
+          0,
+          1,
+          2
+        ],
+        "delta_cm": [
+          20.862,
+          17.26,
+          4.033
+        ]
+      },
+      "sensitivity_repeats_averaged": {
+        "ate": {
+          "A_eboth": 2.853,
+          "C_mapoff": 13.413,
+          "D_maskfree": 26.949,
+          "E_trackside": 27.464
+        },
+        "recovery_trackside": -0.021,
+        "residual_R": 0.562
+      }
+    },
+    "pt1": {
+      "descriptive_only": true,
+      "n": {
+        "A_eboth": 3,
+        "C_mapoff": 3,
+        "D_maskfree": 3,
+        "E_trackside": 0
+      },
+      "ate": {
+        "A_eboth": 9.954,
+        "C_mapoff": 28.816,
+        "D_maskfree": 33.593,
+        "E_trackside": null
+      },
+      "ptp": {
+        "A_eboth": 1.851,
+        "C_mapoff": 19.996,
+        "D_maskfree": 6.491,
+        "E_trackside": null
+      },
+      "per_seed": {
+        "A_eboth": {
+          "0": 10.667,
+          "1": 8.816,
+          "2": 10.379
+        },
+        "C_mapoff": {
+          "0": 16.523,
+          "1": 33.406,
+          "2": 36.519
+        },
+        "D_maskfree": {
+          "0": 32.56,
+          "1": 37.355,
+          "2": 30.864
+        },
+        "E_trackside": {}
+      },
+      "total_effect_cm": 23.639,
+      "control_spread_cm": 6.491,
+      "resolve_ratio": 3.64,
+      "resolvable": true,
+      "residual_R": 0.202,
+      "predict_H_inert_E": 33.593,
+      "predict_H_material_E": 28.816,
+      "prediction_gap_cm": 4.777,
+      "status": "E ARM MISSING"
+    }
+  }
+}

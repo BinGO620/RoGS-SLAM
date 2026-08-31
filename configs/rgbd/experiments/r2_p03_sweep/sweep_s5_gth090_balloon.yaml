@@ -1,0 +1,10 @@
+# R2-P03-SWEEP level S5: native MonoGS opacity prune, hard.
+# Base = arm A (insert-then-prune control) under the frozen RGD balloon trajectory.
+# Allowed diff vs base = {method, Training.gaussian_th} — tests/test_r2_p03_sweep_configs.py.
+# Same lever as S4, pushed to the point where the rate is expected to undershoot arm B and
+# the fidelity cost (if any) becomes measurable.
+inherit_from: "configs/rgbd/experiments/r2_oracle_admission/oracle_prune_balloon.yaml"
+method: "OracleRGD-Prune-S5-gth090"
+
+Training:
+  gaussian_th: 0.9

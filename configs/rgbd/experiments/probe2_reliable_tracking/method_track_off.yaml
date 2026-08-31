@@ -1,0 +1,10 @@
+# PROBE2-RT (screening, 2060, paired arm-vs-arm) — control arm.
+# 基座 = R1-P01 open-set PRUNE 臂逐字段复用（method_openset_prune）。
+# 与 method_track_on.yaml 的唯一差异 = ReliableTracking.enabled（此处保持基座默认 OFF）。
+# 目的：隔离 RGD adaptive-weight tracking（opacity + bbox-view + median-inlier）对 ATE 的影响。
+# 不属于 R1-P01 冻结合同；仅 screening，不作论文方法结果。
+inherit_from: "configs/rgbd/experiments/active/candidate/method_openset_prune.yaml"
+method: "Prune-RToff"
+
+ReliableTracking:
+  enabled: false

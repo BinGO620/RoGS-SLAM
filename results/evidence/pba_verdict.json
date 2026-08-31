@@ -1,0 +1,74 @@
+{
+  "verdict": "BA-CHANNEL-DOMINANT",
+  "why": "removing only the BA-side mask costs 67%-67% of the whole mask benefit on 1 resolvable sequence(s)",
+  "sequences": {
+    "balloon": {
+      "n": {
+        "eboth": 3,
+        "maskfree": 3,
+        "pba": 3
+      },
+      "ate": {
+        "eboth": 3.065,
+        "maskfree": 11.363,
+        "pba": 8.642
+      },
+      "per_seed": {
+        "eboth": [
+          3.057,
+          3.094,
+          3.043
+        ],
+        "maskfree": [
+          11.957,
+          10.436,
+          11.695
+        ],
+        "pba": [
+          9.351,
+          8.545,
+          8.03
+        ]
+      },
+      "total_effect_cm": 8.298,
+      "within_arm_spread_cm": 1.521,
+      "resolve_ratio": 5.46,
+      "resolvable": true,
+      "share_BA": 0.672
+    },
+    "mv_no_box": {
+      "n": {
+        "eboth": 3,
+        "maskfree": 3,
+        "pba": 3
+      },
+      "ate": {
+        "eboth": 2.763,
+        "maskfree": 3.576,
+        "pba": 2.809
+      },
+      "per_seed": {
+        "eboth": [
+          2.755,
+          2.698,
+          2.836
+        ],
+        "maskfree": [
+          3.228,
+          3.002,
+          4.498
+        ],
+        "pba": [
+          2.902,
+          2.725,
+          2.799
+        ]
+      },
+      "total_effect_cm": 0.813,
+      "within_arm_spread_cm": 1.495,
+      "resolve_ratio": 0.54,
+      "resolvable": false,
+      "share_BA": 0.056
+    }
+  }
+}

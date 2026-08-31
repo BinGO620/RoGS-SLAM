@@ -1,0 +1,9 @@
+# EXP51 — f3_st_hf 静态 ATE 优化，Phase 1 预算公平对照。
+#
+# 臂 B1：vanilla（四机制全关的 MonoGS-style 锚点，同 p9_vanilla）+ async_iter_per_kf=10。
+# 目的：原始 baseline，确认 vanilla 自身在此临界序列的失败率基线（exp26 测得 ~20%）。
+inherit_from: "configs/rgbd/tum/f3_st_hf.yaml"
+method: "EXP51-B1-Vanilla-Async10"
+
+Training:
+  async_iter_per_kf: 10

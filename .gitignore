@@ -1,0 +1,22 @@
+# 本地/构建产物
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+.vscode/
+.codegraph/
+.agents/
+.zcode/
+datasets/
+submodules/
+*.so
+*.pyc
+*.ply
+*.mp4
+
+# 实验原始输出（GB 级）：results 下除了 registry 和 evidence 都忽略
+results/runs/
+results/runs_remote_cache/
+
+
+# 图表资产备份（原始帧等）不进库
+*.bak

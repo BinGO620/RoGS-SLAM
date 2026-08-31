@@ -1,0 +1,50 @@
+ReliableTracking:
+  enabled: false
+
+VisibilityWindow:
+  enabled: false
+
+BootstrapVO:
+  enabled: false
+
+DeferredCommit:
+  enabled: false
+
+StaticEvidence:
+  enabled: false
+
+FullFramePose:
+  enabled: false
+
+CoarsePoseInit:
+  enabled: true
+  mode: "const_vel"
+
+RobustTracking:
+  enabled: true
+  kernel: "huber"
+  rgb_delta: 0.10
+  depth_delta: 0.10
+
+SemanticMask:
+  enabled: true
+  model: "maskrcnn"
+  dynamic_classes: [1]
+  dilate_px: 7
+  max_mask_ratio: 0.95
+  device: "cuda"
+  soft: false
+  mask_mapping: true
+  mask_insertion: true
+
+DynamicKeyframe:
+  enabled: true
+  gap_cap: 5
+  occ_tighten_thresh: 2.0
+
+Training:
+  window_size: 12
+  pose_window: 6
+
+Results:
+  save_per_frame_ape: true

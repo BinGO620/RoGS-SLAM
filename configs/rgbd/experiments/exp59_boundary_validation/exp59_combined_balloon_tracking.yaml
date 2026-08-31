@@ -1,0 +1,5 @@
+# EXP59 boundary validation: combined arm on unseen sequence balloon_tracking.
+# Never mixed into the fixed 18-sequence denominator (prereg §2).
+inherit_from: "configs/rgbd/bonn/balloon_tracking.yaml"
+method_from: "configs/rgbd/experiments/active/candidate/method_combined_maskboth_prune.yaml"
+method: "EXP59-combined-balloon_tracking"

@@ -1,0 +1,9 @@
+# P3-DENSIFY-TAIL arm 'lo': densify_grad_threshold 0.0002 -> 0.0001.
+# Backbone (lifecycle/tracking/mask/keyframing) = P2-T's frozen prune run config by identity,
+# so the ONLY resolved diff from the base arm is opt_params.densify_grad_threshold.
+# Pinned by tests/test_p3_densify_tail_configs.py.
+inherit_from: "configs/rgbd/experiments/p2_render/p2s_combined_prune_balloon2.yaml"
+method: "Combined-Prune-densify-lo"
+
+opt_params:
+  densify_grad_threshold: 0.0001

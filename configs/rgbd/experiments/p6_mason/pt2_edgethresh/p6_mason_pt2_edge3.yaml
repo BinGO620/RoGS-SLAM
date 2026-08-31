@@ -1,0 +1,6 @@
+# pt2 (纯人, mask-ON 10.44) — edge_threshold=3.0 通用性测试: edge 是否也降 pt2
+inherit_from: "configs/rgbd/bonn/person_tracking2.yaml"
+method_from: "configs/rgbd/experiments/active/candidate/method_combined_maskboth_prune.yaml"
+method: "Combined"
+Training:
+  edge_threshold: 3.0

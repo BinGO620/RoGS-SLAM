@@ -1,0 +1,4 @@
+# P11 sparse-KF mask-only run config -- mv_no_box2. 18-seq 主表铺开 (exp28).
+inherit_from: "configs/rgbd/bonn/moving_nonobstructing_box2.yaml"
+method_from: "configs/rgbd/experiments/p11_maskonly/method_p11_maskonly.yaml"
+method: "P11-mv_no_box2-sparsemaskonly"

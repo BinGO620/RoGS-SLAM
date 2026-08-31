@@ -1,0 +1,8 @@
+# exp44 Replica combined arm — mask-ON + RT + dynKF + Reliability + prune
+# 唯一差异 vs vanilla: 启用 4 个机制模块
+inherit_from: "configs/rgbd/replica/room0_sp.yaml"
+method_from: "configs/rgbd/experiments/active/candidate/method_combined_maskboth_prune.yaml"
+method: "Exp44-combined-room0"
+
+Results:
+  use_gui: False

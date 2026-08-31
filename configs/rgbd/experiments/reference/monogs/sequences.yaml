@@ -1,0 +1,55 @@
+sequences:
+  - id: f1_desk
+    dataset: TUM
+    config: configs/rgbd/tum/f1_desk.yaml
+  - id: f2_xyz
+    dataset: TUM
+    config: configs/rgbd/tum/f2_xyz.yaml
+  - id: f3_office
+    dataset: TUM
+    config: configs/rgbd/tum/f3_office.yaml
+  - id: f2_person
+    dataset: TUM
+    config: configs/rgbd/tum/f2_person.yaml
+  - id: f3_st_hf
+    dataset: TUM
+    config: configs/rgbd/tum/f3_st_hf.yaml
+  - id: f3_st_rpy
+    dataset: TUM
+    config: configs/rgbd/tum/f3_st_rpy.yaml
+  - id: f3_st_xyz
+    dataset: TUM
+    config: configs/rgbd/tum/f3_st_xyz.yaml
+  - id: f3_wk_hf
+    dataset: TUM
+    config: configs/rgbd/tum/f3_wk_hf.yaml
+  - id: f3_wk_rpy
+    dataset: TUM
+    config: configs/rgbd/tum/f3_wk_rpy.yaml
+  - id: f3_wk_xyz
+    dataset: TUM
+    config: configs/rgbd/tum/f3_wk_xyz.yaml
+  - id: balloon
+    dataset: BONN
+    config: configs/rgbd/bonn/balloon.yaml
+  - id: balloon2
+    dataset: BONN
+    config: configs/rgbd/bonn/balloon2.yaml
+  - id: crowd
+    dataset: BONN
+    config: configs/rgbd/bonn/crowd.yaml
+  - id: crowd2
+    dataset: BONN
+    config: configs/rgbd/bonn/crowd2.yaml
+  - id: mv_no_box
+    dataset: BONN
+    config: configs/rgbd/bonn/moving_nonobstructing_box.yaml
+  - id: mv_no_box2
+    dataset: BONN
+    config: configs/rgbd/bonn/moving_nonobstructing_box2.yaml
+  - id: person_t
+    dataset: BONN
+    config: configs/rgbd/bonn/person_tracking.yaml
+  - id: person_t2
+    dataset: BONN
+    config: configs/rgbd/bonn/person_tracking2.yaml

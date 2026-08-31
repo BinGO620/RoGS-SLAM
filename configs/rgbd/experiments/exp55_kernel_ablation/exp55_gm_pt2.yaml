@@ -1,0 +1,7 @@
+# EXP55 kernel ablation run config: combined-prune arm, kernel=gm.
+# Identity = main-table source config p2s_combined_prune_pt2.yaml
+# (inherit chain, dataset + method), with ONLY RobustTracking.kernel changed.
+# Prereg: results/evidence/exp55_kernel_ablation_prereg.md
+inherit_from: "configs/rgbd/bonn/person_tracking2.yaml"
+method_from: "configs/rgbd/experiments/exp55_kernel_ablation/method_combined_gm.yaml"
+method: "EXP55-Combined-gm-pt2"

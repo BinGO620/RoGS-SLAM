@@ -1,0 +1,14 @@
+# EXP51 — f3_st_hf 静态 ATE 优化，Phase 1 预算公平对照。
+#
+# 臂 A2：MRCS（同 A1 内核）+ 异步映射预算 async_iter_per_kf=50。
+#
+# 目的：第一候选修复。已有 3090 n=5 证据 = 5/5 逃逸、mean≈2.9cm（exp27/p10）。
+# 本臂与 p10_async50_f3_st_hf.yaml 逐字节等价，独立建档以归属 EXP51 系列。
+#
+# 不改共享 tum/base_config.yaml，不改 vanilla 默认预算，不改 gap_cap=5。
+inherit_from: "configs/rgbd/tum/f3_st_hf.yaml"
+method_from: "configs/rgbd/experiments/active/candidate/method_combined_maskoff_prune.yaml"
+method: "EXP51-A2-MRCS-Async50"
+
+Training:
+  async_iter_per_kf: 50

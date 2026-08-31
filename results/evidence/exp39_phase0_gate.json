@@ -1,0 +1,38 @@
+{
+  "verdict": "MECHANISM-LIVE",
+  "gates": {
+    "G-2 negative control": true,
+    "G-3a probe coverage": true,
+    "G-3b mask area vs audit": true,
+    "G-0 floors as registered": true
+  },
+  "notes": {
+    "mask_area_mean": 0.1617713191853234,
+    "ratio_shift": 0.7875916873032555
+  },
+  "arms": {
+    "hard": {
+      "rows": 1094,
+      "floor": 0.0,
+      "dyn_share_map": 0.0,
+      "dyn_share_pose": 0.0,
+      "pose_to_map_ratio": 8.49555349064266,
+      "max_dyn_share_map": 0.0,
+      "max_dyn_share_pose": 0.0
+    },
+    "soft": {
+      "rows": 1084,
+      "floor": 0.25,
+      "dyn_share_map": 0.2927859168274786,
+      "dyn_share_pose": 0.13129107399100634,
+      "pose_to_map_ratio": 6.691027308270314,
+      "max_dyn_share_map": 0.6054890226067318,
+      "max_dyn_share_pose": 0.6177629895192216
+    }
+  },
+  "thresholds": {
+    "mass_share": 0.034,
+    "inert_share": 0.011333333333333334,
+    "reshape_factor": 2.0
+  }
+}

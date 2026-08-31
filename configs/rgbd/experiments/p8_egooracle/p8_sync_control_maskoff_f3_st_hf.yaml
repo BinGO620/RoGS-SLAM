@@ -1,0 +1,30 @@
+# P8-SYNC 机制探针 — f3_st_hf control 臂，固定映射预算（关掉异步竞态）。
+#
+# ★ 这是诊断臂，绝不入主表。理由见 exp26_discriminant_prereg.md D2。
+#
+# 为什么需要：f3_st_hf 修法在 3090 上双稳态（seed0 2.10cm ✅ / seed1 35.86cm ❌），
+# 而两个 run 的 e_flow 统计量几乎一样。已查明 async 模式下 backend `_run_loop`
+# 在队列空时**自由跑** map()，`iter_per_kf = 10`；每两帧之间摊到多少次映射迭代
+# 完全取决于前端相对后端的快慢，也就是机器负载。实测相关：
+#   fix 3090 FPS 0.279 -> 2.10cm ✅ ；fix 3090 FPS 0.572 -> 35.86cm ❌
+#   fix 2060 FPS 0.450 -> 2.99cm ✅ ；oracle 2060 FPS 0.439 -> 2.85cm
+# 即优化预算是个没控住的混杂变量。single_thread 把它变成**固定 150 iters/KF
+# 且后端不自由跑**，于是同 config 同 seed 可复现。
+#
+# ⚠ 两处都要设：frontend 读 Training.single_thread，backend 读
+#   Dataset.single_thread（TUM base 只在 Training 下有，所以本项目历史上
+#   后端从来是自由跑的）。只设一处 = 半同步，探针不成立。
+#
+# ⚠ 这是**另一个工作点**（150 iters/KF vs 10 + 无自由跑），ATE 与主表不可比。
+#   它只回答「把竞态关掉后 control 还崩不崩」。
+inherit_from: "configs/rgbd/tum/f3_st_hf.yaml"
+method_from: "configs/rgbd/experiments/active/candidate/method_combined_maskoff_prune.yaml"
+method: "Diag-Sync-Control-MaskOff"
+
+Dataset:
+  single_thread: True
+Training:
+  single_thread: True
+
+ReliabilitySignal:
+  ego_pose_oracle: false

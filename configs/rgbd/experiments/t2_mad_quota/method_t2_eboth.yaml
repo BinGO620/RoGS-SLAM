@@ -1,0 +1,20 @@
+# T2 — E-both 臂：combined / mask-ON 底座 + 自适应配额，
+# 候选集 = semantic_mask ∪ (e_flow > 0.5)。**任务二的目标形态，判据以本臂为准。**
+#
+# 为什么必须是 mask-ON：语义项是候选集里**唯一不按帧内中位数归一化**的成分，
+# 也就是唯一能突破 E-flow 上界的东西。任务二本质上是 combined 专属的增益机制
+# （架构组追加约束）。mask-free 下本 overlay 会自动退化成 E-flow。
+#
+# 盘上自证：`mad_excl_semantic` 必须为 1（语义确实进了候选集），
+# `mad_excl_applied_frac` ≥ 0.95（机制真的在动），
+# `max_mad_zero_frac_after` ≤ 0.45（塌缩确实没发生过）。
+inherit_from: "configs/rgbd/experiments/active/candidate/method_combined_maskboth_prune.yaml"
+method: "T2-Eboth"
+
+ReliabilitySignal:
+  mad_exclusion: true
+  mad_excl_candidates: "cue"
+  mad_excl_e_thresh: 0.5
+  mad_excl_max_zero_frac: 0.45
+  mad_excl_min_keep_frac: 0.20
+  mad_excl_tau_floor: 0.0

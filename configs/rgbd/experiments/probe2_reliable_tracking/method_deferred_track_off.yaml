@@ -1,0 +1,9 @@
+# PROBE2-RT deferred-arm control. Base = R1-P01 open-set DEFERRED arm (承重 candidate lifecycle),
+# reused field-for-field. Only diff vs method_deferred_track_on.yaml = ReliableTracking.enabled.
+# Tests whether the shared-infra RGD adaptive-weight tracking gain (confirmed on the prune base)
+# also holds on the deferred 承重臂. Screening; not R1-P01 frozen contract.
+inherit_from: "configs/rgbd/experiments/active/candidate/method_openset_deferred.yaml"
+method: "Deferred-RToff"
+
+ReliableTracking:
+  enabled: false

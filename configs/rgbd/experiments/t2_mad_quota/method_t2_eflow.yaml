@@ -1,0 +1,23 @@
+# T2 — E-flow 臂：mask-free 底座 + 自适应配额，候选集 = flow cue（e_flow > 0.5）。
+#
+# ⚠ 效能上界，**跑前声明**（架构组追加约束已确认）：`e_flow` 本身按帧内中位数归一化，
+# 在 mover 占多数的帧里 `e_flow > 0.5` 会反过来把静态背景选成候选。所以本臂**与
+# control 差异不显著属于预期，不构成任务二判负**——判据以 E-both 为准。
+# 本臂存在的意义是把这个上界做成**可测量的对照**，而不是让它留在推理里。
+#
+# 另一条已测死的路（不要重跑）：P7 的 flow-only / geometry-only 单线索臂对本机制
+# **完全免疫**——单线索下 d 的中位数本来就是 0、tau 已塌缩，任何统计域手术都不会
+# 改变 tau（tests/test_mad_exclusion.py::test_single_cue_mode_is_inert_by_construction）。
+inherit_from: "configs/rgbd/experiments/active/candidate/method_combined_maskoff_prune.yaml"
+method: "T2-Eflow"
+
+ReliabilitySignal:
+  mad_exclusion: true
+  mad_excl_candidates: "cue"
+  mad_excl_e_thresh: 0.5
+  # 配额：排除后 d==0 的占比不得超过 0.45 ⇒ tau 塌缩（median=MAD=0）在构造上不可达。
+  mad_excl_max_zero_frac: 0.45
+  mad_excl_min_keep_frac: 0.20
+  # 抗塌缩地板；配额已经把塌缩排除掉，所以这里保持 0（两者对 mean_w 方向相反，
+  # 见 results/evidence/m0_mad_exclusion/，不要顺手一起开）。
+  mad_excl_tau_floor: 0.0

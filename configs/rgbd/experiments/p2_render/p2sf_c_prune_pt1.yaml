@@ -1,0 +1,56 @@
+# P2-SF de-confounding control, variant C, arm A: COMBINED backbone + prune lifecycle,
+# FROZEN-POSE on the prune arm's OWN self-tracked trajectory (Bonn person_tracking).
+#
+# This is NOT a main-table arm. It is the self-frozen de-confounding control that replaces
+# the failed RGD frozen-pose (which couldn't verify frame correspondence). See
+# results/evidence/consult_synthesis_selffrozen.md + p2sf_selffrozen_prereg.md.
+#
+# WHY VARIANT C (prune-trajectory injection). hermes's tracking-difficulty confound: pt1 is
+# both high-coverage AND hard-tracking, so H-D's mechanism story and "hard-tracking seqs are
+# ATE-fragile to any lifecycle change" predict the same pattern at n=6. Freezing the pose
+# kills the tracking channel. Variant C injects the prune arm's OWN self-tracked trajectory
+# (trj_full_final.json from results/runs/P2/P2-T/pt1_prune_seed{N}) into BOTH arms, so the
+# pair is fully symmetric (same injected trajectory, only lifecycle differs). Frame
+# correspondence is 100% verifiable: the source trj_full_final.json carries trj_gt = dataset
+# GT by construction (same SLAM associator), so the oracle anchor residual is ~0 and the gate
+# passes. This is the exact thing the RGD approach lacked.
+#
+# SELECTION-BIAS DISCLOSURE (hermes, prereg). The injected trajectory is prune's self-tracked
+# output — a POST-TREATMENT variable (prune's map influenced it). The bias is BOUNDED
+# (measured prune-vs-deferred trajectory divergence on pt1 seed0 ~7cm on an 11cm base) and
+# its SIGN is not predictable, which is what a paired comparison needs. The estimand is
+# therefore "lifecycle effect on mapping when replaying a prune-generated backbone
+# trajectory" — NOT "tracking difficulty removed generally." Defensible wording is scoped
+# accordingly. Variant B (GT-pose) runs as a regime-extremity sensitivity, NOT the branch.
+#
+# CORRECT OBSERVABLE (NOT ATE). Under frozen pose ATE is identical across arms BY
+# CONSTRUCTION (both share the injected trj_est; oracle_pose.py + slam_frontend.py:905 set
+# oracle_skip at itr 0 and never touch R_gt/T_gt). ATE here is a CANARY (= injected-tracker
+# ATE), not an outcome. Arm-discriminating observables are MAP-LEVEL: refined_num_gaussians
+# (R_G^F = G_def^F/G_prune^F, paired-seed log-ratio) + vac_depth/vac_psnr (guardrail,
+# inherited 1.56cm/0.28dB). See consult_synthesis_selffrozen.md.
+#
+# POSE_FILE IS A SENTINEL. The literal "__PRUNE_TRAJ__" below is NOT a real path. The
+# self-frozen runner (scripts/r2_p2_sf.py) resolves it per (seq, seed) to the actual
+# trj_full_final.json of the prune run before invoking slam.py, writing a resolved config
+# into the run dir. Direct slam.py invocation on this base config will FAIL — by design,
+# so the runner always owns the (seq,seed)->pose_file mapping.
+#
+# WHAT IS ALLOWED TO DIFFER vs the self-tracked pt1 prune config: exactly
+# {Oracle.pose_file, Training.lr.cam_rot_delta, Training.lr.cam_trans_delta} — the trajectory
+# injection + backend pose freeze. Backbone and lifecycle are the self-tracked arm's,
+# unchanged. Pinned by tests/test_p2sf_selffrozen_configs.py.
+#
+# STATUS: apparatus only. Zero GPU runs. seed 0 screening first (pt1+balloon2 × {C,B} × 2 arms
+# = 8 runs); MAP-EFFECT/REVERSED => expand to 3 seed.
+inherit_from: "configs/rgbd/bonn/person_tracking.yaml"
+method_from: "configs/rgbd/experiments/active/candidate/method_combined_maskboth_prune.yaml"
+method: "CombinedSF-C-Prune"
+
+Oracle:
+  pose_file: "__PRUNE_TRAJ__"
+
+Training:
+  lr:
+    cam_rot_delta: 0.0
+    cam_trans_delta: 0.0

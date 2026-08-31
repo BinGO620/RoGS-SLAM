@@ -1,0 +1,13 @@
+# exp39 Step C 剂量扫描臂 —— admission 份额 = 0.01
+#
+# 已测两端：31.8% 有害（ATE 6.53 vs zeromask 3.27，7.6x 地板）、0% 无害（0.1x 地板）。
+# 本臂问：份额压到 0.01 时 admission 是否仍有害？
+#
+# mapping_ema_dynamic_cap 把 mean_w(dyn)/mean_w(stat) 重标定到 0.01，
+# 且该比值对随后的 mass_match（全像素同倍缩放）不变 ⇒ 剂量与总质量独立。
+# 与 E-sm 的唯一差异 = 这一个键。
+inherit_from: "configs/rgbd/experiments/exp39_mapping_soft/exp39c_sm_balloon.yaml"
+method: "EXP39C-cap01-balloon"
+
+SemanticMask:
+  mapping_ema_dynamic_cap: 0.01

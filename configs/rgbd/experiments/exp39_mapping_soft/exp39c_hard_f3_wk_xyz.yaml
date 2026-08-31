@@ -1,0 +1,6 @@
+# exp39 Step C / f3_wk_xyz —— H：现状硬 mask（链条锚点，G-6 用）
+inherit_from: "configs/rgbd/experiments/exp39_mapping_soft/exp39_hard_f3_wk_xyz.yaml"
+method: "EXP39C-hard-f3_wk_xyz"
+
+SemanticMask:
+  mapping_ema: false

@@ -1,0 +1,95 @@
+# R1-P01 comparison registry — deferred-vs-prune（论文 make-or-break 主对比）。
+# id/config/flow 检查一律用真实 Bonn 目录名（rgbd_bonn_<id>）；项目短 ID 映射
+# （mv_no_box(2)=moving_nonobstructing_box(2)，obox=moving_obstructing_box）只用于
+# baseline 表对照，见 04-ours/02-method.md。
+# 分层：主判据 = 18 序列内 open-set 四条（balloon/balloon2/mv_no_box/mv_no_box2，
+# 11 外部 baseline × 3 seed 可复用）；补充 = obox（机制压力测试，07-18 曾定主战场、
+# 07-20 README 硬约束降级）+ person_tracking2（18 内大型持久遮挡，preview 中 deferred
+# 唯一胜位点的全长复核）。
+sequences:
+  # ---- 主判据（in-18 open-set）----
+  - pair: balloon
+    arm: control
+    label: prune_balloon
+    dataset: BONN
+    id: balloon
+    method: OpenSet-Prune
+    config: configs/rgbd/experiments/active/candidate/openset_prune_balloon.yaml
+  - pair: balloon
+    arm: candidate
+    label: deferred_balloon
+    dataset: BONN
+    id: balloon
+    method: OpenSet-Deferred
+    config: configs/rgbd/experiments/active/candidate/openset_deferred_balloon.yaml
+  - pair: balloon2
+    arm: control
+    label: prune_balloon2
+    dataset: BONN
+    id: balloon2
+    method: OpenSet-Prune
+    config: configs/rgbd/experiments/active/candidate/openset_prune_balloon2.yaml
+  - pair: balloon2
+    arm: candidate
+    label: deferred_balloon2
+    dataset: BONN
+    id: balloon2
+    method: OpenSet-Deferred
+    config: configs/rgbd/experiments/active/candidate/openset_deferred_balloon2.yaml
+  - pair: moving_nonobstructing_box
+    arm: control
+    label: prune_moving_nonobstructing_box
+    dataset: BONN
+    id: moving_nonobstructing_box
+    method: OpenSet-Prune
+    config: configs/rgbd/experiments/active/candidate/openset_prune_moving_nonobstructing_box.yaml
+  - pair: moving_nonobstructing_box
+    arm: candidate
+    label: deferred_moving_nonobstructing_box
+    dataset: BONN
+    id: moving_nonobstructing_box
+    method: OpenSet-Deferred
+    config: configs/rgbd/experiments/active/candidate/openset_deferred_moving_nonobstructing_box.yaml
+  - pair: moving_nonobstructing_box2
+    arm: control
+    label: prune_moving_nonobstructing_box2
+    dataset: BONN
+    id: moving_nonobstructing_box2
+    method: OpenSet-Prune
+    config: configs/rgbd/experiments/active/candidate/openset_prune_moving_nonobstructing_box2.yaml
+  - pair: moving_nonobstructing_box2
+    arm: candidate
+    label: deferred_moving_nonobstructing_box2
+    dataset: BONN
+    id: moving_nonobstructing_box2
+    method: OpenSet-Deferred
+    config: configs/rgbd/experiments/active/candidate/openset_deferred_moving_nonobstructing_box2.yaml
+  # ---- 补充（obox=压力测试；person_tracking2=preview 胜位点全长复核）----
+  - pair: moving_obstructing_box
+    arm: control
+    label: prune_moving_obstructing_box
+    dataset: BONN
+    id: moving_obstructing_box
+    method: OpenSet-Prune
+    config: configs/rgbd/experiments/active/candidate/openset_prune_moving_obstructing_box.yaml
+  - pair: moving_obstructing_box
+    arm: candidate
+    label: deferred_moving_obstructing_box
+    dataset: BONN
+    id: moving_obstructing_box
+    method: OpenSet-Deferred
+    config: configs/rgbd/experiments/active/candidate/openset_deferred_moving_obstructing_box.yaml
+  - pair: person_tracking2
+    arm: control
+    label: prune_person_tracking2
+    dataset: BONN
+    id: person_tracking2
+    method: OpenSet-Prune
+    config: configs/rgbd/experiments/active/candidate/openset_prune_person_tracking2.yaml
+  - pair: person_tracking2
+    arm: candidate
+    label: deferred_person_tracking2
+    dataset: BONN
+    id: person_tracking2
+    method: OpenSet-Deferred
+    config: configs/rgbd/experiments/active/candidate/openset_deferred_person_tracking2.yaml

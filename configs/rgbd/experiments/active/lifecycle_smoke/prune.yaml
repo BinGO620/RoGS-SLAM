@@ -1,0 +1,8 @@
+inherit_from: "configs/rgbd/experiments/active/lifecycle_smoke/base.yaml"
+method: "MonoGS-Lifecycle-Prune-Smoke"
+
+# Prune arm (insert-then-remove control): uncertain candidates inserted NOW with a
+# lineage tag (insert_candidates IPC), whole lineage deleted on reject/expire
+# (prune_lineage IPC). Exercises BOTH new backend handlers.
+Mapping:
+  lifecycle_mode: "prune"

@@ -1,0 +1,50 @@
+================================================================================================
+SUPPORT SIZE -- a 'ghost region' that covers the scene is not a ghost region
+================================================================================================
+  image                640x480 = 307200 px
+  unbounded past-union 203284 px = 66.2% of image
+  window=30 frames    100044 px = 32.6% of image
+
+================================================================================================
+NULL BAND over 7 replicates of ONE identical algorithm (arm A excluded)
+================================================================================================
+metric                              mean      sd   spread   per-run values
+--------------------------------------------------------------------------
+vacated_depth_l1 (PRE-REG)        23.425   1.559    4.692 cm 21.99 22.25 22.88 23.05 23.39 23.73 26.68
+vacated_psnr                      21.103   0.278    0.680 dB 20.65 20.77 21.20 21.20 21.26 21.33 21.33
+ghost_excess_depth                 0.204   1.941    5.467 cm -2.17 -1.04 -0.85 -0.28 0.15 2.32 3.30
+ghost_excess_psnr                 -3.246   0.327    0.900 dB -3.81 -3.54 -3.22 -3.17 -3.15 -2.92 -2.91
+freshvac_depth_l1                 23.377   1.345    4.435 cm 21.63 22.91 22.94 23.04 23.43 23.63 26.06
+freshvac_psnr                     20.706   0.207    0.602 dB 20.43 20.46 20.73 20.74 20.76 20.80 21.03
+freshvac_ssim                      0.766   0.005    0.015    0.76 0.76 0.77 0.77 0.77 0.77 0.77
+freshvac_excess_depth              0.259   1.377    3.938 cm -1.15 -1.11 -0.37 0.16 0.41 1.09 2.79
+freshvac_excess_psnr              -1.807   0.275    0.763 dB -2.21 -2.05 -1.89 -1.84 -1.67 -1.53 -1.45
+
+================================================================================================
+GHOST DEFICIT vs NOISE -- can the experiment see its own effect?
+================================================================================================
+  The deficit is how much worse the vacated region already renders than its own
+  surrounding background: the ceiling on what perfect ghost removal could recover.
+  A metric is USABLE only when |deficit| is several times the null sd.
+
+  unbounded  ghost_excess_psnr       deficit= 3.246dB  null_sd=0.327  ratio=  9.9x  -> USABLE
+  unbounded  ghost_excess_depth      deficit= 0.204cm  null_sd=1.941  ratio=  0.1x  -> UNUSABLE
+  windowed   freshvac_excess_psnr    deficit= 1.807dB  null_sd=0.275  ratio=  6.6x  -> USABLE
+  windowed   freshvac_excess_depth   deficit= 0.259cm  null_sd=1.377  ratio=  0.2x  -> UNUSABLE
+
+================================================================================================
+PER-ARM VALUES (arm A shown for reference; B/C/D/E are replicates, not a contrast)
+================================================================================================
+arm                  vac_d   vac_p   exc_p |  fresh_d  fresh_p fresh_ssim  fexc_p
+---------------------------------------------------------------------------------
+A_prune_seed0       21.563  21.658  -4.537 |   21.963   21.095     0.7727  -2.117
+A_prune_seed1       22.074  21.184  -3.459 |   22.043   20.761     0.7674  -1.789
+B_deferred_seed0    22.252  20.647  -2.914 |   22.938   20.425     0.7643  -1.532
+B_deferred_seed1    26.684  21.196  -3.173 |   26.064   20.742     0.7657  -1.895
+C_observe_seed0     23.046  21.261  -2.917 |   23.045   21.027     0.7730  -1.451
+D_exit_seed0        21.992  21.328  -3.150 |   21.629   20.727     0.7664  -2.214
+D_exit_seed1        23.391  20.767  -3.219 |   23.627   20.458     0.7578  -1.667
+E_exit_fill_seed0   22.883  21.198  -3.535 |   22.914   20.763     0.7670  -1.839
+E_exit_fill_seed1   23.729  21.326  -3.814 |   23.425   20.797     0.7675  -2.049
+
+Band-faithfulness of every post-hoc render vs the in-run eval:  True
