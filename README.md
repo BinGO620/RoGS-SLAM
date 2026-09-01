@@ -3,7 +3,7 @@
 **Robust Gaussian Splatting SLAM in Dynamic Environments via Reliability-Guided Weighting**
 
 <p align="center">
-  <img src="papers/maskfree_bundle/figures/fig1_pipeline_v3.png" width="720" alt="RoGS-SLAM pipeline">
+  <img src="figures/fig1_pipeline_v3.png" width="720" alt="RoGS-SLAM pipeline">
 </p>
 
 ## Overview
