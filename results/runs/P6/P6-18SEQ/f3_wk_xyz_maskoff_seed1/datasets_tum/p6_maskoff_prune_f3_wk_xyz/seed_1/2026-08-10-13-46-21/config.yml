@@ -1,0 +1,334 @@
+BootstrapVO:
+  confidence: 0.999
+  enabled: false
+  max_depth: 5.0
+  max_frames: 3
+  min_confirmed_pixels: 1000
+  min_depth: 0.05
+  min_inlier_ratio: 0.3
+  min_inliers: 100
+  orb_features: 2000
+  ransac_iterations: 200
+  ratio_test: 0.75
+  reprojection_threshold_px: 3.0
+CoarsePoseInit:
+  best_fraction: 0.7
+  enabled: false
+  huber_delta: 0.0
+  max_depth: 5.0
+  max_total_rot_deg: 12.0
+  max_total_trans: 0.2
+  max_update_rot_deg: 8.0
+  max_update_trans: 0.15
+  min_depth: 0.05
+  min_inlier_ratio: 0.3
+  min_points: 2000
+  mode: const_vel
+  require_masks: true
+DBALite:
+  cond_warn: 10000.0
+  depth_gate: 0.1
+  diagnostic: false
+  edge_offsets:
+  - 1
+  - 2
+  enabled: false
+  gn_iters: 5
+  grad_thresh: 0.02
+  lm_lambda0: 0.001
+  lm_prior: 5.0
+  max_depth: 5.0
+  max_update_rot_deg: 5.0
+  max_update_trans: 0.1
+  min_depth: 0.05
+  min_points: 500
+  normal_deg: 30.0
+  opt_offsets:
+  - 1
+  - 2
+  - 5
+  oracle: false
+  probe_rot_deg: 2.0
+  probe_trans: 0.03
+  stride: 4
+  v0_iters: 12
+  val_offsets:
+  - 3
+  val_tol: 1.1
+Dataset:
+  Calibration:
+    cx: 320.1
+    cy: 247.6
+    depth_scale: 5000.0
+    distorted: false
+    fx: 535.4
+    fy: 539.2
+    height: 480
+    k1: 0.0
+    k2: 0.0
+    k3: 0.0
+    p1: 0.0
+    p2: 0.0
+    width: 640
+  adaptive_pointsize: true
+  dataset_path: datasets/tum/rgbd_dataset_freiburg3_walking_xyz
+  pcd_downsample: 128
+  pcd_downsample_init: 32
+  point_size: 0.01
+  sensor_type: depth
+  sequence: p6_maskoff_prune_f3_wk_xyz
+  type: tum
+DeferredCommit:
+  color_l1: 0.15
+  confirming_views: 2
+  cuda_debug_sync: false
+  depth_abs_m: 0.03
+  depth_rel: 0.02
+  enabled: true
+  explained_opacity: 0.8
+  fast_color_l1: 0.05
+  fast_depth_abs_m: 0.01
+  fast_promotion: false
+  max_candidates_per_keyframe: 5000
+  max_pending_keyframes: 6
+  promotion_downsample: 1
+  promotion_max_scale_m: 0.02
+  promotion_min_scale_m: 0.001
+  reject_contradictions: 2
+  reliability_confirm: true
+  ttl_keyframes: 5
+  unmapped_opacity_threshold: 0.35
+  validate_state_after_promotion: true
+DynamicKeyframe:
+  enabled: true
+  gap_cap: 5
+  occ_tighten_thresh: 2.0
+FlowResidualTracking:
+  enabled: false
+  max_mask_ratio: 0.9
+  min_depth: 0.01
+  residual_flow_threshold_px: 2.0
+  warmup_iters: 10
+FullFramePose:
+  confidence: 0.999
+  enabled: false
+  map_loss_ratio_gate: 1.05
+  max_conflict_ratio: 0.6
+  max_depth: 5.0
+  max_rotation_deg: 12.0
+  max_translation_m: 0.2
+  min_depth: 0.05
+  min_inlier_ratio: 0.3
+  min_inliers: 100
+  min_static_support_ratio: 0.1
+  orb_features: 2000
+  prior_iterations: 20
+  prior_weight: 0.01
+  ransac_iterations: 200
+  ratio_test: 0.75
+  reprojection_threshold_px: 3.0
+  source_offsets:
+  - 1
+  - 2
+Mapping:
+  lifecycle_mode: prune
+MaskQA:
+  enabled: false
+  gap_abs_thresh: 0.005
+  max_consecutive_propagate: 3
+  min_history: 3
+  presence_thresh: 0.02
+  propagate_dilate_px: 5
+  recent_window: 5
+Oracle:
+  gt_pose: false
+  pose_file: ''
+Reliability:
+  ema_beta: 0.8
+  enabled: false
+  hard_threshold: 0.5
+  loss_eps: 1.0e-06
+  min_mean_reliability: 0.2
+  mode: observe
+  r_min: 0.05
+  save_interval: 20
+  save_opacity: true
+  save_visualization: true
+  tau_depth: 0.05
+  tau_rgb: 0.1
+  type: soft
+  use_ema: false
+ReliabilitySignal:
+  enabled: true
+  flow_scale_floor: 2.0
+  flow_subdir: flow_raft
+  geo_scale_floor: 0.0
+  stash_dba_weights: false
+  warmup_iters: 10
+ReliableTracking:
+  border_max_height: 40
+  border_max_width: 60
+  border_projection_max_points: 20000
+  border_weight_max: 0.8
+  border_weight_min: 0.4
+  depth_median_scale: 10.0
+  enabled: false
+  min_support_ratio: 0.1
+  opacity_min: 0.95
+  rgb_median_scale: 8.0
+  soft_floor: 0.1
+  soft_strength: 1.0
+Results:
+  efficiency_raw_path: results/runs/P6/P6-18SEQ/f3_wk_xyz_maskoff_seed1/tables/efficiency_raw.csv
+  eval_rendering: false
+  mapping_raw_path: results/runs/P6/P6-18SEQ/f3_wk_xyz_maskoff_seed1/tables/mapping_raw.csv
+  save_dir: results/runs/P6/P6-18SEQ/f3_wk_xyz_maskoff_seed1/datasets_tum/p6_maskoff_prune_f3_wk_xyz/seed_1/2026-08-10-13-46-21
+  save_final_gaussians: true
+  save_final_mapping: false
+  save_final_tracking: true
+  save_raw_metrics: true
+  save_results: true
+  save_trj: true
+  save_trj_kf_intv: 5
+  static_bg_band_px:
+  - 10
+  - 25
+  - 50
+  static_bg_mask_subdir: dynamic_mask_gtmc
+  success_threshold_cm: 5.0
+  tracking_raw_path: results/runs/P6/P6-18SEQ/f3_wk_xyz_maskoff_seed1/tables/tracking_raw.csv
+  use_gui: false
+  use_wandb: false
+RobustTracking:
+  depth_delta: 0.1
+  enabled: true
+  kernel: huber
+  loss_eps: 1.0e-06
+  rgb_delta: 0.1
+SemanticMask:
+  device: cuda
+  dilate_px: 7
+  dynamic_classes:
+  - 1
+  enabled: false
+  mask_insertion: true
+  mask_mapping: true
+  max_mask_ratio: 0.95
+  model: maskrcnn
+  soft: false
+  soft_floor: 0.1
+  soft_strength: 1.0
+StaticEvidence:
+  depth_abs_m: 0.03
+  depth_rel: 0.02
+  enabled: false
+  mapped_opacity_threshold: 0.35
+  min_depth: 0.01
+  protocol_version: static-evidence-v1
+  reliable_opacity_threshold: 0.8
+StaticProb:
+  enabled: false
+  initial_static_prob: 0.7
+  memory_beta: 0.9
+  residual_tau: 0.15
+  soft_floor: 0.1
+  soft_strength: 1.0
+Training:
+  alpha: 0.9
+  color_refinement_iterations: 26000
+  edge_threshold: 1.1
+  gaussian_extent: 1.0
+  gaussian_reset: 2001
+  gaussian_th: 0.7
+  gaussian_update_every: 150
+  gaussian_update_offset: 50
+  init_gaussian_extent: 30
+  init_gaussian_reset: 500
+  init_gaussian_th: 0.005
+  init_gaussian_update: 100
+  init_itr_num: 1050
+  kf_cutoff: 0.3
+  kf_interval: 5
+  kf_min_translation: 0.05
+  kf_overlap: 0.9
+  kf_translation: 0.08
+  lr:
+    cam_rot_delta: 0.003
+    cam_trans_delta: 0.001
+  mapping_itr_num: 150
+  pose_window: 6
+  prune_mode: slam
+  rgb_boundary_threshold: 0.01
+  single_thread: false
+  size_threshold: 20
+  spherical_harmonics: false
+  tracking_itr_num: 100
+  window_size: 12
+TriReliability:
+  apply_color_refinement_static_guard: false
+  apply_insertion_gate: false
+  apply_tracking_dynamic_mask: false
+  boundary_depth_threshold: 0.08
+  boundary_gate_power: 1.0
+  boundary_rgb_threshold: 0.08
+  boundary_suppression: 1.0
+  color_refinement_freeze_opacity: false
+  color_refinement_loss_eps: 1.0e-06
+  color_refinement_static_floor: 0.25
+  enabled: false
+  freeze_color_refinement_geometry: true
+  initial_static_prob: 0.7
+  insertion_dynamic_threshold: 0.45
+  max_insertion_gate_ratio: 0.35
+  max_tracking_mask_ratio: 0.6
+  memory_beta: 0.9
+  min_static_weight: 0.5
+  mode: observe
+  opacity_dynamic_threshold: 0.6
+  save_interval: 20
+  save_visualization: true
+  tau_depth: 0.1
+  tau_rgb: 0.2
+  tracking_dynamic_threshold: 0.45
+  tracking_loss_eps: 1.0e-06
+  unmapped_opacity_threshold: 0.35
+  update_gaussian_memory: true
+VisibilityWindow:
+  complement_ray_depth_m: 2.0
+  covis_weight: 0.5
+  enabled: false
+  image_edge_px: 20
+  protect_newest: 2
+  reliability_dynamic_tau: 0.5
+  sample_rays: 2048
+inherit_from: configs/rgbd/tum/f3_wk_xyz.yaml
+method: Combined-MaskOff
+method_from: configs/rgbd/experiments/active/candidate/method_combined_maskoff_prune.yaml
+model_params:
+  data_device: cuda
+  model_path: ''
+  resolution: -1
+  sh_degree: 0
+  source_path: ''
+  white_background: false
+opt_params:
+  densification_interval: 100
+  densify_from_iter: 500
+  densify_grad_threshold: 0.0002
+  densify_until_iter: 15000
+  feature_lr: 0.0025
+  iterations: 30000
+  lambda_dssim: 0.2
+  opacity_lr: 0.05
+  opacity_reset_interval: 3000
+  percent_dense: 0.01
+  position_lr_delay_mult: 0.01
+  position_lr_final: 1.6e-06
+  position_lr_init: 0.00016
+  position_lr_max_steps: 30000
+  rotation_lr: 0.001
+  scaling_lr: 0.001
+pipeline_params:
+  compute_cov3D_python: false
+  convert_SHs_python: false
+seed: 1

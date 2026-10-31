@@ -1,0 +1,51 @@
+# Combined method 主干参数 — 所有跟踪加固组件全开
+# 从 rogs-slam 分支的 method_combined_maskboth_prune.yaml 逐字段复制
+# 唯一差异：本文件是 method_from 目标，不含 inherit_from
+
+TriReliability:
+  enabled: false
+
+RobustTracking:
+  enabled: true
+  kernel: "huber"
+  rgb_delta: 0.10
+  depth_delta: 0.10
+
+SemanticMask:
+  enabled: true
+  model: "maskrcnn"
+  dynamic_classes: [1]
+  dilate_px: 7
+  max_mask_ratio: 0.95
+  device: "cuda"
+  soft: false
+  mask_mapping: true
+  mask_insertion: true
+
+DynamicKeyframe:
+  enabled: true
+  gap_cap: 5
+  occ_tighten_thresh: 2.0
+
+Training:
+  window_size: 12
+  pose_window: 6
+
+ReliabilitySignal:
+  enabled: true
+  cue: "both"
+
+DeferredCommit:
+  enabled: true
+  reliability_confirm: true
+
+Mapping:
+  lifecycle_mode: "prune"
+
+Results:
+  save_raw_metrics: true
+  # 2026-09-21 掩码体系重构：默认源改 canonical dynamic_mask/（0/255 布尔）。
+  # 旧值 dynamic_mask_gtmc 已验证失效（移动者召回 0.10-0.39）；运行期 P-A 用
+  # load_frozen_mask(>127) 读布尔图，指向 dynamic_mask 即可，无需改代码。历史复现请显式改回。
+  static_bg_mask_subdir: "dynamic_mask"
+  static_bg_band_px: [10, 25, 50]

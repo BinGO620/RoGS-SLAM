@@ -1,0 +1,4 @@
+inherit_from: "configs/rgbd/bonn/base_config.yaml"
+
+Dataset:
+  dataset_path: "datasets/bonn/rgbd_bonn_balloon_tracking2"

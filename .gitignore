@@ -1,0 +1,39 @@
+# ============================================================================
+# RoGS-Densify .gitignore
+# 原则：入库 = 代码/配置/判据件（tables/*.csv、config.yml、plot/*_final.json、
+#   render_metrics.json、evidence/**、console.log、*.done）；忽略 = 机器本地
+#   资产 + 可再生重数据（点云/图片/数组转储）。
+# ============================================================================
+
+# ---- 工具本地状态 -----------------------------------------------------------
+__pycache__/
+*.pyc
+.pytest_cache/
+.vscode/
+wandb/
+
+# ---- 机器本地资产（各机自挂/下载）-------------------------------------------
+datasets/
+weights/
+*.so
+
+# ---- 重数据类型（可再生）----------------------------------------------------
+*.ply
+*.mp4
+results/**/*.npy
+results/**/*.npz
+
+# ---- results 渲染可视化大件：按类型忽略 + 判据图白名单 -----------------------
+results/**/*.png
+results/**/*.jpg
+results/**/*.jpeg
+!results/**/figs/**/*.png
+!results/**/figs/**/*.jpg
+!results/**/figs/**/*.jpeg
+!results/**/evidence/**/*.png
+!results/**/evidence/**/*.jpg
+!results/**/evidence/**/*.jpeg
+
+# ---- 逐 KF 过程件（可再生中间快照；终态 trj_final/stats_final 保持入库）------
+results/**/plot/trj_[0-9]*.json
+results/**/plot/stats_[0-9]*.json

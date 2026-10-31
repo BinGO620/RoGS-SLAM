@@ -1,0 +1,9 @@
+# Combined method — Prune lifecycle variant
+# 论文 Table 1 的 control arm：所有跟踪加固组件 + 语义掩码 + prune 清理
+#
+# 继承链: tum/base_config.yaml → bonn/base_config.yaml → bonn/balloon.yaml → 本文件
+# method_from: combined 主干参数（RobustTracking + SemanticMask + Reliability + DeferredCommit）
+
+inherit_from: "configs/rgbd/bonn/balloon.yaml"
+method_from: "configs/experiments/combined_prune/method.yaml"
+method: "Combined-Prune"

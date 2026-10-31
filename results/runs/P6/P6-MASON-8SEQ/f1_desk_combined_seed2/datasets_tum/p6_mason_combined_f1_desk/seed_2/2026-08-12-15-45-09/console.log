@@ -1,0 +1,834 @@
+MonoGS: saving results in 
+results/runs/P6/P6-MASON-8SEQ/f1_desk_combined_seed2/datasets_tum/p6_mason_combi
+ned_f1_desk/seed_2/2026-08-12-15-45-09
+MonoGS: logging console output to 
+results/runs/P6/P6-MASON-8SEQ/f1_desk_combined_seed2/datasets_tum/p6_mason_combi
+ned_f1_desk/seed_2/2026-08-12-15-45-09/console.log
+MonoGS: Resetting the system
+MonoGS: Initialized map
+MonoGS: Candidate insert KF 5: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.010735, scale_init=knn
+MonoGS: Candidate insert KF 10: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.013240, scale_init=knn
+MonoGS: Pruned 199 lineage(s): removed 70 Gaussians
+MonoGS: Candidate insert KF 15: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.016686, scale_init=knn
+MonoGS: Evaluating ATE at frame:  21
+Eval: RMSE ATE [m] 0.004015523507917126
+MonoGS: Pruned 157 lineage(s): removed 61 Gaussians
+MonoGS: Candidate insert KF 20: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.013769, scale_init=knn
+MonoGS: Pruned 87 lineage(s): removed 54 Gaussians
+MonoGS: Candidate insert KF 25: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.016755, scale_init=knn
+MonoGS: Pruned 1019 lineage(s): removed 547 Gaussians
+MonoGS: Candidate insert KF 30: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.015916, scale_init=knn
+MonoGS: Pruned 2533 lineage(s): removed 1307 Gaussians
+MonoGS: Candidate insert KF 35: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.012355, scale_init=knn
+MonoGS: Semantic insertion gate frame 40: 6561 person px zeroed (no dynamic 
+Gaussians)
+MonoGS: Pruned 2494 lineage(s): removed 1220 Gaussians
+MonoGS: Candidate insert KF 40: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.017508, scale_init=knn
+MonoGS: Evaluating ATE at frame:  46
+Eval: RMSE ATE [m] 0.00703939042352327
+MonoGS: Pruned 2454 lineage(s): removed 1446 Gaussians
+MonoGS: Candidate insert KF 45: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.015375, scale_init=knn
+MonoGS: Pruned 2755 lineage(s): removed 876 Gaussians
+MonoGS: Candidate insert KF 50: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.012300, scale_init=knn
+MonoGS: Resetting the opacity of non-visible Gaussians
+MonoGS: Pruned 2295 lineage(s): removed 1578 Gaussians
+MonoGS: Candidate insert KF 55: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.016488, scale_init=knn
+MonoGS: Pruned 2338 lineage(s): removed 1147 Gaussians
+MonoGS: Candidate insert KF 60: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.017290, scale_init=knn
+MonoGS: Pruned 2433 lineage(s): removed 1394 Gaussians
+MonoGS: Candidate insert KF 65: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.020000, scale_init=knn
+MonoGS: Evaluating ATE at frame:  71
+Eval: RMSE ATE [m] 0.00928895910650745
+MonoGS: Pruned 1223 lineage(s): removed 674 Gaussians
+MonoGS: Candidate insert KF 70: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.009961, scale_init=knn
+MonoGS: Pruned 884 lineage(s): removed 200 Gaussians
+MonoGS: Candidate insert KF 75: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.011152, scale_init=knn
+MonoGS: Pruned 1062 lineage(s): removed 534 Gaussians
+MonoGS: Candidate insert KF 80: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.014908, scale_init=knn
+MonoGS: Pruned 1683 lineage(s): removed 818 Gaussians
+MonoGS: Candidate insert KF 84: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.015243, scale_init=knn
+MonoGS: Pruned 1853 lineage(s): removed 934 Gaussians
+MonoGS: Candidate insert KF 89: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.009845, scale_init=knn
+MonoGS: Semantic insertion gate frame 93: 4535 person px zeroed (no dynamic 
+Gaussians)
+MonoGS: Evaluating ATE at frame:  94
+Eval: RMSE ATE [m] 0.010509565592561523
+MonoGS: Pruned 1407 lineage(s): removed 643 Gaussians
+MonoGS: Candidate insert KF 93: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.014714, scale_init=knn
+MonoGS: Pruned 2429 lineage(s): removed 1437 Gaussians
+MonoGS: Candidate insert KF 97: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.012849, scale_init=knn
+MonoGS: Pruned 2277 lineage(s): removed 1088 Gaussians
+MonoGS: Candidate insert KF 101: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.008590, scale_init=knn
+MonoGS: Pruned 2520 lineage(s): removed 1148 Gaussians
+MonoGS: Candidate insert KF 104: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.011401, scale_init=knn
+MonoGS: Pruned 1767 lineage(s): removed 1767 Gaussians
+MonoGS: Candidate insert KF 108: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.009763, scale_init=knn
+MonoGS: Evaluating ATE at frame:  112
+MonoGS: Pruned 3120 lineage(s): removed 864 Gaussians
+Eval: RMSE ATE [m] 0.01088931709979978
+MonoGS: Candidate insert KF 111: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.011155, scale_init=knn
+MonoGS: Pruned 2310 lineage(s): removed 772 Gaussians
+MonoGS: Candidate insert KF 115: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.008850, scale_init=knn
+MonoGS: Pruned 2362 lineage(s): removed 728 Gaussians
+MonoGS: Candidate insert KF 119: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.006077, scale_init=knn
+MonoGS: Pruned 3033 lineage(s): removed 582 Gaussians
+MonoGS: Candidate insert KF 122: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.015849, scale_init=knn
+MonoGS: Pruned 1982 lineage(s): removed 105 Gaussians
+MonoGS: Candidate insert KF 127: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.020000, scale_init=knn
+MonoGS: Evaluating ATE at frame:  133
+Eval: RMSE ATE [m] 0.010024728854324897
+MonoGS: Pruned 2546 lineage(s): removed 324 Gaussians
+MonoGS: Candidate insert KF 132: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.011871, scale_init=knn
+MonoGS: Pruned 5079 lineage(s): removed 270 Gaussians
+MonoGS: Candidate insert KF 136: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.020000, scale_init=knn
+MonoGS: Pruned 589 lineage(s): removed 149 Gaussians
+MonoGS: Candidate insert KF 140: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.018014, scale_init=knn
+MonoGS: Pruned 808 lineage(s): removed 283 Gaussians
+MonoGS: Candidate insert KF 144: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.015282, scale_init=knn
+MonoGS: Semantic insertion gate frame 148: 13123 person px zeroed (no dynamic 
+Gaussians)
+MonoGS: Pruned 2509 lineage(s): removed 545 Gaussians
+MonoGS: Candidate insert KF 148: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.020000, scale_init=knn
+MonoGS: Semantic insertion gate frame 151: 15833 person px zeroed (no dynamic 
+Gaussians)
+MonoGS: Evaluating ATE at frame:  152
+Eval: RMSE ATE [m] 0.010721333051938368
+MonoGS: Pruned 1722 lineage(s): removed 536 Gaussians
+MonoGS: Candidate insert KF 151: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.011879, scale_init=knn
+MonoGS: Pruned 1829 lineage(s): removed 840 Gaussians
+MonoGS: Candidate insert KF 156: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.020000, scale_init=knn
+MonoGS: Pruned 3326 lineage(s): removed 2162 Gaussians
+MonoGS: Candidate insert KF 159: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.017857, scale_init=knn
+MonoGS: Pruned 2045 lineage(s): removed 797 Gaussians
+MonoGS: Candidate insert KF 162: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.020000, scale_init=knn
+MonoGS: Pruned 2884 lineage(s): removed 1425 Gaussians
+MonoGS: Candidate insert KF 167: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.020000, scale_init=knn
+MonoGS: Semantic insertion gate frame 171: 23591 person px zeroed (no dynamic 
+Gaussians)
+MonoGS: Evaluating ATE at frame:  172
+Eval: RMSE ATE [m] 0.01224979984764857
+MonoGS: Pruned 2606 lineage(s): removed 662 Gaussians
+MonoGS: Candidate insert KF 171: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.020000, scale_init=knn
+MonoGS: Pruned 2114 lineage(s): removed 900 Gaussians
+MonoGS: Candidate insert KF 174: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.020000, scale_init=knn
+MonoGS: Pruned 3205 lineage(s): removed 1614 Gaussians
+MonoGS: Candidate insert KF 179: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.013443, scale_init=knn
+MonoGS: Pruned 5689 lineage(s): removed 3080 Gaussians
+MonoGS: Candidate insert KF 182: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.017279, scale_init=knn
+MonoGS: Pruned 3608 lineage(s): removed 1388 Gaussians
+MonoGS: Candidate insert KF 185: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.015625, scale_init=knn
+MonoGS: Evaluating ATE at frame:  189
+Eval: RMSE ATE [m] 0.015636734540082096
+MonoGS: Pruned 3204 lineage(s): removed 762 Gaussians
+MonoGS: Candidate insert KF 188: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.011246, scale_init=knn
+MonoGS: Pruned 3248 lineage(s): removed 1412 Gaussians
+MonoGS: Candidate insert KF 192: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.007884, scale_init=knn
+MonoGS: Pruned 4007 lineage(s): removed 2268 Gaussians
+MonoGS: Candidate insert KF 195: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.015062, scale_init=knn
+MonoGS: Pruned 3996 lineage(s): removed 1016 Gaussians
+MonoGS: Candidate insert KF 198: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.009999, scale_init=knn
+MonoGS: Pruned 4959 lineage(s): removed 4959 Gaussians
+MonoGS: Candidate insert KF 201: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.013786, scale_init=knn
+MonoGS: Evaluating ATE at frame:  205
+Eval: RMSE ATE [m] 0.015150804802621563
+MonoGS: Pruned 2793 lineage(s): removed 1010 Gaussians
+MonoGS: Candidate insert KF 204: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.010962, scale_init=knn
+MonoGS: Pruned 1803 lineage(s): removed 385 Gaussians
+MonoGS: Candidate insert KF 209: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.011303, scale_init=knn
+MonoGS: Pruned 3404 lineage(s): removed 1567 Gaussians
+MonoGS: Candidate insert KF 213: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.012224, scale_init=knn
+MonoGS: Pruned 1969 lineage(s): removed 968 Gaussians
+MonoGS: Candidate insert KF 218: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.009509, scale_init=knn
+MonoGS: Pruned 2064 lineage(s): removed 720 Gaussians
+MonoGS: Candidate insert KF 222: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.014280, scale_init=knn
+MonoGS: Evaluating ATE at frame:  227
+Eval: RMSE ATE [m] 0.014784618975418677
+MonoGS: Pruned 2554 lineage(s): removed 638 Gaussians
+MonoGS: Candidate insert KF 226: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.009391, scale_init=knn
+MonoGS: Pruned 3011 lineage(s): removed 1304 Gaussians
+MonoGS: Candidate insert KF 229: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.009607, scale_init=knn
+MonoGS: Pruned 2908 lineage(s): removed 1161 Gaussians
+MonoGS: Candidate insert KF 233: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.008811, scale_init=knn
+MonoGS: Pruned 2135 lineage(s): removed 782 Gaussians
+MonoGS: Candidate insert KF 237: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.007111, scale_init=knn
+MonoGS: Semantic insertion gate frame 242: 6235 person px zeroed (no dynamic 
+Gaussians)
+MonoGS: Pruned 1850 lineage(s): removed 444 Gaussians
+MonoGS: Candidate insert KF 242: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.008781, scale_init=knn
+MonoGS: Evaluating ATE at frame:  248
+Eval: RMSE ATE [m] 0.014478236234213826
+MonoGS: Pruned 2280 lineage(s): removed 2280 Gaussians
+MonoGS: Candidate insert KF 247: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.008907, scale_init=knn
+MonoGS: Semantic insertion gate frame 252: 8162 person px zeroed (no dynamic 
+Gaussians)
+MonoGS: Pruned 2395 lineage(s): removed 514 Gaussians
+MonoGS: Candidate insert KF 252: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.020000, scale_init=knn
+MonoGS: Semantic insertion gate frame 256: 6982 person px zeroed (no dynamic 
+Gaussians)
+MonoGS: Pruned 2568 lineage(s): removed 782 Gaussians
+MonoGS: Candidate insert KF 256: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.011837, scale_init=knn
+MonoGS: Pruned 2117 lineage(s): removed 554 Gaussians
+MonoGS: Candidate insert KF 259: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.005534, scale_init=knn
+MonoGS: Pruned 3175 lineage(s): removed 926 Gaussians
+MonoGS: Candidate insert KF 262: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.008172, scale_init=knn
+MonoGS: Evaluating ATE at frame:  267
+Eval: RMSE ATE [m] 0.014554476591707383
+MonoGS: Pruned 3993 lineage(s): removed 3993 Gaussians
+MonoGS: Candidate insert KF 266: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.008488, scale_init=knn
+MonoGS: Pruned 3218 lineage(s): removed 787 Gaussians
+MonoGS: Candidate insert KF 270: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.008336, scale_init=knn
+MonoGS: Pruned 3864 lineage(s): removed 498 Gaussians
+MonoGS: Candidate insert KF 273: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.005259, scale_init=knn
+MonoGS: Pruned 3863 lineage(s): removed 382 Gaussians
+MonoGS: Candidate insert KF 277: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.005677, scale_init=knn
+MonoGS: Pruned 3282 lineage(s): removed 451 Gaussians
+MonoGS: Candidate insert KF 281: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.003850, scale_init=knn
+MonoGS: Evaluating ATE at frame:  285
+Eval: RMSE ATE [m] 0.014403084049443673
+MonoGS: Pruned 2914 lineage(s): removed 143 Gaussians
+MonoGS: Candidate insert KF 284: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.013246, scale_init=knn
+MonoGS: Pruned 2719 lineage(s): removed 549 Gaussians
+MonoGS: Candidate insert KF 287: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.008200, scale_init=knn
+MonoGS: Pruned 1948 lineage(s): removed 284 Gaussians
+MonoGS: Candidate insert KF 290: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.005910, scale_init=knn
+MonoGS: Pruned 501 lineage(s): removed 79 Gaussians
+MonoGS: Candidate insert KF 293: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.006291, scale_init=knn
+MonoGS: Pruned 363 lineage(s): removed 99 Gaussians
+MonoGS: Candidate insert KF 296: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.008742, scale_init=knn
+MonoGS: Evaluating ATE at frame:  300
+Eval: RMSE ATE [m] 0.014212019028231564
+MonoGS: Pruned 710 lineage(s): removed 342 Gaussians
+MonoGS: Candidate insert KF 299: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.009665, scale_init=knn
+MonoGS: Pruned 801 lineage(s): removed 801 Gaussians
+MonoGS: Candidate insert KF 302: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.004810, scale_init=knn
+MonoGS: Pruned 768 lineage(s): removed 768 Gaussians
+MonoGS: Candidate insert KF 305: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.007377, scale_init=knn
+MonoGS: Pruned 1242 lineage(s): removed 352 Gaussians
+MonoGS: Candidate insert KF 308: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.010328, scale_init=knn
+MonoGS: Pruned 1215 lineage(s): removed 519 Gaussians
+MonoGS: Candidate insert KF 311: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.004650, scale_init=knn
+MonoGS: Resetting the opacity of non-visible Gaussians
+MonoGS: Evaluating ATE at frame:  315
+MonoGS: Pruned 1244 lineage(s): removed 337 Gaussians
+Eval: RMSE ATE [m] 0.01393267919939276
+MonoGS: Candidate insert KF 314: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.008598, scale_init=knn
+MonoGS: Pruned 1649 lineage(s): removed 357 Gaussians
+MonoGS: Candidate insert KF 317: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.007404, scale_init=knn
+MonoGS: Pruned 2891 lineage(s): removed 2891 Gaussians
+MonoGS: Candidate insert KF 321: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.012479, scale_init=knn
+MonoGS: Semantic insertion gate frame 325: 9545 person px zeroed (no dynamic 
+Gaussians)
+MonoGS: Pruned 2748 lineage(s): removed 557 Gaussians
+MonoGS: Candidate insert KF 325: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.007696, scale_init=knn
+MonoGS: Pruned 2262 lineage(s): removed 444 Gaussians
+MonoGS: Candidate insert KF 329: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.020000, scale_init=knn
+MonoGS: Evaluating ATE at frame:  333
+Eval: RMSE ATE [m] 0.013907707193034807
+MonoGS: Pruned 1228 lineage(s): removed 452 Gaussians
+MonoGS: Candidate insert KF 332: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.012966, scale_init=knn
+MonoGS: Pruned 2848 lineage(s): removed 1798 Gaussians
+MonoGS: Candidate insert KF 336: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.018716, scale_init=knn
+MonoGS: Pruned 2418 lineage(s): removed 1200 Gaussians
+MonoGS: Candidate insert KF 339: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.020000, scale_init=knn
+MonoGS: Pruned 2527 lineage(s): removed 911 Gaussians
+MonoGS: Candidate insert KF 344: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.020000, scale_init=knn
+MonoGS: Pruned 4225 lineage(s): removed 400 Gaussians
+MonoGS: Candidate insert KF 349: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.020000, scale_init=knn
+MonoGS: Evaluating ATE at frame:  355
+Eval: RMSE ATE [m] 0.015041397763976564
+MonoGS: Pruned 2599 lineage(s): removed 658 Gaussians
+MonoGS: Candidate insert KF 354: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.017731, scale_init=knn
+MonoGS: Pruned 5627 lineage(s): removed 3033 Gaussians
+MonoGS: Candidate insert KF 358: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.015590, scale_init=knn
+MonoGS: Pruned 2493 lineage(s): removed 185 Gaussians
+MonoGS: Candidate insert KF 362: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.019328, scale_init=knn
+MonoGS: Pruned 3396 lineage(s): removed 1789 Gaussians
+MonoGS: Candidate insert KF 365: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.014651, scale_init=knn
+MonoGS: Pruned 3229 lineage(s): removed 1884 Gaussians
+MonoGS: Candidate insert KF 368: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.020000, scale_init=knn
+MonoGS: Evaluating ATE at frame:  372
+MonoGS: Pruned 4712 lineage(s): removed 2025 Gaussians
+Eval: RMSE ATE [m] 0.015334307784140034
+MonoGS: Candidate insert KF 371: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.020000, scale_init=knn
+MonoGS: Pruned 4053 lineage(s): removed 4053 Gaussians
+MonoGS: Candidate insert KF 374: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.020000, scale_init=knn
+MonoGS: Pruned 3306 lineage(s): removed 1339 Gaussians
+MonoGS: Candidate insert KF 377: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.020000, scale_init=knn
+MonoGS: Pruned 3862 lineage(s): removed 998 Gaussians
+MonoGS: Candidate insert KF 380: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.020000, scale_init=knn
+MonoGS: Pruned 1819 lineage(s): removed 451 Gaussians
+MonoGS: Candidate insert KF 383: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.020000, scale_init=knn
+MonoGS: Evaluating ATE at frame:  387
+Eval: RMSE ATE [m] 0.015212190466303496
+MonoGS: Pruned 2796 lineage(s): removed 1422 Gaussians
+MonoGS: Candidate insert KF 386: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.015471, scale_init=knn
+MonoGS: Pruned 1908 lineage(s): removed 225 Gaussians
+MonoGS: Candidate insert KF 389: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.020000, scale_init=knn
+MonoGS: Pruned 2947 lineage(s): removed 2947 Gaussians
+MonoGS: Candidate insert KF 393: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.020000, scale_init=knn
+MonoGS: Pruned 2547 lineage(s): removed 477 Gaussians
+MonoGS: Candidate insert KF 397: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.020000, scale_init=knn
+MonoGS: Pruned 3716 lineage(s): removed 558 Gaussians
+MonoGS: Candidate insert KF 401: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.020000, scale_init=knn
+MonoGS: Evaluating ATE at frame:  406
+Eval: RMSE ATE [m] 0.015042779666293332
+MonoGS: Pruned 2722 lineage(s): removed 661 Gaussians
+MonoGS: Candidate insert KF 405: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.020000, scale_init=knn
+MonoGS: Pruned 2161 lineage(s): removed 501 Gaussians
+MonoGS: Candidate insert KF 410: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.020000, scale_init=knn
+MonoGS: Pruned 1417 lineage(s): removed 189 Gaussians
+MonoGS: Candidate insert KF 415: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.020000, scale_init=knn
+MonoGS: Pruned 1627 lineage(s): removed 413 Gaussians
+MonoGS: Candidate insert KF 420: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.020000, scale_init=knn
+MonoGS: Pruned 1637 lineage(s): removed 654 Gaussians
+MonoGS: Candidate insert KF 425: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.020000, scale_init=knn
+MonoGS: Evaluating ATE at frame:  431
+Eval: RMSE ATE [m] 0.014779288549780664
+MonoGS: Pruned 1474 lineage(s): removed 622 Gaussians
+MonoGS: Candidate insert KF 430: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.020000, scale_init=knn
+MonoGS: Pruned 1620 lineage(s): removed 813 Gaussians
+MonoGS: Candidate insert KF 435: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.020000, scale_init=knn
+MonoGS: Pruned 1664 lineage(s): removed 1664 Gaussians
+MonoGS: Candidate insert KF 440: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.020000, scale_init=knn
+MonoGS: Pruned 2859 lineage(s): removed 2859 Gaussians
+MonoGS: Candidate insert KF 444: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.020000, scale_init=knn
+MonoGS: Pruned 2428 lineage(s): removed 2428 Gaussians
+MonoGS: Candidate insert KF 448: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.020000, scale_init=knn
+MonoGS: Evaluating ATE at frame:  453
+Eval: RMSE ATE [m] 0.014608662533896194
+MonoGS: Pruned 2283 lineage(s): removed 2283 Gaussians
+MonoGS: Candidate insert KF 452: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.020000, scale_init=knn
+MonoGS: Pruned 1988 lineage(s): removed 1988 Gaussians
+MonoGS: Candidate insert KF 456: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.020000, scale_init=knn
+MonoGS: Pruned 1843 lineage(s): removed 747 Gaussians
+MonoGS: Candidate insert KF 460: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.020000, scale_init=knn
+MonoGS: Pruned 2000 lineage(s): removed 852 Gaussians
+MonoGS: Candidate insert KF 465: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.020000, scale_init=knn
+MonoGS: Pruned 4568 lineage(s): removed 2159 Gaussians
+MonoGS: Candidate insert KF 470: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.020000, scale_init=knn
+MonoGS: Evaluating ATE at frame:  476
+Eval: RMSE ATE [m] 0.014636454428774561
+MonoGS: Pruned 2036 lineage(s): removed 728 Gaussians
+MonoGS: Candidate insert KF 475: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.020000, scale_init=knn
+MonoGS: Pruned 2013 lineage(s): removed 423 Gaussians
+MonoGS: Candidate insert KF 479: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.012689, scale_init=knn
+MonoGS: Pruned 2152 lineage(s): removed 677 Gaussians
+MonoGS: Candidate insert KF 483: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.015746, scale_init=knn
+MonoGS: Pruned 3003 lineage(s): removed 1299 Gaussians
+MonoGS: Candidate insert KF 487: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.008266, scale_init=knn
+MonoGS: Pruned 2777 lineage(s): removed 849 Gaussians
+MonoGS: Candidate insert KF 491: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.010527, scale_init=knn
+MonoGS: Evaluating ATE at frame:  495
+Eval: RMSE ATE [m] 0.014571374086131308
+MonoGS: Pruned 3036 lineage(s): removed 595 Gaussians
+MonoGS: Candidate insert KF 494: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.012477, scale_init=knn
+MonoGS: Pruned 2877 lineage(s): removed 2877 Gaussians
+MonoGS: Candidate insert KF 497: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.008864, scale_init=knn
+MonoGS: Pruned 1646 lineage(s): removed 1646 Gaussians
+MonoGS: Candidate insert KF 500: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.006202, scale_init=knn
+MonoGS: Pruned 2009 lineage(s): removed 387 Gaussians
+MonoGS: Candidate insert KF 503: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.005509, scale_init=knn
+MonoGS: Pruned 2091 lineage(s): removed 363 Gaussians
+MonoGS: Candidate insert KF 506: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.011478, scale_init=knn
+MonoGS: Evaluating ATE at frame:  510
+MonoGS: Pruned 2604 lineage(s): removed 474 Gaussians
+Eval: RMSE ATE [m] 0.014475848892357207
+MonoGS: Candidate insert KF 509: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.015478, scale_init=knn
+MonoGS: Pruned 2710 lineage(s): removed 249 Gaussians
+MonoGS: Candidate insert KF 512: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.009474, scale_init=knn
+MonoGS: Pruned 3026 lineage(s): removed 3026 Gaussians
+MonoGS: Candidate insert KF 515: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.007626, scale_init=knn
+MonoGS: Pruned 2731 lineage(s): removed 2731 Gaussians
+MonoGS: Candidate insert KF 518: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.002785, scale_init=knn
+MonoGS: Pruned 2131 lineage(s): removed 456 Gaussians
+MonoGS: Candidate insert KF 521: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.002796, scale_init=knn
+MonoGS: Evaluating ATE at frame:  525
+MonoGS: Pruned 1950 lineage(s): removed 383 Gaussians
+Eval: RMSE ATE [m] 0.014261660217485822
+MonoGS: Candidate insert KF 524: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.007144, scale_init=knn
+MonoGS: Pruned 2200 lineage(s): removed 269 Gaussians
+MonoGS: Candidate insert KF 527: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.004557, scale_init=knn
+MonoGS: Pruned 2251 lineage(s): removed 214 Gaussians
+MonoGS: Candidate insert KF 531: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.011676, scale_init=knn
+MonoGS: Pruned 2441 lineage(s): removed 2441 Gaussians
+MonoGS: Candidate insert KF 536: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.006984, scale_init=knn
+MonoGS: Pruned 3078 lineage(s): removed 320 Gaussians
+MonoGS: Candidate insert KF 541: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.018845, scale_init=knn
+MonoGS: Evaluating ATE at frame:  547
+Eval: RMSE ATE [m] 0.014030642165708745
+MonoGS: Pruned 3348 lineage(s): removed 545 Gaussians
+MonoGS: Candidate insert KF 546: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.020000, scale_init=knn
+MonoGS: Pruned 3415 lineage(s): removed 649 Gaussians
+MonoGS: Candidate insert KF 551: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.020000, scale_init=knn
+MonoGS: Pruned 2088 lineage(s): removed 405 Gaussians
+MonoGS: Candidate insert KF 556: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.003763, scale_init=knn
+MonoGS: Pruned 1452 lineage(s): removed 86 Gaussians
+MonoGS: Candidate insert KF 561: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.005118, scale_init=knn
+MonoGS: Semantic insertion gate frame 566: 4316 person px zeroed (no dynamic 
+Gaussians)
+MonoGS: Pruned 2372 lineage(s): removed 2372 Gaussians
+MonoGS: Candidate insert KF 566: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.009368, scale_init=knn
+MonoGS: Semantic insertion gate frame 571: 3879 person px zeroed (no dynamic 
+Gaussians)
+MonoGS: Evaluating ATE at frame:  572
+MonoGS: Pruned 2139 lineage(s): removed 2139 Gaussians
+Eval: RMSE ATE [m] 0.013816899077068094
+MonoGS: Candidate insert KF 571: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.020000, scale_init=knn
+MonoGS: Pruned 2784 lineage(s): removed 2784 Gaussians
+MonoGS: Candidate insert KF 576: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.006370, scale_init=knn
+MonoGS: Pruned 1594 lineage(s): removed 1594 Gaussians
+MonoGS: Candidate insert KF 581: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.017724, scale_init=knn
+MonoGS: Resetting the opacity of non-visible Gaussians
+MonoGS: Pruned 2330 lineage(s): removed 2330 Gaussians
+MonoGS: Candidate insert KF 586: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.006393, scale_init=knn
+MonoGS: Pruned 2069 lineage(s): removed 2069 Gaussians
+MonoGS: Candidate insert KF 591: inserted 5000 Gaussians
+MonoGS: Deferred promotion health: invalid={'xyz': 0, 'features_dc': 0, 
+'features_rest': 0, 'opacity': 0, 'scaling': 0, 'rotation': 0}, 
+scale_min=0.001000, scale_max=0.020000, scale_init=knn
+Eval: RMSE ATE [m] 0.013631750673385389
+Eval: Online SLAM time 1159.3219685109798
+Eval: Online SLAM FPS 0.5106433036547717
+MonoGS: Backend stopped and joined the main thread
+MonoGS: Done.

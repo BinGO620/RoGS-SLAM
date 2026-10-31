@@ -1,0 +1,46 @@
+name: rogs-slam
+
+channels:
+  - conda-forge
+  - defaults
+
+dependencies:
+  - python=3.10
+  - pip
+  - pip:
+      - --extra-index-url https://download.pytorch.org/whl/cu118
+      - torch==2.1.0+cu118
+      - torchvision==0.16.0+cu118
+      - torchaudio==2.1.0+cu118
+      - numpy==1.26.4
+      - setuptools==69.5.1
+      - wheel
+      - packaging
+      - ninja
+      - opencv-python==4.8.1.78
+      - PyYAML==6.0.3
+      - munch==4.0.0
+      - trimesh==4.12.2
+      - evo==1.11.0
+      - open3d==0.18.0
+      - torchmetrics==1.3.2
+      - imgviz==2.1.0
+      - PyOpenGL==3.1.10
+      - glfw==2.10.0
+      - PyGLM==2.8.3
+      - wandb==0.28.0
+      - lpips==0.1.4
+      - rich==15.0.0
+      - plyfile==0.8.1
+      - matplotlib==3.10.9
+      - tqdm==4.68.3
+      - scipy==1.15.3
+      - scikit-learn==1.7.2
+      - pandas==2.3.3
+      - openpyxl==3.1.5
+      - natsort==8.4.0
+      - colorama==0.4.6
+      - protobuf==7.35.1
+      - ruff
+      - ./submodules/simple-knn
+      - ./submodules/diff-gaussian-rasterization
