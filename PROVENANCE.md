@@ -59,5 +59,10 @@ else 分支返回 (None, None) → 标量路径；手术等价于恒走标量路
 
 ## 冒烟 A/B 补记
 
-（执行时填写：RoGS-Densify 同款流程，裁剪仓 vs monogs-ours@31b0f0367 纯净参照，
-config `configs/experiments/combined_prune/balloon.yaml`，--max-frames 40 --seed 0。）
+- 设置：`configs/experiments/combined_prune/balloon.yaml`，`--max-frames 40 --seed 0`，
+  同机同卡（RTX 2060）各跑一次；参照 = monogs-ours@31b0f0367 纯净代码副本。
+- 读数：ATE RMSE 0.7163 vs 0.7386 cm（Δ=0.022cm）、KF-ATE 0.8654 vs 0.9064、
+  RPE 1.4673 vs 1.4834。Δ 绝对量低于同配置跨批噪声地板（0.18–0.62cm）约一个量级；
+  手术等价性另行核证：被删的 else 分支函数（`compute_per_gaussian_knobs`/
+  `log_sel_dens_state`）在禁用时零副作用早退、不消耗 RNG，标量路径逐位一致。
+  **判定：PASS（Δ 属重管线的 CUDA 非确定性）。**
