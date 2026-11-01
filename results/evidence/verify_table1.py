@@ -30,13 +30,17 @@ def parse_cell(cell):
 def main():
     table = list(csv.DictReader(open(T1)))
     rows = []
-    for f in glob.glob(os.path.join(ROOT, "results/runs/P6", "*/*/datasets_*/**/tracking_raw.csv"), recursive=True):
-        family = f.split(os.sep)[-7]  # .../runs/P6/<family>/<exp>/datasets_x/...
-        for r in csv.DictReader(open(f)):
-            try:
-                rows.append((family, r["sequence"], float(r["ate_rmse_cm"])))
-            except (KeyError, ValueError):
-                continue
+    # 数据源 1：P6 布局 runs/<family>/<exp>/datasets_x/<run>/seed_N/<ts>/tracking_raw.csv → family = -7
+    # 数据源 2：WPB 布局 runs/<family>/<exp>/tables/tracking_raw.csv → family = -4
+    for pat, fam_idx in (("results/runs/*/*/*/datasets_*/**/tracking_raw.csv", -7),
+                         ("results/runs/*/*/tables/tracking_raw.csv", -4)):
+        for f in glob.glob(os.path.join(ROOT, pat), recursive=True):
+            family = f.split(os.sep)[fam_idx]
+            for r in csv.DictReader(open(f)):
+                try:
+                    rows.append((family, r["sequence"], float(r["ate_rmse_cm"])))
+                except (KeyError, ValueError):
+                    continue
     groups = {}
     for family, seq, ate in rows:
         groups.setdefault((family, seq), []).append(ate)
@@ -52,14 +56,25 @@ def main():
                 continue
             m, s = cell
             hit = None
+            # 双重分组匹配：① (family, sequence) 精确；② 仅 sequence 合并
+            # （论文批次有"跨族补种子"历史：如 balloon/maskfree 的 3 seeds 分属
+            #   P6-MASKOFF 与 P6-MASKOFF-3SEED，按族分组会拆散）
+            merged = {}
             for (family, name), ates in groups.items():
-                if not re.search(rf"(^|_){re.escape(seq)}(_|$)", name):
-                    continue
-                gm = st.mean(ates)
-                ss = st.stdev(ates) if len(ates) > 1 else 0.0
-                ps = st.pstdev(ates) if len(ates) > 1 else 0.0
-                if abs(gm - m) < 0.02 and (abs(ss - s) < 0.03 or abs(ps - s) < 0.03):
-                    hit = (f"{family}/{name}", len(ates), gm, ss)
+                merged.setdefault(name, []).extend(ates)
+            for pool in (groups, merged):
+                for key, ates in pool.items():
+                    name = key[1] if isinstance(key, tuple) else key
+                    if not re.search(rf"(^|_){re.escape(seq)}(_|$)", name):
+                        continue
+                    gm = st.mean(ates)
+                    ss = st.stdev(ates) if len(ates) > 1 else 0.0
+                    ps = st.pstdev(ates) if len(ates) > 1 else 0.0
+                    if abs(gm - m) < 0.02 and (abs(ss - s) < 0.03 or abs(ps - s) < 0.03):
+                        tag = f"{key[0]}/{key[1]}" if isinstance(key, tuple) else f"(跨族合并){name}"
+                        hit = (tag, len(ates), gm, ss)
+                        break
+                if hit:
                     break
             if hit:
                 matched += 1
