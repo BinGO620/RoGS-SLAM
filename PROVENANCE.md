@@ -57,6 +57,23 @@ else 分支返回 (None, None) → 标量路径；手术等价于恒走标量路
 | submodule pin | `diff-gaussian-rasterization@43e21bff`、`simple-knn@44f764299` |
 | 2060 冒烟 A/B（40 帧，combined/balloon，seed 0） | 见下方补记 |
 
+## 数字验证矩阵（Table 1，工具 = results/evidence/verify_table1.py）
+
+数据源 = 仓内全部 run 判据件（tar 归档 P6 八族 + git tag mmm2027-submission 的
+runs/WPB 与 P6 补件，254 个 tracking_raw.csv）；匹配 = 序列名正则 + mean/std 双窗口，
+支持跨族合并（论文批次有跨族补种子历史，如 balloon/maskfree 的 3 seeds 分属
+P6-MASKOFF 与 P6-MASKOFF-3SEED）。
+
+| 列 | 逐位重算 | 状态 |
+|---|---|---|
+| **maskfree** | **18/18** | 全命中（含跨族合并 3 格） |
+| **combined** | **13/18** | TUM 10 + crowd/crowd2/pt1 命中；**BONN 5 格缺口**（balloon 3.06 / balloon2 5.28 / mv_no_box 2.66 / mv_no_box2 5.14 / pt2 10.44）——论文那批 run 工件不在 tar 与 tag（最接近候选 = WPB-CONFIRM 因子批 K1R1L1，均值差 0.2–1.4，非同批）→ **待查 3090 /mnt/app 工件或重跑** |
+| vanilla（MonoGS） | 1/18 | 外部方法列，本组代码不产出，run 工件预期不在归档；数字以 evidence CSV 为准 |
+| rgd | 0/18 | 同上（外部对照方法） |
+
+**合计 32/72 逐位重算命中；其余 40 格中 35 格属外部方法列（结构性无工件）、5 格登记待补。**
+配置同源：47 个 yaml 与 monogs-ours@31b0f0367 逐字节一致（parity check 2026-11-01）。
+
 ## 冒烟 A/B 补记
 
 - 设置：`configs/experiments/combined_prune/balloon.yaml`，`--max-frames 40 --seed 0`，
