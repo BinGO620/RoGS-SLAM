@@ -83,3 +83,15 @@ P6-MASKOFF 与 P6-MASKOFF-3SEED）。
   手术等价性另行核证：被删的 else 分支函数（`compute_per_gaussian_knobs`/
   `log_sel_dens_state`）在禁用时零副作用早退、不消耗 RNG，标量路径逐位一致。
   **判定：PASS（Δ 属重管线的 CUDA 非确定性）。**
+
+## 归档原则（2026-11-04 登记；用户指令，适用于每一个仓库）
+
+- **工作区永远只留最新**：过时的版本/草稿/历史快照一律移入本仓 `archive/`（就近归档，
+  命名 `{语义}_{YYYY-MM-DD}`），不散落工作区顶层。
+- **归档 ≠ 删除**：归档件是证据键，账本指针不追改；每处归档配 `README.md` 并在仓内
+  索引登记。
+- **本仓独立性**：实验一律回 monogs-ours 做，本仓只收"已判据确认"的成果快照
+  （四步同步见 monogs-ours `/data/master-thesis/WORKFLOW.md`）；本仓自持门禁与
+  PROVENANCE，不依赖 monogs-ours 工作区即可复验。
+- **里程碑触发同步**：只在判决落地/投稿等里程碑做 manifest 重灌 + gate 全跑 +
+  PROVENANCE 登记；平时不同步（避免快照漂移）。
