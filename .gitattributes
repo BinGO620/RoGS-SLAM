@@ -1,0 +1,10 @@
+# Normalize line endings for text sources; binaries stay untouched.
+* text=auto eol=lf
+*.png binary
+*.jpg binary
+*.pdf binary
+*.ply binary
+*.tar.gz binary
+*.zip binary
+*.ckpt binary
+*.pth binary

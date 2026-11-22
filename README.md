@@ -18,6 +18,9 @@ cd RoGS-SLAM
 conda activate rogs-slam
 ```
 
+For a full step-by-step walkthrough (requirements, CUDA checks, datasets,
+smoke test, Table 1 reproduction), see **[REPRODUCING.md](REPRODUCING.md)**.
+
 ## Usage
 
 ```bash
@@ -63,3 +66,13 @@ submodules/                                     # diff-gaussian-rasterization-w-
 
 Built on [MonoGS](https://github.com/muskie82/MonoGS) and
 [3D Gaussian Splatting](https://github.com/graphdeco-inria/gaussian-splatting).
+
+## License
+
+Released for **non-commercial research and evaluation use only**, inherited from
+the Inria/MPII Gaussian-Splatting License that covers the rasterizer submodule.
+See [LICENSE](LICENSE) for the combined terms and the per-component table.
+
+## Citation
+
+If you use this code, please cite the paper — see [CITATION.cff](CITATION.cff).

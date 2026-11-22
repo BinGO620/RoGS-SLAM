@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+message: "If you use this code, please cite the paper below."
+title: "RoGS-SLAM: Robust Gaussian Splatting SLAM in Dynamic Environments via Reliability-Guided Weighting"
+type: software
+authors:
+  - family-names: Chen
+    given-names: Bin
+  - family-names: Su
+    given-names: Jie
+  - family-names: Zhang
+    given-names: Jing
+repository-code: "https://github.com/BinGO620/RoGS-SLAM"
+license: LicenseRef-Gaussian-Splatting-NonCommercial
+preferred-citation:
+  type: conference-paper
+  title: "RoGS-SLAM: Robust Gaussian Splatting SLAM in Dynamic Environments via Reliability-Guided Weighting"
+  authors:
+    - family-names: Chen
+      given-names: Bin
+    - family-names: Su
+      given-names: Jie
+    - family-names: Zhang
+      given-names: Jing
+  conference:
+    name: "International Conference on Multimedia Modeling (MMM)"
+  year: 2027
+  notes: "Accepted (camera-ready, 14 pages)."

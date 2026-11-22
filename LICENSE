@@ -1,0 +1,42 @@
+# License and third-party terms
+
+This repository is released for **non-commercial research and evaluation use only**.
+
+The reason is inherited, not chosen: the Gaussian-splatting rasterizer this code
+builds on (`submodules/diff-gaussian-rasterization`) is distributed by Inria and
+the Max Planck Institute for Informatics under the *Gaussian-Splatting License*,
+which grants non-exclusive rights "for research purposes" and permits use
+"non-commercially, i.e., for research and/or evaluation purposes only".
+
+## What this means for you
+
+- **Academic and industrial research use is permitted**, free of charge.
+- **Commercial use is not permitted** without a separate license from Inria/MPII.
+- You may reproduce, prepare derivative works, and redistribute the software for
+  research purposes, provided you keep this notice and the upstream licenses
+  intact. There is no right to sublicense.
+- This repository's own code (everything not under `submodules/`) is offered to
+  you under the same non-commercial research terms, so that the combined work
+  has a single, honest license statement.
+
+## Upstream components and their licenses
+
+| Component | Location | License |
+|---|---|---|
+| Gaussian-splatting rasterizer | `submodules/diff-gaussian-rasterization` | Inria/MPII Gaussian-Splatting License (non-commercial research); full text in that directory's `LICENSE.md` |
+| `simple-knn` | `submodules/simple-knn` | Inria/MPII Gaussian-Splatting License (same terms) |
+| MonoGS (upstream platform) | derived, see `PROVENANCE.md` | Inria/MPII Gaussian-Splatting License |
+| Mask R-CNN weights | downloaded at runtime via torchvision | TorchVision / Meta research-only terms; see the torchvision model license |
+| RAFT optical-flow weights | downloaded at runtime via `torch.hub` | BSD-3-Clause (princeton-vl/RAFT) |
+| Bonn RGB-D Dynamic dataset | downloaded by `scripts/download_bonn.sh` | CC BY 4.0 (University of Bonn); cite the ReFusion/BoT-SORT papers |
+| TUM RGB-D dataset | downloaded by `scripts/download_tum.sh` | CC BY 4.0 (TU Munich) |
+
+## No warranty
+
+The software is provided "as is", without warranty of any kind. The authors are
+not liable for any claim, damage, or other liability arising from its use.
+
+## If you need a commercial license
+
+Contact the license holders of the Gaussian-Splatting software (Inria and MPII).
+This repository cannot grant commercial rights it does not hold.
