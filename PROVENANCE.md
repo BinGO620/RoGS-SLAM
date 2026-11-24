@@ -1,97 +1,119 @@
-# PROVENANCE — 本仓库与 monogs-ours 的对应关系
+# PROVENANCE — how this repository relates to monogs-ours
 
-- **源**：`/data/monogs-ours` @ `31b0f03670a4366e8c6a5a7012963962a8203663`（分支
-  `feat/bpw-densification`）。monogs-ours 不拆分、不修改，作为备份库。
-- **构建方式**：按 manifest 复制（代码自 RoGS-Densify 同源裁剪状态起步 = 已含论文2
-  机制的减法）→ 论文1 增量减法（删致密化机制）→ 换配置/判据件 → 验证。
-- **旧仓库历史**：本仓库原 main（2 commits，2026-09 开源快照）已打 tag
-  `legacy-20261031` 并推送远程，未丢失。
+- **Source**: `/data/monogs-ours` @ `31b0f03670a4366e8c6a5a7012963962a8203663` (branch
+  `feat/bpw-densification`). monogs-ours is not split or modified; it serves as the
+  backup repository.
+- **How it was built**: copied by manifest (code started from RoGS-Densify's
+  same-origin pruned state, i.e. already carrying paper 2's mechanisms) → paper 1
+  incremental subtraction (removed the densification mechanisms) → swapped configs
+  and criterion artifacts → verified.
+- **Earlier history**: this repo's original `main` (2 commits, the 2026-09 open-source
+  snapshot) is tagged `legacy-20261031` and has been pushed to the remote; it is not
+  lost.
 
-## 组织原则
+## Organization principles
 
-同 RoGS-Densify/PROVENANCE.md（减法不改名、显式清单、主干同源、继承显式化、
-判据件同仓）。本仓库的「本论文代码」= 论文1 四组件（K/R/L/D + 语义掩码），全部位于
-主干开关集内、`combined_prune/method.yaml` 默认开启，无独立新文件。
+Same as RoGS-Densify/PROVENANCE.md (subtraction never renames, explicit inventory,
+same-origin core, explicit inheritance, criterion artifacts in-repo). "This paper's
+code" here = paper 1's four components (K/R/L/D + semantic mask), all inside the
+core switch set and enabled by default in `combined_prune/method.yaml`; no new
+standalone files.
 
-## 对主干文件的修改（相对 RoGS-Densify 同源状态，即 monogs-ours@31b0f0367 减论文2 后）
+## Changes to the core files (relative to RoGS-Densify's same-origin state, i.e.
+monogs-ours@31b0f0367 minus paper 2)
 
-目的：移除论文3（致密化）机制的文件与接线。论文1 配置下所有向量选点分支均不激活，
-else 分支返回 (None, None) → 标量路径；手术等价于恒走标量路径，主线行为不变。
+Purpose: remove the files and wiring of paper 3's (densification) mechanism. Under
+the paper-1 configuration no vector-selection branch is active; the `else` branch
+returns (None, None) → scalar path. The surgery is equivalent to always taking the
+scalar path, so core behavior is unchanged.
 
 ### utils/slam_backend.py
 
-| 源行号（RoGS-Densify 状态） | 删除内容 |
+| Source lines (RoGS-Densify state) | Removed |
 |---|---|
-| 145–159 | `selective_densification`/`densification_selection` import |
-| 356–364 | FDose 事件序数 reset（`_fdose_event_idx`/`_fdose_ordinal_must_be_zero`） |
-| 406–445 | init 站点向量 dispatch（bpw/cgb/fdose/else）→ 换纯标量 `densify_and_prune` |
-| 798–822 | selective residual-EMA ledger 块（含 `update_static_prob_from_evidence` 调用） |
-| 829–873 | map 站点向量 dispatch + `log_sel_dens_state` → 换纯标量 `densify_and_prune` |
-| 160–163 | `static_prob` 两函数 import（随 ledger 块删除；模块与 `static_prob` 张量字段保留） |
+| 145–159 | `selective_densification`/`densification_selection` imports |
+| 356–364 | FDose event-ordinal reset (`_fdose_event_idx`/`_fdose_ordinal_must_be_zero`) |
+| 406–445 | init-site vector dispatch (bpw/cgb/fdose/else) → replaced by pure-scalar `densify_and_prune` |
+| 798–822 | selective residual-EMA ledger block (including the `update_static_prob_from_evidence` call) |
+| 829–873 | map-site vector dispatch + `log_sel_dens_state` → replaced by pure-scalar `densify_and_prune` |
+| 160–163 | `static_prob` two-function import (removed with the ledger block; the module and the `static_prob` tensor field are kept) |
 
-### 删除的模块（2 个，论文3 专属）
+### Removed modules (2, paper-3 only)
 
 `utils/{densification_selection, selective_densification}.py`
-（它们在 RoGS-Densify 仓库中保留。）
+(they remain in the RoGS-Densify repository.)
 
-## 判据件（results/）
+## Criterion artifacts (results/)
 
-- `results/evidence/`：自 `biyelunwen/01_small_papers/MMM2027/deliverable/evidence/`
-  原样复制（table1_18seq_ate、wpa_factorial、p7_cuesplit 等 9 件）+ 本仓库新增
-  `verify_table1.py`。
-- `results/runs/P6/`：自 `/data/archive/monogs-ours-results-archive-20260901.tar`
-  提取（`results/runs/` 与 `results/runs_remote_cache/` 两处，P6 家族 8 子族 111+ run），
-  仅判据小件；**丢弃** `plot/trj_final.json`/`trj_full_final.json`（221MB 过程件，
-  ATE 数字以 tracking_raw.csv/per_frame_ape.csv 为准，trj 可按 config 重跑再生）。
-- 归档中不存在 vanilla/rgd 列的 run 工件（ MonaGS 原版与对照方法非本组代码产出），
-  两列数字以 evidence CSV 为准，verify_table1.py 逐格如实标注。
+- `results/evidence/`: copied verbatim from
+  `biyelunwen/01_small_papers/MMM2027/deliverable/evidence/` (table1_18seq_ate,
+  wpa_factorial, p7_cuesplit and 6 others, 9 items) plus this repo's new
+  `verify_table1.py`.
+- `results/runs/P6/`: extracted from
+  `/data/archive/monogs-ours-results-archive-20260901.tar` (`results/runs/` and
+  `results/runs_remote_cache/`; P6 family, 8 sub-families, 111+ runs). Criterion
+  artifacts only. **Discarded** `plot/trj_final.json`/`trj_full_final.json`
+  (221 MB intermediate files); ATE numbers are taken from `tracking_raw.csv` /
+  `per_frame_ape.csv`, and the trajectories can be regenerated from the config.
+- No run artifacts exist for the `vanilla`/`rgd` columns (stock MonoGS and the
+  comparison method were not produced by this group's code). Those columns' numbers
+  come from the evidence CSV, and `verify_table1.py` labels each cell honestly.
 
-## 验证记录
+## Verification record
 
-| 项 | 结果 |
+| Item | Result |
 |---|---|
-| AST import 闭包 | 64 文件，无缺失 |
-| `py_compile` slam.py / slam_frontend.py / slam_backend.py | 通过 |
-| `pytest tests/test_config_valid.py` | 9 passed（全 18 序列配置继承链有效） |
-| Table 1 重算核对 | **28 格 MATCH（含 combined+maskfree 两列全部可核格）**，44 格 NO-RUN-IN-REPO（如实标注） |
-| submodule pin | `diff-gaussian-rasterization@43e21bff`、`simple-knn@44f764299` |
-| 2060 冒烟 A/B（40 帧，combined/balloon，seed 0） | 见下方补记 |
+| AST import closure | 64 files, nothing missing |
+| `py_compile` slam.py / slam_frontend.py / slam_backend.py | pass |
+| `pytest tests/test_config_valid.py` | 9 passed (inheritance chain valid for all 18 sequences) |
+| Table 1 recomputation check | **28 cells MATCH (all checkable cells in the combined + maskfree columns)**, 44 cells NO-RUN-IN-REPO (labelled honestly) |
+| Submodule pins | `diff-gaussian-rasterization@43e21bff`, `simple-knn@44f764299` |
+| 2060 smoke A/B (40 frames, combined/balloon, seed 0) | see the note below |
 
-## 数字验证矩阵（Table 1，工具 = results/evidence/verify_table1.py）
+## Numeric verification matrix (Table 1; tool = results/evidence/verify_table1.py)
 
-数据源 = 仓内全部 run 判据件（tar 归档 P6 八族 + git tag mmm2027-submission 的
-runs/WPB 与 P6 补件，254 个 tracking_raw.csv）；匹配 = 序列名正则 + mean/std 双窗口，
-支持跨族合并（论文批次有跨族补种子历史，如 balloon/maskfree 的 3 seeds 分属
-P6-MASKOFF 与 P6-MASKOFF-3SEED）。
+Data source = every in-repo run criterion artifact (tar archive P6 eight families +
+git tag mmm2027-submission's runs/WPB and P6 supplements, 254 `tracking_raw.csv`).
+Matching = sequence-name regex + mean/std dual window, with cross-family merging
+supported (the paper batch has a history of cross-family seed supplementation, e.g.
+balloon/maskfree's 3 seeds split across P6-MASKOFF and P6-MASKOFF-3SEED).
 
-| 列 | 逐位重算 | 状态 |
+| Column | Exact recompute | Status |
 |---|---|---|
-| **maskfree** | **18/18** | 全命中（含跨族合并 3 格） |
-| **combined** | **13/18** | TUM 10 + crowd/crowd2/pt1 命中；**BONN 5 格缺口**（balloon 3.06 / balloon2 5.28 / mv_no_box 2.66 / mv_no_box2 5.14 / pt2 10.44）——论文那批 run 工件不在 tar 与 tag（最接近候选 = WPB-CONFIRM 因子批 K1R1L1，均值差 0.2–1.4，非同批）→ **待查 3090 /mnt/app 工件或重跑** |
-| vanilla（MonoGS） | 1/18 | 外部方法列，本组代码不产出，run 工件预期不在归档；数字以 evidence CSV 为准 |
-| rgd | 0/18 | 同上（外部对照方法） |
+| **maskfree** | **18/18** | all hit (including 3 cross-family merged cells) |
+| **combined** | **13/18** | TUM 10 + crowd/crowd2/pt1 hit; **5 BONN cells missing** (balloon 3.06 / balloon2 5.28 / mv_no_box 2.66 / mv_no_box2 5.14 / pt2 10.44) — the paper batch's run artifacts are in neither the tar nor the tag (the closest candidate, the WPB-CONFIRM factorial batch K1R1L1, differs by 0.2–1.4 in the mean and is not the same batch) → **to be located in the 3090 `/mnt/app` artifacts or re-run** |
+| vanilla (MonoGS) | 1/18 | external method column, not produced by this group's code; run artifacts are expected to be absent. Numbers from the evidence CSV |
+| rgd | 0/18 | same as above (external comparison method) |
 
-**合计 32/72 逐位重算命中；其余 40 格中 35 格属外部方法列（结构性无工件）、5 格登记待补。**
-配置同源：47 个 yaml 与 monogs-ours@31b0f0367 逐字节一致（parity check 2026-11-01）。
+**Totals: 32/72 cells recompute exactly; of the remaining 40, 35 are external-method
+columns (structurally artifact-free) and 5 are registered as pending.**
+Config parity: 47 YAMLs byte-identical to monogs-ours@31b0f0367 (parity check 2026-11-01).
 
-## 冒烟 A/B 补记
+## Smoke A/B note
 
-- 设置：`configs/experiments/combined_prune/balloon.yaml`，`--max-frames 40 --seed 0`，
-  同机同卡（RTX 2060）各跑一次；参照 = monogs-ours@31b0f0367 纯净代码副本。
-- 读数：ATE RMSE 0.7163 vs 0.7386 cm（Δ=0.022cm）、KF-ATE 0.8654 vs 0.9064、
-  RPE 1.4673 vs 1.4834。Δ 绝对量低于同配置跨批噪声地板（0.18–0.62cm）约一个量级；
-  手术等价性另行核证：被删的 else 分支函数（`compute_per_gaussian_knobs`/
-  `log_sel_dens_state`）在禁用时零副作用早退、不消耗 RNG，标量路径逐位一致。
-  **判定：PASS（Δ 属重管线的 CUDA 非确定性）。**
+- Setup: `configs/experiments/combined_prune/balloon.yaml`, `--max-frames 40 --seed 0`,
+  same machine and same card (RTX 2060), one run each; reference = the clean code copy
+  at monogs-ours@31b0f0367.
+- Readings: ATE RMSE 0.7163 vs 0.7386 cm (Δ = 0.022 cm), KF-ATE 0.8654 vs 0.9064,
+  RPE 1.4673 vs 1.4834. The absolute Δ is about an order of magnitude below the
+  same-config cross-batch noise floor (0.18–0.62 cm). Surgery equivalence was checked
+  separately: the removed `else`-branch functions
+  (`compute_per_gaussian_knobs`/`log_sel_dens_state`) return early with zero side
+  effects when disabled and consume no RNG, so the scalar path is bitwise identical.
+  **Verdict: PASS (Δ is pipeline-rerun CUDA nondeterminism).**
 
-## 归档原则（2026-11-04 登记；用户指令，适用于每一个仓库）
+## Archiving policy (registered 2026-11-04; user instruction, applies to every repo)
 
-- **工作区永远只留最新**：过时的版本/草稿/历史快照一律移入本仓 `archive/`（就近归档，
-  命名 `{语义}_{YYYY-MM-DD}`），不散落工作区顶层。
-- **归档 ≠ 删除**：归档件是证据键，账本指针不追改；每处归档配 `README.md` 并在仓内
-  索引登记。
-- **本仓独立性**：实验一律回 monogs-ours 做，本仓只收"已判据确认"的成果快照
-  （四步同步见 monogs-ours `/data/master-thesis/WORKFLOW.md`）；本仓自持门禁与
-  PROVENANCE，不依赖 monogs-ours 工作区即可复验。
-- **里程碑触发同步**：只在判决落地/投稿等里程碑做 manifest 重灌 + gate 全跑 +
-  PROVENANCE 登记；平时不同步（避免快照漂移）。
+- **Keep only the latest in the working area**: outdated versions, drafts, and
+  historical snapshots all move into this repo's `archive/` (archive in place, named
+  `{semantic}_{YYYY-MM-DD}`), never left scattered at the top level.
+- **Archive ≠ delete**: archived items are evidence keys; ledger pointers are not
+  rewritten; every archive location gets a `README.md` and is registered in the
+  in-repo index.
+- **Repo independence**: experiments are always run back in monogs-ours; this repo
+  only takes "criterion-confirmed" result snapshots (the four-step sync is in
+  monogs-ours `/data/master-thesis/WORKFLOW.md`). This repo carries its own gates and
+  PROVENANCE, so it can be re-verified without the monogs-ours working area.
+- **Milestone-triggered sync**: only re-run the manifest and full gates and update
+  PROVENANCE at milestones (verdict landed, submission, etc.); do not sync routinely
+  (to avoid snapshot drift).
